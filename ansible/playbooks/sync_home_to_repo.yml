@@ -1,0 +1,13 @@
+---
+- hosts: arch
+  gather_facts: false
+  tasks:
+    - name: Clear home folder
+      file:
+        path: ../../home
+        state: absent
+
+    - name: Synchronize home to repo
+      ansible.posix.synchronize:
+        src: "/home/{{ user }}/"
+        dest: ../../home

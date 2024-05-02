@@ -1,0 +1,11 @@
+---
+- name: Clone a repo with separate git directory
+  ansible.builtin.git:
+    repo: https://github.com/ohmyzsh/ohmyzsh/
+    dest: "/home/{{ user }}/places/oh-my-zsh"
+
+- name: Change default shell to zsh
+  become: true
+  user:
+    name: "{{ user }}"
+    shell: /bin/zsh

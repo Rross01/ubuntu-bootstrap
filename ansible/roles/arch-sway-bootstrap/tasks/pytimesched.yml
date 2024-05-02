@@ -1,0 +1,28 @@
+---
+- name: Ensure destination directory exists
+  file:
+    path: "{{ pytimesched.app_path }}"
+    state: directory
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
+- name: Download app package
+  unarchive:
+    src: "{{ pytimesched.app_url }}"
+    dest: "{{ pytimesched.app_path }}"
+    remote_src: yes
+    owner: "{{ user }}"
+
+- name: Ensure application directory exists
+  file:
+    path: "{{ pytimesched.desktop_entities_path }}"
+    state: directory
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
+- name: Create application entity
+  template:
+    src: pytimesched.desktop
+    dest: "{{ pytimesched.desktop_entities_path }}/pytimesched.desktop"
+    owner: "{{ user }}"
+    group: "{{ user }}"

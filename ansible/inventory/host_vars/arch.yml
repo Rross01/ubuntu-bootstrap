@@ -1,0 +1,93 @@
+---
+user: "rrossamakhin"
+locale: "ru_RU.UTF-8"
+
+my_groups:
+  - docker
+
+yay_packages:
+  - downgrade
+  - espanso-wayland
+  - grimshot
+
+pacman_packages:
+  # sway
+  - sway
+  - swaybg
+  - swayidle
+  - swaylock
+
+  # wm stuff
+  - bemenu
+  - kanshi
+  - mako
+  - network-manager-applet
+  - nm-connection-editor
+  - swappy
+  - udiskie
+  - mpv
+
+  # apps
+  - alacritty
+  - firefox
+  - keepassxc
+  - nextcloud-client
+  - obs-studio
+  - telegram-desktop
+  - thunderbird
+
+  # theming
+  - materia-gtk-theme
+  - papirus-icon-theme
+  - ttf-jetbrains-mono-nerd
+
+  # audio
+  - pavucontrol
+  - pipewire
+  - pipewire-alsa
+  - pipewire-audio
+  - pipewire-jack
+  - pipewire-pulse
+
+  # some deps
+  - grim
+  - xdg-desktop-portal
+  - xdg-desktop-portal-wlr
+  - qt6-wayland
+
+  # dev
+  - ansible
+  - ansible-lint
+  - npm
+
+  # network and bluetooth
+  - blueman
+  - bluez
+  - networkmanager-openconnect
+
+  # cli tools
+  - curl
+  - fzf
+  - git
+  - htop
+  - ranger
+  - ripgrep
+  - rsync
+  - tldr
+  - tmux
+  - zsh
+
+  # k8s and etc
+  - helm
+  - helmfile
+  - kubectl
+
+  # android phone as webcam
+  - ffmpeg
+  - v4l2loopback-dkms
+
+user_systemd_enabled:
+  - ssh-agent.service
+
+system_systemd_enabled:
+  - bluetooth.service

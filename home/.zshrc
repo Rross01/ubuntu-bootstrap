@@ -1,0 +1,40 @@
+if [ -z "$WAYLAND_DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]; then
+    export SDL_VIDEODRIVER=wayland
+    export _JAVA_AWT_WM_NONREPARENTING=1
+    export QT_QPA_PLATFORM=wayland
+    export XDG_CURRENT_DESKTOP=sway
+    export XDG_SESSION_DESKTOP=sway
+    echo > /tmp/sway_is_starting
+    exec sway
+fi
+
+# Add own binaries to the path
+export PATH=$PATH:$HOME/.bin:$HOME/.scripts
+
+# zsh settings
+ZSH_THEME="robbyrussell"
+CASE_SENSITIVE="false"
+HYPHEN_INSENSITIVE="true"
+HISTFILE=~/places/.zsh_history
+HISTFILESIZE=1000000000
+HISTSIZE=1000000000
+plugins=(git)
+export ZSH="$HOME/places/oh-my-zsh"
+source $ZSH/oh-my-zsh.sh
+
+# Sources
+source <(helmfile completion zsh)
+source <(kubectl completion zsh)
+
+# Change default editor
+export EDITOR="nvim"
+
+# Aliases
+alias sf='~/.scripts/ssh_search.sh'
+alias v='nvim'
+alias vim='nvim'
+alias gb='git branch'
+alias git_clean='git checkout master && git pull && git branch | grep -v master | xargs git branch -D $argv'
+alias glog='git log --all --decorate --oneline --graph $argv'
+alias kl='kubectl'
+alias x='ranger'

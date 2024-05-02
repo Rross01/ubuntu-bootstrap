@@ -1,0 +1,41 @@
+matches:
+
+  - trigger: ";du"
+    replace: "du -ah --max-depth=1 | sort -h"
+
+  - trigger: ";ss"
+    replace: "sudo su -"
+
+  - trigger: ";sp"
+    replace: "sudo su postgres -"
+
+  - trigger: ";psql"
+    replace: "sudo su postgres -c psql"
+
+  - trigger: ";myip"
+    replace: "curl ifconfig.me"
+
+  - trigger: ";date"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%Y-%m-%d"
+
+  - trigger: ";tst"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%Y-%m-%d %H:%M:%S"
+
+  - trigger: ";pwdgen"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "openssl rand -hex 12"
+          shell: bash 

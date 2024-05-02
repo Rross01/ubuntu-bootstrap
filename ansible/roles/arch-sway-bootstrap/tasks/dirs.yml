@@ -1,0 +1,15 @@
+---
+- name: Synchronize repo to home
+  ansible.posix.synchronize:
+    src: ../home/
+    dest: "/home/{{ user }}/"
+
+- name: Create common directories
+  file:
+    path: "{{ item }}"
+    state: directory
+  with_items:
+    - "/home/{{ user }}/places/personal/git"
+    - "/home/{{ user }}/places/screenshots"
+    - "/home/{{ user }}/places/work/git"
+    - "/home/{{ user }}/temp"

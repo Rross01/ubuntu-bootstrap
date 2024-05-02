@@ -1,0 +1,30 @@
+---
+- import_tasks: locale.yml
+  tags: locale
+
+- import_tasks: aur.yml
+  tags: aur
+
+- import_tasks: packages.yml
+  tags: packages
+
+- import_tasks: logind.yml
+  tags: logind
+
+- import_tasks: zram.yml
+  tags: zram
+
+- import_tasks: dirs.yml
+  tags: dirs
+
+- import_tasks: groups.yml
+  tags: groups
+
+- import_tasks: systemd.yml
+  tags: systemd
+
+- import_tasks: pytimesched.yml
+  tags: pytimesched
+
+- import_tasks: zsh.yml
+  tags: zsh

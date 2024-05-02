@@ -1,0 +1,7 @@
+[user]
+	name = Roman Rossamakhin
+	email = rossamakhin01@gmail.com
+[core]
+	autocrlf = input
+[push]
+	autoSetupRemote = true

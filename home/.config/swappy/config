@@ -1,0 +1,4 @@
+[Default]
+early_exit=true
+save_dir=$HOME/places/screenshots
+show_panel=true

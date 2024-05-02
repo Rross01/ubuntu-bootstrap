@@ -1,0 +1,214 @@
+################################
+#            Common            #
+################################
+
+set {
+    $mod Mod4
+
+    $left h
+    $down j
+    $up k
+    $right l
+
+    $font "JetBrainsMono Nerd Font Mono 10"
+
+    $bemenu_opts -c -l 20 -i --fixed-height --prompt "➜" --no-spacing --grab --width-factor 0.5 --fn $font
+}
+
+font $font
+
+default_border pixel 3
+floating_modifier $mod normal
+smart_borders on
+workspace_auto_back_and_forth yes
+
+output * bg #5e5e5e solid_color
+
+for_window {
+    [app_id="pavucontrol"] floating enable
+    [app_id="pavucontrol"] resize set width 1200 height 800
+}
+
+assign {
+    [app_id="firefox"] workspace 1
+    [app_id="Alacritty"] workspace 2
+    [app_id="org.telegram.desktop"] workspace 9
+    [app_id="org.keepassxc.KeePassXC"] workspace 9
+    [app_id="thunderbird"] workspace 9
+}
+
+################################
+#            Inputs            #
+################################
+
+input "type:touchpad" {
+    tap enabled
+    natural_scroll enabled
+}
+
+input "type:keyboard" {
+    xkb_layout us,ru
+    xkb_options grp:alt_shift_toggle,caps:swapescape
+}
+
+################################
+#          Autostart           #
+################################
+
+exec_always {
+    "espanso service restart --unmanaged"
+    "killall kanshi; kanshi"
+    "killall wl-paste; wl-paste --watch cliphist store"
+    "makoctl reload"
+}
+
+exec {
+    MOZ_ENABLE_WAYLAND=1 thunderbird
+    alacritty
+    firefox
+    keepassxc
+    nm-applet
+    telegram-desktop
+    udiskie --smart-tray --no-automount --notify --tray
+    swayidle -w \
+        timeout 300 'swaylock' \
+        timeout 600 'swaymsg "output * power off"' \
+        resume 'swaymsg "output * power on"' \
+        before-sleep 'playerctl pause && swaylock'
+    "sleep 10 && rm /tmp/sway_is_starting"
+}
+
+################################
+#            Modes             #
+################################
+
+mode "resize" {
+    bindsym {
+        $left resize shrink width 10px
+        $down resize grow height 10px
+        $up resize shrink height 10px
+        $right resize grow width 10px
+        Escape mode "default"
+    }
+}
+
+set $mode_system "(l)ock, (s)leep, (r)eboot, (p)oweroff, (k)ill sway"
+mode $mode_system {
+    bindsym {
+        l exec --no-startup-id swaylock, mode "default"
+        s exec --no-startup-id swaylock && systemctl -i suspend, mode "default"
+        r exec --no-startup-id systemctl -i reboot
+        p exec --no-startup-id systemctl -i poweroff
+        k exec --no-startup-id pkill sway
+        Escape mode "default"
+    }
+}
+
+################################
+#           Bindings           #
+################################
+
+bindswitch --locked {
+    lid:on exec "test -f /tmp/sway_is_starting || pgrep swaylock || (swaylock && systemctl suspend)"
+    lid:off exec notify-send "Welcome home, my lord."
+}
+
+bindgesture {
+    swipe:right workspace prev
+    swipe:left workspace next
+}
+
+bindsym {
+    Ctrl+Alt+h workspace prev
+    Ctrl+Alt+l workspace next
+
+    # hide bar
+    $mod bar hidden_state toggle
+    $mod+p bar mode toggle
+
+    # media keys
+    XF86AudioLowerVolume exec pactl -- set-sink-mute @DEFAULT_SINK@ 0 && pactl -- set-sink-volume @DEFAULT_SINK@ -10%
+    XF86AudioRaiseVolume exec pactl -- set-sink-mute @DEFAULT_SINK@ 0 && pactl -- set-sink-volume @DEFAULT_SINK@ +10%
+    XF86AudioMute exec pactl -- set-sink-mute @DEFAULT_SINK@ toggle
+    XF86AudioMicMute exec pactl -- set-source-mute @DEFAULT_SOURCE@ toggle
+    XF86MonBrightnessUp exec brightnessctl set +10%
+    XF86MonBrightnessDown exec brightnessctl set 10%-
+
+    # notification
+    Ctrl+space exec --no-startup-id makoctl dismiss --all
+
+    # screenshot bindings
+    $mod+Shift+s exec --no-startup-id grimshot --notify save area - | swappy -f -
+
+    # terminal
+    $mod+Return exec alacritty
+
+    $mod+Shift+q kill
+    $mod+Shift+r reload
+    $mod+d exec bemenu-run $bemenu_opts | xargs swaymsg exec --
+
+    # cliphist
+    $mod+v exec cliphist list | bemenu $bemenu_opts | cliphist decode | wl-copy
+
+    # split orientation
+    $mod+q split toggle
+
+    # navigation
+    $mod+$left focus left
+    $mod+$down focus down
+    $mod+$up focus up
+    $mod+$right focus right
+    $mod+Shift+$left move left
+    $mod+Shift+$down move down
+    $mod+Shift+$up move up
+    $mod+Shift+$right move right
+
+    # switch to workspace
+    $mod+1 workspace 1
+    $mod+2 workspace 2
+    $mod+3 workspace 3
+    $mod+4 workspace 4
+    $mod+5 workspace 5
+    $mod+6 workspace 6
+    $mod+7 workspace 7
+    $mod+8 workspace 8
+    $mod+9 workspace 9
+
+    # move to workspace with focused container
+    $mod+Shift+1 move container to workspace 1; workspace 1
+    $mod+Shift+2 move container to workspace 2; workspace 2
+    $mod+Shift+3 move container to workspace 3; workspace 3
+    $mod+Shift+4 move container to workspace 4; workspace 4
+    $mod+Shift+5 move container to workspace 5; workspace 5
+    $mod+Shift+6 move container to workspace 6; workspace 6
+    $mod+Shift+7 move container to workspace 7; workspace 7
+    $mod+Shift+8 move container to workspace 8; workspace 8
+    $mod+Shift+9 move container to workspace 9; workspace 9
+
+    # scratchpad
+    $mod+Shift+minus move scratchpad
+    $mod+minus scratchpad show
+
+    $mod+w layout toggle tabbed split
+    $mod+f fullscreen
+    $mod+Shift+space floating toggle
+    $mod+space focus mode_toggle
+    $mod+a focus parent
+
+    $mod+r mode "resize"
+    $mod+0 mode $mode_system
+}
+
+################################
+#             Bar              #
+################################
+
+bar {
+    position bottom
+    status_command ~/.scripts/wm/sway-status.sh
+    tray {
+        icon_theme Papirus-Dark
+    }
+}
+
+include ~/.config/sway/config.d/*
