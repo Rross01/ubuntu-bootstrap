@@ -68,13 +68,29 @@ return {
     },
 
     {
-        'HoNamDuong/hybrid.nvim',
+        'navarasu/onedark.nvim',
         lazy = false,
         priority = 1000,
         config = function()
-            vim.cmd('colorscheme hybrid')
+            require('onedark').setup {
+                style = 'warm',
+                transparent = false,
+                toggle_style_key = '<leader>ts',
+                toggle_style_list = { 'dark', 'darker', 'warm', 'warmer', 'light' },
+            }
+            require('onedark').load()
+            vim.cmd('colorscheme onedark')
         end,
     },
+
+    -- {
+    --     'HoNamDuong/hybrid.nvim',
+    --     lazy = false,
+    --     priority = 1000,
+    --     config = function()
+    --         vim.cmd('colorscheme hybrid')
+    --     end,
+    -- },
 
     {
         'echasnovski/mini.nvim',
@@ -87,6 +103,23 @@ return {
             require('mini.comment').setup({ ignore_blank_line = false, })
         end,
     },
+
+    -- {
+    --     'codota/tabnine-nvim',
+    --     build = "./dl_binaries.sh",
+    --     event = "VeryLazy",
+    --     config = function()
+    --         require('tabnine').setup({
+    --             disable_auto_comment = true,
+    --             accept_keymap = "<C-w>",
+    --             dismiss_keymap = "<C-e>",
+    --             debounce_ms = 800,
+    --             suggestion_color = { gui = "#808080", cterm = 244 },
+    --             exclude_filetypes = { "TelescopePrompt", "neo-tree" },
+    --             log_file_path = nil, -- absolute path to Tabnine log file
+    --         })
+    --     end,
+    -- },
 
     {
         "stevearc/conform.nvim",
@@ -122,7 +155,6 @@ return {
         config = function()
             require 'nvim-treesitter.configs'.setup {
                 highlight = { enable = true },
-                ensure_installed = { "lua", "yaml", "python", "toml", "ini", "groovy", "helm" },
             }
         end
     },
