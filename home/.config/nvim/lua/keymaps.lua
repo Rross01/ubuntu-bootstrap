@@ -30,8 +30,8 @@ map("n", "fs", ":nohl<CR>", map_default_opts)
 -- Neotree
 map("n", "<leader>e", ":Neotree float toggle<CR>", map_default_opts)
 map("n", "<leader>E", ":Neotree float reveal<CR>", map_default_opts)
-map("n", "<leader>q", ":Neotree left toggle<CR>", map_default_opts)
-map("n", "<leader>Q", ":Neotree left reveal<CR>", map_default_opts)
+map("n", "<leader>q", ":Neotree right toggle<CR>", map_default_opts)
+map("n", "<leader>Q", ":Neotree right reveal<CR>", map_default_opts)
 
 -- Telescope
 map("n", "<leader>pf", ":Telescope find_files<CR>", map_default_opts)
@@ -39,6 +39,7 @@ map("n", "<leader>pg", ":Telescope live_grep<CR>", map_default_opts)
 map("n", "<leader>pc", ":Telescope grep_string<CR>", map_default_opts)
 map("n", "<leader>pd", ":Telescope diagnostics<CR>", map_default_opts)
 map("n", "<leader>H", ":Telescope help_tags<CR>", map_default_opts)
+map("n", "<leader>b", ":Telescope buffers<CR>", map_default_opts)
 
 -- formatter
 map("n", "fr", ":Format<CR>", map_default_opts)
