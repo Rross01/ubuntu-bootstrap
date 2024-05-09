@@ -9,7 +9,6 @@
 + .config/swappy/***
 + .config/sway/***
 + .config/swaylock/***
-+ .config/systemd/***
 + .config/tmux/***
 + .gitconfig
 + .rsync-filter
