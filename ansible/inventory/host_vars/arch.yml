@@ -48,7 +48,6 @@ pacman_packages:
   - pipewire
   - pipewire-alsa
   - pipewire-audio
-  - pipewire-jack
   - pipewire-pulse
 
   # some deps
@@ -67,7 +66,12 @@ pacman_packages:
   - bluez
   - networkmanager-openconnect
 
-  # cli tools
+  # common cli tools
+  - unzip
+  - zip
+  - dnsutils
+
+  # extra cli tools
   - curl
   - fzf
   - git
