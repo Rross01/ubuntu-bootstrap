@@ -18,7 +18,6 @@ pacman_packages:
   - swaylock
 
   # wm stuff
-  - bemenu
   - kanshi
   - mako
   - network-manager-applet
@@ -26,6 +25,9 @@ pacman_packages:
   - swappy
   - udiskie
   - mpv
+  - bemenu-wayland
+  - brightnessctl
+  - cliphist
 
   # apps
   - alacritty
@@ -70,6 +72,7 @@ pacman_packages:
   - fzf
   - git
   - htop
+  - less
   - ranger
   - ripgrep
   - rsync
