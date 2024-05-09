@@ -11,5 +11,6 @@
   with_items:
     - "/home/{{ user }}/places/personal/git"
     - "/home/{{ user }}/places/screenshots"
+    - "/home/{{ user }}/places/wallpapers"
     - "/home/{{ user }}/places/work/git"
     - "/home/{{ user }}/temp"

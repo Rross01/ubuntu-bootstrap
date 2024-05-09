@@ -23,12 +23,10 @@ set {
 
 font $font
 
-default_border pixel 3
+default_border pixel 2
 floating_modifier $mod normal
 smart_borders on
 workspace_auto_back_and_forth yes
-
-output * bg #5e5e5e solid_color
 
 for_window {
     [app_id="pavucontrol"] floating enable
@@ -38,9 +36,9 @@ for_window {
 assign {
     [app_id="firefox"] workspace 1
     [app_id="Alacritty"] workspace 2
-    [app_id="org.telegram.desktop"] workspace 9
-    [app_id="org.keepassxc.KeePassXC"] workspace 9
-    [app_id="thunderbird"] workspace 9
+    [app_id="org.telegram.desktop"] workspace 3
+    [app_id="org.keepassxc.KeePassXC"] workspace 3
+    [app_id="thunderbird"] workspace 3
 }
 
 ################################
@@ -67,6 +65,7 @@ exec_always {
     "killall wl-paste; wl-paste --watch cliphist store"
     "makoctl reload"
     "pkill nm-applet; nm-applet"
+    "$HOME/.scripts/wm/bing_wallpaper.sh"
 }
 
 exec {
