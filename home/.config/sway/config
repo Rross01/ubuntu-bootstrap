@@ -66,6 +66,7 @@ exec_always {
     "killall kanshi; kanshi"
     "killall wl-paste; wl-paste --watch cliphist store"
     "makoctl reload"
+    "pkill nm-applet; nm-applet"
 }
 
 exec {
@@ -73,7 +74,6 @@ exec {
     alacritty
     firefox
     keepassxc
-    nm-applet
     telegram-desktop
     udiskie --smart-tray --no-automount --notify --tray
     $swayidle
@@ -131,7 +131,7 @@ mode "resize" {
 ################################
 
 bindswitch --locked {
-    lid:on exec "test -f /tmp/sway_is_starting || pgrep swaylock || (swaylock && systemctl suspend)"
+    lid:on exec "test -f /tmp/sway_is_starting || pgrep swaylock || (swaylock && sleep 2m && systemctl suspend)"
     lid:off exec notify-send "Welcome home, my lord."
 }
 

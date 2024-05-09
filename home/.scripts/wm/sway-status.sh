@@ -3,6 +3,16 @@
 echo '{"version":1}'
 echo '['
 
+layout() {
+    RAW=$(swaymsg -t get_inputs -r | jq '[.[] | select(.type == "keyboard") | .xkb_active_layout_index][0]')
+    if [[ $RAW = '0' ]] 
+    then
+        echo "en"
+    else
+        echo "ru"
+    fi
+}
+
 body() {
     cat <<- EOF | jq --compact-output --monochrome-output
     [
@@ -18,6 +28,11 @@ body() {
         },
         {
             "full_text": "$(cat /sys/class/power_supply/BAT0/capacity)%",
+            "color": "#c5c8c6",
+            "separator_block_width": 16
+        },
+        {
+            "full_text": "$(layout)",
             "color": "#c5c8c6",
             "separator_block_width": 16
         }
