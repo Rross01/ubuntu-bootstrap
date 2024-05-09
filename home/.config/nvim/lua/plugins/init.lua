@@ -73,7 +73,7 @@ return {
         priority = 1000,
         config = function()
             require('onedark').setup {
-                style = 'warm',
+                style = 'dark',
                 transparent = false,
                 toggle_style_key = '<leader>ts',
                 toggle_style_list = { 'dark', 'darker', 'warm', 'warmer', 'light' },

@@ -8,9 +8,6 @@ local bind_default_opts = { bang = true }
 -- Закрытие текущего буфера
 map("n", "<leader>d", "[[<cmd>lua MiniBufremove.delete()<cr>", map_default_opts)
 
--- Закрытие всех буферов
-map("n", "<leader>D", "[[<cmd>bufdo lua MiniBufremove.delete()<cr>", map_default_opts)
-
 -- Выход из режима терминала
 map("i", "jj", "<Esc>", map_default_opts)
 map("i", "оо", "<Esc>", map_default_opts)
@@ -20,9 +17,6 @@ map("x", "<leader>p", '"_dP', map_default_opts)
 
 -- Переименовать слово под которым курсор
 map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], map_default_opts)
-
--- grep по слову под курсором
-map("n", "<leader>g", [[:grep <C-r><C-w> | copen<cr><cr>]], map_default_opts)
 
 -- По fs очищаем последний поиск с подсветкой
 map("n", "fs", ":nohl<CR>", map_default_opts)
@@ -70,6 +64,13 @@ map("n", "<C-l>", "<C-w>l", map_default_opts)
 map("n", "<C-j>", "<C-w>j", map_default_opts)
 map("n", "<C-k>", "<C-w>k", map_default_opts)
 
+-- Fugitive
+-- map("n", "<leader>g", ":tab G | vsplit<CR>", map_default_opts)
+map("n", "<leader>g", ":tab G<CR>", map_default_opts)
+
+-- tabclose
+map("n", "<leader>D", ":tabclose<CR>", map_default_opts)
+
 -- My commands
 bind('Tmplog', "e ~/places/work/myself-log/log.md", bind_default_opts)
 bind('W', "w", bind_default_opts)
@@ -79,3 +80,5 @@ bind('Gca', "G commit --amend", bind_default_opts)
 bind('Gp', "G push", bind_default_opts)
 bind('Gpf', "G push --force", bind_default_opts)
 bind('Gb', "G branch", bind_default_opts)
+
+bind('Table', "'<,'>!column --table --separator ' '", bind_default_opts)
