@@ -11,10 +11,6 @@ style = "Medium"
 [mouse]
 hide_when_typing = true
 
-[colors.primary]
-background = "#282c34"
-foreground = "#abb2bf"
-
 [colors.normal]
 black = "#1e2127"
 red = "#e06c75"
