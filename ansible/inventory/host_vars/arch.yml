@@ -67,19 +67,21 @@ pacman_packages:
   - networkmanager-openconnect
 
   # common cli tools
-  - unzip
-  - zip
-  - dnsutils
-
-  # extra cli tools
   - curl
-  - fzf
-  - git
+  - dnsutils
   - htop
   - less
+  - man-db
+  - rsync
+  - unzip
+  - wget
+  - zip
+
+  # extra cli tools
+  - fzf
+  - git
   - ranger
   - ripgrep
-  - rsync
   - tldr
   - tmux
   - zsh
