@@ -26,6 +26,9 @@ source $ZSH/oh-my-zsh.sh
 source <(helmfile completion zsh)
 source <(kubectl completion zsh)
 
+# ssh-agent
+export SSH_AUTH_SOCK=/run/user/1000/ssh-agent.socket
+
 # Change default editor
 export EDITOR="nvim"
 
