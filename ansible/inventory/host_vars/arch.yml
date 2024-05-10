@@ -90,6 +90,7 @@ pacman_packages:
   # k8s and etc
   - helm
   - helmfile
+  - k9s
   - kubectl
 
   # android phone as webcam
