@@ -4,6 +4,7 @@ locale: "ru_RU.UTF-8"
 
 my_groups:
   - docker
+  - lp
 
 yay_packages:
   - downgrade
