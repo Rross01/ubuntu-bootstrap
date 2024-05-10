@@ -13,6 +13,10 @@ layout() {
     fi
 }
 
+battery() {
+    cat /sys/class/power_supply/BAT0/capacity
+}
+
 body() {
     cat <<- EOF | jq --compact-output --monochrome-output
     [
@@ -27,7 +31,7 @@ body() {
             "separator_block_width": 16
         },
         {
-            "full_text": "$(cat /sys/class/power_supply/BAT0/capacity)%",
+            "full_text": "$(battery)%",
             "color": "#c5c8c6",
             "separator_block_width": 16
         },
@@ -42,6 +46,9 @@ EOF
 
 while :;
 do
+    test $(battery) -gt 20 || notify-send --urgency=critical "Battery charge is less than 20%"
+    test $(battery) -gt 10 || notify-send --urgency=critical "Battery charge is less than 10%"
+
     echo "$(body),"
 	sleep 1
 done
