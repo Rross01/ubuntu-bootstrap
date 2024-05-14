@@ -3,11 +3,11 @@
 ################################
 
 set {
-    $swayidle swayidle -w \
-        timeout 300 'swaylock' \
+    $lock "playerctl pause; keepassxc --lock && swaylock"
+    $idle swayidle -w \
+        timeout 300 $lock \
         timeout 600 'swaymsg "output * power off"' \
-        resume 'swaymsg "output * power on"' \
-        before-sleep 'playerctl pause && swaylock'
+        resume 'swaymsg "output * power on"'
 
     $mod Mod4
 
@@ -75,7 +75,7 @@ exec {
     keepassxc
     telegram-desktop
     udiskie --smart-tray --no-automount --notify --tray
-    $swayidle
+    $idle
     "sleep 10 && rm /tmp/sway_is_starting"
     nextcloud
 }
@@ -84,11 +84,24 @@ exec {
 #            Modes             #
 ################################
 
+set $player "(n)ext, (p)revious, (t)oggle play/pause, (N)ame of the song"
+bindsym $mod+p mode $player
+mode $player {
+    bindsym {
+        n exec --no-startup-id playerctl next, mode "default"
+        p exec --no-startup-id playerctl previous, mode "default"
+        t exec --no-startup-id playerctl play-pause, mode "default"
+        n+Shift exec --no-startup-id notify-send \
+            "$(playerctl metadata --format '{{ artist }} ({{ album }}) - {{ title }}')", mode "default"
+        Escape mode "default"
+    }
+}
+
 set $kaffeine "(k)ill swayidle, (s)tart swayidle"
 mode $kaffeine {
     bindsym {
         k exec --no-startup-id pkill swayidle, mode "default"
-        s exec --no-startup-id pgrep swayidle || $swayidle, mode "default"
+        s exec --no-startup-id pgrep swayidle || $idle, mode "default"
         Escape mode "default"
     }
 }
@@ -96,8 +109,8 @@ mode $kaffeine {
 set $powermode "(l)ock, (s)leep, (r)eboot, (p)oweroff, (k)ill sway"
 mode $powermode {
     bindsym {
-        l exec --no-startup-id swaylock, mode "default"
-        s exec --no-startup-id swaylock && systemctl -i suspend, mode "default"
+        l exec --no-startup-id $lock, mode "default"
+        s exec --no-startup-id $lock && systemctl -i suspend, mode "default"
         r exec --no-startup-id systemctl -i reboot
         p exec --no-startup-id systemctl -i poweroff
         k exec --no-startup-id pkill sway
@@ -146,7 +159,7 @@ bindsym {
 
     # hide bar
     $mod bar hidden_state toggle
-    $mod+p bar mode toggle
+    $mod+Shift+p bar mode toggle
 
     # media keys
     XF86AudioLowerVolume exec pactl -- set-sink-mute @DEFAULT_SINK@ 0 && pactl -- set-sink-volume @DEFAULT_SINK@ -10%
