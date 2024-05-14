@@ -50,6 +50,7 @@ pacman_packages:
   - pipewire-alsa
   - pipewire-audio
   - pipewire-pulse
+  - playerctl
 
   # some deps
   - grim
