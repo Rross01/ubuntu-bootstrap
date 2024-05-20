@@ -37,7 +37,6 @@ pacman_packages:
   - nextcloud-client
   - obs-studio
   - telegram-desktop
-  - thunderbird
 
   # theming
   - materia-gtk-theme
@@ -95,6 +94,7 @@ pacman_packages:
   - kubectl
 
   # android phone as webcam
+  - linux-headers
   - ffmpeg
   - v4l2loopback-dkms
 

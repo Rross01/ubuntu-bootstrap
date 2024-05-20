@@ -46,9 +46,6 @@ EOF
 
 while :;
 do
-    test $(battery) -gt 20 || notify-send --urgency=critical "Battery charge is less than 20%"
-    test $(battery) -gt 10 || notify-send --urgency=critical "Battery charge is less than 10%"
-
     echo "$(body),"
 	sleep 1
 done

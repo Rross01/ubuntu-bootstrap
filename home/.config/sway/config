@@ -110,7 +110,7 @@ set $powermode "(l)ock, (s)leep, (r)eboot, (p)oweroff, (k)ill sway"
 mode $powermode {
     bindsym {
         l exec --no-startup-id $lock, mode "default"
-        s exec --no-startup-id $lock && systemctl -i suspend, mode "default"
+        s exec --no-startup-id "$$lock && systemctl -i suspend", mode "default"
         r exec --no-startup-id systemctl -i reboot
         p exec --no-startup-id systemctl -i poweroff
         k exec --no-startup-id pkill sway
@@ -173,7 +173,10 @@ bindsym {
     Ctrl+space exec --no-startup-id makoctl dismiss --all
 
     # screenshot bindings
-    $mod+Shift+s exec --no-startup-id grimshot --notify save area - | swappy -f -
+    $mod+s exec --no-startup-id grimshot --notify save area - | swappy -f -
+
+    # toggle sticky
+    $mod+Shift+s sticky toggle
 
     # terminal
     $mod+Return exec alacritty
