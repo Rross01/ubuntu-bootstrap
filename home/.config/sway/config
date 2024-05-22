@@ -84,13 +84,13 @@ exec {
 #            Modes             #
 ################################
 
-set $player "(n)ext, (p)revious, (t)oggle play/pause, (N)ame of the song"
+set $player "(n)ext, (P)revious, (p)lay/pause, (N)ame of the song"
 bindsym $mod+p mode $player
 mode $player {
     bindsym {
         n exec --no-startup-id playerctl next, mode "default"
-        p exec --no-startup-id playerctl previous, mode "default"
-        t exec --no-startup-id playerctl play-pause, mode "default"
+        p+shift exec --no-startup-id playerctl previous, mode "default"
+        p exec --no-startup-id playerctl play-pause, mode "default"
         n+Shift exec --no-startup-id notify-send \
             "$(playerctl metadata --format '{{ artist }} ({{ album }}) - {{ title }}')", mode "default"
         Escape mode "default"
