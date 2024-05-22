@@ -28,3 +28,6 @@
 
 - import_tasks: zsh.yml
   tags: zsh
+
+- import_tasks: dconf.yml
+  tags: dconf

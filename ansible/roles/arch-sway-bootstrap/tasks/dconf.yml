@@ -1,0 +1,5 @@
+---
+- name: Change blueman notification daemon
+  dconf:
+    key: "/org/blueman/general/notification-daemon"
+    value: false
