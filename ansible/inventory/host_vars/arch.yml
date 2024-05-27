@@ -37,6 +37,7 @@ pacman_packages:
   - nextcloud-client
   - obs-studio
   - telegram-desktop
+  - libreoffice-still-ru
 
   # theming
   - materia-gtk-theme
@@ -57,6 +58,7 @@ pacman_packages:
   - xdg-desktop-portal-wlr
   - qt6-wayland
   - python-psutil
+  - lm_sensors
 
   # dev
   - ansible
