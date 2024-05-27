@@ -3,7 +3,7 @@
 ################################
 
 set {
-    $lock "playerctl pause; keepassxc --lock && swaylock"
+    $lock "pgrep swaylock || playerctl pause; keepassxc --lock && swaylock"
     $idle swayidle -w \
         timeout 300 $lock \
         timeout 600 'swaymsg "output * power off"' \
@@ -144,7 +144,7 @@ mode "resize" {
 ################################
 
 bindswitch --locked {
-    lid:on exec "test -f /tmp/sway_is_starting || pgrep swaylock || (swaylock && sleep 2m && systemctl suspend)"
+    lid:on exec "test -f /tmp/sway_is_starting || $lock"
     lid:off exec notify-send "Welcome home, my lord."
 }
 
