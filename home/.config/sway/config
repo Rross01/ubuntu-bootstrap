@@ -4,6 +4,7 @@
 
 set {
     $lock "pgrep swaylock || playerctl pause; keepassxc --lock && swaylock"
+    $sleep "$$lock && systemctl -i suspend"
     $idle swayidle -w \
         timeout 300 $lock \
         timeout 600 'swaymsg "output * power off"' \
@@ -75,9 +76,8 @@ exec {
     keepassxc
     telegram-desktop
     udiskie --smart-tray --no-automount --notify --tray
-    $idle
-    "sleep 10 && rm /tmp/sway_is_starting"
     nextcloud
+    $idle
 }
 
 ################################
@@ -110,7 +110,7 @@ set $powermode "(l)ock, (s)leep, (r)eboot, (p)oweroff, (k)ill sway"
 mode $powermode {
     bindsym {
         l exec --no-startup-id $lock, mode "default"
-        s exec --no-startup-id "$$lock && systemctl -i suspend", mode "default"
+        s exec --no-startup-id $sleep, mode "default"
         r exec --no-startup-id systemctl -i reboot
         p exec --no-startup-id systemctl -i poweroff
         k exec --no-startup-id pkill sway
@@ -144,7 +144,7 @@ mode "resize" {
 ################################
 
 bindswitch --locked {
-    lid:on exec "test -f /tmp/sway_is_starting || $lock"
+    lid:on exec $lock
     lid:off exec notify-send "Welcome home, my lord."
 }
 
