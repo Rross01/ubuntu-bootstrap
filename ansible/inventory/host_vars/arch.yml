@@ -80,6 +80,7 @@ pacman_packages:
   - unzip
   - wget
   - zip
+  - openldap
 
   # extra cli tools
   - fzf
