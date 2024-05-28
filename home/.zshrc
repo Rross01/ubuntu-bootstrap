@@ -32,6 +32,31 @@ export SSH_AUTH_SOCK=/run/user/1000/ssh-agent.socket
 # Change default editor
 export EDITOR="nvim"
 
+# Functions
+check_for_http_status_code() {
+    ENDPOINT=$1
+    STATUS_CODE=$2
+    CHECK=$(curl -L -w '%{response_code}' -s -o /dev/null $ENDPOINT)
+    [[ $CHECK = $STATUS_CODE ]]
+}
+
+loop() {
+    for (( ; ; ))
+    do
+        zsh -i -c "$1"
+        sleep 1
+    done
+}
+
+loop_wait_for_true() {
+    for (( ; ; ))
+    do
+        date
+        zsh -i -c "$1" && break
+        sleep 1
+    done
+}
+
 # Aliases
 alias sf='~/.scripts/ssh_search.sh'
 alias v='nvim'
