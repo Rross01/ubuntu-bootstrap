@@ -19,7 +19,7 @@ set {
 
     $font "JetBrainsMono Nerd Font Mono 10"
 
-    $bemenu_opts --center --list 20 --ignorecase --fixed-height --prompt "➜" --no-spacing --grab --width-factor 0.5 --fn $font
+    $bemenu_opts --no-cursor --center --list 20 --ignorecase --fixed-height --prompt "➜" --no-spacing --grab --width-factor 0.5 --fn $font
 }
 
 font $font
@@ -39,7 +39,6 @@ assign {
     [app_id="Alacritty"] workspace 2
     [app_id="org.telegram.desktop"] workspace 3
     [app_id="org.keepassxc.KeePassXC"] workspace 3
-    [app_id="thunderbird"] workspace 3
 }
 
 ################################
@@ -65,18 +64,17 @@ exec_always {
     "killall kanshi; kanshi"
     "killall wl-paste; wl-paste --watch cliphist store"
     "makoctl reload"
-    "pkill nm-applet; nm-applet"
     "$HOME/.scripts/wm/bing_wallpaper.sh"
 }
 
 exec {
-    MOZ_ENABLE_WAYLAND=1 thunderbird
     alacritty
     firefox
     keepassxc
     telegram-desktop
     udiskie --smart-tray --no-automount --notify --tray
     nextcloud
+    nm-applet
     $idle
 }
 
