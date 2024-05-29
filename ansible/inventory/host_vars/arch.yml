@@ -79,11 +79,12 @@ pacman_packages:
   - htop
   - less
   - man-db
+  - openldap
   - rsync
+  - tcpdump
   - unzip
   - wget
   - zip
-  - openldap
 
   # extra cli tools
   - fzf
