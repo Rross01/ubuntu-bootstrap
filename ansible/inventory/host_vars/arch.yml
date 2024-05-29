@@ -44,6 +44,9 @@ pacman_packages:
   - papirus-icon-theme
   - ttf-jetbrains-mono-nerd
 
+  # fonts for firefox
+  - noto-fonts
+
   # audio
   - pavucontrol
   - pipewire
