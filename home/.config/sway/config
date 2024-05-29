@@ -17,9 +17,9 @@ set {
     $up k
     $right l
 
-    $font "JetBrainsMono Nerd Font Mono 10"
+    $font "JetBrainsMono Nerd Font Mono 12"
 
-    $bemenu_opts --no-cursor --center --list 20 --ignorecase --fixed-height --prompt "➜" --no-spacing --grab --width-factor 0.5 --fn $font
+    $bemenu_opts --no-cursor --center --list 20 --ignorecase --fixed-height --prompt "➜" --no-spacing --grab --width-factor 0.75 --fn $font
 }
 
 font $font
@@ -64,7 +64,7 @@ exec_always {
     "killall kanshi; kanshi"
     "killall wl-paste; wl-paste --watch cliphist store"
     "makoctl reload"
-    "$HOME/.scripts/wm/bing_wallpaper.sh"
+    "$HOME/.scripts/wm/bing-wallpaper.sh"
 }
 
 exec {
@@ -72,7 +72,7 @@ exec {
     firefox
     keepassxc
     telegram-desktop
-    udiskie --smart-tray --no-automount --notify --tray
+    udiskie --smart-tray --no-automount --notify
     nextcloud
     nm-applet
     $idle
@@ -140,7 +140,6 @@ mode "resize" {
 
 bindswitch --locked {
     lid:on exec $lock
-    lid:off exec notify-send "Welcome home, my lord."
 }
 
 bindgesture {

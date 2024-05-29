@@ -3,6 +3,6 @@ profile default {
 }
 
 profile dock {
-    output eDP-1 pos 0 0 scale 1.25
+    output eDP-1 disable
     output DP-1
 }

@@ -1,8 +1,5 @@
 #!/bin/bash
 
-echo '{"version":1}'
-echo '['
-
 layout() {
     RAW=$(swaymsg -t get_inputs -r | jq '[.[] | select(.type == "keyboard") | .xkb_active_layout_index][0]')
     if [[ $RAW = '0' ]] 
@@ -26,7 +23,7 @@ body() {
             "separator_block_width": 16
         },
         {
-            "full_text": "$(date "+%m.%d")",
+            "full_text": "$(date "+%d.%m")",
             "color": "#c5c8c6",
             "separator_block_width": 16
         },
@@ -43,6 +40,9 @@ body() {
     ]
 EOF
 }
+
+echo '{"version":1}'
+echo '['
 
 while :;
 do
