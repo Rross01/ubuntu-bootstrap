@@ -38,6 +38,7 @@ pacman_packages:
   - obs-studio
   - telegram-desktop
   - libreoffice-still-ru
+  - wireshark-qt
 
   # theming
   - materia-gtk-theme
