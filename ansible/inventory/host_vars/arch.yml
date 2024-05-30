@@ -10,6 +10,7 @@ yay_packages:
   - downgrade
   - espanso-wayland
   - grimshot
+  - pycharm-community-edition
 
 pacman_packages:
   # sway
