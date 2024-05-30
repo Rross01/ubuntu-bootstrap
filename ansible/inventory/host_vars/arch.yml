@@ -61,13 +61,16 @@ pacman_packages:
   - xdg-desktop-portal
   - xdg-desktop-portal-wlr
   - qt6-wayland
-  - python-psutil
-  - lm_sensors
+  - python-psutil # ansible gsettings module
+  - fuse-overlayfs # for podman default filesystem
+
 
   # dev
   - ansible
   - ansible-lint
   - npm
+  - podman
+  - podman-compose
 
   # network and bluetooth
   - blueman
