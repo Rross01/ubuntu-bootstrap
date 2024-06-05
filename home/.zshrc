@@ -33,13 +33,6 @@ export SSH_AUTH_SOCK=/run/user/1000/ssh-agent.socket
 export EDITOR="nvim"
 
 # Functions
-check_for_http_status_code() {
-    ENDPOINT=$1
-    STATUS_CODE=$2
-    CHECK=$(curl -L -w '%{response_code}' -s -o /dev/null $ENDPOINT)
-    [[ $CHECK = $STATUS_CODE ]]
-}
-
 loop() {
     for (( ; ; ))
     do
@@ -57,6 +50,21 @@ loop_wait_for_true() {
     done
 }
 
+check_for_http_status_code() {
+    ENDPOINT=$1
+    STATUS_CODE=$2
+    CHECK=$(curl -L -w '%{response_code}' -s -o /dev/null $ENDPOINT)
+    [[ $CHECK = $STATUS_CODE ]]
+}
+
+notify_when_status_code() {
+    ENDPOINT=$1
+    STATUS_CODE=$2
+    MESSAGE=$3
+    check_for_http_status_code $ENDPOINT $STATUS_CODE
+    loop_wait_for_true "check_for_http_status_code ${ENDPOINT} ${STATUS_CODE}" && notify-send $MESSAGE
+}
+
 # Aliases
 alias sf='~/.scripts/ssh_search.sh'
 alias v='nvim'
@@ -66,3 +74,4 @@ alias git_clean='git checkout master && git pull && git branch | grep -v master 
 alias glog='git log --all --decorate --oneline --graph $argv'
 alias kl='kubectl'
 alias x='ranger'
+alias docker='podman'
