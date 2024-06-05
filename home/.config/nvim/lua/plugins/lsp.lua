@@ -13,8 +13,6 @@ return {
             { "saadparwaiz1/cmp_luasnip" },
             { "williamboman/mason-lspconfig.nvim" },
             { "williamboman/mason.nvim" },
-            -- { "mfussenegger/nvim-lint" },
-            -- { "rshkarin/mason-nvim-lint" },
             { 'towolf/vim-helm',                  ft = 'helm' },
         },
         config = function()
@@ -27,10 +25,16 @@ return {
                 lsp_zero.default_keymaps({ buffer = bufnr })
             end)
 
-
             require("mason").setup({})
             require("mason-lspconfig").setup({
-                ensure_installed = { "lua_ls", "pyright", "dockerls", "docker_compose_language_service", "yamlls", "helm_ls", },
+                ensure_installed = {
+                    "lua_ls",
+                    "pyright",
+                    "dockerls",
+                    "docker_compose_language_service",
+                    "yamlls",
+                    "helm_ls",
+                },
                 handlers = { lsp_zero.default_setup, },
             })
 
@@ -46,17 +50,6 @@ return {
                     }
                 }
             }
-
-            -- setup yamlls
-            lspconfig.yamlls.setup {}
-            -- require('lint').linters_by_ft = {
-            --     ["python"] = {
-            --         "pylint",
-            --     },
-            -- }
-            -- require("mason-nvim-lint").setup({
-            --     ensure_installed = { 'pylint', 'ansible-lint' },
-            -- })
         end,
     },
 }

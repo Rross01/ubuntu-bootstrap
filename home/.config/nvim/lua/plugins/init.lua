@@ -87,10 +87,15 @@ return {
         'echasnovski/mini.nvim',
         version = false,
         config = function()
+            -- Autohighlight word under cursor
             require('mini.cursorword').setup()
+            -- Move any selection in any direction
             require('mini.move').setup()
+            -- Split and join arguments
             require('mini.splitjoin').setup()
+            -- Remove buffers
             require('mini.bufremove').setup()
+            -- Comment lines
             require('mini.comment').setup({ ignore_blank_line = false, })
         end,
     },
