@@ -70,8 +70,12 @@ pacman_packages:
   - ansible
   - ansible-lint
   - npm
+
+  # podman
+  - aardvark-dns
   - podman
   - podman-compose
+  - podman-docker
 
   # network and bluetooth
   - blueman
