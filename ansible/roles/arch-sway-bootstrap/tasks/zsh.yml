@@ -1,8 +1,13 @@
 ---
-- name: Clone a repo with separate git directory
+- name: Clone zsh repo
   ansible.builtin.git:
     repo: https://github.com/ohmyzsh/ohmyzsh/
     dest: "/home/{{ user }}/places/oh-my-zsh"
+
+- name: Clone zsh-autosuggestions repo
+  ansible.builtin.git:
+    repo: https://github.com/zsh-users/zsh-autosuggestions/
+    dest: "/home/{{ user }}/places/oh-my-zsh/custom/plugins/zsh-autosuggestions"
 
 - name: Change default shell to zsh
   become: true

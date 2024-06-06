@@ -18,7 +18,10 @@ HYPHEN_INSENSITIVE="true"
 HISTFILE=~/places/.zsh_history
 HISTFILESIZE=1000000000
 HISTSIZE=1000000000
-plugins=(git)
+plugins=(
+    git
+    zsh-autosuggestions
+)
 export ZSH="$HOME/places/oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
 
@@ -75,3 +78,16 @@ alias glog='git log --all --decorate --oneline --graph $argv'
 alias kl='kubectl'
 alias x='ranger'
 alias docker='podman'
+
+# autoload python venv
+python_venv() {
+  MYVENV=./venv
+  # when you cd into a folder that contains $MYVENV
+  [[ -d $MYVENV ]] && source $MYVENV/bin/activate > /dev/null 2>&1
+  # when you cd into a folder that doesn't
+  [[ ! -d $MYVENV ]] && deactivate > /dev/null 2>&1
+}
+autoload -U add-zsh-hook
+add-zsh-hook chpwd python_venv
+
+python_venv
