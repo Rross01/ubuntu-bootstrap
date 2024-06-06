@@ -13,7 +13,7 @@ check() {
 }
 
 set() {
-    swaybg --image $TODAY_WALLPAPER --output "*"
+    swaybg --image $TODAY_WALLPAPER --output "*" --mode fill
 }
 
 pkill swaybg

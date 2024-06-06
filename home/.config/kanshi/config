@@ -2,7 +2,13 @@ profile default {
     output eDP-1 enable scale 1.5
 }
 
-profile dock {
+profile dock-home {
+    output eDP-1 disable
+    output HDMI-A-2
+    output DP-1 transform 270
+}
+
+profile dock-work {
     output eDP-1 disable
     output DP-1
 }

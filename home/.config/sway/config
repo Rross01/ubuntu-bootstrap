@@ -19,7 +19,7 @@ set {
 
     $font "JetBrainsMono Nerd Font Mono 10"
 
-    $bemenu_opts --no-cursor --center --list 20 --ignorecase --fixed-height --prompt "➜" --no-spacing --grab --width-factor 0.75 --fn $font
+    $bemenu_opts --no-cursor --center --list 20 --ignorecase --fixed-height --prompt "➜" --no-spacing --grab --width-factor 0.5 --fn $font
 }
 
 font $font
