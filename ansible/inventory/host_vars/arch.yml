@@ -70,6 +70,8 @@ pacman_packages:
   - ansible
   - ansible-lint
   - npm
+  - python-boto3
+  - python-botocore
 
   # podman
   - aardvark-dns
