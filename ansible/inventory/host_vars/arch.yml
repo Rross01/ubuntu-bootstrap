@@ -69,7 +69,9 @@ pacman_packages:
   # dev
   - ansible
   - ansible-lint
+  - aws-cli
   - npm
+  - postgresql-libs
   - python-boto3
   - python-botocore
 
