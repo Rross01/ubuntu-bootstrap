@@ -74,6 +74,7 @@ pacman_packages:
   - postgresql-libs
   - python-boto3
   - python-botocore
+  - python-isort
 
   # podman
   - aardvark-dns
