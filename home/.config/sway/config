@@ -153,9 +153,6 @@ bindsym --to-code {
     $mod+r mode "resize"
     $mod+0 mode $entrypoint
 
-    Ctrl+Alt+h workspace prev
-    Ctrl+Alt+l workspace next
-
     # hide bar
     $mod bar hidden_state toggle
     $mod+Shift+p bar mode toggle
@@ -173,6 +170,8 @@ bindsym --to-code {
 
     # screenshot bindings
     $mod+s exec --no-startup-id grimshot --notify save area - | swappy -f -
+    $mod+Ctrl+s exec --no-startup-id grimshot save screen - | swappy -f -
+
 
     # toggle sticky
     $mod+Shift+s sticky toggle

@@ -4,7 +4,6 @@ if [ -z "$WAYLAND_DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]; then
     export QT_QPA_PLATFORM=wayland
     export XDG_CURRENT_DESKTOP=sway
     export XDG_SESSION_DESKTOP=sway
-    echo > /tmp/sway_is_starting
     exec sway
 fi
 
