@@ -13,30 +13,30 @@ return {
         dependencies = { "nvim-lua/plenary.nvim" },
     },
 
-    {
-        'MeanderingProgrammer/markdown.nvim',
-        dependencies = { 'nvim-treesitter/nvim-treesitter' },
-        config = function()
-            require('render-markdown').setup({})
-        end,
-    },
+    -- {
+    --     'MeanderingProgrammer/markdown.nvim',
+    --     dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    --     config = function()
+    --         require('render-markdown').setup({})
+    --     end,
+    -- },
 
     {
         'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' },
         config = function()
             require('lualine').setup {
-                options = {
+                options  = {
                     component_separators = { left = '', right = '' },
                     section_separators = { left = '', right = '' },
                     globalstatus = true
                 },
                 sections = {
                     lualine_a = {},
-                    lualine_b = { { 'filename', path = 1, }, 'diff', 'diagnostics' },
-                    lualine_c = { 'branch' },
-                    lualine_x = { 'filetype' },
-                    lualine_y = { 'location' },
+                    lualine_b = {},
+                    lualine_c = { { 'filename', path = 1, }, 'diff', 'diagnostics' },
+                    lualine_x = { 'branch' },
+                    lualine_y = {},
                     lualine_z = {}
                 },
             }
@@ -83,9 +83,12 @@ return {
         config = function()
             require('onedark').setup {
                 style = 'darker',
-                transparent = false,
+                transparent = true,
                 toggle_style_key = '<leader>ts',
                 toggle_style_list = { 'dark', 'darker', 'warm', 'warmer', 'light' },
+                lualine = {
+                    transparent = true,
+                },
             }
             require('onedark').load()
             vim.cmd('colorscheme onedark')
@@ -115,18 +118,21 @@ return {
         cmd = { "ConformInfo" },
         keys = {
             {
-                "<leader>f",
+                "fr",
                 function()
-                    require("conform").format({ async = true, lsp_fallback = true })
+                    require("conform").format({ async = true, lsp_format = "fallback" })
                 end,
             },
         },
         opts = {
+            format_on_save   = {
+                timeout_ms = 500,
+            },
             formatters_by_ft = {
-                lua = { "stylua" },
-                python = { "isort", "black" },
-                yaml = { "yamlfmt" },
-                sh = { "beautysh" }
+                lua    = { "stylua" },
+                python = { "ruff_format", "ruff_organize_imports", "ruff_fix" },
+                yaml   = { "yamlfmt" },
+                sh     = { "beautysh" }
             },
         },
     },

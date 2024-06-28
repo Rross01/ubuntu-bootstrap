@@ -35,9 +35,6 @@ map("n", "<leader>pd", ":Telescope diagnostics<CR>", map_default_opts)
 map("n", "<leader>H", ":Telescope help_tags<CR>", map_default_opts)
 map("n", "<leader>b", ":Telescope buffers<CR>", map_default_opts)
 
--- formatter
-map("n", "fr", ":Format<CR>", map_default_opts)
-
 -- Harpoon2
 local harpoon = require("harpoon")
 harpoon.setup()
