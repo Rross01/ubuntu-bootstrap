@@ -1,12 +1,13 @@
 [font]
 size = 11.5
 
-# [shell]
-# program = "/usr/bin/tmux"
+[shell]
+program = "/usr/bin/tmux"
 
 [font.normal]
 family = "JetBrainsMonoNerdFont"
 style = "Medium"
+
 [window]
 opacity = 0.90
 
