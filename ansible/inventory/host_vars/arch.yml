@@ -63,6 +63,9 @@ pacman_packages:
   - xdg-desktop-portal-wlr
   - qt6-wayland
   - python-psutil # ansible gsettings module
+  - python-requests # ansible dep
+  - python-netaddr # ansible dep
+  - python-proxmoxer # ansible dep
   - fuse-overlayfs # for podman default filesystem
 
 
@@ -75,6 +78,7 @@ pacman_packages:
   - python-boto3
   - python-botocore
   - python-isort
+  - stylua
 
   # podman
   - aardvark-dns
