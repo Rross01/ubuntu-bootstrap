@@ -75,7 +75,6 @@ exec {
     telegram-desktop
     udiskie --smart-tray --no-automount --notify
     nextcloud
-    nm-applet
     $idle
 }
 
