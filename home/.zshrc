@@ -76,7 +76,7 @@ alias git_clean='git checkout master && git pull && git branch | grep -v master 
 alias glog='git log --all --decorate --oneline --graph $argv'
 alias kl='kubectl'
 alias x='ranger'
-alias docker='podman'
+alias arch_clean_packages='pacman -Qdtq | pacman -Rns -'
 
 # autoload python venv
 python_venv() {
