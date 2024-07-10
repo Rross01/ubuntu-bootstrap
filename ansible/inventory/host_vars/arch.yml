@@ -22,7 +22,6 @@ pacman_packages:
   # wm stuff
   - kanshi
   - mako
-  - network-manager-applet
   - nm-connection-editor
   - swappy
   - udiskie
@@ -71,7 +70,6 @@ pacman_packages:
 
   # dev
   - ansible
-  - ansible-lint
   - aws-cli
   - npm
   - postgresql-libs
@@ -82,6 +80,7 @@ pacman_packages:
 
   # podman
   - aardvark-dns
+  - openresolv
   - podman
   - podman-compose
   - podman-docker
