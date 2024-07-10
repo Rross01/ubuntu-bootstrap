@@ -68,7 +68,7 @@ notify_when_status_code() {
 }
 
 # Aliases
-alias sf='~/.scripts/ssh_search.sh'
+alias s='ssh'
 alias v='nvim'
 alias vim='nvim'
 alias gb='git branch'
