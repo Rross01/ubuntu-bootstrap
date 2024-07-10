@@ -115,11 +115,12 @@ mode $powermode {
     }
 }
 
-set $entrypoint "(k)affeine, (p)owermode"
+set $entrypoint "(k)affeine, (p)owermode, (t)oggle touchpad"
 mode $entrypoint {
     bindsym --to-code {
         k mode $kaffeine
         p mode $powermode
+        t exec swaymsg input type:touchpad events toggle, mode "default"
         Escape mode "default"
     }
 }
