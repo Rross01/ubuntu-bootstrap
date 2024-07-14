@@ -98,6 +98,7 @@ pacman_packages:
   - man-db
   - openldap
   - rsync
+  - sshpass
   - tcpdump
   - unzip
   - wget
