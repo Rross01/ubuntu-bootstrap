@@ -11,6 +11,7 @@ yay_packages:
   - espanso-wayland
   - grimshot
   - pycharm-community-edition
+  - rancher-k3d-bin
 
 pacman_packages:
   # sway
@@ -34,10 +35,11 @@ pacman_packages:
   - alacritty
   - firefox
   - keepassxc
+  - libreoffice-still-ru
   - nextcloud-client
   - obs-studio
+  - qbittorrent
   - telegram-desktop
-  - libreoffice-still-ru
   - wireshark-qt
 
   # theming
@@ -66,7 +68,6 @@ pacman_packages:
   - python-netaddr # ansible dep
   - python-proxmoxer # ansible dep
   - fuse-overlayfs # for podman default filesystem
-
 
   # dev
   - ansible
@@ -129,3 +130,4 @@ user_systemd_enabled:
 
 system_systemd_enabled:
   - bluetooth.service
+  - podman.socket
