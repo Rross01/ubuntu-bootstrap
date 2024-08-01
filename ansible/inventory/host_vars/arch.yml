@@ -7,6 +7,7 @@ my_groups:
   - lp
 
 yay_packages:
+  - beautysh
   - downgrade
   - espanso-wayland
   - grimshot
@@ -59,15 +60,17 @@ pacman_packages:
   - playerctl
 
   # some deps
+  - fuse-overlayfs # for podman default filesystem
   - grim
-  - xdg-desktop-portal
-  - xdg-desktop-portal-wlr
-  - qt6-wayland
-  - python-psutil # ansible gsettings module
-  - python-requests # ansible dep
+  - python-colorama # beautysh dep
   - python-netaddr # ansible dep
   - python-proxmoxer # ansible dep
-  - fuse-overlayfs # for podman default filesystem
+  - python-psutil # ansible gsettings module
+  - python-requests # ansible dep
+  - python-yaml
+  - qt6-wayland
+  - xdg-desktop-portal
+  - xdg-desktop-portal-wlr
 
   # dev
   - ansible
@@ -95,6 +98,7 @@ pacman_packages:
   - curl
   - dnsutils
   - htop
+  - jq
   - less
   - man-db
   - openldap
@@ -103,6 +107,7 @@ pacman_packages:
   - tcpdump
   - unzip
   - wget
+  - yq
   - zip
 
   # extra cli tools
