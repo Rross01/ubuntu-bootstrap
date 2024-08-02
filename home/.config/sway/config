@@ -239,7 +239,6 @@ bindsym --to-code {
 bar {
     position bottom
     status_command ~/.scripts/wm/sway-status.sh
-    mode hide
     tray {
         icon_theme Papirus-Dark
     }

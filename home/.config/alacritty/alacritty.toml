@@ -8,28 +8,33 @@ program = "/usr/bin/tmux"
 family = "JetBrainsMonoNerdFont"
 style = "Medium"
 
-[window]
-opacity = 0.90
-
 [mouse]
 hide_when_typing = true
 
+[window]
+opacity = 0.95
+
+[colors.primary]
+background = "#121212"
+foreground = "#ffffff"
+bright_foreground = "#ffffff"
+
 [colors.normal]
-black = "#1e2127"
-red = "#e06c75"
-green = "#98c379"
-yellow = "#d19a66"
-blue = "#61afef"
-magenta = "#c678dd"
-cyan = "#56b6c2"
-white = "#abb2bf"
+black = "#45475a"
+red = "#f38ba8"
+green = "#a6e3a1"
+yellow = "#f9e2af"
+blue = "#89b4fa"
+magenta = "#f5c2e7"
+cyan = "#94e2d5"
+white = "#bac2de"
 
 [colors.bright]
-black = "#5c6370"
-red = "#e06c75"
-green = "#98c379"
-yellow = "#d19a66"
-blue = "#61afef"
-magenta = "#c678dd"
-cyan = "#56b6c2"
-white = "#ffffff"
+black = "#585b70"
+red = "#f38ba8"
+green = "#a6e3a1"
+yellow = "#f9e2af"
+blue = "#89b4fa"
+magenta = "#f5c2e7"
+cyan = "#94e2d5"
+white = "#a6adc8"
