@@ -27,12 +27,16 @@ source $ZSH/oh-my-zsh.sh
 # Sources
 source <(helmfile completion zsh)
 source <(kubectl completion zsh)
+source <(k3d completion zsh)
 
 # ssh-agent
 export SSH_AUTH_SOCK=/run/user/1000/ssh-agent.socket
 
 # Change default editor
 export EDITOR="nvim"
+
+# awscli config file
+export AWS_CONFIG_FILE="~/places/.aws_credentials"
 
 # Functions
 loop() {
@@ -77,6 +81,9 @@ alias glog='git log --all --decorate --oneline --graph $argv'
 alias kl='kubectl'
 alias x='ranger'
 alias arch_clean_packages='pacman -Qdtq | pacman -Rns -'
+
+# kubeconfs
+alias locconf='export KUBECONFIG=~/.kube/loc.conf'
 
 # autoload python venv
 python_venv() {
