@@ -83,7 +83,7 @@ alias x='ranger'
 alias arch_clean_packages='pacman -Qdtq | pacman -Rns -'
 
 # kubeconfs
-alias locconf='export KUBECONFIG=~/.kube/loc.conf'
+alias locconf='export KUBECONFIG=~/places/personal/kubeconfigs/loc.conf'
 
 # autoload python venv
 python_venv() {
