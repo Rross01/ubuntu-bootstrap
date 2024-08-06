@@ -68,6 +68,7 @@ pacman_packages:
   - python-psutil # ansible gsettings module
   - python-requests # ansible dep
   - python-yaml
+  - qt5-wayland
   - qt6-wayland
   - xdg-desktop-portal
   - xdg-desktop-portal-wlr

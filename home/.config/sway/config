@@ -3,7 +3,7 @@
 ################################
 
 set {
-    $lock "pgrep swaylock || playerctl pause; keepassxc --lock && swaylock"
+    $lock "pgrep swaylock || playerctl pause; keepassxc --lock; swaylock"
     $sleep "$$lock && systemctl -i suspend"
     $idle swayidle -w \
         timeout 300 $lock \
@@ -74,7 +74,7 @@ exec {
     keepassxc
     telegram-desktop
     udiskie --smart-tray --no-automount --notify
-    nextcloud
+    owncloud
     $idle
 }
 
