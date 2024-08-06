@@ -37,8 +37,8 @@ pacman_packages:
   - firefox
   - keepassxc
   - libreoffice-still-ru
-  - nextcloud-client
   - obs-studio
+  - owncloud-client
   - qbittorrent
   - telegram-desktop
   - wireshark-qt
