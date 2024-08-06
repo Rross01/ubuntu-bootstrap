@@ -21,7 +21,7 @@ plugins=(
     git
     zsh-autosuggestions
 )
-export ZSH="$HOME/places/oh-my-zsh"
+export ZSH="$HOME/places/sys/oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
 
 # Sources

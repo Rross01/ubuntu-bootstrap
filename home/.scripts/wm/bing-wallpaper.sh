@@ -1,7 +1,7 @@
 #!/bin/bash
 
 URL=https://bing.biturl.top/\?resolution\=3840\&format\=json\&mkt\=random
-IMAGES_DIR=$HOME/places/wallpapers
+IMAGES_DIR=$HOME/places/sys/wallpapers
 TODAY_WALLPAPER=$IMAGES_DIR/$(date +%Y%m%d).jpg
 
 download() {

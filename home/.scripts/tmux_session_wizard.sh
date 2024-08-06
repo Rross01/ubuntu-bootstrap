@@ -8,6 +8,7 @@ function tmux_session_wizard() {
         $HOME/.config \
         $HOME/Nextcloud \
         $HOME/temp \
+        $HOME/places/sys \
         $HOME/places/apps \
         $HOME/places/personal \
         $HOME/places/work \
