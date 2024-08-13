@@ -5,7 +5,7 @@ IMAGES_DIR=$HOME/places/sys/wallpapers
 TODAY_WALLPAPER=$IMAGES_DIR/$(date +%Y%m%d).jpg
 
 download() {
-    wget $(curl --silent $URL | jq -r '.url') -O $TODAY_WALLPAPER 
+    wget $(curl $URL | jq -r '.url') -O $TODAY_WALLPAPER
 }
 
 check() {
