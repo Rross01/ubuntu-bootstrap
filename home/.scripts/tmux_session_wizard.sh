@@ -6,7 +6,7 @@ function tmux_session_wizard() {
     PLACES_TO_FZF="
         $HOME/ \
         $HOME/.config \
-        $HOME/Nextcloud \
+        $HOME/ownCloud \
         $HOME/temp \
         $HOME/places/sys \
         $HOME/places/apps \
