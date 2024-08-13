@@ -31,6 +31,7 @@ return {
 					component_separators = { left = "", right = "" },
 					section_separators = { left = "", right = "" },
 					globalstatus = true,
+					theme = "custom",
 				},
 				sections = {
 					lualine_a = {},
@@ -83,10 +84,19 @@ return {
 		priority = 1000,
 		opts = {},
 		config = function()
-			require("catppuccin").setup({ transparent_background = true })
 			vim.cmd.colorscheme("catppuccin-macchiato")
 		end,
 	},
+
+	-- {
+	-- 	"folke/tokyonight.nvim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	opts = {},
+	-- 	config = function()
+	-- 		vim.cmd.colorscheme("tokyonight")
+	-- 	end,
+	-- },
 
 	{
 		"echasnovski/mini.nvim",
