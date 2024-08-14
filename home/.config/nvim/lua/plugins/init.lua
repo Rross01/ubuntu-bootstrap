@@ -79,12 +79,18 @@ return {
 	},
 
 	{
-		"catppuccin/nvim",
+		"navarasu/onedark.nvim",
 		lazy = false,
 		priority = 1000,
-		opts = {},
 		config = function()
-			vim.cmd.colorscheme("catppuccin-macchiato")
+			require("onedark").setup({
+				style = "dark", -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+				transparent = true,
+				code_style = {
+					functions = "bold",
+				},
+			})
+			vim.cmd.colorscheme("onedark")
 		end,
 	},
 
