@@ -2,12 +2,10 @@
 user: "rrossamakhin"
 locale: "ru_RU.UTF-8"
 
-my_groups:
-  - docker
-  - lp
+my_groups: [docker, lp]
 
 yay_packages:
-  - beautysh
+  - beautysh # shell formatter
   - downgrade
   - espanso-wayland
   - grimshot
@@ -61,7 +59,10 @@ pacman_packages:
 
   # some deps
   - fuse-overlayfs # for podman default filesystem
-  - grim
+  - grim # grimshot del
+  - npm # nvim plugins dep
+  - python-boto3 # awscli dep
+  - python-botocore # awscli dep
   - python-colorama # beautysh dep
   - python-netaddr # ansible dep
   - python-proxmoxer # ansible dep
@@ -77,10 +78,7 @@ pacman_packages:
   # dev
   - ansible
   - aws-cli
-  - npm
   - postgresql-libs
-  - python-boto3
-  - python-botocore
   - python-isort
   - stylua
 
@@ -132,9 +130,5 @@ pacman_packages:
   - ffmpeg
   - v4l2loopback-dkms
 
-user_systemd_enabled:
-  - ssh-agent.service
-
-system_systemd_enabled:
-  - bluetooth.service
-  - podman.socket
+user_systemd_enabled: [ssh-agent.service]
+system_systemd_enabled: [bluetooth.service]
