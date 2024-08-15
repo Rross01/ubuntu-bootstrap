@@ -80,6 +80,7 @@ pacman_packages:
   - aws-cli
   - postgresql-libs
   - python-isort
+  - ruff # python formatter
   - stylua
 
   # podman
