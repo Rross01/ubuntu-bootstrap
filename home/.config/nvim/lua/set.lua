@@ -1,3 +1,4 @@
+-- убираем ~ в конце файла
 vim.opt.fillchars = { eob = " " }
 
 -- don't auto commenting new lines

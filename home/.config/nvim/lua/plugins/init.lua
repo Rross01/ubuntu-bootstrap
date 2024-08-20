@@ -79,31 +79,28 @@ return {
 	},
 
 	{
-		"navarasu/onedark.nvim",
+		"projekt0n/github-nvim-theme",
 		lazy = false,
 		priority = 1000,
 		config = function()
-			require("onedark").setup({
-				style = "dark",
-				transparent = true,
-				highlights = {
-					CursorLine = { bg = "#3c3c3c" },
-					Visual = { bg = "#3c3c3c" },
+			require("github-theme").setup({
+				options = {
+					styles = {
+						comments = "italic",
+					},
+					inverse = {
+						match_paren = true,
+						search = true,
+					},
 				},
+				palettes = {},
+				specs = {},
+				groups = {},
 			})
-			vim.cmd.colorscheme("onedark")
+
+			vim.cmd("colorscheme github_dark_dimmed")
 		end,
 	},
-
-	-- {
-	-- 	"folke/tokyonight.nvim",
-	-- 	lazy = false,
-	-- 	priority = 1000,
-	-- 	opts = {},
-	-- 	config = function()
-	-- 		vim.cmd.colorscheme("tokyonight")
-	-- 	end,
-	-- },
 
 	{
 		"echasnovski/mini.nvim",
