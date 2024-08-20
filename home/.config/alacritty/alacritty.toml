@@ -21,8 +21,8 @@ hide_when_typing = true
 
 # Default colors
 [colors.primary]
-background = '#282c34'
-foreground = '#abb2bf'
+background = '#2e2e2e'
+foreground = '#ffffff'
 
 # Normal colors
 [colors.normal]

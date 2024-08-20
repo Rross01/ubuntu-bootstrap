@@ -84,10 +84,11 @@ return {
 		priority = 1000,
 		config = function()
 			require("onedark").setup({
-				style = "dark", -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+				style = "dark",
 				transparent = true,
-				code_style = {
-					functions = "bold",
+				highlights = {
+					CursorLine = { bg = "#3c3c3c" },
+					Visual = { bg = "#3c3c3c" },
 				},
 			})
 			vim.cmd.colorscheme("onedark")
@@ -134,9 +135,9 @@ return {
 			},
 		},
 		opts = {
-			format_on_save = {
-				timeout_ms = 500,
-			},
+			-- format_on_save = {
+			-- 	timeout_ms = 500,
+			-- },
 			formatters_by_ft = {
 				lua = { "stylua" },
 				python = { "ruff_format", "ruff_organize_imports", "ruff_fix" },
