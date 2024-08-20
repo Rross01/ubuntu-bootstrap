@@ -56,6 +56,7 @@ pacman_packages:
   - pipewire-audio
   - pipewire-pulse
   - playerctl
+  - sof-firmware # audio drivers
 
   # some deps
   - fuse-overlayfs # for podman default filesystem
@@ -73,7 +74,8 @@ pacman_packages:
   - qt6-wayland
   - xdg-desktop-portal
   - xdg-desktop-portal-wlr
-  - xorg-xwayland
+  - xorg-xwayland # for minecraft
+  - xorg-xrandr # for minecraft
 
   # dev
   - ansible
