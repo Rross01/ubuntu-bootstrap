@@ -4,17 +4,13 @@ URL=https://bing.biturl.top/\?resolution\=3840\&format\=json\&mkt\=random
 IMAGES_DIR=$HOME/places/sys/wallpapers
 TODAY_WALLPAPER=$IMAGES_DIR/$(date +%Y%m%d).jpg
 
-download() {
-    wget $(curl $URL | jq -r '.url') -O $TODAY_WALLPAPER
-}
-
-check() {
-    test -f $TODAY_WALLPAPER
-}
-
-set() {
+bg_set() {
     swaybg --image $TODAY_WALLPAPER --output "*" --mode fill
 }
 
 pkill swaybg
-(check || download) && set
+if [[ -f $TODAY_WALLPAPER ]]; then
+    bg_set
+else
+    wget $(curl $URL | jq -r '.url') -O $TODAY_WALLPAPER && bg_set
+fi

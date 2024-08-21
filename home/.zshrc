@@ -39,36 +39,17 @@ export EDITOR="nvim"
 export AWS_CONFIG_FILE="~/places/.aws_credentials"
 
 # Functions
-loop() {
+wait_for_status_code() {
+    ENDPOINT=$1
+    EXPECTED_RC=$2
     for (( ; ; ))
     do
-        zsh -i -c "$1"
+        CURRENT_RC=$(curl -L -w '%{response_code}' -s -o /dev/null $ENDPOINT)
+        echo "$(date): URL: $ENDPOINT, return code: $CURRENT_RC"
+        [[ $CURRENT_RC = $EXPECTED_RC ]] && break
         sleep 1
     done
-}
-
-loop_wait_for_true() {
-    for (( ; ; ))
-    do
-        date
-        zsh -i -c "$1" && break
-        sleep 1
-    done
-}
-
-check_for_http_status_code() {
-    ENDPOINT=$1
-    STATUS_CODE=$2
-    CHECK=$(curl -L -w '%{response_code}' -s -o /dev/null $ENDPOINT)
-    [[ $CHECK = $STATUS_CODE ]]
-}
-
-notify_when_status_code() {
-    ENDPOINT=$1
-    STATUS_CODE=$2
-    MESSAGE=$3
-    check_for_http_status_code $ENDPOINT $STATUS_CODE
-    loop_wait_for_true "check_for_http_status_code ${ENDPOINT} ${STATUS_CODE}" && notify-send $MESSAGE
+    notify-send "$ENDPOINT return $EXPECTED_RC!"
 }
 
 # Aliases

@@ -3,7 +3,7 @@
 ################################
 
 set {
-    $lock "pgrep swaylock || playerctl pause; keepassxc --lock; swaylock"
+    $lock "$HOME/.scripts/wm/lock.sh"
     $sleep "$$lock && systemctl -i suspend"
     $idle swayidle -w \
         timeout 300 $lock \
