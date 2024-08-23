@@ -88,14 +88,7 @@ return {
 					styles = {
 						comments = "italic",
 					},
-					inverse = {
-						match_paren = true,
-						search = true,
-					},
 				},
-				palettes = {},
-				specs = {},
-				groups = {},
 			})
 
 			vim.cmd("colorscheme github_dark_dimmed")
@@ -155,6 +148,18 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		config = function()
 			require("nvim-treesitter.configs").setup({
+				ensure_installed = {
+					"python",
+					"lua",
+					"vim",
+					"vimdoc",
+					"markdown",
+					"markdown_inline",
+					"helm",
+					"bash",
+					"json",
+					"jsonc",
+				},
 				highlight = { enable = true },
 			})
 		end,
