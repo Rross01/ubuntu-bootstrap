@@ -3,7 +3,7 @@
 ################################
 
 set {
-    $lock "$HOME/.scripts/wm/lock.sh"
+    $lock "$HOME/.scripts/lock.sh"
     $sleep "$$lock && systemctl -i suspend"
     $idle swayidle -w \
         timeout 300 $lock \
@@ -28,7 +28,6 @@ default_border pixel 2
 floating_modifier $mod normal
 smart_borders on
 workspace_auto_back_and_forth yes
-gaps inner 6
 
 for_window {
     [app_id="pavucontrol"] floating enable
@@ -65,7 +64,6 @@ exec_always {
     "killall kanshi; kanshi"
     "killall wl-paste; wl-paste --watch cliphist store"
     "makoctl reload"
-    "$HOME/.scripts/wm/bing-wallpaper.sh"
 }
 
 exec {
@@ -153,10 +151,6 @@ bindsym --to-code {
     $mod+r mode "resize"
     $mod+0 mode $entrypoint
 
-    # hide bar
-    $mod bar hidden_state toggle
-    $mod+Shift+p bar mode toggle
-
     # media keys
     XF86AudioLowerVolume exec pactl -- set-sink-mute @DEFAULT_SINK@ 0 && pactl -- set-sink-volume @DEFAULT_SINK@ -10%
     XF86AudioRaiseVolume exec pactl -- set-sink-mute @DEFAULT_SINK@ 0 && pactl -- set-sink-volume @DEFAULT_SINK@ +10%
@@ -232,16 +226,8 @@ bindsym --to-code {
     $mod+a focus parent
 }
 
-################################
-#             Bar              #
-################################
-
 bar {
-    position bottom
-    status_command ~/.scripts/wm/sway-status.sh
-    tray {
-        icon_theme Papirus-Dark
-    }
+     swaybar_command waybar
 }
 
 include ~/.config/sway/config.d/*

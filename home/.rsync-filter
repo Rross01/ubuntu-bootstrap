@@ -11,6 +11,7 @@
 + .config/sway/***
 + .config/swaylock/***
 + .config/tmux/***
++ .config/waybar/***
 + .gitconfig
 + .rsync-filter
 + .scripts/***
