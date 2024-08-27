@@ -5,6 +5,7 @@
 	font-size: 12px;
 	min-height: 0;
 	margin: 0px;
+	padding: 0px;
 }
 
 window#waybar {
@@ -17,34 +18,27 @@ window#waybar {
 	font-weight: bold;
 }
 
-#workspaces {
-	padding: 0px;
-	margin: 0px;
-}
-
 #workspaces button {
-	padding: 0 2px;
-	margin: 0px;
 	background: transparent;
 	color: #e4e4e4;
+    padding: 0 4px;
 }
 
 #workspaces button.focused {
-	background: #00afd7;
+	background: #539bf5;
 	color: #1b1d1e;
 }
 
 #workspaces button.urgent {
-	background: #af005f;
+	background: #f47067;
 	color: #1b1d1e;
 }
 
 #mode {
-	background: transparent;
-	color: red;
+	background: #b083f0;
+	color: #000000;
 }
 
 #clock, #battery, #tray, #mode, #language {
-	padding: 0 3px;
-	margin: 0 2px;
+	padding: 0 5px;
 }
