@@ -7,7 +7,6 @@ my_groups: [docker, lp]
 yay_packages:
   - beautysh # shell formatter
   - downgrade
-  - espanso-wayland
   - grimshot
   - pycharm-community-edition
   - rancher-k3d-bin
