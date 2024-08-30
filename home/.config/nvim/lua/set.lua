@@ -1,9 +1,6 @@
 -- убираем ~ в конце файла
 vim.opt.fillchars = { eob = " " }
 
--- don't auto commenting new lines
-vim.cmd([[au BufEnter * set fo-=c fo-=r fo-=o]])
-
 -- enable word wrap
 vim.opt.wrap = true
 
@@ -20,6 +17,12 @@ vim.opt.splitbelow = true -- horizontal split вниз
 
 -- Интеграция с буфером обмена ОС
 vim.cmd([[ set clipboard+=unnamedplus ]])
+
+-- Изменение иконок диагностики
+vim.fn.sign_define("DiagnosticSignError", { text = " ", texthl = "DiagnosticSignError" })
+vim.fn.sign_define("DiagnosticSignWarn", { text = " ", texthl = "DiagnosticSignWarn" })
+vim.fn.sign_define("DiagnosticSignInfo", { text = " ", texthl = "DiagnosticSignInfo" })
+vim.fn.sign_define("DiagnosticSignHint", { text = "󰌵", texthl = "DiagnosticSignHint" })
 
 -- Включение глобального статуса
 vim.cmd([[ set laststatus=3 ]])
