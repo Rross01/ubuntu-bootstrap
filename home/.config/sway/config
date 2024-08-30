@@ -19,7 +19,18 @@ set {
 
     $font "JetBrainsMono Nerd Font Mono 10"
 
-    $bemenu_opts --no-cursor --center --list 20 --ignorecase --fixed-height --prompt "➜" --no-spacing --grab --width-factor 0.5 --fn $font
+    $bemenu_opts --no-cursor \
+        --center \
+        --list 20 \
+        --ignorecase \
+        --fixed-height \
+        --prompt "➜" \
+        --no-spacing \
+        --grab \
+        --width-factor 0.5 \
+        --fn $font \
+        --hf "#539bf5" \
+        --tf "#539bf5"
 }
 
 font $font
@@ -31,7 +42,7 @@ workspace_auto_back_and_forth yes
 
 for_window {
     [app_id="pavucontrol"] floating enable
-    [app_id="pavucontrol"] resize set width 1200 height 800
+    [app_id="org.gnome.Calculator"] floating enable
 }
 
 assign {
@@ -60,7 +71,6 @@ input "type:keyboard" {
 ################################
 
 exec_always {
-    "espanso service restart --unmanaged"
     "killall kanshi; kanshi"
     "killall wl-paste; wl-paste --watch cliphist store"
     "makoctl reload"
@@ -71,7 +81,7 @@ exec {
     firefox
     keepassxc
     telegram-desktop
-    udiskie --smart-tray --no-automount --notify
+    udiskie --smart-tray --notify
     owncloud
     $idle
 }
@@ -145,6 +155,7 @@ bindgesture {
     swipe:right workspace prev
     swipe:left workspace next
 }
+
 bindsym --to-code {
     # modes
     $mod+p mode $player
@@ -166,12 +177,14 @@ bindsym --to-code {
     $mod+s exec --no-startup-id grimshot --notify save area - | swappy -f -
     $mod+Ctrl+s exec --no-startup-id grimshot save screen - | swappy -f -
 
-
     # toggle sticky
     $mod+Shift+s sticky toggle
 
     # terminal
     $mod+Return exec alacritty
+
+    # calculator
+    $mod+c exec gnome-calculator
 
     $mod+Shift+q kill
     $mod+Shift+r reload

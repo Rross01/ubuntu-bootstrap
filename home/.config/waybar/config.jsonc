@@ -9,6 +9,7 @@
 	"sway/mode": {
 		"format": "{}"
 	},
+
 	"clock": {
 		"interval": 1,
 		"format": "⏰ {:%H:%M}",
@@ -28,8 +29,9 @@
 		},
 		"format": "{capacity}%"
 	},
+
 	"tray": {
 		"icon-size": 15,
 		"spacing": 10
-	}
+	},
 }
