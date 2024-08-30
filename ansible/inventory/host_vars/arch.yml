@@ -19,19 +19,20 @@ pacman_packages:
   - swaylock
 
   # wm stuff
-  - kanshi
-  - mako
-  - nm-connection-editor
-  - swappy
-  - udiskie
-  - mpv
   - bemenu-wayland
   - brightnessctl
   - cliphist
+  - kanshi
+  - mako
+  - mpv
+  - nm-connection-editor
+  - swappy
+  - udiskie
 
   # apps
   - alacritty
   - firefox
+  - gnome-calculator
   - keepassxc
   - libreoffice-still-ru
   - obs-studio
@@ -73,8 +74,8 @@ pacman_packages:
   - qt6-wayland
   - xdg-desktop-portal
   - xdg-desktop-portal-wlr
-  - xorg-xwayland # for minecraft
   - xorg-xrandr # for minecraft
+  - xorg-xwayland # for minecraft
 
   # dev
   - ansible
@@ -128,8 +129,8 @@ pacman_packages:
   - kubectl
 
   # android phone as webcam
-  - linux-headers
   - ffmpeg
+  - linux-headers
   - v4l2loopback-dkms
 
 user_systemd_enabled: [ssh-agent.service]
