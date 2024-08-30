@@ -70,6 +70,25 @@ return {
 			"nvim-tree/nvim-web-devicons",
 			"MunifTanjim/nui.nvim",
 		},
+		config = function()
+			require("neo-tree").setup({
+				default_component_configs = {
+					indent = {
+						indent_marker = "│",
+						last_indent_marker = "│",
+						highlight = "WinSeparator",
+					},
+					icon = {
+						folder_closed = "",
+						folder_open = "",
+						folder_empty = "󰜌",
+					},
+					file_size = {
+						enabled = false,
+					},
+				},
+			})
+		end,
 	},
 
 	{
@@ -149,16 +168,17 @@ return {
 		config = function()
 			require("nvim-treesitter.configs").setup({
 				ensure_installed = {
-					"python",
-					"lua",
-					"vim",
-					"vimdoc",
-					"markdown",
-					"markdown_inline",
-					"helm",
 					"bash",
+					"helm",
 					"json",
 					"jsonc",
+					"lua",
+					"markdown",
+					"markdown_inline",
+					"python",
+					"vim",
+					"vimdoc",
+					"groovy",
 				},
 				highlight = { enable = true },
 			})
