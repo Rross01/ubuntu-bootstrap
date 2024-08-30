@@ -14,14 +14,6 @@ return {
 		dependencies = { "nvim-lua/plenary.nvim" },
 	},
 
-	-- {
-	--     'MeanderingProgrammer/markdown.nvim',
-	--     dependencies = { 'nvim-treesitter/nvim-treesitter' },
-	--     config = function()
-	--         require('render-markdown').setup({})
-	--     end,
-	-- },
-
 	{
 		"nvim-lualine/lualine.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -83,9 +75,7 @@ return {
 						folder_open = "",
 						folder_empty = "󰜌",
 					},
-					file_size = {
-						enabled = false,
-					},
+					file_size = { enabled = false },
 				},
 			})
 		end,
@@ -103,13 +93,8 @@ return {
 		priority = 1000,
 		config = function()
 			require("github-theme").setup({
-				options = {
-					styles = {
-						comments = "italic",
-					},
-				},
+				options = { styles = { comments = "italic" } },
 			})
-
 			vim.cmd("colorscheme github_dark_dimmed")
 		end,
 	},
@@ -118,17 +103,20 @@ return {
 		"echasnovski/mini.nvim",
 		version = false,
 		config = function()
-			-- Autohighlight word under cursor
-			require("mini.cursorword").setup()
-			-- Move any selection in any direction
-			require("mini.move").setup()
-			-- Split and join arguments
-			require("mini.splitjoin").setup()
-			-- Remove buffers
-			require("mini.bufremove").setup()
-			-- Comment lines
-			require("mini.comment").setup({ ignore_blank_line = false })
+			require("mini.cursorword").setup() -- Autohighlight word under cursor
+			require("mini.move").setup() -- Move any selection in any direction
+			require("mini.splitjoin").setup() -- Split and join arguments (g + S)
+			require("mini.bufremove").setup() -- Remove buffers
+			require("mini.comment").setup() -- Comment lines
 		end,
+		keys = {
+			{
+				"<leader>d",
+				function()
+					require("mini.bufremove").delete()
+				end,
+			},
+		},
 	},
 
 	{
@@ -144,9 +132,6 @@ return {
 			},
 		},
 		opts = {
-			-- format_on_save = {
-			-- 	timeout_ms = 500,
-			-- },
 			formatters_by_ft = {
 				lua = { "stylua" },
 				python = { "ruff_format", "ruff_organize_imports", "ruff_fix" },
@@ -160,7 +145,14 @@ return {
 		"jiaoshijie/undotree",
 		dependencies = "nvim-lua/plenary.nvim",
 		config = true,
-		keys = { { "<leader>u", "<cmd>lua require('undotree').toggle()<cr>" } },
+		keys = {
+			{
+				"<leader>u",
+				function()
+					require("undotree").toggle()
+				end,
+			},
+		},
 	},
 
 	{
@@ -180,7 +172,6 @@ return {
 					"vimdoc",
 					"groovy",
 				},
-				highlight = { enable = true },
 			})
 		end,
 	},

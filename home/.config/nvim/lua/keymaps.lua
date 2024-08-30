@@ -5,9 +5,6 @@ local map_default_opts = { noremap = true, silent = true }
 local bind = vim.api.nvim_create_user_command
 local bind_default_opts = { bang = true }
 
--- Закрытие текущего буфера
-map("n", "<leader>d", "[[<cmd>lua MiniBufremove.delete()<cr>", map_default_opts)
-
 -- Выход из режима терминала
 map("i", "jj", "<Esc>", map_default_opts)
 map("i", "оо", "<Esc>", map_default_opts)
@@ -30,10 +27,7 @@ map("n", "<leader>Q", ":Neotree right reveal<CR>", map_default_opts)
 -- Telescope
 map("n", "<leader>pf", ":Telescope find_files<CR>", map_default_opts)
 map("n", "<leader>pg", ":Telescope live_grep<CR>", map_default_opts)
-map("n", "<leader>pc", ":Telescope grep_string<CR>", map_default_opts)
 map("n", "<leader>pd", ":Telescope diagnostics<CR>", map_default_opts)
-map("n", "<leader>H", ":Telescope help_tags<CR>", map_default_opts)
-map("n", "<leader>b", ":Telescope buffers<CR>", map_default_opts)
 
 -- Harpoon2
 local harpoon = require("harpoon")
@@ -65,13 +59,6 @@ map2("n", "<leader>6", function()
 	harpoon:list():select(6)
 end)
 
-map2("n", "<tab>", function()
-	harpoon:list():prev()
-end)
-map2("n", "<s-tab>", function()
-	harpoon:list():next()
-end)
-
 -- gitsigns
 map("n", "<leader>tb", ":Gitsigns blame_line<CR>", map_default_opts)
 
@@ -82,7 +69,6 @@ map("n", "<C-j>", "<C-w>j", map_default_opts)
 map("n", "<C-k>", "<C-w>k", map_default_opts)
 
 -- Fugitive
--- map("n", "<leader>g", ":tab G | vsplit<CR>", map_default_opts)
 map("n", "<leader>g", ":tab G<CR>", map_default_opts)
 
 -- tabclose

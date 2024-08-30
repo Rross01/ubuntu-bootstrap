@@ -31,11 +31,7 @@ return {
 			-- setup helm-ls
 			lspconfig.helm_ls.setup({
 				settings = {
-					["helm-ls"] = {
-						yamlls = {
-							path = "yaml-language-server",
-						},
-					},
+					["helm-ls"] = { yamlls = { path = "yaml-language-server" } },
 				},
 			})
 		end,
