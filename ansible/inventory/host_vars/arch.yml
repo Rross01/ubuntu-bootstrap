@@ -7,7 +7,6 @@ my_groups: [docker, lp]
 yay_packages:
   - beautysh # shell formatter
   - downgrade
-  - grimshot
   - pycharm-community-edition
   - rancher-k3d-bin
 
@@ -28,6 +27,8 @@ pacman_packages:
   - nm-connection-editor
   - swappy
   - udiskie
+  - grim # for screenshots
+  - slurp # for screenshots
 
   # apps
   - alacritty
@@ -60,7 +61,6 @@ pacman_packages:
 
   # some deps
   - fuse-overlayfs # for podman default filesystem
-  - grim # grimshot del
   - npm # nvim plugins dep
   - python-boto3 # awscli dep
   - python-botocore # awscli dep

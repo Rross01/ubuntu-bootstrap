@@ -161,8 +161,8 @@ bindsym --to-code {
     Ctrl+space exec --no-startup-id makoctl dismiss --all
 
     # screenshot bindings
-    $mod+s exec --no-startup-id grimshot --notify save area - | swappy -f -
-    $mod+Ctrl+s exec --no-startup-id grimshot save screen - | swappy -f -
+    $mod+s exec --no-startup-id grim -g "$(slurp)" - | swappy -f -
+    $mod+Ctrl+s exec --no-startup-id grim - | swappy -f -
 
     # toggle sticky
     $mod+Shift+s sticky toggle
