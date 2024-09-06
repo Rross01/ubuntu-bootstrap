@@ -18,19 +18,6 @@ set {
     $right l
 
     $font "JetBrainsMono Nerd Font Mono 10"
-
-    $bemenu_opts --no-cursor \
-        --center \
-        --list 20 \
-        --ignorecase \
-        --fixed-height \
-        --prompt "➜" \
-        --no-spacing \
-        --grab \
-        --width-factor 0.5 \
-        --fn $font \
-        --hf "#539bf5" \
-        --tf "#539bf5"
 }
 
 font $font
@@ -188,10 +175,10 @@ bindsym --to-code {
 
     $mod+Shift+q kill
     $mod+Shift+r reload
-    $mod+d exec bemenu-run $bemenu_opts | xargs swaymsg exec --
+    $mod+d exec fuzzel
 
     # cliphist
-    $mod+v exec cliphist list | bemenu $bemenu_opts | cliphist decode | wl-copy
+    $mod+v exec cliphist list | fuzzel -d -w 100 | cliphist decode | wl-copy
 
     # split orientation
     $mod+q split toggle
