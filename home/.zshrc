@@ -61,7 +61,7 @@ alias git_clean='git checkout master && git pull && git branch | grep -v master 
 alias glog='git log --all --decorate --oneline --graph $argv'
 alias kl='kubectl'
 alias x='ranger'
-alias arch_clean_packages='pacman -Qdtq | pacman -Rns -'
+alias arch_clean_packages='sudo pacman -Qdtq | sudo pacman -Rns -'
 
 # kubeconfs
 alias locconf='export KUBECONFIG=~/places/personal/kubeconfigs/loc.conf'

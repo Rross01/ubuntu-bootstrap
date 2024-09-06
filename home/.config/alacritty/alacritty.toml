@@ -13,29 +13,36 @@ family = "terminal-font"
 [mouse]
 hide_when_typing = true
 
-# github colors
 [colors.primary]
-background = '#22272e'
-foreground = '#ffffff'
+background = '#24292e'
+foreground = '#d1d5da'
 
 # Normal colors
 [colors.normal]
-black   = '#545d68'
-red     = '#f47067'
-green   = '#57ab5a'
-yellow  = '#c69026'
-blue    = '#539bf5'
-magenta = '#b083f0'
+black   = '#586069'
+red     = '#ea4a5a'
+green   = '#34d058'
+yellow  = '#ffea7f'
+blue    = '#2188ff'
+magenta = '#b392f0'
 cyan    = '#39c5cf'
-white   = '#909dab'
+white   = '#d1d5da'
 
 # Bright colors
 [colors.bright]
-black   = '#636e7b'
-red     = '#ff938a'
-green   = '#6bc46d'
-yellow  = '#daaa3f'
-blue    = '#6cb6ff'
-magenta = '#dcbdfb'
+black   = '#959da5'
+red     = '#f97583'
+green   = '#85e89d'
+yellow  = '#ffea7f'
+blue    = '#79b8ff'
+magenta = '#b392f0'
 cyan    = '#56d4dd'
-white   = '#cdd9e5'
+white   = '#fafbfc'
+
+[[colors.indexed_colors]]
+index = 16
+color = '#d18616'
+
+[[colors.indexed_colors]]
+index = 17
+color = '#f97583'

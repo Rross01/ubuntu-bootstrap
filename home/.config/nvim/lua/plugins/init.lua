@@ -52,6 +52,15 @@ return {
 	{
 		"nvim-telescope/telescope.nvim",
 		dependencies = { "nvim-lua/plenary.nvim", "BurntSushi/ripgrep" },
+		opts = {
+			defaults = {
+				borderchars = {
+					prompt = { "─", " ", "─", "│", "│", " ", "─", "└" },
+					results = { "─", " ", " ", "│", "┌", "─", " ", "│" },
+					preview = { "─", "│", "─", "│", "┬", "┐", "┘", "┴" },
+				},
+			},
+		},
 	},
 
 	{
@@ -95,7 +104,7 @@ return {
 			require("github-theme").setup({
 				options = { styles = { comments = "italic" } },
 			})
-			vim.cmd("colorscheme github_dark_dimmed")
+			vim.cmd("colorscheme github_dark")
 		end,
 	},
 
