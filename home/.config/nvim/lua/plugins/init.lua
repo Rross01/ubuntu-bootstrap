@@ -172,6 +172,7 @@ return {
 					"vimdoc",
 					"groovy",
 				},
+				highlight = { enable = true },
 			})
 		end,
 	},

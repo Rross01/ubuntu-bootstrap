@@ -9,15 +9,9 @@ program = "/usr/bin/tmux"
 
 [font.normal]
 family = "terminal-font"
-style = "Medium"
 
 [mouse]
 hide_when_typing = true
-
-# [window]
-# opacity = 0.95
-
-# Colors (One Dark)
 
 # github colors
 [colors.primary]
