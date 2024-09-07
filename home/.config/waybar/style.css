@@ -3,6 +3,7 @@
 	border-radius: 0;
 	font-family: "terminal-font";
 	font-size: 12px;
+    font-weight: 700;
 	min-height: 0;
 	margin: 0px;
 	padding: 0px;
@@ -10,32 +11,31 @@
 
 window#waybar {
 	background: #000000;
-	color: #e4e4e4;
+	color: #d1d5da;
 }
 
 #window {
-	color: #e4e4e4;
+	color: #d1d5da;
 	font-weight: bold;
 }
 
 #workspaces button {
 	background: transparent;
-	color: #e4e4e4;
-    padding: 0 4px;
+	color: #d1d5da;
 }
 
 #workspaces button.focused {
-	background: #539bf5;
-	color: #1b1d1e;
+	background: #2188ff;
+	color: #000000;
 }
 
 #workspaces button.urgent {
-	background: #f47067;
-	color: #1b1d1e;
+	background: #ea4a5a;
+	color: #000000;
 }
 
 #mode {
-	background: #b083f0;
+	background: #79b8ff;
 	color: #000000;
 }
 
