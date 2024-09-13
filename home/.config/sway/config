@@ -3,11 +3,12 @@
 ################################
 
 set {
-    $lock "$HOME/.scripts/lock.sh"
+    $lock $HOME/.scripts/lock.sh
     $sleep "$$lock && systemctl -i suspend"
+
     $idle swayidle -w \
-        timeout 300 $lock \
-        timeout 600 'swaymsg "output * power off"' \
+        timeout 600 $lock \
+        timeout 900 'swaymsg "output * power off"' \
         resume 'swaymsg "output * power on"'
 
     $mod Mod4
