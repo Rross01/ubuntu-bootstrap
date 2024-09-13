@@ -9,6 +9,16 @@ return {
 	{ "lepture/vim-jinja" },
 
 	{
+		"iamcco/markdown-preview.nvim",
+		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+		build = "cd app && npm install",
+		init = function()
+			vim.g.mkdp_filetypes = { "markdown" }
+		end,
+		ft = { "markdown" },
+	},
+
+	{
 		"ThePrimeagen/harpoon",
 		branch = "harpoon2",
 		dependencies = { "nvim-lua/plenary.nvim" },
@@ -102,9 +112,12 @@ return {
 		priority = 1000,
 		config = function()
 			require("github-theme").setup({
-				options = { styles = { comments = "italic" } },
+				options = {
+					styles = { comments = "italic" },
+					transparent = true,
+				},
 			})
-			vim.cmd("colorscheme github_dark")
+			vim.cmd("colorscheme github_dark_dimmed")
 		end,
 	},
 
@@ -179,7 +192,6 @@ return {
 					"python",
 					"vim",
 					"vimdoc",
-					"groovy",
 				},
 				highlight = { enable = true },
 			})

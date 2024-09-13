@@ -14,7 +14,7 @@ family = "terminal-font"
 hide_when_typing = true
 
 [colors.primary]
-background = '#24292e'
+background = '#2b2b2b'
 foreground = '#d1d5da'
 
 # Normal colors
