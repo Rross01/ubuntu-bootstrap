@@ -6,6 +6,8 @@ set {
     $lock $HOME/.scripts/lock.sh
     $sleep "$$lock && systemctl -i suspend"
 
+    $tmux_session_wizard $HOME/.scripts/tmux_session_wizard.sh
+
     $idle swayidle -w \
         timeout 600 $lock \
         timeout 900 'swaymsg "output * power off"' \
