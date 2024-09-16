@@ -1,9 +1,3 @@
--- убираем ~ в конце файла
-vim.opt.fillchars = { eob = " " }
-
--- enable word wrap
-vim.opt.wrap = true
-
 -- highlight current line
 vim.opt.cursorline = true
 
@@ -12,20 +6,9 @@ vim.opt.termguicolors = true
 vim.opt.number = true -- Включаем нумерацию строк
 vim.opt.so = 999 -- Отступ сверху и снизу при скролинге
 vim.opt.undofile = true -- Возможность отката назад
-vim.opt.splitright = true -- vertical split вправо
-vim.opt.splitbelow = true -- horizontal split вниз
 
 -- Интеграция с буфером обмена ОС
 vim.cmd([[ set clipboard+=unnamedplus ]])
-
--- Изменение иконок диагностики
-vim.fn.sign_define("DiagnosticSignError", { text = " ", texthl = "DiagnosticSignError" })
-vim.fn.sign_define("DiagnosticSignWarn", { text = " ", texthl = "DiagnosticSignWarn" })
-vim.fn.sign_define("DiagnosticSignInfo", { text = " ", texthl = "DiagnosticSignInfo" })
-vim.fn.sign_define("DiagnosticSignHint", { text = "󰌵", texthl = "DiagnosticSignHint" })
-
--- Включение глобального статуса
-vim.cmd([[ set laststatus=3 ]])
 
 -- Скрытие командной строки
 vim.cmd([[ set cmdheight=0 ]])

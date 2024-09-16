@@ -5,13 +5,6 @@ local map_default_opts = { noremap = true, silent = true }
 local bind = vim.api.nvim_create_user_command
 local bind_default_opts = { bang = true }
 
--- Выход из режима терминала
-map("i", "jj", "<Esc>", map_default_opts)
-map("i", "оо", "<Esc>", map_default_opts)
-
--- Вставка по Space+p, предотвращая копирование замененного текста в буфер
-map("x", "<leader>p", '"_dP', map_default_opts)
-
 -- Переименовать слово под которым курсор
 map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], map_default_opts)
 

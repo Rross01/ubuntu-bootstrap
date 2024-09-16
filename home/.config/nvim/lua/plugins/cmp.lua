@@ -1,7 +1,6 @@
 return {
 	{
 		"hrsh7th/cmp-cmdline",
-		branch = "v3.x",
 		dependencies = {
 			{ "hrsh7th/cmp-buffer" },
 			{ "hrsh7th/cmp-nvim-lsp" },
