@@ -5,8 +5,6 @@ locale: "ru_RU.UTF-8"
 my_groups: [docker, lp]
 
 yay_packages:
-  - beautysh # shell formatter
-  - downgrade
   - pycharm-community-edition
   - rancher-k3d-bin
 
@@ -21,14 +19,16 @@ pacman_packages:
   - brightnessctl
   - cliphist
   - fuzzel
+  - grim # for screenshots
+  - imagemagik
   - kanshi
   - mako
   - mpv
   - nm-connection-editor
+  - slurp # for screenshots
   - swappy
   - udiskie
-  - grim # for screenshots
-  - slurp # for screenshots
+  - waybar
 
   # apps
   - alacritty
@@ -60,16 +60,10 @@ pacman_packages:
   - sof-firmware # audio drivers
 
   # some deps
-  - fuse-overlayfs # for podman default filesystem
   - npm # nvim plugins dep
-  - python-boto3 # awscli dep
-  - python-botocore # awscli dep
-  - python-colorama # beautysh dep
   - python-netaddr # ansible dep
-  - python-proxmoxer # ansible dep
   - python-psutil # ansible gsettings module
   - python-requests # ansible dep
-  - python-yaml
   - qt5-wayland
   - qt6-wayland
   - xdg-desktop-portal
@@ -80,13 +74,12 @@ pacman_packages:
   # dev
   - ansible
   - aws-cli
-  - postgresql-libs
-  - python-isort
   - ruff # python formatter
   - stylua
 
   # podman
   - aardvark-dns
+  - fuse-overlayfs # for default filesystem
   - openresolv
   - podman
   - podman-compose
@@ -98,11 +91,8 @@ pacman_packages:
   - networkmanager-openconnect
 
   # common cli tools
-  - curl
   - dnsutils
   - htop
-  - jq
-  - less
   - man-db
   - openldap
   - rsync
@@ -114,7 +104,6 @@ pacman_packages:
   - zip
 
   # extra cli tools
-  - fzf
   - git
   - ranger
   - ripgrep
