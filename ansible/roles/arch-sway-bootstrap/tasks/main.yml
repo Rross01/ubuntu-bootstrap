@@ -5,7 +5,7 @@
 - import_tasks: aur.yml
   tags: aur
 
-- import_tasks: packages.yml
+- include_tasks: packages.yml
   tags: packages
 
 - import_tasks: logind.yml
