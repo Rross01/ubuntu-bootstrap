@@ -95,6 +95,7 @@ pacman_packages:
   - htop
   - man-db
   - openldap
+  - p7zip
   - rsync
   - sshpass
   - tcpdump
