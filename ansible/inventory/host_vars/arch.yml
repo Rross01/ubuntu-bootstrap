@@ -20,7 +20,7 @@ pacman_packages:
   - cliphist
   - fuzzel
   - grim # for screenshots
-  - imagemagik
+  - imagemagick
   - kanshi
   - mako
   - mpv
