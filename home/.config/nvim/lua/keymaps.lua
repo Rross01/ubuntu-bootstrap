@@ -22,6 +22,9 @@ map("n", "<leader>pf", ":Telescope find_files<CR>", map_default_opts)
 map("n", "<leader>pg", ":Telescope live_grep<CR>", map_default_opts)
 map("n", "<leader>pd", ":Telescope diagnostics<CR>", map_default_opts)
 
+-- Todo
+map("n", "<leader>td", ":TodoTelescope<CR>", map_default_opts)
+
 -- Harpoon2
 local harpoon = require("harpoon")
 harpoon.setup()
