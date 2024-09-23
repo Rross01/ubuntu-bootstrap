@@ -1,17 +1,22 @@
 return {
 	{ "lewis6991/gitsigns.nvim", config = true },
 	{ "windwp/nvim-autopairs", config = true },
-	{ "s1n7ax/nvim-window-picker", config = true },
 	{ "brenoprata10/nvim-highlight-colors", config = true },
-	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", config = true },
 	{ "tpope/vim-fugitive" },
 	{ "nvim-pack/nvim-spectre" },
 	{ "powerman/vim-plugin-ruscmd" },
 	{ "lepture/vim-jinja" },
-
 	{ "ThePrimeagen/harpoon", branch = "harpoon2", dependencies = { "nvim-lua/plenary.nvim" } },
 	{ "folke/trouble.nvim", dependencies = { "nvim-tree/nvim-web-devicons" }, config = true },
 	{ "folke/todo-comments.nvim", dependencies = { "nvim-lua/plenary.nvim" }, config = true },
+
+	{
+		"lukas-reineke/indent-blankline.nvim",
+		main = "ibl",
+		opts = {
+			scope = { enabled = false },
+		},
+	},
 
 	{
 		"nvim-telescope/telescope.nvim",
@@ -34,6 +39,7 @@ return {
 			"nvim-lua/plenary.nvim",
 			"nvim-tree/nvim-web-devicons",
 			"MunifTanjim/nui.nvim",
+			"s1n7ax/nvim-window-picker",
 		},
 	},
 
@@ -61,6 +67,12 @@ return {
 				"<leader>d",
 				function()
 					require("mini.bufremove").delete()
+				end,
+			},
+			{
+				"gS",
+				function()
+					require("mini.splitjoin").toggle()
 				end,
 			},
 		},
