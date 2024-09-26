@@ -34,6 +34,8 @@ for_window {
     [app_id="pavucontrol"] floating enable
     [app_id="org.gnome.Calculator"] floating enable
     [app_id="blueman-manager"] floating enable
+    [app_id="pyTimeSched"] floating enable
+    [app_id="pyTimeSched"] sticky enable
 }
 
 assign {
@@ -69,8 +71,8 @@ exec_always {
 }
 
 exec {
-    alacritty
     firefox
+    alacritty
     keepassxc
     telegram-desktop
     udiskie --smart-tray --notify
@@ -169,9 +171,6 @@ bindsym --to-code {
 
     # toggle sticky
     $mod+Shift+s sticky toggle
-
-    # terminal
-    $mod+Return exec alacritty
 
     # calculator
     $mod+c exec gnome-calculator

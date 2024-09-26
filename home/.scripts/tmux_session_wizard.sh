@@ -1,7 +1,5 @@
 #!/bin/bash
 
-FZF_OPTS="--bind=alt-k:up,alt-j:down --layout=reverse"
-
 DIRS_TO_FIND="\
 $HOME \
 $HOME/.config \
