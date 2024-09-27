@@ -1,0 +1,16 @@
+[general]
+fullscreen = false
+initial-tool = "line"
+copy-command = "wl-copy"
+output-filename = "/home/rrossamakhin/places/sys/satty-%Y-%m-%d_%H:%M:%S.png"
+disable-notifications = true
+
+# Font to use for text annotations
+[font]
+family = "Roboto"
+style = "Bold"
+
+[color-palette]
+first= "#a52a2a"
+second= "#ffd700"
+third= "#008000"

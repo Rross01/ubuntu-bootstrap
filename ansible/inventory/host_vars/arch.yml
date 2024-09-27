@@ -1,8 +1,9 @@
 ---
 user: "rrossamakhin"
 locale: "ru_RU.UTF-8"
-
 my_groups: [docker, lp]
+user_systemd_enabled: [ssh-agent.service]
+system_systemd_enabled: [bluetooth.service]
 
 yay_packages:
   - pycharm-community-edition
@@ -19,16 +20,18 @@ pacman_packages:
   - brightnessctl
   - cliphist
   - fuzzel
-  - grim # for screenshots
   - imagemagick
   - kanshi
   - mako
   - mpv
   - nm-connection-editor
-  - slurp # for screenshots
-  - swappy
   - udiskie
   - waybar
+
+  # screenshots
+  - grim
+  - satty
+  - slurp
 
   # apps
   - alacritty
@@ -122,6 +125,3 @@ pacman_packages:
   - ffmpeg
   - linux-headers
   - v4l2loopback-dkms
-
-user_systemd_enabled: [ssh-agent.service]
-system_systemd_enabled: [bluetooth.service]

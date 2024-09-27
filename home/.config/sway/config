@@ -36,6 +36,7 @@ for_window {
     [app_id="blueman-manager"] floating enable
     [app_id="pyTimeSched"] floating enable
     [app_id="pyTimeSched"] sticky enable
+    [app_id="com.gabm.satty"] resize set width 70 ppt height 70 ppt
 }
 
 assign {
@@ -166,8 +167,8 @@ bindsym --to-code {
     Ctrl+space exec --no-startup-id makoctl dismiss --all
 
     # screenshot bindings
-    $mod+s exec --no-startup-id grim -g "$(slurp)" - | swappy -f -
-    $mod+Ctrl+s exec --no-startup-id grim - | swappy -f -
+    $mod+s exec --no-startup-id grim -g "$(slurp)" - | satty -f -
+    $mod+Ctrl+s exec --no-startup-id grim - | satty -f -
 
     # toggle sticky
     $mod+Shift+s sticky toggle
