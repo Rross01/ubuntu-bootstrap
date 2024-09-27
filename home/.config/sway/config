@@ -1,26 +1,19 @@
-################################
-#            Common            #
-################################
-
+# Common
 set {
-    $lock $HOME/.scripts/lock.sh
-    $sleep "$$lock && systemctl -i suspend"
-
-    $tmux_session_wizard $HOME/.scripts/tmux_session_wizard.sh
-
-    $idle swayidle -w \
-        timeout 600 $lock \
-        timeout 900 'swaymsg "output * power off"' \
-        resume 'swaymsg "output * power on"'
-
     $mod Mod4
-
+    $font "JetBrainsMono Nerd Font Mono 10"
     $left h
     $down j
     $up k
     $right l
 
-    $font "JetBrainsMono Nerd Font Mono 10"
+    $lock $HOME/.scripts/lock.sh
+    $sleep "$$lock && systemctl -i suspend"
+    $tmux_session_wizard $HOME/.scripts/tmux_session_wizard.sh
+    $idle swayidle -w \
+        timeout 600 $lock \
+        timeout 900 'swaymsg "output * power off"' \
+        resume 'swaymsg "output * power on"'
 }
 
 font $font
@@ -47,10 +40,7 @@ assign {
     [instance="jetbrains-pycharm-ce"] workspace 4
 }
 
-################################
-#            Inputs            #
-################################
-
+# Inputs
 input "type:touchpad" {
     tap enabled
     natural_scroll enabled
@@ -61,10 +51,7 @@ input "type:keyboard" {
     xkb_options grp:alt_shift_toggle,caps:swapescape
 }
 
-################################
-#          Autostart           #
-################################
-
+# Autostart
 exec_always {
     "killall kanshi; kanshi"
     "killall wl-paste; wl-paste --watch cliphist store"
@@ -81,10 +68,7 @@ exec {
     $idle
 }
 
-################################
-#            Modes             #
-################################
-
+# Modes
 set $player "(n)ext, (P)revious, (p)lay/pause"
 mode $player {
     bindsym --to-code {
@@ -136,10 +120,7 @@ mode "resize" {
     }
 }
 
-################################
-#           Bindings           #
-################################
-
+# Bindings
 bindswitch --locked {
     lid:on exec $lock
 }
