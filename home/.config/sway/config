@@ -159,7 +159,7 @@ bindsym --to-code {
     $mod+c exec gnome-calculator
 
     # calendar
-    $mod+Shift+c exec firefox calendar.google.com; workspace 1
+    $mod+Shift+c exec firefox calendar.google.com
 
     $mod+Shift+q kill
     $mod+Shift+r reload
