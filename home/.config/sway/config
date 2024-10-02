@@ -1,7 +1,7 @@
 # Common
 set {
     $mod Mod4
-    $font "JetBrainsMono Nerd Font Mono 10"
+    $font "Ubuntu 12"
     $left h
     $down j
     $up k

@@ -4,14 +4,14 @@
     min-height: 0;
     margin: 0;
     padding: 0;
+	font-family: "Ubuntu Mono";
+	font-size: 14px;
+    font-weight: 500;
 }
 
 #waybar {
     background: #000000;
     color: white;
-	font-family: "terminal-font";
-	font-size: 12px;
-    font-weight: 600;
 }
 
 #window {
