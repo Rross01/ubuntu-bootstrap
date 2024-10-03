@@ -55,6 +55,7 @@ input "type:keyboard" {
 # Autostart
 exec_always {
     "makoctl reload"
+    "killall kanshi; kanshi"
 }
 
 exec {
@@ -65,7 +66,6 @@ exec {
     udiskie --smart-tray --notify
     owncloud
     wl-paste --watch cliphist store
-    kanshi
     $idle
 }
 
