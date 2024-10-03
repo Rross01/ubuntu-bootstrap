@@ -3,7 +3,9 @@ vim.opt.cursorline = true
 
 vim.opt.termguicolors = true
 
-vim.opt.number = true -- Включаем нумерацию строк
+vim.opt.number = true
+vim.wo.relativenumber = true
+
 vim.opt.so = 999 -- Отступ сверху и снизу при скролинге
 vim.opt.undofile = true -- Возможность отката назад
 
