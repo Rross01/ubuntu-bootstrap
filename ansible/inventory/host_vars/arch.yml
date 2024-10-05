@@ -49,6 +49,7 @@ pacman_packages:
   - materia-gtk-theme
   - papirus-icon-theme
   - ttf-jetbrains-mono-nerd
+  - ttf-ubuntu-font-family
 
   # fonts for firefox
   - noto-fonts
