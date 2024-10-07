@@ -40,6 +40,7 @@ pacman_packages:
   - keepassxc
   - libreoffice-still-ru
   - obs-studio
+  - obsidian
   - owncloud-client
   - qbittorrent
   - telegram-desktop
