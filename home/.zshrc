@@ -44,7 +44,7 @@ wait_for_status_code() {
     EXPECTED_RC=$2
     for (( ; ; ))
     do
-        CURRENT_RC=$(curl -L -w '%{response_code}' -s -o /dev/null $ENDPOINT)
+        CURRENT_RC=$(curl --connect-timeout 1 -L -w '%{response_code}' -s -o /dev/null $ENDPOINT)
         echo "$(date): URL: $ENDPOINT, return code: $CURRENT_RC"
         [[ $CURRENT_RC = $EXPECTED_RC ]] && break
         sleep 1
