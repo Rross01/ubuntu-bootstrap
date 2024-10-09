@@ -11,6 +11,6 @@ family = "Roboto"
 style = "Bold"
 
 [color-palette]
-first= "#a52a2a"
-second= "#ffd700"
-third= "#008000"
+first= "#ff0000"
+second= "#ffe100"
+third= "#00ff00"
