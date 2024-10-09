@@ -1,7 +1,7 @@
 # Common
 set {
     $mod Mod4
-    $font "Ubuntu 12"
+    $font "Ubuntu 10"
     $left h
     $down j
     $up k
@@ -40,6 +40,7 @@ assign {
     [app_id="org.telegram.desktop"] workspace 3
     [app_id="org.keepassxc.KeePassXC"] workspace 3
     [instance="jetbrains-pycharm-ce"] workspace 4
+    [instance="obsidian"] workspace 9
 }
 
 # Inputs
@@ -55,19 +56,20 @@ input "type:keyboard" {
 
 # Autostart
 exec_always {
-    "makoctl reload"
     "killall kanshi; kanshi"
+    "makoctl reload"
 }
 
 exec {
-    firefox
+    $idle
     alacritty
+    firefox
     keepassxc
+    obsidian
+    owncloud
     telegram-desktop
     udiskie --smart-tray --notify
-    owncloud
     wl-paste --watch cliphist store
-    $idle
 }
 
 # Modes
