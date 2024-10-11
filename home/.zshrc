@@ -10,6 +10,8 @@ fi
 # Add own binaries to the path
 export PATH=$PATH:$HOME/.bin:$HOME/.scripts
 
+export TERM=screen-256color
+
 # zsh settings
 ZSH_THEME="robbyrussell"
 CASE_SENSITIVE="false"
