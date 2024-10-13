@@ -31,3 +31,6 @@
 
 - import_tasks: dconf.yml
   tags: dconf
+
+- import_tasks: pam.yml
+  tags: pam
