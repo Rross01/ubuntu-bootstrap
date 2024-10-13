@@ -32,6 +32,7 @@ for_window {
     [app_id="pyTimeSched"] resize set width 40 ppt height 30 ppt
     [app_id="com.gabm.satty"] floating enable
     [app_id="com.gabm.satty"] resize set width 70 ppt height 70 ppt
+    [app_id="desktopclient.owncloud.com.owncloud"] floating enable
 }
 
 assign {
