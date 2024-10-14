@@ -6,7 +6,6 @@ user_systemd_enabled: [ssh-agent.service]
 system_systemd_enabled: [bluetooth.service]
 
 yay_packages:
-  - pycharm-community-edition
   - rancher-k3d-bin
 
 pacman_packages:
@@ -42,6 +41,7 @@ pacman_packages:
   - obs-studio
   - obsidian
   - owncloud-client
+  - pycharm-community-edition
   - qbittorrent
   - telegram-desktop
   - wireshark-qt
