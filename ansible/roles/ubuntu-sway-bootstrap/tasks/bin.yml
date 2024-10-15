@@ -1,0 +1,33 @@
+---
+- name: Ensure destination directory exists
+  with_items: "{{ bin_archived }}"
+  file:
+    path: "{{ apps_home }}/{{ item.name }}"
+    state: directory
+
+- name: Download app archive
+  with_items: "{{ bin_archived }}"
+  unarchive:
+    src: "{{ item.url }}"
+    dest: "{{ apps_home }}/{{ item.name }}"
+    remote_src: yes
+
+- name: Create a symbolic link to bin
+  become: true
+  with_items: "{{ bin_archived }}"
+  file:
+    src: "{{ apps_home }}/{{ item.name }}/{{ item.bin_path }}"
+    dest: "/usr/bin/{{ item.name }}"
+    state: link
+
+- name: Ensure app entities directory exists
+  file:
+    path: "{{ desktop_entities_path }}"
+    state: directory
+
+- name: Create app entities
+  with_items: "{{ bin_archived }}"
+  when: "{{ item.desktop_entity.enabled is defined }}"
+  template:
+    src: tpl.desktop.j2
+    dest: "{{ desktop_entities_path }}/{{ item.name }}.desktop"

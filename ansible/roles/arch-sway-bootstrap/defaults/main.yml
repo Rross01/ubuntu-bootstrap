@@ -1,5 +1,0 @@
-pytimesched:
-  app_url: "https://gitlab.com/ilmenshik/pytimesched/-/jobs/3568673400/artifacts/raw/pyTimeSched-v0.6-linux.tar.gz"
-  app_path: "/home/{{ user }}/places/sys/pytimesched"
-  desktop_entities_path: "/home/{{ user }}/.local/share/applications"
-zsh_home: "/home/{{ user }}/places/sys/oh-my-zsh"

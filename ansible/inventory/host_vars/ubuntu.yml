@@ -1,0 +1,85 @@
+---
+user: rrossamakhin
+my_groups: []
+user_systemd_enabled: []
+system_systemd_enabled: []
+
+packages:
+  # gnome
+  - gnome-shell-extensions
+
+  # apps
+  - alacritty
+  - keepassxc
+  - obs-studio
+  - wireshark
+
+  # some deps
+  - npm # nvim plugins dep
+  - python3-psutil # ansible gsettings module
+  - ripgrep # neovim fuzzy search
+  - sshpass # ansible
+
+  # dev
+  - ansible
+    #- awscli
+    #- ruff
+
+  # podman
+  - podman
+  - podman-compose
+  - podman-docker
+
+  # network and bluetooth
+  - network-manager-openconnect
+
+  # cli tools
+  - git
+  - htop
+  - p7zip
+  - ranger
+  - tldr
+  - tmux
+  - zsh
+
+snap_packages:
+  common:
+    - helmfile-snap
+    - k9s
+    - telegram-desktop
+  classic:
+    - helm
+    - kubectl
+    - pycharm-community
+
+single_deb:
+  - https://st.ktalk.host/ktalk-app/linux/ktalk2.12.0amd64.deb
+  - https://products.s.kaspersky-labs.com/endpoints/keslinux10/12.1.0.1297/multilanguage-12.1.0.1297/3837323739337c44454c7c31/kesl_12.1.0-1297_amd64.deb
+
+fonts:
+  - https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip
+
+bin_archived:
+  - url: https://github.com/neovim/neovim/releases/download/v0.10.2/nvim-linux64.tar.gz
+    name: nvim
+    bin_path: nvim-linux64/bin/nvim
+  - url: https://gitlab.com/ilmenshik/pytimesched/-/jobs/3568673400/artifacts/raw/pyTimeSched-v0.6-linux.tar.gz
+    name: pyTimeSched
+    bin_path: pyTimeSched
+    desktop_entity:
+      enabled: true
+      icon_path: gui/icons/icon.png
+  - url: https://github.com/zen-browser/desktop/releases/download/1.0.1-a.12/zen.linux-specific.tar.bz2
+    name: Zen
+    bin_path: zen/zen
+    desktop_entity:
+      enabled: true
+      icon_path: zen/browser/chrome/icons/default/default128.png
+      startup_wm_class: zen-alpha
+
+
+dconf:
+  - "/org/gnome/shell/extensions/dash-to-dock/click-action": "'minimize'"
+  - "/org/gnome/desktop/input-sources/xkb-options": "['caps:swapescape']"
+  - "/org/gnome/settings-daemon/plugins/power/lid-close-battery-action": "'logout'"
+  - "/org/gnome/settings-daemon/plugins/power/lid-close-ac-action": "'logout'"

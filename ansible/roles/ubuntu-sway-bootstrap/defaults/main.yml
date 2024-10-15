@@ -1,0 +1,3 @@
+zsh_home: "/home/{{ user }}/places/sys/oh-my-zsh"
+desktop_entities_path: "/home/{{ user }}/.local/share/applications"
+apps_home: "/home/{{ user }}/places/sys"
