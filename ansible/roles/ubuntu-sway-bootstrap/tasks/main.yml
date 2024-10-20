@@ -11,9 +11,6 @@
 - import_tasks: systemd.yml
   tags: systemd
 
-- import_tasks: pytimesched.yml
-  tags: pytimesched
-
 - import_tasks: zsh.yml
   tags: zsh
 
