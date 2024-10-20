@@ -55,7 +55,6 @@ snap_packages:
 
 single_deb:
   - https://st.ktalk.host/ktalk-app/linux/ktalk2.12.0amd64.deb
-  - https://products.s.kaspersky-labs.com/endpoints/keslinux10/12.1.0.1297/multilanguage-12.1.0.1297/3837323739337c44454c7c31/kesl_12.1.0-1297_amd64.deb
 
 fonts:
   - https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip
