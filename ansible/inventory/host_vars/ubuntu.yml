@@ -77,7 +77,6 @@ bin_archived:
       icon_path: zen/browser/chrome/icons/default/default128.png
       startup_wm_class: zen-alpha
 
-
 dconf:
   - "/org/gnome/shell/extensions/dash-to-dock/click-action": "'minimize'"
   - "/org/gnome/desktop/input-sources/xkb-options": "['caps:swapescape']"
