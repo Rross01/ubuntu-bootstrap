@@ -22,8 +22,6 @@ packages:
 
   # dev
   - ansible
-    #- awscli
-    #- ruff
 
   # podman
   - podman
@@ -47,8 +45,10 @@ snap_packages:
   common:
     - helmfile-snap
     - k9s
+    - ruff
     - telegram-desktop
   classic:
+    - aws-cli
     - helm
     - kubectl
     - pycharm-community
