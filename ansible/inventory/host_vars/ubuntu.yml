@@ -32,6 +32,7 @@ packages:
 
   # network and bluetooth
   - network-manager-openconnect
+  - network-manager-openconnect-gnome
 
   # cli tools
   - git
