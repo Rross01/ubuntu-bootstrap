@@ -1,6 +1,5 @@
 -- highlight current line
 vim.opt.cursorline = true
-
 vim.opt.termguicolors = true
 
 vim.opt.number = true
@@ -41,3 +40,6 @@ augroup end
 ]],
 	false
 )
+
+-- Скрыть ~
+vim.cmd([[ set fillchars=eob:\ ]])
