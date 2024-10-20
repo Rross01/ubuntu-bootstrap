@@ -83,3 +83,4 @@ dconf:
   - "/org/gnome/desktop/input-sources/xkb-options": "['caps:swapescape']"
   - "/org/gnome/settings-daemon/plugins/power/lid-close-battery-action": "'logout'"
   - "/org/gnome/settings-daemon/plugins/power/lid-close-ac-action": "'logout'"
+  - "/org/gnome/desktop/wm/keybindings/switch-input-source": "['<Alt>Shift_L']"
