@@ -1,9 +1,0 @@
----
-- name: Prevent logind from handling lid events
-  become: true
-  blockinfile:
-    path: /etc/systemd/logind.conf
-    block: |
-      HandleLidSwitch=ignore
-      HandleLidSwitchExternalPower=ignore
-      HandleLidSwitchDocked=ignore

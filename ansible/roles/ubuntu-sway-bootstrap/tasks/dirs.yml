@@ -9,8 +9,7 @@
     path: "{{ item }}"
     state: directory
   with_items:
-    - "/home/{{ user }}/places/sys/screenshots"
-    - "/home/{{ user }}/places/sys/wallpapers"
     - "/home/{{ user }}/places/personal/git"
     - "/home/{{ user }}/places/work/git"
     - "/home/{{ user }}/temp"
+    - "/home/{{ user }}/.fonts"
