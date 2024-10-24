@@ -3,29 +3,9 @@ return {
 	{ "windwp/nvim-autopairs", config = true },
 	{ "brenoprata10/nvim-highlight-colors", config = true },
 	{ "tpope/vim-fugitive" },
-	{ "nvim-pack/nvim-spectre" },
-	{ "powerman/vim-plugin-ruscmd" },
-	{ "lepture/vim-jinja" },
 	{ "ThePrimeagen/harpoon", branch = "harpoon2", dependencies = { "nvim-lua/plenary.nvim" } },
-	{ "folke/trouble.nvim", dependencies = { "nvim-tree/nvim-web-devicons" }, config = true },
-	{ "folke/todo-comments.nvim", dependencies = { "nvim-lua/plenary.nvim" }, config = true },
-
-	{
-		"folke/zen-mode.nvim",
-		opts = {
-			-- your configuration comes here
-			-- or leave it empty to use the default settings
-			-- refer to the configuration section below
-		},
-	},
-
-	{
-		"lukas-reineke/indent-blankline.nvim",
-		main = "ibl",
-		opts = {
-			scope = { enabled = false },
-		},
-	},
+	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = { scope = { enabled = false } } },
+	{ "shortcuts/no-neck-pain.nvim", version = "*", opts = { width = 150 } },
 
 	{
 		"nvim-telescope/telescope.nvim",
@@ -53,11 +33,15 @@ return {
 	},
 
 	{
-		"HoNamDuong/hybrid.nvim",
+		"navarasu/onedark.nvim",
 		lazy = false,
 		priority = 1000,
 		config = function()
-			vim.cmd("colorscheme hybrid")
+			require("onedark").setup({
+				-- { "dark", "darker", "cool", "deep", "warm", "warmer", "light" }
+				style = "cool",
+			})
+			vim.cmd("colorscheme onedark")
 		end,
 	},
 
@@ -65,9 +49,8 @@ return {
 		"echasnovski/mini.nvim",
 		version = false,
 		config = function()
-			require("mini.cursorword").setup() -- Autohighlight word under cursor
 			require("mini.move").setup() -- Move any selection in any direction
-			require("mini.splitjoin").setup() -- Split and join arguments (g + S)
+			require("mini.splitjoin")
 			require("mini.bufremove").setup() -- Remove buffers
 			require("mini.comment").setup() -- Comment lines
 		end,

@@ -9,7 +9,7 @@ vim.opt.so = 999 -- Отступ сверху и снизу при скроли�
 vim.opt.undofile = true -- Возможность отката назад
 
 -- Enable globalstatus
-vim.cmd([[ set laststatus=3 ]])
+-- vim.cmd([[ set laststatus=3 ]])
 
 -- Интеграция с буфером обмена ОС
 vim.cmd([[ set clipboard+=unnamedplus ]])
