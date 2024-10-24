@@ -63,19 +63,25 @@ bin_archived:
   - url: https://github.com/neovim/neovim/releases/download/v0.10.2/nvim-linux64.tar.gz
     name: nvim
     bin_path: nvim-linux64/bin/nvim
+
+  - url: https://github.com/JohnnyMorganz/StyLua/releases/download/v0.20.0/stylua-linux-x86_64.zip
+    name: stylua
+    bin_path: stylua
+
   - url: https://gitlab.com/ilmenshik/pytimesched/-/jobs/3568673400/artifacts/raw/pyTimeSched-v0.6-linux.tar.gz
     name: pyTimeSched
     bin_path: pyTimeSched
     desktop_entity:
       enabled: true
       icon_path: gui/icons/icon.png
-  - url: https://github.com/zen-browser/desktop/releases/download/1.0.1-a.12/zen.linux-specific.tar.bz2
-    name: Zen
-    bin_path: zen/zen
-    desktop_entity:
-      enabled: true
-      icon_path: zen/browser/chrome/icons/default/default128.png
-      startup_wm_class: zen-alpha
+
+  # - url: https://github.com/zen-browser/desktop/releases/download/1.0.1-a.12/zen.linux-specific.tar.bz2
+  #   name: Zen
+  #   bin_path: zen/zen
+  #   desktop_entity:
+  #     enabled: true
+  #     icon_path: zen/browser/chrome/icons/default/default128.png
+  #     startup_wm_class: zen-alpha
 
 dconf:
   - "/org/gnome/shell/extensions/dash-to-dock/click-action": "'minimize'"
