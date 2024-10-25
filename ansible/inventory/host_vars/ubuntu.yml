@@ -33,6 +33,7 @@ packages:
   - network-manager-openconnect-gnome
 
   # cli tools
+  - fzf
   - git
   - htop
   - p7zip
@@ -45,6 +46,7 @@ snap_packages:
   common:
     - helmfile-snap
     - k9s
+    - pinta
     - ruff
     - telegram-desktop
   classic:
