@@ -1,5 +1,4 @@
 + .config/
-+ .config/alacritty/***
 + .config/nvim/***
 + .config/ranger/***
 + .config/tmux/***

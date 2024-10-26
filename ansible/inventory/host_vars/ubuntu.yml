@@ -9,7 +9,7 @@ packages:
   - gnome-shell-extensions
 
   # apps
-  - alacritty
+  - blackbox-terminal
   - keepassxc
   - obs-studio
   - wireshark
@@ -33,6 +33,7 @@ packages:
   - network-manager-openconnect-gnome
 
   # cli tools
+  - curl
   - fzf
   - git
   - htop
