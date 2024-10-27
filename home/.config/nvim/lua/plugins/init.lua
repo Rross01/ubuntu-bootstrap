@@ -7,6 +7,8 @@ return {
 	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = { scope = { enabled = false } } },
 	{ "shortcuts/no-neck-pain.nvim", version = "*", opts = { width = 150 } },
 
+	{ "nvim-pack/nvim-spectre" },
+
 	{
 		"nvim-telescope/telescope.nvim",
 		dependencies = { "nvim-lua/plenary.nvim", "BurntSushi/ripgrep" },

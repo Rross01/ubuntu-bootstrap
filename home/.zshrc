@@ -11,15 +11,8 @@ plugins=(
 export ZSH="$HOME/places/sys/oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
 
-# Sources
-source <(helm completion zsh)
-source <(kubectl completion zsh)
-
 # Change default editor
 export EDITOR="nvim"
-
-# awscli config file
-export AWS_CONFIG_FILE="~/places/.aws_credentials"
 
 # Functions
 wait_for_status_code() {
@@ -35,15 +28,23 @@ wait_for_status_code() {
     notify-send "$ENDPOINT return $EXPECTED_RC!"
 }
 
+# Sources
+source <(helm completion zsh)
+source <(kubectl completion zsh)
+
+# awscli config file
+export AWS_CONFIG_FILE="~/places/.aws_credentials"
+# kubeconfs
+alias locconf='export KUBECONFIG=~/places/personal/kubeconfigs/loc.conf'
+
 # Aliases
 alias s='ssh'
 alias v='nvim'
+alias vim='nvim'
 alias kl='kubectl'
 alias x='ranger'
 alias git_clean='git checkout master && git pull && git branch | grep -v master | xargs git branch -D $argv'
-
-# kubeconfs
-alias locconf='export KUBECONFIG=~/places/personal/kubeconfigs/loc.conf'
+alias git_log='git log --all --decorate --oneline --graph $argv'
 
 # autoload python venv
 python_venv() {

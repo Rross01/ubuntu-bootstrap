@@ -1,4 +1,19 @@
 ---
+- name: Download flat binaries
+  with_items: "{{ bin }}"
+  get_url:
+    url: "{{ item.url }}"
+    dest: "{{ apps_home }}/{{ item.name }}"
+
+- name: Create a symbolic link to bin
+  become: true
+  with_items: "{{ bin }}"
+  file:
+    src: "{{ apps_home }}/{{ item.name }}"
+    dest: "/usr/bin/{{ item.name }}"
+    state: link
+    mode: 0775
+
 - name: Ensure destination directory exists
   with_items: "{{ bin_archived }}"
   file:
