@@ -8,6 +8,7 @@
 - name: Install deb packages
   become: true
   loop: "{{ single_deb }}"
+  ignore_errors: true
   apt:
     deb: "{{ item }}"
 
