@@ -1,6 +1,6 @@
 #!/bin/bash
 
-FZF_OPTS="--bind=alt-k:up,alt-j:down --layout=reverse"
+FZF_OPTS="--bind=alt-k:up,alt-j:down --layout=reverse --no-color"
 
 DIRS_TO_FIND="\
 $HOME \
