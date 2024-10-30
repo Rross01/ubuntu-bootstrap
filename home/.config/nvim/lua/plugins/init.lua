@@ -6,22 +6,9 @@ return {
 	{ "ThePrimeagen/harpoon", branch = "harpoon2", dependencies = { "nvim-lua/plenary.nvim" } },
 	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = { scope = { enabled = false } } },
 	{ "shortcuts/no-neck-pain.nvim", version = "*", opts = { width = 150 } },
-
+	{ "folke/todo-comments.nvim", dependencies = { "nvim-lua/plenary.nvim" }, config = true },
+	{ "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim", "BurntSushi/ripgrep" } },
 	{ "nvim-pack/nvim-spectre" },
-
-	{
-		"nvim-telescope/telescope.nvim",
-		dependencies = { "nvim-lua/plenary.nvim", "BurntSushi/ripgrep" },
-		opts = {
-			defaults = {
-				borderchars = {
-					prompt = { "─", " ", "─", "│", "│", " ", "─", "└" },
-					results = { "─", " ", " ", "│", "┌", "─", " ", "│" },
-					preview = { "─", "│", "─", "│", "┬", "┐", "┘", "┴" },
-				},
-			},
-		},
-	},
 
 	{
 		"nvim-neo-tree/neo-tree.nvim",
@@ -110,23 +97,23 @@ return {
 
 	{
 		"nvim-treesitter/nvim-treesitter",
-		config = function()
-			require("nvim-treesitter.configs").setup({
-				ensure_installed = {
-					"bash",
-					"helm",
-					"json",
-					"jsonc",
-					"lua",
-					"markdown",
-					"markdown_inline",
-					"python",
-					"vim",
-					"vimdoc",
-					"yaml",
-				},
-				highlight = { enable = true },
-			})
-		end,
+		build = ":TSUpdate",
+		main = "nvim-treesitter.configs",
+		opts = {
+			ensure_installed = {
+				"bash",
+				"helm",
+				"json",
+				"jsonc",
+				"lua",
+				"markdown",
+				"markdown_inline",
+				"python",
+				"vim",
+				"vimdoc",
+				"yaml",
+			},
+			highlight = { enable = true },
+		},
 	},
 }

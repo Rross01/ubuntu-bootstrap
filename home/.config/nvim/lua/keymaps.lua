@@ -5,17 +5,24 @@ local map_default_opts = { noremap = true, silent = true }
 local bind = vim.api.nvim_create_user_command
 local bind_default_opts = { bang = true }
 
--- Переименовать слово под которым курсор
-map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], map_default_opts)
+-- Keybinds to make split navigation easier.
+--  Use CTRL+<hjkl> to switch between windows
+--
+--  See `:help wincmd` for a list of all window commands
+vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
+vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
+vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
+vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
--- По fs очищаем последний поиск с подсветкой
-map("n", "fs", ":nohl<CR>", map_default_opts)
+-- Clear highlights on search when pressing <Esc> in normal mode
+--  See `:help hlsearch`
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- Neotree
 map("n", "<leader>e", ":Neotree float toggle<CR>", map_default_opts)
 map("n", "<leader>E", ":Neotree float reveal<CR>", map_default_opts)
-map("n", "<leader>q", ":Neotree left toggle<CR>", map_default_opts)
-map("n", "<leader>Q", ":Neotree left reveal<CR>", map_default_opts)
+map("n", "<leader>q", ":Neotree right toggle<CR>", map_default_opts)
+map("n", "<leader>Q", ":Neotree right reveal<CR>", map_default_opts)
 
 -- Telescope
 map("n", "<leader>pf", ":Telescope find_files<CR>", map_default_opts)
@@ -57,12 +64,6 @@ end)
 
 -- gitsigns
 map("n", "<leader>tb", ":Gitsigns blame_line<CR>", map_default_opts)
-
--- easy split navigation
-map("n", "<C-h>", "<C-w>h", map_default_opts)
-map("n", "<C-l>", "<C-w>l", map_default_opts)
-map("n", "<C-j>", "<C-w>j", map_default_opts)
-map("n", "<C-k>", "<C-w>k", map_default_opts)
 
 -- Fugitive
 map("n", "<leader>g", ":tab G<CR>", map_default_opts)
