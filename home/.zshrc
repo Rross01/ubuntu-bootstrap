@@ -18,6 +18,9 @@ export EDITOR="nvim"
 source <(helm completion zsh)
 source <(kubectl completion zsh)
 
+# Different home for gpg
+export GNUPGHOME="~/places/gpg"
+
 # awscli config file
 export AWS_CONFIG_FILE="~/places/.aws_credentials"
 # kubeconfs
