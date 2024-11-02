@@ -81,5 +81,7 @@ bind("Gp", "G push", bind_default_opts)
 bind("Gpf", "G push --force", bind_default_opts)
 bind("Gb", "G branch", bind_default_opts)
 
+bind("GPT", ":GpChatNew tabnew", bind_default_opts)
+
 bind("Table", "'<,'>!column --table --separator ' '", bind_default_opts)
 bind("Flatten", "'<,'>!tr -d '[:space:]'", bind_default_opts)
