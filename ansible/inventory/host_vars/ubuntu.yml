@@ -94,3 +94,8 @@ dconf:
   - "/org/gnome/settings-daemon/plugins/power/lid-close-battery-action": "'logout'"
   - "/org/gnome/settings-daemon/plugins/power/lid-close-ac-action": "'logout'"
   - "/org/gnome/desktop/wm/keybindings/switch-input-source": "['<Alt>Shift_L']"
+
+  # solid gray wallpaper
+  - "/org/gnome/desktop/background/picture-uri": "''"
+  - "/org/gnome/desktop/background/picture-uri-dark": "''"
+  - "/org/gnome/desktop/background/primary-color": "'#3c3c3c'"
