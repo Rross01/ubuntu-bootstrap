@@ -4,4 +4,4 @@
   tasks:
     - name: Include role
       import_role:
-        name: ubuntu-sway-bootstrap
+        name: ubuntu-bootstrap
