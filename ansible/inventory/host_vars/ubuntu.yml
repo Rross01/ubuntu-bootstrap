@@ -1,5 +1,6 @@
 ---
 user: rrossamakhin
+
 my_groups: []
 user_systemd_enabled: []
 system_systemd_enabled: []
@@ -9,7 +10,6 @@ packages:
   - gnome-shell-extensions
 
   # apps
-  - blackbox-terminal
   - keepassxc
   - obs-studio
   - wireshark
@@ -90,9 +90,15 @@ bin_archived:
 
 dconf:
   - "/org/gnome/shell/extensions/dash-to-dock/click-action": "'minimize'"
-  - "/org/gnome/desktop/input-sources/xkb-options": "['caps:swapescape']"
   - "/org/gnome/settings-daemon/plugins/power/lid-close-battery-action": "'logout'"
   - "/org/gnome/settings-daemon/plugins/power/lid-close-ac-action": "'logout'"
+
+  # Colors
+  - "/org/gnome/desktop/interface/gtk-theme": "'Yaru-blue-dark'"
+  - "/org/gnome/desktop/interface/icon-theme": "'Yaru-blue'"
+
+  # keyboard
+  - "/org/gnome/desktop/input-sources/xkb-options": "['caps:swapescape']"
   - "/org/gnome/desktop/wm/keybindings/switch-input-source": "['<Alt>Shift_L']"
 
   # solid gray wallpaper

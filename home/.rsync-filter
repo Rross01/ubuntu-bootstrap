@@ -1,6 +1,6 @@
 + .config/
++ .config/kitty/***
 + .config/nvim/***
-+ .config/ranger/***
 + .config/tmux/***
 + .gitconfig
 + .rsync-filter
