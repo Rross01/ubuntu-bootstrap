@@ -8,9 +8,11 @@ system_systemd_enabled: []
 packages:
   # gnome
   - gnome-shell-extensions
+  - gnome-tweaks
 
   # apps
   - keepassxc
+  - kitty
   - obs-studio
   - wireshark
 
@@ -107,7 +109,8 @@ dconf:
   - "/org/gnome/desktop/background/primary-color": "'#3c3c3c'"
 
   # Just Perfection
-  # - "/org/gnome/shell/extensions/just-perfection/accessibility-menu": "'false'"
-  # - "/org/gnome/shell/extensions/just-perfection/activities-button": "'false'"
-  - "/org/gnome/shell/extensions/just-perfection/animation": "'4'"
-  - "/org/gnome/shell/extensions/just-perfection/clock-menu-position": "'2'"
+  - "/org/gnome/shell/extensions/just-perfection/accessibility-menu": "false"
+  - "/org/gnome/shell/extensions/just-perfection/activities-button": "false"
+  - "/org/gnome/shell/extensions/just-perfection/show-apps-button": "false"
+  - "/org/gnome/shell/extensions/just-perfection/animation": "4"
+  - "/org/gnome/shell/extensions/just-perfection/clock-menu-position": "2"
