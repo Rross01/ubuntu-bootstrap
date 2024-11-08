@@ -31,7 +31,7 @@ alias s='ssh'
 alias v='nvim'
 alias vim='nvim'
 alias kl='kubectl'
-alias x='ranger'
+alias x='ranger --cmd="set show_hidden true"'
 alias git_clean='git checkout master && git pull && git branch | grep -v master | xargs git branch -D $argv'
 alias git_log='git log --all --decorate --oneline --graph $argv'
 
