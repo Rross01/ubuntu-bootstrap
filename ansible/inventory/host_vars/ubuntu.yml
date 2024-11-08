@@ -53,6 +53,7 @@ snap_packages:
     - telegram-desktop
   classic:
     - pycharm-community
+    - obsidian
 
 single_deb:
   - https://st.ktalk.host/ktalk-app/linux/ktalk2.12.0amd64.deb
