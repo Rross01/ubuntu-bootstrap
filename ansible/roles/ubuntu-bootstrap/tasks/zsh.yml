@@ -1,13 +1,15 @@
 ---
 - name: Clone zsh repo
-  ansible.builtin.git:
+  git:
     repo: https://github.com/ohmyzsh/ohmyzsh/
     dest: "{{ zsh_home }}"
+    force: true
 
 - name: Clone zsh-autosuggestions repo
-  ansible.builtin.git:
+  git:
     repo: https://github.com/zsh-users/zsh-autosuggestions/
     dest: "{{ zsh_home }}/custom/plugins/zsh-autosuggestions"
+    force: true
 
 - name: Change default shell to zsh
   become: true
