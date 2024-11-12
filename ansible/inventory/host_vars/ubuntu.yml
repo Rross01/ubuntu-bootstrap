@@ -12,7 +12,6 @@ packages:
 
   # apps
   - keepassxc
-  - kitty
   - obs-studio
   - wireshark
 
@@ -59,6 +58,7 @@ single_deb:
   - https://st.ktalk.host/ktalk-app/linux/ktalk2.12.0amd64.deb
   - https://github.com/derailed/k9s/releases/download/v0.32.5/k9s_linux_amd64.deb
   - https://github.com/getsops/sops/releases/download/v3.9.1/sops_3.9.1_amd64.deb
+  - https://github.com/wez/wezterm/releases/download/20240203-110809-5046fc22/wezterm-20240203-110809-5046fc22.Debian12.deb
 
 fonts:
   - https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip

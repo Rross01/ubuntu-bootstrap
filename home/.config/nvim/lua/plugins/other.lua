@@ -7,13 +7,14 @@ return {
 	{ "folke/todo-comments.nvim", dependencies = { "nvim-lua/plenary.nvim" }, config = true },
 	{ "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim", "BurntSushi/ripgrep" } },
 	{ "nvim-pack/nvim-spectre" },
+	{ "mrjones2014/smart-splits.nvim" },
 
 	{
-		'navarasu/onedark.nvim',
+		"rose-pine/neovim",
 		lazy = false,
 		priority = 1000,
 		config = function()
-			vim.cmd("colorscheme onedark")
+			vim.cmd("colorscheme rose-pine-moon")
 		end,
 	},
 
