@@ -10,10 +10,26 @@ return {
 	{ "mrjones2014/smart-splits.nvim" },
 
 	{
+		"lukas-reineke/virt-column.nvim",
+		opts = {
+			char = "|",
+			virtcolumn = "88",
+			highlight = "IblIndent",
+		},
+	},
+
+	{
 		"rose-pine/neovim",
 		lazy = false,
 		priority = 1000,
 		config = function()
+			require("rose-pine").setup({
+				styles = { italic = false },
+				highlight_groups = {
+					StatusLine = { fg = "love", bg = "love", blend = 10 },
+					StatusLineNC = { fg = "subtle", bg = "surface" },
+				},
+			})
 			vim.cmd("colorscheme rose-pine-moon")
 		end,
 	},

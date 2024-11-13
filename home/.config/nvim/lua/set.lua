@@ -16,6 +16,11 @@ end)
 -- Скрытие командной строки
 vim.cmd([[ set cmdheight=0 ]])
 
+vim.opt.laststatus = 2
+vim.opt.statusline = " %f %m %= %l:%c"
+
+-- vim.opt.colorcolumn = "88"
+
 -- search
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
