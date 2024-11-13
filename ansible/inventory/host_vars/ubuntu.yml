@@ -42,7 +42,7 @@ packages:
   - p7zip
   - ranger
   - tldr
-  - tmux
+  - zoxide
   - zsh
 
 snap_packages:

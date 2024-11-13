@@ -14,6 +14,9 @@ source $ZSH/oh-my-zsh.sh
 # Change default editor
 export EDITOR="nvim"
 
+# Activate zoxide
+eval "$(zoxide init zsh)"
+
 # Sources
 source <(helm completion zsh)
 source <(kubectl completion zsh)
