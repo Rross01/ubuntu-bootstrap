@@ -2,10 +2,10 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 local act = wezterm.action
-
+config.dpi = 192
 config.color_scheme = "iTerm2 Tango Dark"
 config.font = wezterm.font({
-	family = "JetBrains Mono",
+	family = "IosevkaTerm Nerd Font Mono",
 	harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
 })
 config.font_size = 11.5
@@ -121,7 +121,18 @@ config.keys = {
 	{ mods = "LEADER", key = "Space", action = act.RotatePanes("Clockwise") },
 	-- swap active pane with selected
 	{ mods = "LEADER", key = "0", action = act.PaneSelect({ mode = "SwapWithActive" }) },
-	-- activate copy mode or vim mode
+	-- Activate copy mode or vim mode
 	{ key = "[", mods = "LEADER", action = act.ActivateCopyMode },
+	-- Tabs navigation
+	{ key = "1", mods = "LEADER", action = wezterm.action({ ActivateTab = 0 }) },
+	{ key = "2", mods = "LEADER", action = wezterm.action({ ActivateTab = 1 }) },
+	{ key = "3", mods = "LEADER", action = wezterm.action({ ActivateTab = 2 }) },
+	{ key = "4", mods = "LEADER", action = wezterm.action({ ActivateTab = 3 }) },
+	{ key = "5", mods = "LEADER", action = wezterm.action({ ActivateTab = 4 }) },
+	{ key = "6", mods = "LEADER", action = wezterm.action({ ActivateTab = 5 }) },
+	{ key = "7", mods = "LEADER", action = wezterm.action({ ActivateTab = 6 }) },
+	{ key = "8", mods = "LEADER", action = wezterm.action({ ActivateTab = 7 }) },
+	{ key = "9", mods = "LEADER", action = wezterm.action({ ActivateTab = 8 }) },
+	{ key = "x", mods = "LEADER", action = wezterm.action({ CloseCurrentPane = { confirm = true } }) },
 }
 return config
