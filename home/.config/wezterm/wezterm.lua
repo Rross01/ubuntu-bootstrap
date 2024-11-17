@@ -2,10 +2,9 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 local act = wezterm.action
-config.dpi = 192
 config.color_scheme = "iTerm2 Tango Dark"
 config.font = wezterm.font({
-	family = "IosevkaTerm Nerd Font Mono",
+	family = "Berkeley Mono",
 	harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
 })
 config.font_size = 11.5
