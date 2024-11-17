@@ -4,7 +4,7 @@ local config = wezterm.config_builder()
 local act = wezterm.action
 config.color_scheme = "iTerm2 Tango Dark"
 config.font = wezterm.font({
-	family = "Berkeley Mono",
+	family = "JetBrains Mono",
 	harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
 })
 config.font_size = 11.5

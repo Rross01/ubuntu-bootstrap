@@ -61,8 +61,7 @@ single_deb:
   - https://github.com/wez/wezterm/releases/download/20240203-110809-5046fc22/wezterm-20240203-110809-5046fc22.Debian12.deb
 
 fonts:
-  # - https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip
-  - https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/IosevkaTerm.zip
+  - https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip
 
 bin:
   - url: https://dl.k8s.io/release/v1.31.0/bin/linux/amd64/kubectl
