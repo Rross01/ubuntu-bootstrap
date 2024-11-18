@@ -19,11 +19,13 @@ return {
 	},
 
 	{
-		"ofirgall/ofirkai.nvim",
+		"polirritmico/monokai-nightasty.nvim",
 		lazy = false,
 		priority = 1000,
 		config = function()
-			vim.cmd("colorscheme ofirkai")
+			local opts = { markdown_header_marks = true }
+			require("monokai-nightasty").load(opts)
+			vim.cmd("colorscheme monokai-nightasty")
 		end,
 	},
 

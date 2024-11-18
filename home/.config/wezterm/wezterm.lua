@@ -2,7 +2,7 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 local act = wezterm.action
-config.color_scheme = "iTerm2 Tango Dark"
+config.color_scheme = "Monokai (terminal.sexy)"
 config.font = wezterm.font({
 	family = "JetBrains Mono",
 	harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
@@ -52,24 +52,14 @@ end
 wezterm.on("update-right-status", function(window, pane)
 	window:set_right_status(window:active_workspace())
 end)
+
 local workspace_switcher = wezterm.plugin.require("https://github.com/MLFlexer/smart_workspace_switcher.wezterm")
-workspace_switcher.zoxide_path = "/usr/bin/zoxide"
 
 wezterm.on("update-status", function(window, pane)
-	local padding = {
-		left = 8,
-		right = 8,
-		top = 8,
-		bottom = 8,
-	}
+	local padding = { left = 8, right = 8, top = 8, bottom = 8 }
 	local overrides = window:get_config_overrides() or {}
 	if string.find(pane:get_title(), "^n-vi-m-.*") then
-		overrides.window_padding = {
-			left = 0,
-			right = 0,
-			top = 0,
-			bottom = 0,
-		}
+		overrides.window_padding = { left = 0, right = 0, top = 0, bottom = 0 }
 	else
 		overrides.window_padding = padding
 	end
