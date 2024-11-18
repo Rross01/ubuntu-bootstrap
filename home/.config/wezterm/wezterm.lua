@@ -14,14 +14,15 @@ config.tab_bar_at_bottom = true
 config.window_close_confirmation = "NeverPrompt"
 config.window_padding = { left = 0, right = 0, top = 0, bottom = 0 }
 
+local def = { bg_color = "#000000", fg_color = "#808080" }
 config.colors = {
 	tab_bar = {
 		background = "#000000",
-		active_tab = { bg_color = "#2b2042", fg_color = "#c0c0c0" },
-		inactive_tab = { bg_color = "#1b1032", fg_color = "#808080" },
-		inactive_tab_hover = { bg_color = "#3b3052", fg_color = "#909090" },
-		new_tab = { bg_color = "#1b1032", fg_color = "#808080" },
-		new_tab_hover = { bg_color = "#3b3052", fg_color = "#909090" },
+		active_tab = { bg_color = "#2b2b2b", fg_color = "#c0c0c0" },
+		inactive_tab = def,
+		inactive_tab_hover = def,
+		new_tab = def,
+		new_tab_hover = def,
 	},
 }
 
@@ -55,16 +56,16 @@ end)
 
 local workspace_switcher = wezterm.plugin.require("https://github.com/MLFlexer/smart_workspace_switcher.wezterm")
 
-wezterm.on("update-status", function(window, pane)
-	local padding = { left = 8, right = 8, top = 8, bottom = 8 }
-	local overrides = window:get_config_overrides() or {}
-	if string.find(pane:get_title(), "^n-vi-m-.*") then
-		overrides.window_padding = { left = 0, right = 0, top = 0, bottom = 0 }
-	else
-		overrides.window_padding = padding
-	end
-	window:set_config_overrides(overrides)
-end)
+-- wezterm.on("update-status", function(window, pane)
+-- 	local padding = { left = 8, right = 8, top = 8, bottom = 8 }
+-- 	local overrides = window:get_config_overrides() or {}
+-- 	if string.find(pane:get_title(), "^n-vi-m-.*") then
+-- 		overrides.window_padding = { left = 0, right = 0, top = 0, bottom = 0 }
+-- 	else
+-- 		overrides.window_padding = padding
+-- 	end
+-- 	window:set_config_overrides(overrides)
+-- end)
 
 config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 }
 config.keys = {
