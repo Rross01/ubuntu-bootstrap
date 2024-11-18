@@ -16,31 +16,12 @@ config.window_padding = { left = 0, right = 0, top = 0, bottom = 0 }
 
 config.colors = {
 	tab_bar = {
-		-- The color of the strip that goes along the top of the window
-		-- (does not apply when fancy tab bar is in use)
-		background = "#0b0022",
-		active_tab = {
-			bg_color = "#2b2042",
-			fg_color = "#c0c0c0",
-		},
-		inactive_tab = {
-			bg_color = "#1b1032",
-			fg_color = "#808080",
-		},
-		inactive_tab_hover = {
-			bg_color = "#3b3052",
-			fg_color = "#909090",
-			italic = true,
-		},
-		new_tab = {
-			bg_color = "#1b1032",
-			fg_color = "#808080",
-		},
-		new_tab_hover = {
-			bg_color = "#3b3052",
-			fg_color = "#909090",
-			italic = true,
-		},
+		background = "#000000",
+		active_tab = { bg_color = "#2b2042", fg_color = "#c0c0c0" },
+		inactive_tab = { bg_color = "#1b1032", fg_color = "#808080" },
+		inactive_tab_hover = { bg_color = "#3b3052", fg_color = "#909090" },
+		new_tab = { bg_color = "#1b1032", fg_color = "#808080" },
+		new_tab_hover = { bg_color = "#3b3052", fg_color = "#909090" },
 	},
 }
 
@@ -74,26 +55,26 @@ end)
 local workspace_switcher = wezterm.plugin.require("https://github.com/MLFlexer/smart_workspace_switcher.wezterm")
 workspace_switcher.zoxide_path = "/usr/bin/zoxide"
 
--- wezterm.on("update-status", function(window, pane)
--- 	local padding = {
--- 		left = 4,
--- 		right = 0,
--- 		top = 4,
--- 		bottom = 0,
--- 	}
--- 	local overrides = window:get_config_overrides() or {}
--- 	if string.find(pane:get_title(), "^n-vi-m-.*") then
--- 		overrides.window_padding = {
--- 			left = 0,
--- 			right = 0,
--- 			top = 0,
--- 			bottom = 0,
--- 		}
--- 	else
--- 		overrides.window_padding = padding
--- 	end
--- 	window:set_config_overrides(overrides)
--- end)
+wezterm.on("update-status", function(window, pane)
+	local padding = {
+		left = 8,
+		right = 8,
+		top = 8,
+		bottom = 8,
+	}
+	local overrides = window:get_config_overrides() or {}
+	if string.find(pane:get_title(), "^n-vi-m-.*") then
+		overrides.window_padding = {
+			left = 0,
+			right = 0,
+			top = 0,
+			bottom = 0,
+		}
+	else
+		overrides.window_padding = padding
+	end
+	window:set_config_overrides(overrides)
+end)
 
 config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 }
 config.keys = {
@@ -123,15 +104,17 @@ config.keys = {
 	-- Activate copy mode or vim mode
 	{ key = "[", mods = "LEADER", action = act.ActivateCopyMode },
 	-- Tabs navigation
-	{ key = "1", mods = "LEADER", action = wezterm.action({ ActivateTab = 0 }) },
-	{ key = "2", mods = "LEADER", action = wezterm.action({ ActivateTab = 1 }) },
-	{ key = "3", mods = "LEADER", action = wezterm.action({ ActivateTab = 2 }) },
-	{ key = "4", mods = "LEADER", action = wezterm.action({ ActivateTab = 3 }) },
-	{ key = "5", mods = "LEADER", action = wezterm.action({ ActivateTab = 4 }) },
-	{ key = "6", mods = "LEADER", action = wezterm.action({ ActivateTab = 5 }) },
-	{ key = "7", mods = "LEADER", action = wezterm.action({ ActivateTab = 6 }) },
-	{ key = "8", mods = "LEADER", action = wezterm.action({ ActivateTab = 7 }) },
-	{ key = "9", mods = "LEADER", action = wezterm.action({ ActivateTab = 8 }) },
-	{ key = "x", mods = "LEADER", action = wezterm.action({ CloseCurrentPane = { confirm = true } }) },
+	{ key = "1", mods = "LEADER", action = act({ ActivateTab = 0 }) },
+	{ key = "2", mods = "LEADER", action = act({ ActivateTab = 1 }) },
+	{ key = "3", mods = "LEADER", action = act({ ActivateTab = 2 }) },
+	{ key = "4", mods = "LEADER", action = act({ ActivateTab = 3 }) },
+	{ key = "5", mods = "LEADER", action = act({ ActivateTab = 4 }) },
+	{ key = "6", mods = "LEADER", action = act({ ActivateTab = 5 }) },
+	{ key = "7", mods = "LEADER", action = act({ ActivateTab = 6 }) },
+	{ key = "8", mods = "LEADER", action = act({ ActivateTab = 7 }) },
+	{ key = "9", mods = "LEADER", action = act({ ActivateTab = 8 }) },
+	{ key = "x", mods = "LEADER", action = act({ CloseCurrentPane = { confirm = true } }) },
+	-- Workaround for screen's keybind
+	{ key = "a", mods = "LEADER", action = act.SendKey({ key = "a", mods = "CTRL" }) },
 }
 return config

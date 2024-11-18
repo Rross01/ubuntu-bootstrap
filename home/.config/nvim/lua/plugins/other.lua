@@ -19,18 +19,11 @@ return {
 	},
 
 	{
-		"rose-pine/neovim",
+		"ofirgall/ofirkai.nvim",
 		lazy = false,
 		priority = 1000,
 		config = function()
-			require("rose-pine").setup({
-				styles = { italic = false },
-				highlight_groups = {
-					StatusLine = { fg = "love", bg = "love", blend = 10 },
-					StatusLineNC = { fg = "subtle", bg = "surface" },
-				},
-			})
-			vim.cmd("colorscheme rose-pine-moon")
+			vim.cmd("colorscheme ofirkai")
 		end,
 	},
 
