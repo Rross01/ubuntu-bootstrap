@@ -11,6 +11,7 @@ packages:
   - gnome-tweaks
 
   # apps
+  - evolution-ews
   - keepassxc
   - obs-studio
   - wireshark
