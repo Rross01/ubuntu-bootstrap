@@ -19,13 +19,14 @@ return {
 	},
 
 	{
-		"polirritmico/monokai-nightasty.nvim",
+		"sainnhe/gruvbox-material",
 		lazy = false,
 		priority = 1000,
 		config = function()
-			local opts = { markdown_header_marks = true }
-			require("monokai-nightasty").load(opts)
-			vim.cmd("colorscheme monokai-nightasty")
+			vim.g.gruvbox_material_background = "medium"
+			vim.g.gruvbox_material_foreground = "original"
+			-- vim.g.gruvbox_material_transparent_background = 2
+			vim.cmd.colorscheme("gruvbox-material")
 		end,
 	},
 
