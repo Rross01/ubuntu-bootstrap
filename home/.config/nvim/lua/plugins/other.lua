@@ -19,6 +19,15 @@ return {
 	},
 
 	{
+		"lukas-reineke/indent-blankline.nvim",
+		main = "ibl",
+		opts = {
+			scope = { enabled = false },
+			indent = { highlight = "IblIndent", char = "▏" },
+		},
+	},
+
+	{
 		"sainnhe/gruvbox-material",
 		lazy = false,
 		priority = 1000,
@@ -62,14 +71,6 @@ return {
 		version = "*",
 		opts = {
 			width = 150,
-		},
-	},
-
-	{
-		"lukas-reineke/indent-blankline.nvim",
-		main = "ibl",
-		opts = {
-			scope = { enabled = false },
 		},
 	},
 
