@@ -13,6 +13,7 @@ config.use_fancy_tab_bar = false
 config.tab_bar_at_bottom = true
 config.window_close_confirmation = "NeverPrompt"
 config.window_padding = { left = 0, right = 0, top = 0, bottom = 0 }
+config.tab_max_width = 24
 
 local def = { bg_color = "#000000", fg_color = "#808080" }
 config.colors = {
