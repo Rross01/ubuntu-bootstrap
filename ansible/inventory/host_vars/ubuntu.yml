@@ -37,6 +37,7 @@ packages:
 
   # cli tools
   - curl
+  - fzf
   - git
   - htop
   - ranger
