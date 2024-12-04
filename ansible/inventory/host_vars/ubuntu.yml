@@ -17,9 +17,7 @@ packages:
   - wireshark
 
   # some deps
-  - npm # nvim plugins dep
   - python3-psutil # ansible gsettings module
-  - ripgrep # neovim fuzzy search
   - sshpass # ansible
 
   # dev
@@ -40,8 +38,8 @@ packages:
   - fzf
   - git
   - htop
-  - ranger
   - tldr
+  - vim
   - zoxide
   - zsh
 
@@ -58,24 +56,12 @@ single_deb:
   - https://st.ktalk.host/ktalk-app/linux/ktalk2.12.0amd64.deb
   - https://github.com/derailed/k9s/releases/download/v0.32.5/k9s_linux_amd64.deb
   - https://github.com/getsops/sops/releases/download/v3.9.1/sops_3.9.1_amd64.deb
-  - https://github.com/wez/wezterm/releases/download/20240203-110809-5046fc22/wezterm-20240203-110809-5046fc22.Debian12.deb
-
-fonts:
-  - https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip
 
 bin:
   - url: https://dl.k8s.io/release/v1.31.0/bin/linux/amd64/kubectl
     name: kubectl
 
 bin_archived:
-  - url: https://github.com/neovim/neovim/releases/download/v0.10.2/nvim-linux64.tar.gz
-    name: nvim
-    bin_path: nvim-linux64/bin/nvim
-
-  - url: https://github.com/JohnnyMorganz/StyLua/releases/download/v0.20.0/stylua-linux-x86_64.zip
-    name: stylua
-    bin_path: stylua
-
   - url: https://get.helm.sh/helm-v3.16.2-linux-amd64.tar.gz
     name: helm
     bin_path: linux-amd64/helm
@@ -104,11 +90,6 @@ dconf:
   - "/org/gnome/desktop/interface/gtk-theme": "'Yaru-blue-dark'"
   - "/org/gnome/desktop/interface/icon-theme": "'Yaru-blue'"
 
-  # keyboard
+  # Keyboard
   - "/org/gnome/desktop/input-sources/xkb-options": "['caps:swapescape']"
   - "/org/gnome/desktop/wm/keybindings/switch-input-source": "['<Alt>Shift_L']"
-
-  # solid gray wallpaper
-  - "/org/gnome/desktop/background/picture-uri": "''"
-  - "/org/gnome/desktop/background/picture-uri-dark": "''"
-  - "/org/gnome/desktop/background/primary-color": "'#3c3c3c'"

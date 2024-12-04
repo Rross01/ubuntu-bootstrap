@@ -1,4 +1,3 @@
-# zsh settings
 ZSH_THEME="fwalch"
 HYPHEN_INSENSITIVE="true"
 HISTFILE=~/places/.zsh_history
@@ -8,37 +7,31 @@ plugins=(
     git
     zsh-autosuggestions
 )
-export ZSH="$HOME/places/sys/oh-my-zsh"
-source $ZSH/oh-my-zsh.sh
 
-# Change default editor
-export EDITOR="nvim"
+# Sources
+source $HOME/places/sys/oh-my-zsh/oh-my-zsh.sh
+source <(helm completion zsh)
+source <(kubectl completion zsh)
 
 # Activate zoxide
 eval "$(zoxide init zsh)"
 
-# Sources
-source <(helm completion zsh)
-source <(kubectl completion zsh)
+# Change default editor
+export EDITOR="vim"
 
 # Different home for gpg
 export GNUPGHOME="~/places/gpg"
 
 # awscli config file
 export AWS_CONFIG_FILE="~/places/.aws_credentials"
-# kubeconfs
-alias locconf='export KUBECONFIG=~/places/personal/kubeconfigs/loc.conf'
 
 # Aliases
 alias s='ssh'
-alias v='nvim'
-alias vim='nvim'
 alias kl='kubectl'
-alias x='ranger --cmd="set show_hidden true"'
 alias git_clean='git checkout master && git pull && git branch | grep -v master | xargs git branch -D $argv'
 alias git_log='git log --all --decorate --oneline --graph $argv'
+alias locconf='export KUBECONFIG=~/places/personal/kubeconfigs/loc.conf'
 
-# Functions
 wait_for_status_code() {
     ENDPOINT=$1
     EXPECTED_RC=$2
