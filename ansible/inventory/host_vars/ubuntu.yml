@@ -1,7 +1,7 @@
 ---
 user: rrossamakhin
 
-my_groups: []
+my_groups: ["docker"]
 user_systemd_enabled: []
 system_systemd_enabled: []
 
@@ -23,11 +23,6 @@ packages:
   # dev
   - ansible
   - postgresql-client
-
-  # podman
-  - podman
-  - podman-compose
-  - podman-docker
 
   # network and bluetooth
   - network-manager-openconnect
