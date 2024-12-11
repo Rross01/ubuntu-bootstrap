@@ -17,7 +17,9 @@ packages:
   - wireshark
 
   # some deps
+  - npm
   - python3-psutil # ansible gsettings module
+  - ripgrep
   - sshpass # ansible
 
   # dev
@@ -34,6 +36,7 @@ packages:
   - git
   - htop
   - tldr
+  - tmux
   - vim
   - zoxide
   - zsh
@@ -51,12 +54,24 @@ single_deb:
   - https://st.ktalk.host/ktalk-app/linux/ktalk2.12.0amd64.deb
   - https://github.com/derailed/k9s/releases/download/v0.32.5/k9s_linux_amd64.deb
   - https://github.com/getsops/sops/releases/download/v3.9.1/sops_3.9.1_amd64.deb
+  - https://github.com/wez/wezterm/releases/download/nightly/wezterm-nightly.Ubuntu24.04.deb
+
+fonts:
+  - https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip
 
 bin:
   - url: https://dl.k8s.io/release/v1.31.0/bin/linux/amd64/kubectl
     name: kubectl
 
 bin_archived:
+  - url: https://github.com/neovim/neovim/releases/download/v0.10.2/nvim-linux64.tar.gz
+    name: nvim
+    bin_path: nvim-linux64/bin/nvim
+
+  - url: https://github.com/JohnnyMorganz/StyLua/releases/download/v0.20.0/stylua-linux-x86_64.zip
+    name: stylua
+    bin_path: stylua
+
   - url: https://get.helm.sh/helm-v3.16.2-linux-amd64.tar.gz
     name: helm
     bin_path: linux-amd64/helm

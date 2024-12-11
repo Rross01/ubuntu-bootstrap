@@ -14,6 +14,9 @@
 - import_tasks: zsh.yml
   tags: zsh
 
+- import_tasks: fonts.yml
+  tags: fonts
+
 - import_tasks: bin.yml
   tags: bin
 
