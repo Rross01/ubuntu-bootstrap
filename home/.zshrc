@@ -3,21 +3,15 @@ HYPHEN_INSENSITIVE="true"
 HISTFILE=~/places/.zsh_history
 HISTFILESIZE=1000000000
 HISTSIZE=1000000000
-plugins=(
-    git
-    zsh-autosuggestions
-)
-
-# Sources
-source $HOME/places/sys/oh-my-zsh/oh-my-zsh.sh
-source <(helm completion zsh)
-source <(kubectl completion zsh)
-
-# Activate zoxide
-eval "$(zoxide init zsh)"
+plugins=(zsh-autosuggestions)
 
 # Change default editor
-export EDITOR="vim"
+export EDITOR="nvim"
+
+# Sources
+source <(helm completion zsh)
+source <(kubectl completion zsh)
+source $HOME/places/sys/oh-my-zsh/oh-my-zsh.sh
 
 # Different home for gpg
 export GNUPGHOME="~/places/gpg"
@@ -27,7 +21,10 @@ export AWS_CONFIG_FILE="~/places/.aws_credentials"
 
 # Aliases
 alias s='ssh'
+alias v='nvim'
+alias vim='nvim'
 alias kl='kubectl'
+alias x='ranger --cmd="set show_hidden true"'
 alias git_clean='git checkout master && git pull && git branch | grep -v master | xargs git branch -D $argv'
 alias git_log='git log --all --decorate --oneline --graph $argv'
 alias locconf='export KUBECONFIG=~/places/personal/kubeconfigs/loc.conf'
