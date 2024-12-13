@@ -22,7 +22,8 @@ return {
 		config = function()
 			vim.g.gruvbox_material_background = "medium"
 			vim.g.gruvbox_material_foreground = "mix"
-			-- vim.g.gruvbox_material_transparent_background = 2
+			vim.g.gruvbox_material_transparent_background = 1
+			vim.g.gruvbox_material_show_eob = 0
 			vim.cmd.colorscheme("gruvbox-material")
 		end,
 	},
@@ -35,6 +36,16 @@ return {
 			"nvim-tree/nvim-web-devicons",
 			"MunifTanjim/nui.nvim",
 			"s1n7ax/nvim-window-picker",
+		},
+		opts = {
+			default_component_configs = {
+				indent = { padding = 0 },
+				icon = {
+					folder_closed = "",
+					folder_open = "",
+					folder_empty = "󰜌",
+				},
+			},
 		},
 	},
 
@@ -110,6 +121,8 @@ return {
 				"json",
 				"jsonc",
 				"lua",
+				"lua",
+				"luadoc",
 				"markdown",
 				"markdown_inline",
 				"python",

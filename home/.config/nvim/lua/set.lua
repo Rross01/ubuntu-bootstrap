@@ -44,6 +44,3 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 		vim.highlight.on_yank()
 	end,
 })
-
--- Скрыть "~"
-vim.cmd([[ set fillchars=eob:\ ]])
