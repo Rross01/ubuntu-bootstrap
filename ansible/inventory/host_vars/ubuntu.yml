@@ -11,6 +11,7 @@ packages:
   - gnome-tweaks
 
   # apps
+  - blackbox-terminal
   - evolution-ews
   - keepassxc
   - obs-studio
@@ -37,8 +38,6 @@ packages:
   - htop
   - tldr
   - tmux
-  - vim
-  - zoxide
   - zsh
 
 snap_packages:
@@ -54,7 +53,6 @@ single_deb:
   - https://st.ktalk.host/ktalk-app/linux/ktalk2.12.0amd64.deb
   - https://github.com/derailed/k9s/releases/download/v0.32.5/k9s_linux_amd64.deb
   - https://github.com/getsops/sops/releases/download/v3.9.1/sops_3.9.1_amd64.deb
-  - https://github.com/wez/wezterm/releases/download/nightly/wezterm-nightly.Ubuntu24.04.deb
 
 fonts:
   - https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip

@@ -1,7 +1,6 @@
 + .config/
 + .config/nvim/***
 + .config/tmux/***
-+ .config/wezterm/***
 + .gitconfig
 + .rsync-filter
 + .scripts/***
