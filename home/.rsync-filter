@@ -1,4 +1,5 @@
 + .config/
++ .config/alacritty/***
 + .config/nvim/***
 + .config/tmux/***
 + .gitconfig

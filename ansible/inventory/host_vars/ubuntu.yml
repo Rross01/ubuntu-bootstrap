@@ -11,16 +11,16 @@ packages:
   - gnome-tweaks
 
   # apps
-  - blackbox-terminal
+  - alacritty
   - evolution-ews
   - keepassxc
   - obs-studio
   - wireshark
 
   # some deps
-  - npm
+  - npm # nvim dep
   - python3-psutil # ansible gsettings module
-  - ripgrep
+  - ripgrep # nvim dep
   - sshpass # ansible
 
   # dev
