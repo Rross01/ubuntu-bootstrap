@@ -27,6 +27,7 @@ alias kl='kubectl'
 alias x='ranger --cmd="set show_hidden true"'
 alias git_clean='git checkout master && git pull && git branch | grep -v master | xargs git branch -D $argv'
 alias git_log='git log --all --decorate --oneline --graph $argv'
+alias getpass="head /dev/urandom | tr -dc \"A-Za-z0-9@#!()&'\" | head -c 16 | wl-copy"
 alias locconf='export KUBECONFIG=~/places/personal/kubeconfigs/loc.conf'
 
 wait_for_status_code() {
