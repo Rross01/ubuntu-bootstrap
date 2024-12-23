@@ -58,34 +58,12 @@ return {
 			require("mini.bufremove").setup() -- Remove buffers
 			require("mini.comment").setup() -- Comment lines
 		end,
-		keys = {
-			{
-				"<leader>d",
-				function()
-					require("mini.bufremove").delete()
-				end,
-			},
-			{
-				"gS",
-				function()
-					require("mini.splitjoin").toggle()
-				end,
-			},
-		},
 	},
 
 	{
 		"stevearc/conform.nvim",
 		event = { "BufWritePre" },
 		cmd = { "ConformInfo" },
-		keys = {
-			{
-				"fr",
-				function()
-					require("conform").format({ async = true, lsp_format = "fallback" })
-				end,
-			},
-		},
 		opts = {
 			formatters_by_ft = {
 				lua = { "stylua" },
@@ -100,14 +78,6 @@ return {
 		"jiaoshijie/undotree",
 		dependencies = "nvim-lua/plenary.nvim",
 		config = true,
-		keys = {
-			{
-				"<leader>u",
-				function()
-					require("undotree").toggle()
-				end,
-			},
-		},
 	},
 
 	{

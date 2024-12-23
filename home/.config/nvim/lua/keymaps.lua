@@ -13,9 +13,28 @@ map("n", "<leader>Q", ":Neotree left reveal<CR>")
 map("n", "<leader>pf", ":Telescope find_files<CR>")
 map("n", "<leader>pg", ":Telescope live_grep<CR>")
 map("n", "<leader>pd", ":Telescope diagnostics<CR>")
-
--- Todo
 map("n", "<leader>td", ":TodoTelescope<CR>")
+
+-- undotree
+map("n", "<leader>u", function()
+	require("undotree").toggle()
+end)
+
+-- mini
+map("n", "<leader>d", function()
+	require("mini.bufremove").delete()
+end)
+map("n", "gS", function()
+	require("mini.splitjoin").toggle()
+end)
+
+-- conform
+map("n", "fr", function()
+	require("conform").format({
+		async = true,
+		lsp_format = "fallback",
+	})
+end)
 
 -- Harpoon2
 local harpoon = require("harpoon")
