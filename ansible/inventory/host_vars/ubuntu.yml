@@ -42,6 +42,7 @@ packages:
 
 snap_packages:
   common:
+    - beautysh
     - pinta
     - ruff
     - telegram-desktop
