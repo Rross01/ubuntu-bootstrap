@@ -20,6 +20,7 @@ packages:
   # some deps
   - npm # nvim dep
   - python3-psutil # ansible gsettings module
+  - python3-venv
   - ripgrep # nvim dep
   - sshpass # ansible
 
