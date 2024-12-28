@@ -26,21 +26,26 @@ end
 require("mason").setup({})
 require("mason-lspconfig").setup({
 	ensure_installed = {
+		-- python
+		"pyright",
+		"ruff",
+		-- other
 		"dockerls",
 		"helm_ls",
 		"lua_ls",
-		"pyright",
 		"yamlls",
 	},
 	handlers = { default_setup },
 })
 
 local lspconfig = require("lspconfig")
--- setup helm-ls
 lspconfig.helm_ls.setup({
 	settings = {
 		["helm-ls"] = { yamlls = { path = "yaml-language-server" } },
 	},
+})
+lspconfig.ruff.setup({
+	init_options = { settings = { lint = { select = { "ALL" } } } },
 })
 
 local cmp = require("cmp")
