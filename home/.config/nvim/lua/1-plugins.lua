@@ -1,10 +1,16 @@
 return {
-	{ "lewis6991/gitsigns.nvim", config = true },
 	{ "tpope/vim-fugitive" },
+	{ "nvim-pack/nvim-spectre" },
+	{ "lewis6991/gitsigns.nvim", config = true },
 	{ "ThePrimeagen/harpoon", branch = "harpoon2", dependencies = { "nvim-lua/plenary.nvim" } },
 	{ "folke/todo-comments.nvim", dependencies = { "nvim-lua/plenary.nvim" }, config = true },
 	{ "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim", "BurntSushi/ripgrep" } },
-	{ "nvim-pack/nvim-spectre" },
+
+	{
+		"windwp/nvim-autopairs",
+		event = "InsertEnter",
+		config = true,
+	},
 
 	{
 		"lukas-reineke/indent-blankline.nvim",
@@ -100,6 +106,21 @@ return {
 				"yaml",
 			},
 			highlight = { enable = true },
+		},
+	},
+
+	-- lsp stuff - setup in lsp.lua file
+	{
+		"neovim/nvim-lspconfig",
+		branch = "v3.x",
+		dependencies = {
+			{ "towolf/vim-helm", ft = "helm" },
+			{ "williamboman/mason-lspconfig.nvim" },
+			{ "williamboman/mason.nvim" },
+			{ "hrsh7th/nvim-cmp" },
+			{ "hrsh7th/cmp-nvim-lsp" },
+			{ "L3MON4D3/LuaSnip" },
+			{ "mfussenegger/nvim-lint" },
 		},
 	},
 }

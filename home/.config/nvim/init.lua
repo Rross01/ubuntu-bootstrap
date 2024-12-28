@@ -11,10 +11,10 @@ if not vim.loop.fs_stat(lazypath) then
 	})
 end
 vim.opt.rtp:prepend(lazypath)
---
 
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
-require("lazy").setup("plugins")
-require("keymaps")
-require("set")
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+require("lazy").setup("1-plugins")
+require("2-set")
+require("3-keymaps")
+require("4-lsp")
