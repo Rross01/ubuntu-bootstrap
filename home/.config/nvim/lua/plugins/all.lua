@@ -1,7 +1,6 @@
 return {
-	{ "tpope/vim-fugitive" },
-	{ "nvim-pack/nvim-spectre" },
-	{ "lewis6991/gitsigns.nvim", config = true },
+	"tpope/vim-fugitive",
+	"nvim-pack/nvim-spectre",
 	{ "ThePrimeagen/harpoon", branch = "harpoon2", dependencies = { "nvim-lua/plenary.nvim" } },
 	{ "folke/todo-comments.nvim", dependencies = { "nvim-lua/plenary.nvim" }, config = true },
 	{ "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim", "BurntSushi/ripgrep" } },
@@ -28,7 +27,7 @@ return {
 		config = function()
 			vim.g.gruvbox_material_background = "hard"
 			vim.g.gruvbox_material_foreground = "original"
-			vim.g.gruvbox_material_transparent_background = 2
+			vim.g.gruvbox_material_transparent_background = 1
 			vim.g.gruvbox_material_show_eob = 0
 			vim.cmd.colorscheme("gruvbox-material")
 		end,
@@ -117,10 +116,22 @@ return {
 			{ "towolf/vim-helm", ft = "helm" },
 			{ "williamboman/mason-lspconfig.nvim" },
 			{ "williamboman/mason.nvim" },
-			{ "hrsh7th/nvim-cmp" },
-			{ "hrsh7th/cmp-nvim-lsp" },
 			{ "L3MON4D3/LuaSnip" },
 			{ "mfussenegger/nvim-lint" },
 		},
+	},
+
+	{
+		"saghen/blink.cmp",
+		dependencies = "rafamadriz/friendly-snippets",
+		version = "*",
+		---@module 'blink.cmp'
+		---@type blink.cmp.Config
+		opts = {
+			completion = {
+				ghost_text = { enabled = true },
+			},
+		},
+		opts_extend = { "sources.default" },
 	},
 }

@@ -15,8 +15,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		map("n", "<F4>", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
 	end,
 })
-
-local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
+local lsp_capabilities = require("blink.cmp").get_lsp_capabilities()
 local default_setup = function(server)
 	require("lspconfig")[server].setup({
 		capabilities = lsp_capabilities,
@@ -46,17 +45,4 @@ lspconfig.helm_ls.setup({
 })
 lspconfig.ruff.setup({
 	init_options = { settings = { lint = { select = { "ALL" } } } },
-})
-
-local cmp = require("cmp")
-cmp.setup({
-	snippet = {
-		expand = function(args)
-			require("luasnip").lsp_expand(args.body)
-		end,
-	},
-	mapping = cmp.mapping.preset.insert({
-		["<CR>"] = cmp.mapping.confirm({ select = true }),
-	}),
-	sources = cmp.config.sources({ { name = "nvim_lsp" } }, { { name = "buffer" } }),
 })
