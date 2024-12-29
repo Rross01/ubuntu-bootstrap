@@ -4,12 +4,7 @@ return {
 	{ "ThePrimeagen/harpoon", branch = "harpoon2", dependencies = { "nvim-lua/plenary.nvim" } },
 	{ "folke/todo-comments.nvim", dependencies = { "nvim-lua/plenary.nvim" }, config = true },
 	{ "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim", "BurntSushi/ripgrep" } },
-
-	{
-		"windwp/nvim-autopairs",
-		event = "InsertEnter",
-		config = true,
-	},
+	{ "windwp/nvim-autopairs", event = "InsertEnter", config = true },
 
 	{
 		"lukas-reineke/indent-blankline.nvim",
@@ -59,7 +54,6 @@ return {
 		version = false,
 		config = function()
 			require("mini.move").setup() -- Move any selection in any direction
-			require("mini.splitjoin")
 			require("mini.bufremove").setup() -- Remove buffers
 			require("mini.comment").setup() -- Comment lines
 		end,
@@ -123,15 +117,9 @@ return {
 
 	{
 		"saghen/blink.cmp",
-		dependencies = "rafamadriz/friendly-snippets",
 		version = "*",
 		---@module 'blink.cmp'
 		---@type blink.cmp.Config
-		opts = {
-			completion = {
-				ghost_text = { enabled = true },
-			},
-		},
 		opts_extend = { "sources.default" },
 	},
 }
