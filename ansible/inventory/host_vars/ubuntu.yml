@@ -23,6 +23,7 @@ packages:
   - python3-venv
   - ripgrep # nvim dep
   - sshpass # ansible
+  - wl-clipboard
 
   # dev
   - ansible
