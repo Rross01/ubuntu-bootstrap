@@ -100,3 +100,15 @@ dconf:
   # Keyboard
   - "/org/gnome/desktop/input-sources/xkb-options": "['caps:swapescape']"
   - "/org/gnome/desktop/wm/keybindings/switch-input-source": "['<Alt>Shift_L']"
+
+  # Solid gray wallpaper
+  - "/org/gnome/desktop/background/picture-uri": "''"
+  - "/org/gnome/desktop/background/picture-uri-dark": "''"
+  - "/org/gnome/desktop/background/primary-color": "'#3c3c3c'"
+
+  # Just Perfection
+  - "/org/gnome/shell/extensions/just-perfection/accessibility-menu": "false"
+  - "/org/gnome/shell/extensions/just-perfection/activities-button": "false"
+  - "/org/gnome/shell/extensions/just-perfection/show-apps-button": "false"
+  - "/org/gnome/shell/extensions/just-perfection/animation": "4"
+  - "/org/gnome/shell/extensions/just-perfection/clock-menu-position": "2"
