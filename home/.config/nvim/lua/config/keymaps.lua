@@ -76,7 +76,7 @@ map("n", "<leader>D", ":tabclose<CR>")
 local bind = vim.api.nvim_create_user_command
 local bind_default_opts = { bang = true }
 
-bind("Tmplog", "e ~/places/myself-log.md", bind_default_opts)
+bind("Tmp", "e ~/places/myself-log.md", bind_default_opts)
 bind("W", "w", bind_default_opts)
 bind("Q", "q", bind_default_opts)
 bind("X", "x", bind_default_opts)

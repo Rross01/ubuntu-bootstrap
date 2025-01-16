@@ -1,6 +1,7 @@
 return {
 	"tpope/vim-fugitive",
 	"nvim-pack/nvim-spectre",
+	{ "lewis6991/gitsigns.nvim", event = "VeryLazy", config = true },
 	{ "ThePrimeagen/harpoon", branch = "harpoon2", dependencies = { "nvim-lua/plenary.nvim" } },
 	{ "folke/todo-comments.nvim", dependencies = { "nvim-lua/plenary.nvim" }, config = true },
 	{ "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim", "BurntSushi/ripgrep" } },
