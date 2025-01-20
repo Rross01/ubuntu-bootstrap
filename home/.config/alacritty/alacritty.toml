@@ -1,11 +1,11 @@
 [font]
-size = 11.5
+size = 12
 
 [shell]
 program = "tmux"
 
 [font.normal]
-family = "JetBrainsMono Nerd Font"
+family = "GoMono Nerd Font Propo"
 
 [env]
 TERM = "xterm-256color"

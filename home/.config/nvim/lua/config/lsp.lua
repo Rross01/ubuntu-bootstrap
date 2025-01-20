@@ -44,5 +44,27 @@ lspconfig.helm_ls.setup({
 	},
 })
 lspconfig.ruff.setup({
-	init_options = { settings = { lint = { select = { "ALL" } } } },
+	init_options = {
+		settings = {
+			lint = {
+				select = { "ALL" },
+				ignore = {
+					"D100",
+					"D105",
+					"D107",
+					"FBT001",
+					"FBT002",
+					"INP001",
+					"RUF001",
+					"RUF002",
+					"RUF003",
+					"TRY003",
+				},
+				pydocstyle = {
+					convention = "google",
+					ignore_var_parameters = true,
+				},
+			},
+		},
+	},
 })

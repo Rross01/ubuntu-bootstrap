@@ -17,7 +17,7 @@ end)
 vim.cmd([[ set cmdheight=0 ]])
 
 vim.opt.laststatus = 3
-vim.opt.statusline = " %f %m %= %l:%c"
+vim.opt.statusline = " %f %m %= %l:%v"
 
 -- search
 vim.opt.ignorecase = true
@@ -42,3 +42,28 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 		vim.highlight.on_yank()
 	end,
 })
+
+
+-- FOLDS SETTINGS
+
+-- Keymaps:
+-- zf#j creates a fold from the cursor down # lines.
+-- zf/string creates a fold from the cursor to string .
+-- zj moves the cursor to the next fold.
+-- zk moves the cursor to the previous fold.
+-- zo opens a fold at the cursor.
+-- zO opens all folds at the cursor.
+-- zm increases the foldlevel by one.
+-- zM closes all open folds.
+-- zr decreases the foldlevel by one.
+-- zR decreases the foldlevel to zero -- all folds will be open.
+-- zd deletes the fold at the cursor.
+-- zE deletes all folds.
+-- [z move to start of open fold.
+-- ]z move to end of open fold.
+
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldcolumn = "0"
+vim.opt.foldtext = ""
+vim.opt.foldlevel = 99
