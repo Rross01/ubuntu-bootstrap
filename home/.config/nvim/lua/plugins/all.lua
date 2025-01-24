@@ -1,5 +1,4 @@
 return {
-	"norcalli/nvim-colorizer.lua",
 	"nvim-pack/nvim-spectre",
 	"tpope/vim-fugitive",
 
@@ -23,6 +22,7 @@ return {
 	{
 		"folke/todo-comments.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
+		event = "VeryLazy",
 		config = true,
 	},
 
@@ -35,6 +35,8 @@ return {
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		main = "ibl",
+		-- event = "InsertEnter",
+		event = "VeryLazy",
 		opts = {
 			scope = { enabled = false },
 			indent = { highlight = "IblIndent", char = "▏" },
@@ -83,6 +85,7 @@ return {
 	{
 		"echasnovski/mini.nvim",
 		version = false,
+		event = "VeryLazy",
 		config = function()
 			require("mini.move").setup() -- Move any selection in any direction
 			require("mini.bufremove").setup() -- Remove buffers
@@ -106,6 +109,7 @@ return {
 	{
 		"jiaoshijie/undotree",
 		dependencies = "nvim-lua/plenary.nvim",
+		event = "VeryLazy",
 		config = true,
 	},
 
@@ -204,6 +208,30 @@ return {
 			"nvim-lua/plenary.nvim",
 			"folke/trouble.nvim", -- optional
 			"nvim-telescope/telescope.nvim",
+		},
+	},
+
+	{
+		"hedyhli/outline.nvim",
+		lazy = true,
+		cmd = { "Outline", "OutlineOpen" },
+		keys = { -- Example mapping to toggle outline
+			{ "<leader>o", "<cmd>Outline<CR>", desc = "Toggle outline" },
+		},
+		opts = {
+			outline_window = {
+				-- Percentage or integer of columns
+				width = 20,
+			},
+			outline_items = {
+				show_symbol_details = false,
+				highlight_hovered_item = false,
+			},
+			symbol_folding = {
+				autofold_depth = false,
+				auto_unfold = { hovered = false, only = false },
+			},
+			guides = { enabled = false },
 		},
 	},
 }
