@@ -5,7 +5,7 @@ size = 12
 program = "tmux"
 
 [font.normal]
-family = "GoMono Nerd Font Propo"
+family = "GoMono Nerd Font Mono"
 
 [env]
 TERM = "xterm-256color"
@@ -23,8 +23,8 @@ bindings = [
 
 # My customized gruvbox
 [colors.primary]
-background = '#1d2021'
-foreground = '#ebdaca'
+background = '#1e1e20'
+foreground = '#ded3ba'
 
 [colors.normal]
 black = "#272822"

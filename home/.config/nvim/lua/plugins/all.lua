@@ -1,6 +1,7 @@
 return {
 	"nvim-pack/nvim-spectre",
 	"tpope/vim-fugitive",
+	"norcalli/nvim-colorizer.lua",
 
 	{
 		"ThePrimeagen/harpoon",
@@ -55,6 +56,9 @@ return {
 			vim.g.gruvbox_material_colors_override = {
 				green = { "#a7b837", "142" },
 				bg_green = { "#a7b837", "142" },
+				bg1 = { "#252527", "235" },
+				bg2 = { "#252527", "235" },
+				bg_statusline1 = { "#252527", "235" },
 			}
 			vim.g.gruvbox_material_show_eob = 0
 			vim.cmd.colorscheme("gruvbox-material")
@@ -164,51 +168,6 @@ return {
 			},
 		},
 		opts_extend = { "sources.default" },
-	},
-
-	-- Interactive popup
-	--
-	-- When using ChatGPT and ChatGPTEditWithInstructions, the following keybindings are available:
-	--
-	--     <C-Enter> [Both] to submit.
-	--     <C-y> [Both] to copy/yank last answer.
-	--     <C-o> [Both] Toggle settings window.
-	--     <C-h> [Both] Toggle help window.
-	--     <Tab> [Both] Cycle over windows.
-	--     <C-f> [Chat] Cycle over modes (center, stick to right).
-	--     <C-c> [Both] to close chat window.
-	--     <C-p> [Chat] Toggle sessions list.
-	--     <C-u> [Chat] scroll up chat window.
-	--     <C-d> [Chat] scroll down chat window.
-	--     <C-k> [Chat] to copy/yank code from last answer.
-	--     <C-n> [Chat] Start new session.
-	--     <C-r> [Chat] draft message (create message without submitting it to server)
-	--     <C-r> [Chat] switch role (switch between user and assistant role to define a workflow)
-	--     <C-s> [Both] Toggle system message window.
-	--     <C-i> [Edit Window] use response as input.
-	--     <C-d> [Edit Window] view the diff between left and right panes and use diff-mode commands
-	--
-	-- When the setting window is opened (with <C-o>), settings can be modified by pressing Enter on the related config. Settings are saved across sections
-	{
-		"jackMort/ChatGPT.nvim",
-		event = "VeryLazy",
-		config = function()
-			local config = {
-				api_host_cmd = "echo -n chat-gpt.nau.im",
-				api_key_cmd = "echo foobar",
-				ignore_default_actions_path = true,
-				actions_paths = {
-					"~/.config/nvim/lua/plugins/chatgpt_actions.json",
-				},
-			}
-			require("chatgpt").setup(config)
-		end,
-		dependencies = {
-			"MunifTanjim/nui.nvim",
-			"nvim-lua/plenary.nvim",
-			"folke/trouble.nvim", -- optional
-			"nvim-telescope/telescope.nvim",
-		},
 	},
 
 	{
