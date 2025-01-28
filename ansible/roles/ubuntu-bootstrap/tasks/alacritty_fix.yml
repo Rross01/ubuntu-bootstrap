@@ -1,0 +1,14 @@
+---
+- name: Ensure directory ~/.local/share/icons exists
+  tags: alacritty_fix
+  file:
+    dest: ~/.local/share/icons
+    state: directory
+
+# https://www.reddit.com/r/openSUSE/comments/1fk110m/mouse_issues_in_any_terminal_that_isnt_gnome/
+- name: Weird fix for alacritty mouse pointer
+  tags: alacritty_fix
+  copy:
+    src: /usr/share/icons/Adwaita/
+    dest: ~/.local/share/icons/default
+    remote_src: true

@@ -58,7 +58,6 @@ single_deb:
   - https://github.com/getsops/sops/releases/download/v3.9.1/sops_3.9.1_amd64.deb
 
 fonts:
-  - https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip
   - https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/Go-Mono.zip
 
 bin:
@@ -106,3 +105,10 @@ dconf:
   - "/org/gnome/desktop/background/picture-uri": "''"
   - "/org/gnome/desktop/background/picture-uri-dark": "''"
   - "/org/gnome/desktop/background/primary-color": "'#3c3c3c'"
+
+crons:
+  - name: "gitSniffer"
+    minute: "*/10"
+    job: >
+      export DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/1000/bus"
+      python3 $HOME/.scripts/git_sniffer.py $HOME/places
