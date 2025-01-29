@@ -54,8 +54,8 @@ return {
 			vim.g.gruvbox_material_transparent_background = 1
 			vim.g.gruvbox_material_statusline_style = "original"
 			vim.g.gruvbox_material_colors_override = {
-				green = { "#a7b837", "142" },
-				bg_green = { "#a7b837", "142" },
+				green = { "#92b937", "142" },
+				bg_green = { "#92b937", "142" },
 				bg1 = { "#252527", "235" },
 				bg2 = { "#252527", "235" },
 				bg_statusline1 = { "#252527", "235" },
