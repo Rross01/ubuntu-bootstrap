@@ -1,0 +1,42 @@
+---
+- import_tasks: 01_locale.yml
+  tags: locale
+
+- import_tasks: 02_aur.yml
+  tags: aur
+
+- include_tasks: 03_packages.yml
+  tags: packages
+
+- include_tasks: 04_logind.yml
+  tags: logind
+
+- import_tasks: 05_dirs.yml
+  tags: dirs
+
+- import_tasks: 06_groups.yml
+  tags: groups
+
+- import_tasks: 07_systemd.yml
+  tags: systemd
+
+- import_tasks: 08_zsh.yml
+  tags: zsh
+
+- import_tasks: 09_dconf.yml
+  tags: dconf
+
+- import_tasks: 10_pam.yml
+  tags: pam
+
+- import_tasks: 11_bin.yml
+  tags: bin
+
+- import_tasks: 12_cron.yml
+  tags: cron
+
+- import_tasks: 13_fonts.yml
+  tags: fonts
+
+- import_tasks: 14_podman.yml
+  tags: podman

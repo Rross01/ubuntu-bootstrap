@@ -1,0 +1,37 @@
+{
+	"layer": "bottom",
+	"position": "bottom",
+	"height": 18,
+
+	"modules-left": [
+	    "sway/workspaces",
+	    "sway/mode"
+	],
+	"modules-right": [
+	    "sway/language",
+	    "clock",
+	    "battery",
+	    "tray"
+	],
+
+	"clock": {
+		"interval": 1,
+		"format": "{:%H:%M}",
+		"tooltip-format": "{:%Y-%m-%d | %H:%M:%S}",
+		"format-alt": "{:%H:%M:%S}"
+	},
+
+	"battery": {
+		"states": {
+			"good": 95,
+			"warning": 20,
+			"critical": 10
+		},
+		"format": "{capacity}%"
+	},
+
+	"tray": {
+		"icon-size": 14,
+		"spacing": 8
+	},
+}

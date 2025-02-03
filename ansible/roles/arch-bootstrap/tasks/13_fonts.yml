@@ -7,10 +7,9 @@
     group: "{{ user }}"
 
 - name: Download fonts
-  loop: "{{ fonts }}"
+  with_items: "{{ fonts }}"
   unarchive:
     src: "{{ item }}"
     dest: "/home/{{ user }}/.fonts"
     remote_src: yes
     owner: "{{ user }}"
-

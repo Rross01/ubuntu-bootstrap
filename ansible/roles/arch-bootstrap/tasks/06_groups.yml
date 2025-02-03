@@ -8,8 +8,8 @@
 
 - name: Add user to groups
   become: true
+  with_items: "{{ my_groups }}"
   user:
     name: "{{ user }}"
     groups: "{{ item }}"
     append: true
-  with_items: "{{ my_groups }}"

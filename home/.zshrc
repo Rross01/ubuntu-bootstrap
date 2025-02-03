@@ -1,20 +1,25 @@
+if [ -z "$WAYLAND_DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ] ; then
+    exec sway
+fi
+
 ZSH_THEME="fwalch"
 HYPHEN_INSENSITIVE="true"
 HISTFILE=~/places/.zsh_history
 HISTFILESIZE=1000000000
 HISTSIZE=1000000000
-plugins=(zsh-autosuggestions)
+plugins=()
 
 # Change default editor
 export EDITOR="nvim"
 
 # Sources
-source <(helm completion zsh)
-source <(kubectl completion zsh)
 source $HOME/places/sys/oh-my-zsh/oh-my-zsh.sh
 
 # Different home for gpg
 export GNUPGHOME="~/places/gpg"
+
+# Export ssh-agent sock
+export SSH_AUTH_SOCK=/run/user/1000/ssh-agent.socket
 
 # awscli config file
 export AWS_CONFIG_FILE="~/places/.aws_credentials"
@@ -28,7 +33,7 @@ alias x='ranger --cmd="set show_hidden true"'
 alias git_clean='git checkout master && git pull && git branch | grep -v master | xargs git branch -D $argv'
 alias git_log='git log --all --decorate --oneline --graph $argv'
 alias getpass="head /dev/urandom | tr -dc \"A-Za-z0-9@#!()&'\" | head -c 16 | wl-copy"
-alias locconf='export KUBECONFIG=~/places/personal/kubeconfigs/loc.conf'
+alias locconf='export KUBECONFIG=~/places/kubeconfigs/loc.conf'
 
 wait_for_status_code() {
     ENDPOINT=$1
@@ -45,7 +50,7 @@ wait_for_status_code() {
 
 # Auto activate and deactivate python venv
 python_venv() {
-    MYVENV=./venv
+    MYVENV="./venv"
     # when you cd into a folder that contains $MYVENV
     [[ -d $MYVENV ]] && source $MYVENV/bin/activate > /dev/null 2>&1
     # when you cd into a folder that doesn't

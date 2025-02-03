@@ -1,6 +1,6 @@
 ---
 - name: Enable user wide services and ensure it is not masked
-  loop: "{{ user_systemd_enabled }}"
+  with_items: "{{ user_systemd_enabled }}"
   systemd_service:
     name: "{{ item }}" 
     enabled: true
@@ -9,8 +9,8 @@
     scope: user
 
 - name: Enable system wide services and ensure it is not masked
-  loop: "{{ system_systemd_enabled }}"
   become: true
+  with_items: "{{ system_systemd_enabled }}"
   systemd_service:
     name: "{{ item }}" 
     enabled: true

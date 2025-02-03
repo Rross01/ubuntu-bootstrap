@@ -5,12 +5,6 @@
     dest: "{{ zsh_home }}"
     force: true
 
-- name: Clone zsh-autosuggestions repo
-  git:
-    repo: https://github.com/zsh-users/zsh-autosuggestions/
-    dest: "{{ zsh_home }}/custom/plugins/zsh-autosuggestions"
-    force: true
-
 - name: Change default shell to zsh
   become: true
   user:

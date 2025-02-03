@@ -1,0 +1,24 @@
+---
+- name: Install pacman packages
+  become: true
+  with_items: "{{ pacman_packages }}"
+  package:
+    name: "{{ item }}"
+    state: present
+
+- name: Install yay using makepkg
+  become: true
+  become_user: aur_builder
+  aur:
+    name: yay
+    use: makepkg
+    state: present
+
+- name: Install AUR packages using yay
+  become: true
+  become_user: aur_builder
+  with_items: "{{ yay_packages }}"
+  aur:
+    name: "{{ item }}"
+    use: yay
+    state: present

@@ -1,0 +1,141 @@
+---
+user: "rrossamakhin"
+locale: "ru_RU.UTF-8"
+user_systemd_enabled: [ssh-agent.service]
+system_systemd_enabled: [bluetooth.service]
+my_groups: [lp]
+
+yay_packages: [
+  beautysh,
+  kontur-talk,
+]
+
+pacman_packages:
+  # sway
+  - sway
+  - swaybg
+  - swayidle
+  - swaylock
+
+  # wm stuff
+  - brightnessctl
+  - cliphist
+  - fuzzel
+  - imagemagick
+  - kanshi # monitors auto layout
+  - mako # notification daemon
+  - mpv # video player
+  - nm-connection-editor
+  - noto-fonts # fonts pack
+  - udiskie # detect usb drives
+  - waybar
+
+  # screenshots
+  - slurp # select area for grim
+  - grim # grab image for satty
+  - satty # edit result
+
+  # apps
+  - alacritty
+  - firefox
+  - gnome-calculator
+  - keepassxc
+  - libreoffice-still-ru
+  - pycharm-community-edition
+  - qbittorrent
+  - telegram-desktop
+  - wireshark-qt
+
+  # theming
+  - materia-gtk-theme
+  - papirus-icon-theme
+  - ttf-jetbrains-mono-nerd
+
+  # audio
+  - pavucontrol # control center
+  - pipewire
+  - pipewire-alsa
+  - pipewire-audio
+  - pipewire-pulse
+  - playerctl
+  - sof-firmware # audio drivers
+
+  # some deps
+  - npm # nvim plugins dep
+  - python-netaddr # ansible dep
+  - python-psutil # ansible gsettings module
+  - python-requests # ansible dep
+  - qt5-wayland # for keepassxc
+  - qt6-wayland # for keepassxc
+  - xdg-desktop-portal # for a lot of stuff
+  - xdg-desktop-portal-wlr # for a lot of stuff
+  - xorg-xrandr # for minecraft
+  - xorg-xwayland # for minecraft
+
+  # dev
+  - ansible
+  - aws-cli
+  - ruff # python formatter
+  - stylua
+
+  # podman
+  - podman
+  - podman-compose
+  - podman-docker
+
+  # network and bluetooth
+  - blueman # control center
+  - bluez # bluetooth engine
+  - networkmanager-openconnect
+
+  # common cli tools
+  - curl
+  # - dnsutils
+  - fzf
+  - git
+  - htop
+  - man-db
+  - openldap # for ldapsearch
+  - p7zip
+  - ranger
+  - ripgrep # nvim telescope dep
+  - rsync
+  - sshpass # ansible dep
+  - tcpdump
+  - tldr
+  - tmux
+  - unzip
+  - wget
+  - yq
+  - zip
+  - zsh
+
+  # k8s and stuff
+  - helm
+  - helmfile
+  - k9s
+  - kubectl
+  - sops
+
+dconf: [
+  "/org/blueman/general/notification-daemon": "false",
+]
+
+fonts: []
+
+bin: []
+
+bin_archived:
+  - url: https://gitlab.com/ilmenshik/pytimesched/-/jobs/3568673400/artifacts/raw/pyTimeSched-v0.6-linux.tar.gz
+    name: pyTimeSched
+    bin_path: pyTimeSched
+    desktop_entity:
+      enabled: true
+      icon_path: gui/icons/icon.png
+
+crons: []
+#   - name: "gitSniffer"
+#     minute: "*/10"
+#     job: >
+#       export DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/1000/bus"
+#       python3 $HOME/.scripts/git_sniffer.py $HOME/places

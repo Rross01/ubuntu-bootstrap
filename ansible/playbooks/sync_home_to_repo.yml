@@ -1,5 +1,5 @@
 ---
-- hosts: ubuntu
+- hosts: arch
   gather_facts: false
   tasks:
     - name: Clear home folder

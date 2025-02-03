@@ -1,11 +1,11 @@
 [font]
-size = 12
+size = 11.5
 
-[shell]
-program = "tmux"
+[terminal]
+shell = "tmux"
 
 [font.normal]
-family = "GoMono Nerd Font Mono"
+family = "terminal-font"
 
 [env]
 TERM = "xterm-256color"
@@ -23,29 +23,26 @@ bindings = [
 
 # Campbell flavoured colorscheme
 
-# Default colors
 [colors.primary]
-background = '#0c0c0c'
+background = '#000000'
 foreground = '#d9d9d9'
 
-# Normal colors
 [colors.normal]
 black   = '#000000'
 red     = '#e61919'
-green   = '#52cc33'
+green   = '#3bad1f'
 yellow  = '#e5e619'
 blue    = '#196be6'
 magenta = '#bd19e6'
-cyan    = '#19e5e6'
+cyan    = '#5cd6d6'
 white   = '#d0d0d0'
 
-# Bright colors
 [colors.bright]
 black   = '#808080'
 red     = '#e61919'
-green   = '#52cc33'
+green   = '#3bad1f'
 yellow  = '#e5e619'
 blue    = '#196be6'
 magenta = '#bd19e6'
-cyan    = '#19e5e6'
+cyan    = '#5cd6d6'
 white   = '#FFFFFF'
