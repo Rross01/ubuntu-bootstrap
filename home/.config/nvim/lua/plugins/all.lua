@@ -51,14 +51,11 @@ return {
 		config = function()
 			vim.g.gruvbox_material_background = "hard"
 			vim.g.gruvbox_material_foreground = "original"
-			vim.g.gruvbox_material_transparent_background = 1
+			vim.g.gruvbox_material_transparent_background = 0
 			vim.g.gruvbox_material_statusline_style = "original"
 			vim.g.gruvbox_material_colors_override = {
 				green = { "#92b937", "142" },
 				bg_green = { "#92b937", "142" },
-				bg1 = { "#252527", "235" },
-				bg2 = { "#252527", "235" },
-				bg_statusline1 = { "#252527", "235" },
 			}
 			vim.g.gruvbox_material_show_eob = 0
 			vim.cmd.colorscheme("gruvbox-material")

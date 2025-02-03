@@ -21,27 +21,31 @@ bindings = [
     {key = "F11", action = "ToggleFullscreen"},
 ]
 
-# My customized gruvbox
+# Campbell flavoured colorscheme
+
+# Default colors
 [colors.primary]
-background = '#1e1e20'
-foreground = '#ded3ba'
+background = '#0c0c0c'
+foreground = '#d9d9d9'
 
+# Normal colors
 [colors.normal]
-black = "#272822"
-red = "#f92672"
-green = "#a6e22e"
-yellow = "#f4bf75"
-blue = "#66d9ef"
-magenta = "#ae81ff"
-cyan = "#a1efe4"
-white = "#f8f8f2"
+black   = '#000000'
+red     = '#e61919'
+green   = '#3bad1f'
+yellow  = '#e5e619'
+blue    = '#196be6'
+magenta = '#bd19e6'
+cyan    = '#19e5e6'
+white   = '#d0d0d0'
 
+# Bright colors
 [colors.bright]
-black = "#75715e"
-red = "#f92672"
-green = "#a6e22e"
-yellow = "#f4bf75"
-blue = "#66d9ef"
-magenta = "#ae81ff"
-cyan = "#a1efe4"
-white = "#f9f8f5"
+black   = '#808080'
+red     = '#e61919'
+green   = '#3bad1f'
+yellow  = '#e5e619'
+blue    = '#196be6'
+magenta = '#bd19e6'
+cyan    = '#19e5e6'
+white   = '#FFFFFF'
