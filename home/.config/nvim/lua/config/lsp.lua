@@ -49,7 +49,10 @@ lspconfig.ruff.setup({
 			lint = {
 				select = { "ALL" },
 				ignore = {
+					"ANN002",
+					"ANN003",
 					"D100",
+					"D101",
 					"D105",
 					"D107",
 					"FBT001",
@@ -59,8 +62,6 @@ lspconfig.ruff.setup({
 					"RUF002",
 					"RUF003",
 					"TRY003",
-					"ANN002",
-					"ANN003",
 				},
 				pydocstyle = {
 					convention = "google",
