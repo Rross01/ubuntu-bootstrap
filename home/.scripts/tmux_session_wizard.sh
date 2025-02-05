@@ -5,13 +5,9 @@ FZF_OPTS="--bind=alt-k:up,alt-j:down --layout=reverse --no-color"
 DIRS_TO_FIND="\
 $HOME \
 $HOME/.config \
-$HOME/ownCloud \
 $HOME/temp \
-$HOME/places/sys \
-$HOME/places/personal \
-$HOME/places/work \
-$HOME/places/personal/git \
-$HOME/places/work/git"
+$HOME/places/git/personal/ \
+$HOME/places/git/work/"
 
 TMUX_LIST_FORMAT="\
 #{session_name}: #{session_windows} window(s)\
