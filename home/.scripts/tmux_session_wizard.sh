@@ -7,7 +7,8 @@ $HOME \
 $HOME/.config \
 $HOME/temp \
 $HOME/places/git/personal/ \
-$HOME/places/git/work/"
+$HOME/places/git/work/ \
+$HOME/places/sys/"
 
 TMUX_LIST_FORMAT="\
 #{session_name}: #{session_windows} window(s)\
