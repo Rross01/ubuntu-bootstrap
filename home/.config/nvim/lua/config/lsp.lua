@@ -58,6 +58,7 @@ lspconfig.ruff.setup({
 					"FBT001",
 					"FBT002",
 					"INP001",
+					"PLW0603",
 					"RUF001",
 					"RUF002",
 					"RUF003",

@@ -2,6 +2,7 @@ return {
 	"nvim-pack/nvim-spectre",
 	"tpope/vim-fugitive",
 	"norcalli/nvim-colorizer.lua",
+	"armyers/Vim-Jinja2-Syntax",
 
 	{
 		"ThePrimeagen/harpoon",
@@ -52,7 +53,6 @@ return {
 			vim.g.gruvbox_material_background = "hard"
 			vim.g.gruvbox_material_foreground = "original"
 			vim.g.gruvbox_material_transparent_background = 0
-			vim.g.gruvbox_material_statusline_style = "original"
 			vim.g.gruvbox_material_colors_override = {
 				green = { "#92b937", "142" },
 				bg_green = { "#92b937", "142" },
