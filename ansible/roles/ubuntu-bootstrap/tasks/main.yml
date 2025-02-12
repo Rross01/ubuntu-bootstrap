@@ -1,30 +1,30 @@
 ---
-- import_tasks: packages.yml
+- import_tasks: 01_packages.yml
   tags: packages
 
-- import_tasks: dirs.yml
+- import_tasks: 02_dirs.yml
   tags: dirs
 
-- import_tasks: groups.yml
+- import_tasks: 03_groups.yml
   tags: groups
 
-- import_tasks: systemd.yml
+- import_tasks: 04_systemd.yml
   tags: systemd
 
-- import_tasks: zsh.yml
+- import_tasks: 05_zsh.yml
   tags: zsh
 
-- import_tasks: fonts.yml
+- import_tasks: 06_fonts.yml
   tags: fonts
 
-- import_tasks: bin.yml
+- import_tasks: 07_bin.yml
   tags: bin
 
-- import_tasks: dconf.yml
+- import_tasks: 08_dconf.yml
   tags: dconf
 
-- import_tasks: cron.yml
-  tags: cron
+- import_tasks: 09_alacritty_fix.yml
+  tags: alacritty_fix
 
-- import_tasks: alacritty_fix.yml
+- import_tasks: 10_podman.yml
   tags: alacritty_fix

@@ -41,8 +41,8 @@
     state: directory
 
 - name: Create app entities
-  with_items: "{{ bin_archived }}"
   when: "{{ item.desktop_entity.enabled is defined }}"
+  with_items: "{{ bin_archived }}"
   template:
     src: tpl.desktop.j2
     dest: "{{ desktop_entities_path }}/{{ item.name }}.desktop"

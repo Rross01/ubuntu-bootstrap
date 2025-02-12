@@ -1,0 +1,32 @@
+---
+- name: Create user systemd units
+  with_dict: "{{ user_systemd_units }}"
+  copy:
+    dest: "/home/{{ user }}/.config/systemd/user/{{ item.key }}.service"
+    content: "{{ item.value }}"
+
+- name: Create user systemd timers
+  with_dict: "{{ user_systemd_timers }}"
+  copy:
+    dest: "/home/{{ user }}/.config/systemd/user/{{ item.key }}.timer"
+    content: "{{ item.value }}"
+
+- name: Enable user services and ensure it is not masked
+  with_items: "{{ user_systemd_enabled }}"
+  systemd_service:
+    name: "{{ item }}" 
+    enabled: true
+    state: started
+    masked: no
+    scope: user
+    daemon_reload: true
+
+- name: Enable system wide services and ensure it is not masked
+  become: true
+  with_items: "{{ system_systemd_enabled }}"
+  systemd_service:
+    name: "{{ item }}" 
+    enabled: true
+    state: started
+    masked: no
+    daemon_reload: true

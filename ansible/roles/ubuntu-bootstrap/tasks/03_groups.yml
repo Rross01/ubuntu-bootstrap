@@ -1,15 +1,15 @@
 ---
 - name: Ensure required groups exists
   become: true
+  with_items: "{{ my_groups }}"
   group:
     name: "{{ item }}"
     state: present
-  with_items: "{{ my_groups }}"
 
 - name: Add user to groups
   become: true
+  with_items: "{{ my_groups }}"
   user:
     name: "{{ user }}"
     groups: "{{ item }}"
     append: true
-  with_items: "{{ my_groups }}"
