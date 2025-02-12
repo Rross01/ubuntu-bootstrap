@@ -1,8 +1,8 @@
 [font]
 size = 11.5
 
-[terminal]
-shell = "tmux"
+[shell]
+program = "tmux"
 
 [font.normal]
 family = "terminal-font"
