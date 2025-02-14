@@ -1,3 +1,7 @@
+import = [
+  "~/.config/alacritty/themes/gruvbox_dark.toml",
+]
+
 [font]
 size = 11.5
 
@@ -20,28 +24,3 @@ decorations = "None"
 bindings = [
     {key = "F11", action = "ToggleFullscreen"},
 ]
-
-# Colors (Gruvbox Material Hard Dark)
-[colors.primary]
-background = "#1d2021"
-foreground = "#f8f8f2"
-
-[colors.normal]
-black   = "#272822"
-red     = "#f92672"
-green   = "#92b937"
-yellow  = "#f4bf75"
-blue    = "#66d9ef"
-magenta = "#ae81ff"
-cyan    = "#a1efe4"
-white   = "#f8f8f2"
-
-[colors.bright]
-black   = "#75715e"
-red     = "#f92672"
-green   = "#92b937"
-yellow  = "#f4bf75"
-blue    = "#66d9ef"
-magenta = "#ae81ff"
-cyan    = "#a1efe4"
-white   = "#f9f8f5"
