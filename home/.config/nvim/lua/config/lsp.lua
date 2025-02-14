@@ -63,6 +63,7 @@ lspconfig.ruff.setup({
 					"RUF002",
 					"RUF003",
 					"TRY003",
+                    "F841",
 				},
 				pydocstyle = {
 					convention = "google",
