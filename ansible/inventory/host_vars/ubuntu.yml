@@ -98,15 +98,15 @@ dconf:
   - "/org/gnome/desktop/interface/gtk-theme": "'Yaru-blue-dark'"
   - "/org/gnome/desktop/interface/icon-theme": "'Yaru-blue'"
 
-  # Keyboard
-  - "/org/gnome/desktop/input-sources/xkb-options": "['caps:swapescape']"
-  - "/org/gnome/desktop/wm/keybindings/switch-input-source": "['<Alt>Shift_L']"
-
   # Disable window preview when alt-tab
   - "/org/gnome/shell/window-switcher/app-icon-mode": "'app-icon-only'"
 
-  # Win+e explorer
+  # Keyboard
+  - "/org/gnome/desktop/input-sources/xkb-options": "['caps:swapescape']"
+  - "/org/gnome/desktop/wm/keybindings/switch-input-source": "['<Alt>Shift_L']"
+  - "/org/gnome/desktop/wm/keybindings/close": "['<Super>q']"
   - "/org/gnome/settings-daemon/plugins/media-keys/home": "['<Super>e']"
+  - "/org/gnome/settings-daemon/plugins/media-keys/calculator": "['<Super>c']"
 
 
 user_systemd_units: []
