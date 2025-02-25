@@ -59,7 +59,7 @@ deb:
   - https://github.com/getsops/sops/releases/download/v3.9.4/sops_3.9.1_amd64.deb
 
 fonts:
-  - https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/DejaVuSansMono.zip
+  - https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/JetBrainsMono.zip
 
 bin:
   - url: https://dl.k8s.io/release/v1.32.0/bin/linux/amd64/kubectl
