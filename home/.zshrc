@@ -45,7 +45,6 @@ wait_for_status_code() {
     notify-send "$ENDPOINT return $EXPECTED_RC!"
 }
 
-# Auto activate and deactivate python venv
 python_venv() {
     MYVENV=./venv
     # when you cd into a folder that contains $MYVENV
