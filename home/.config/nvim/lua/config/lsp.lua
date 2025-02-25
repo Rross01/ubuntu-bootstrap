@@ -55,6 +55,7 @@ lspconfig.ruff.setup({
 					"ARG002",
 					"D100",
 					"D101",
+					"D102",
 					"D105",
 					"D107",
 					"F841",
@@ -66,7 +67,8 @@ lspconfig.ruff.setup({
 					"RUF002",
 					"RUF003",
 					"TRY003",
-                    "UP032",
+					"COM812",
+					"UP032",
 				},
 				pydocstyle = {
 					convention = "google",
