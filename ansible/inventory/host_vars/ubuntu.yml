@@ -104,7 +104,7 @@ dconf:
   # Keyboard
   - "/org/gnome/desktop/input-sources/xkb-options": "['caps:swapescape']"
   - "/org/gnome/desktop/wm/keybindings/switch-input-source": "['<Alt>Shift_L']"
-  - "/org/gnome/desktop/wm/keybindings/close": "['<Super>q']"
+  - "/org/gnome/desktop/wm/keybindings/close": "['<Shift><Super>q']"
   - "/org/gnome/settings-daemon/plugins/media-keys/home": "['<Super>e']"
   - "/org/gnome/settings-daemon/plugins/media-keys/calculator": "['<Super>c']"
 
