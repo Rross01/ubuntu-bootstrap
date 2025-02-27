@@ -69,7 +69,7 @@ end)
 -- Fugitive
 map("n", "<leader>g", ":tab G<CR>")
 
--- tabclose
+-- Tabclose
 map("n", "<leader>D", ":tabclose<CR>")
 
 -- My commands

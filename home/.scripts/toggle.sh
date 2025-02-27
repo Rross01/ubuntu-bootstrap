@@ -4,7 +4,7 @@
 LIGHTTHEME="gruvbox_light"
 DARKTHEME="gruvbox_dark"
 
-NVIM_CONF="$HOME/.config/nvim/lua/config/background.lua"
+NVIM_CONF="$HOME/.config/nvim/lua/config/03_background.lua"
 ALACRITTY_CONF="$HOME/.config/alacritty/alacritty.toml"
 TMUX_CONF="$HOME/.config/tmux/tmux.conf"
 

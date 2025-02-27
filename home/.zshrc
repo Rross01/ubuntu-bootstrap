@@ -32,19 +32,6 @@ alias locconf='export KUBECONFIG=~/places/kubeconfigs/loc.conf'
 alias dark='~/.scripts/toggle.sh dark'
 alias light='~/.scripts/toggle.sh light'
 
-wait_for_status_code() {
-    ENDPOINT=$1
-    EXPECTED_RC=$2
-    for (( ; ; ))
-    do
-        CURRENT_RC=$(curl --connect-timeout 1 -L -w '%{response_code}' -s -o /dev/null $ENDPOINT)
-        echo "$(date): URL: $ENDPOINT, return code: $CURRENT_RC"
-        [[ $CURRENT_RC = $EXPECTED_RC ]] && break
-        sleep 1
-    done
-    notify-send "$ENDPOINT return $EXPECTED_RC!"
-}
-
 python_venv() {
     MYVENV=./venv
     # when you cd into a folder that contains $MYVENV

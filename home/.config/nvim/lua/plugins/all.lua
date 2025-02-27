@@ -35,6 +35,12 @@ return {
 	},
 
 	{
+		"akinsho/toggleterm.nvim",
+		version = "*",
+		opts = {},
+		config = true,
+	},
+	{
 		"lukas-reineke/indent-blankline.nvim",
 		main = "ibl",
 		-- event = "InsertEnter",
@@ -52,7 +58,7 @@ return {
 		config = function()
 			vim.g.gruvbox_material_background = "hard"
 			vim.g.gruvbox_material_foreground = "original"
-			vim.g.gruvbox_material_transparent_background = 1
+			-- vim.g.gruvbox_material_transparent_background = 1
 			vim.g.gruvbox_material_colors_override = {
 				green = { "#92b937", "142" },
 				bg_green = { "#92b937", "142" },
@@ -157,6 +163,7 @@ return {
 		---@module 'blink.cmp'
 		---@type blink.cmp.Config
 		opts = {
+			keymap = { preset = "super-tab" },
 			appearance = {
 				use_nvim_cmp_as_default = false,
 			},
