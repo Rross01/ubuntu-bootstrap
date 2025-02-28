@@ -35,12 +35,6 @@ return {
 	},
 
 	{
-		"akinsho/toggleterm.nvim",
-		version = "*",
-		opts = {},
-		config = true,
-	},
-	{
 		"lukas-reineke/indent-blankline.nvim",
 		main = "ibl",
 		-- event = "InsertEnter",
