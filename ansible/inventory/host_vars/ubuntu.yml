@@ -8,7 +8,7 @@ packages:
   - gnome-tweaks
 
   # apps
-  - alacritty
+  - blackbox-terminal
   - evolution-ews
   - keepassxc
   - wireshark
@@ -41,7 +41,7 @@ packages:
   - git
   - htop
   - tldr
-  - tmux
+  - zoxide
   - zsh
 
 snap_packages:

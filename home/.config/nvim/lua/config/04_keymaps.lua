@@ -14,6 +14,7 @@ map("n", "<leader>pf", ":Telescope find_files<CR>")
 map("n", "<leader>pg", ":Telescope live_grep<CR>")
 map("n", "<leader>pd", ":Telescope diagnostics<CR>")
 map("n", "<leader>td", ":TodoTelescope<CR>")
+map("n", "<leader>zi", ":Telescope zoxide list<CR>")
 
 -- undotree
 map("n", "<leader>u", function()

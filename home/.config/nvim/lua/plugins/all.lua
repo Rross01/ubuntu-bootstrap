@@ -12,7 +12,15 @@ return {
 
 	{
 		"nvim-telescope/telescope.nvim",
-		dependencies = { "nvim-lua/plenary.nvim", "BurntSushi/ripgrep" },
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"BurntSushi/ripgrep",
+			"nvim-lua/popup.nvim",
+			"jvgrootveld/telescope-zoxide",
+		},
+		config = function()
+			require("telescope").load_extension("zoxide")
+		end,
 	},
 
 	{
@@ -52,7 +60,7 @@ return {
 		config = function()
 			vim.g.gruvbox_material_background = "hard"
 			vim.g.gruvbox_material_foreground = "original"
-			-- vim.g.gruvbox_material_transparent_background = 1
+			vim.g.gruvbox_material_transparent_background = 2
 			vim.g.gruvbox_material_colors_override = {
 				green = { "#92b937", "142" },
 				bg_green = { "#92b937", "142" },

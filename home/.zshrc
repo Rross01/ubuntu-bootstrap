@@ -5,6 +5,10 @@ HISTFILESIZE=1000000000
 HISTSIZE=1000000000
 plugins=(zsh-autosuggestions)
 
+# zoxide
+eval "$(zoxide init zsh)"
+export _ZO_FZF_OPTS="--bind=alt-k:up,alt-j:down --layout=reverse --no-color"
+
 # Change default editor
 export EDITOR="nvim"
 
