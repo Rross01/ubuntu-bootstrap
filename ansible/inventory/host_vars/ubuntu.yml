@@ -5,7 +5,6 @@ my_groups: []
 packages:
   # gnome
   - gnome-shell-extensions
-  - gnome-tweaks
 
   # apps
   - blackbox-terminal
@@ -16,7 +15,6 @@ packages:
   # some deps
   - npm # nvim dep
   - python3-psutil # ansible gsettings module
-  - python3-venv
   - ripgrep # nvim dep
   - sshpass # ansible
   - wl-clipboard
@@ -30,6 +28,7 @@ packages:
   - ansible
   - golang-go
   - postgresql-client
+  - python3-venv
 
   # network and bluetooth
   - network-manager-openconnect
