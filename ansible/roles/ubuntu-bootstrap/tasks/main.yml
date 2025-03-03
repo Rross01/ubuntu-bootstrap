@@ -22,3 +22,9 @@
 
 - import_tasks: 08_dconf.yml
   tags: dconf
+
+- import_tasks: 09_alacritty_fix.yml
+  tags: alacritty_fix
+
+- import_tasks: 10_podman.yml
+  tags: alacritty_fix

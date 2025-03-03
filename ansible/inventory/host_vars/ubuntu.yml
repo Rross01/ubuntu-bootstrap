@@ -7,7 +7,7 @@ packages:
   - gnome-shell-extensions
 
   # apps
-  - blackbox-terminal
+  - alacritty
   - evolution-ews
   - keepassxc
   - wireshark
@@ -40,7 +40,7 @@ packages:
   - git
   - htop
   - tldr
-  - zoxide
+  - tmux
   - zsh
 
 snap_packages:

@@ -1,5 +1,8 @@
 + .config/
++ .config/alacritty/***
++ .config/fontconfig/***
 + .config/nvim/***
++ .config/tmux/***
 + .gitconfig
 + .rsync-filter
 + .scripts/***
