@@ -39,6 +39,7 @@ packages:
   - fzf
   - git
   - htop
+  - krb5-user
   - tldr
   - tmux
   - zsh
