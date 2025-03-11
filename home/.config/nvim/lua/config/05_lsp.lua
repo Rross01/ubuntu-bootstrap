@@ -28,6 +28,8 @@ require("mason-lspconfig").setup({
 		-- python
 		"pyright",
 		"ruff",
+		-- sql
+		"sqlfmt",
 		-- other
 		"dockerls",
 		"helm_ls",
@@ -53,6 +55,7 @@ lspconfig.ruff.setup({
 					"ANN003",
 					"ANN204",
 					"ARG002",
+					"COM812",
 					"D100",
 					"D101",
 					"D102",
@@ -67,8 +70,9 @@ lspconfig.ruff.setup({
 					"RUF002",
 					"RUF003",
 					"TRY003",
-					"COM812",
 					"UP032",
+					"S112",
+					"SIM102",
 				},
 				pydocstyle = {
 					convention = "google",

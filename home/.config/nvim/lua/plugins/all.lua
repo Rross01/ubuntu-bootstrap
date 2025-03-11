@@ -103,6 +103,7 @@ return {
 				lua = { "stylua" },
 				python = { "ruff_format", "ruff_organize_imports", "ruff_fix" },
 				sh = { "beautysh" },
+				sql = { "sqlfmt" },
 			},
 		},
 	},
@@ -166,29 +167,5 @@ return {
 			},
 		},
 		opts_extend = { "sources.default" },
-	},
-
-	{
-		"hedyhli/outline.nvim",
-		lazy = true,
-		cmd = { "Outline", "OutlineOpen" },
-		keys = { -- Example mapping to toggle outline
-			{ "<leader>o", "<cmd>Outline<CR>", desc = "Toggle outline" },
-		},
-		opts = {
-			outline_window = {
-				-- Percentage or integer of columns
-				width = 20,
-			},
-			outline_items = {
-				show_symbol_details = false,
-				highlight_hovered_item = false,
-			},
-			symbol_folding = {
-				autofold_depth = false,
-				auto_unfold = { hovered = false, only = false },
-			},
-			guides = { enabled = false },
-		},
 	},
 }
