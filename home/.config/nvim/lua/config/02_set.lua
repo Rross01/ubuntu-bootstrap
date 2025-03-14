@@ -3,7 +3,6 @@ vim.opt.cursorline = true
 vim.opt.termguicolors = true
 
 vim.opt.number = true
-vim.wo.relativenumber = true
 
 vim.opt.scrolloff = 999
 vim.opt.undofile = true -- Возможность отката назад
