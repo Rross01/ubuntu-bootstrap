@@ -15,6 +15,8 @@ map("n", "<leader>pg", ":Telescope live_grep<CR>")
 map("n", "<leader>pd", ":Telescope diagnostics<CR>")
 map("n", "<leader>td", ":TodoTelescope<CR>")
 
+map("n", "<leader><Tab>", "<C-^>")
+
 -- undotree
 map("n", "<leader>u", function()
 	require("undotree").toggle()
