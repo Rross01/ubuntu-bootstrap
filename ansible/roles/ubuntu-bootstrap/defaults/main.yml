@@ -1,4 +1,5 @@
 ---
-zsh_home: "/home/{{ user }}/places/sys/oh-my-zsh"
+apps_home:  "/home/{{ user }}/places/sys"
+zsh_home:   "{{ apps_home }}/oh-my-zsh"
+aider_home: "{{ apps_home }}/aider"
 desktop_entities_path: "/home/{{ user }}/.local/share/applications"
-apps_home: "/home/{{ user }}/places/sys"

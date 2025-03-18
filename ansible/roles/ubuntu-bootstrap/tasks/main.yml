@@ -28,3 +28,6 @@
 
 - import_tasks: 10_podman.yml
   tags: alacritty_fix
+
+- import_tasks: 11_aider.yml
+  tags: aider

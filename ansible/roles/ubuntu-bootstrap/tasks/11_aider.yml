@@ -1,0 +1,24 @@
+---
+- name: Updating repositories
+  become: true
+  apt:
+    cache_valid_time: 86400
+    update_cache: yes
+
+- name: Ensure python3-venv installed
+  become: true
+  package:
+    name: python3-venv
+
+- name: Install aider-chat in virtualenv
+  pip:
+    name: aider-chat
+    virtualenv: "{{ aider_home }}"
+    virtualenv_command: /usr/bin/python3 -m venv
+
+- name: Create a symbolic link
+  become: true
+  file:
+    src: "{{ aider_home }}/bin/aider"
+    dest: /usr/bin/aider
+    state: link
