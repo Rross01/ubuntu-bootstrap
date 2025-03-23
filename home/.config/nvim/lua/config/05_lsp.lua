@@ -28,8 +28,6 @@ require("mason-lspconfig").setup({
 		-- python
 		"pyright",
 		"ruff",
-		-- sql
-		"sqlfmt",
 		-- other
 		"dockerls",
 		"helm_ls",
