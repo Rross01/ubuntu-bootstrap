@@ -8,6 +8,7 @@ return {
 		"ThePrimeagen/harpoon",
 		branch = "harpoon2",
 		dependencies = { "nvim-lua/plenary.nvim" },
+        config = true
 	},
 
 	{
@@ -57,8 +58,8 @@ return {
 				green = { "#92b937", "142" },
 				bg_green = { "#92b937", "142" },
 			}
-			vim.g.gruvbox_material_show_eob = 0
 			vim.cmd.colorscheme("gruvbox-material")
+    		vim.g.gruvbox_material_show_eob = 0
 		end,
 	},
 

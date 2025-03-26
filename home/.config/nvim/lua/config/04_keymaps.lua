@@ -40,7 +40,6 @@ end)
 
 -- Harpoon2
 local harpoon = require("harpoon")
-harpoon.setup()
 
 map("n", "<leader>a", function()
 	harpoon:list():add()
@@ -48,7 +47,6 @@ end)
 map("n", "<C-e>", function()
 	harpoon.ui:toggle_quick_menu(harpoon:list())
 end)
-
 map("n", "<leader>1", function()
 	harpoon:list():select(1)
 end)

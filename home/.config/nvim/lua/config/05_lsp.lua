@@ -71,6 +71,7 @@ lspconfig.ruff.setup({
 					"RUF001",
 					"RUF002",
 					"RUF003",
+                    "S110",
 					"S112",
 					"SIM102",
 					"TRY003",
