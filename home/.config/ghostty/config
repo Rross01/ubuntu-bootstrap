@@ -7,3 +7,5 @@ theme = light:GruvboxLightHard,dark:GruvboxDarkHard
 mouse-hide-while-typing = true
 gtk-titlebar = false
 keybind = f11=toggle_fullscreen
+mouse-scroll-multiplier = 0.01
+command = tmux
