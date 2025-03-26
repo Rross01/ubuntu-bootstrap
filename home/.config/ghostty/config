@@ -1,5 +1,8 @@
-font-family = "JetBrainsMono Nerd Font Mono"
-font-size = 12.5
+window-padding-x = 0
+window-padding-y = 0
+font-family = "JetBrainsMono Nerd Font"
+font-size = 13
+font-style = Medium
 theme = light:GruvboxLightHard,dark:GruvboxDarkHard
 mouse-hide-while-typing = true
 gtk-titlebar = false

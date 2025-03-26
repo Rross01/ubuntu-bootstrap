@@ -1,11 +1,10 @@
 #!/bin/sh
 
-# Toggle dark and light themes for tmux, alacritty, and nvim
+# Toggle dark and light themes for tmux, and nvim
 LIGHTTHEME="gruvbox_light"
 DARKTHEME="gruvbox_dark"
 
 NVIM_CONF="$HOME/.config/nvim/lua/config/03_background.lua"
-ALACRITTY_CONF="$HOME/.config/alacritty/alacritty.toml"
 TMUX_CONF="$HOME/.config/tmux/tmux.conf"
 
 switch_vim_theme() {
@@ -17,11 +16,9 @@ switch_vim_theme() {
 }
 
 if [ "$1" = "dark" ]; then
-    sed -i "s/${LIGHTTHEME}/${DARKTHEME}/" "$ALACRITTY_CONF" "$TMUX_CONF"
     sed -i 's/light/dark/' "$NVIM_CONF"
     switch_vim_theme "dark"
 else
-    sed -i "s/${DARKTHEME}/${LIGHTTHEME}/" "$ALACRITTY_CONF" "$TMUX_CONF"
     sed -i 's/dark/light/' "$NVIM_CONF"
     switch_vim_theme "light"
 fi
