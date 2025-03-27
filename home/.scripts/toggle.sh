@@ -16,13 +16,21 @@ switch_vim_theme() {
 }
 
 if [ "$1" = "dark" ]; then
+    sed -i "s/${LIGHTTHEME}/${DARKTHEME}/" "$TMUX_CONF"
     sed -i 's/light/dark/' "$NVIM_CONF"
     switch_vim_theme "dark"
+
 else
+    sed -i "s/${DARKTHEME}/${LIGHTTHEME}/" "$TMUX_CONF"
     sed -i 's/dark/light/' "$NVIM_CONF"
     switch_vim_theme "light"
+
 fi
 
+
+
 # I don't know why, but tmux applies only after second run
+
 tmux source-file "$TMUX_CONF"
+
 tmux source-file "$TMUX_CONF"
