@@ -118,25 +118,11 @@ user_systemd_units: []
 #     [Service]
 #     Type=oneshot
 #     ExecStart=python %h/.scripts/git-sniffer/main.py %h/places
-# - config-sync: |-
-#     [Unit]
-#     Description=config-sync
-#     [Service]
-#     Type=oneshot
-#     ExecStart=ansible-playbook %h/places/git/personal/ubuntu-bootstrap/ansible/playbooks/sync_home_to_repo.yml
 
 user_systemd_timers: []
 # - git-sniffer: |-
 #     [Unit]
 #     Description=Run git-sniffer every 10 minute and on boot
-#     [Timer]
-#     OnBootSec=5min
-#     OnUnitActiveSec=10min
-#     [Install]
-#     WantedBy=timers.target
-# - config-sync: |-
-#     [Unit]
-#     Description=Sync configs to repo every 10 minute and on boot
 #     [Timer]
 #     OnBootSec=5min
 #     OnUnitActiveSec=10min

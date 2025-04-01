@@ -8,7 +8,7 @@ return {
 		"ThePrimeagen/harpoon",
 		branch = "harpoon2",
 		dependencies = { "nvim-lua/plenary.nvim" },
-        config = true
+		config = true,
 	},
 
 	{
@@ -53,12 +53,12 @@ return {
 		config = function()
 			vim.g.gruvbox_material_background = "hard"
 			vim.g.gruvbox_material_foreground = "original"
-			-- vim.g.gruvbox_material_transparent_background = 1
+			vim.g.gruvbox_material_transparent_background = 1
 			vim.g.gruvbox_material_colors_override = {
 				green = { "#92b937", "142" },
 				bg_green = { "#92b937", "142" },
 			}
-            vim.g.gruvbox_material_show_eob = 0
+			vim.g.gruvbox_material_show_eob = 0
 			vim.cmd.colorscheme("gruvbox-material")
 		end,
 	},
@@ -105,6 +105,7 @@ return {
 				python = { "ruff_format", "ruff_organize_imports", "ruff_fix" },
 				sh = { "beautysh" },
 				sql = { "sqlfmt" },
+				json = { "fixjson" },
 			},
 		},
 	},

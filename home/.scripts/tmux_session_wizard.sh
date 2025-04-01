@@ -8,6 +8,7 @@ $HOME/.config \
 $HOME/temp \
 $HOME/places/git/personal/ \
 $HOME/places/git/work/ \
+$HOME/places/git/work/launchpad/ \
 $HOME/places/sys/"
 
 TMUX_LIST_FORMAT="\
