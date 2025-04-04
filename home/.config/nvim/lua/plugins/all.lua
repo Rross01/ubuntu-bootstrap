@@ -1,8 +1,35 @@
 return {
-	"nvim-pack/nvim-spectre",
 	"tpope/vim-fugitive",
-	"norcalli/nvim-colorizer.lua",
 	"armyers/Vim-Jinja2-Syntax",
+
+	{
+		"folke/trouble.nvim",
+		opts = {}, -- for default options, refer to the configuration section for custom setup.
+		cmd = "Trouble",
+		keys = {
+			{
+				"<leader>tt",
+				"<cmd>Trouble diagnostics toggle<cr>",
+				desc = "Diagnostics (Trouble)",
+			},
+			{
+				"<leader>TT",
+				"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+				desc = "Buffer Diagnostics (Trouble)",
+			},
+		},
+	},
+
+	{
+		"rachartier/tiny-inline-diagnostic.nvim",
+		opts = {
+			preset = "powerline",
+			transparent_bg = false,
+			options = { show_source = true },
+		},
+		event = "VeryLazy", -- Or `LspAttach`
+		priority = 1000, -- needs to be loaded in first
+	},
 
 	{
 		"ThePrimeagen/harpoon",
@@ -19,19 +46,6 @@ return {
 	{
 		"lewis6991/gitsigns.nvim",
 		event = "VeryLazy",
-		config = true,
-	},
-
-	{
-		"folke/todo-comments.nvim",
-		dependencies = { "nvim-lua/plenary.nvim" },
-		event = "VeryLazy",
-		config = true,
-	},
-
-	{
-		"windwp/nvim-autopairs",
-		event = "InsertEnter",
 		config = true,
 	},
 
@@ -112,23 +126,16 @@ return {
 	},
 
 	{
-		"jiaoshijie/undotree",
-		dependencies = "nvim-lua/plenary.nvim",
-		event = "VeryLazy",
-		config = true,
-	},
-
-	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
 		main = "nvim-treesitter.configs",
 		opts = {
 			ensure_installed = {
 				"bash",
+				"go",
 				"helm",
 				"json",
 				"jsonc",
-				"lua",
 				"lua",
 				"luadoc",
 				"markdown",

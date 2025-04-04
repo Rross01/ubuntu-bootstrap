@@ -13,14 +13,8 @@ map("n", "<leader>Q", ":Neotree left reveal<CR>")
 map("n", "<leader>pf", ":Telescope find_files<CR>")
 map("n", "<leader>pg", ":Telescope live_grep<CR>")
 map("n", "<leader>pd", ":Telescope diagnostics<CR>")
-map("n", "<leader>td", ":TodoTelescope<CR>")
 
 map("n", "<leader><Tab>", "<C-^>")
-
--- undotree
-map("n", "<leader>u", function()
-	require("undotree").toggle()
-end)
 
 -- mini
 map("n", "<leader>d", function()

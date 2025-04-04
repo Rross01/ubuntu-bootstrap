@@ -7,6 +7,7 @@ vim.opt.number = true
 vim.opt.scrolloff = 999
 vim.opt.undofile = true -- Возможность отката назад
 
+
 -- Интеграция с буфером обмена ОС
 vim.schedule(function()
 	vim.opt.clipboard = "unnamedplus"
@@ -41,7 +42,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 		vim.highlight.on_yank()
 	end,
 })
-
 
 -- FOLDS SETTINGS
 

@@ -22,6 +22,24 @@ local default_setup = function(server)
 	})
 end
 
+-- diagnostics
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+	underline = false,
+	virtual_text = false,
+})
+
+vim.diagnostic.config({
+	virtual_text = false,
+	unerline = false,
+	signs = {
+		text = {
+			[vim.diagnostic.severity.ERROR] = "",
+			[vim.diagnostic.severity.WARN] = "",
+			[vim.diagnostic.severity.INFO] = "",
+			[vim.diagnostic.severity.HINT] = "",
+		},
+	},
+})
 require("mason").setup({})
 require("mason-lspconfig").setup({
 	ensure_installed = {
