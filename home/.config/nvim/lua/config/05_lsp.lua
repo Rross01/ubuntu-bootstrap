@@ -49,7 +49,7 @@ lspconfig.ruff.setup({
 			lint = {
 				select = { "ALL" },
 				ignore = {
-                    -- whole group
+					-- whole group
 					"BLE",
 					"COM",
 					"D",
@@ -57,21 +57,26 @@ lspconfig.ruff.setup({
 					"FIX",
 					"INP",
 					"TD",
-                    -- specific rule
+					-- specific rule
 					"ANN002",
 					"ANN003",
+					"ANN101",
 					"ANN201",
 					"ANN202",
 					"ANN204",
 					"ANN205",
+					"ARG001",
 					"ARG002",
 					"DTZ005",
 					"F841",
+					"N803",
+					"N806",
+					"PGH003",
 					"PLW0603",
 					"RUF001",
 					"RUF002",
 					"RUF003",
-                    "S110",
+					"S110",
 					"S112",
 					"SIM102",
 					"TRY003",
