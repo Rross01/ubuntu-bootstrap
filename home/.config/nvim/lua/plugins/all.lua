@@ -1,7 +1,6 @@
 return {
 	"tpope/vim-fugitive",
 	"armyers/Vim-Jinja2-Syntax",
-	"norcalli/nvim-colorizer.lua",
 	"nvim-pack/nvim-spectre",
 
 	{
