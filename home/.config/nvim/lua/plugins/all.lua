@@ -1,6 +1,7 @@
 return {
 	"tpope/vim-fugitive",
 	"armyers/Vim-Jinja2-Syntax",
+	"norcalli/nvim-colorizer.lua",
 	"nvim-pack/nvim-spectre",
 
 	{
@@ -53,7 +54,7 @@ return {
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		main = "ibl",
-		-- event = "InsertEnter",
+		event = "InsertEnter",
 		event = "VeryLazy",
 		opts = {
 			scope = { enabled = false },
@@ -62,10 +63,13 @@ return {
 	},
 
 	{
-		dir = "/home/rrossamakhin/places/git/personal/gruvbox-material",
+		"sainnhe/gruvbox-material",
 		lazy = false,
 		priority = 1000,
 		config = function()
+			vim.g.gruvbox_material_background = "medium"
+			vim.g.gruvbox_material_foreground = "mix"
+			vim.g.gruvbox_material_show_eob = 0
 			vim.cmd.colorscheme("gruvbox-material")
 		end,
 	},
