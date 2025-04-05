@@ -6,20 +6,8 @@ return {
 
 	{
 		"folke/trouble.nvim",
-		opts = {}, -- for default options, refer to the configuration section for custom setup.
+		opts = {},
 		cmd = "Trouble",
-		keys = {
-			{
-				"<leader>tt",
-				"<cmd>Trouble diagnostics toggle<cr>",
-				desc = "Diagnostics (Trouble)",
-			},
-			{
-				"<leader>TT",
-				"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
-				desc = "Buffer Diagnostics (Trouble)",
-			},
-		},
 	},
 
 	{
@@ -103,6 +91,7 @@ return {
 			require("mini.move").setup() -- Move any selection in any direction
 			require("mini.bufremove").setup() -- Remove buffers
 			require("mini.comment").setup() -- Comment lines
+			require("mini.pairs").setup()
 		end,
 	},
 

@@ -14,6 +14,10 @@ map("n", "<leader>pf", ":Telescope find_files<CR>")
 map("n", "<leader>pg", ":Telescope live_grep<CR>")
 map("n", "<leader>pd", ":Telescope diagnostics<CR>")
 
+-- Trouble
+map("n", "<leader>tt", ":Trouble diagnostics toggle<CR>")
+map("n", "<leader>TT", ":Trouble diagnostics toggle filter.buf=0<CR>")
+
 map("n", "<leader><Tab>", "<C-^>")
 
 -- mini
