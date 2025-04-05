@@ -27,8 +27,6 @@ else
 
 fi
 
-
-
 # I don't know why, but tmux applies only after second run
 
 tmux source-file "$TMUX_CONF"

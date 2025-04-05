@@ -1,6 +1,7 @@
 return {
 	"tpope/vim-fugitive",
 	"armyers/Vim-Jinja2-Syntax",
+	"nvim-pack/nvim-spectre",
 
 	{
 		"folke/trouble.nvim",
@@ -61,19 +62,10 @@ return {
 	},
 
 	{
-		"sainnhe/gruvbox-material",
+		dir = "/home/rrossamakhin/places/git/personal/gruvbox-material",
 		lazy = false,
 		priority = 1000,
 		config = function()
-			vim.g.gruvbox_material_background = "hard"
-			vim.g.gruvbox_material_foreground = "original"
-			vim.g.gruvbox_material_transparent_background = 2
-			vim.g.gruvbox_material_colors_override = {
-				green = { "#92b937", "142" },
-				bg_green = { "#92b937", "142" },
-				bg1 = { "#242424", "235" },
-			}
-			vim.g.gruvbox_material_show_eob = 0
 			vim.cmd.colorscheme("gruvbox-material")
 		end,
 	},
