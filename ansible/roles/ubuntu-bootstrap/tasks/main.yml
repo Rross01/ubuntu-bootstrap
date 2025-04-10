@@ -26,5 +26,5 @@
 - import_tasks: 09_podman.yml
   tags: podman
 
-- import_tasks: 10_aider.yml
-  tags: aider
+- import_tasks: 10_pip.yml
+  tags: pip

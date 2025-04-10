@@ -14,6 +14,7 @@ packages:
   # some deps
   - npm # nvim dep
   - python3-psutil # ansible gsettings module
+  - python3-venv
   - ripgrep # nvim dep
   - sshpass # ansible
   - wl-clipboard
@@ -108,6 +109,15 @@ dconf:
   - "/org/gnome/desktop/wm/keybindings/close": "['<Shift><Super>q']"
   - "/org/gnome/settings-daemon/plugins/media-keys/home": "['<Super>e']"
   - "/org/gnome/settings-daemon/plugins/media-keys/calculator": "['<Super>c']"
+
+pip:
+  - package_name: aider-chat
+    bin_path: bin/aider
+    symlink_name: aider
+
+  - package_name: uv
+    bin_path: bin/uv
+    symlink_name: uv
 
 
 user_systemd_units: []

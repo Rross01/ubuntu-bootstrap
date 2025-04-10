@@ -1,0 +1,15 @@
+---
+- name: Install package in isolated env
+  with_items: "{{ pip }}"
+  pip:
+    name: "{{ item.package_name }}"
+    virtualenv: "{{ pip_isolated_home }}/{{ item.package_name }}"
+    virtualenv_command: /usr/bin/python3 -m venv
+
+- name: Create a symbolic link
+  with_items: "{{ pip }}"
+  become: true
+  file:
+    src: "{{ pip_isolated_home }}/{{ item.package_name }}/{{ item.bin_path }}"
+    dest: "/usr/bin/{{ item.symlink_name }}"
+    state: link
