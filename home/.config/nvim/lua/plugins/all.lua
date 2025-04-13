@@ -91,6 +91,7 @@ return {
 			require("mini.bufremove").setup() -- Remove buffers
 			require("mini.comment").setup() -- Comment lines
 			require("mini.pairs").setup()
+            require("mini.cursorword").setup()
 		end,
 	},
 
