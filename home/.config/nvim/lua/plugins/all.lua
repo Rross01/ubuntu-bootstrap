@@ -4,12 +4,6 @@ return {
 	"nvim-pack/nvim-spectre",
 
 	{
-		"folke/trouble.nvim",
-		opts = {},
-		cmd = "Trouble",
-	},
-
-	{
 		"rachartier/tiny-inline-diagnostic.nvim",
 		opts = {
 			preset = "powerline",
@@ -41,7 +35,6 @@ return {
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		main = "ibl",
-		event = "InsertEnter",
 		event = "VeryLazy",
 		opts = {
 			scope = { enabled = false },
@@ -70,16 +63,6 @@ return {
 			"MunifTanjim/nui.nvim",
 			"s1n7ax/nvim-window-picker",
 		},
-		opts = {
-			default_component_configs = {
-				indent = { padding = 0 },
-				icon = {
-					folder_closed = "",
-					folder_open = "",
-					folder_empty = "󰜌",
-				},
-			},
-		},
 	},
 
 	{
@@ -90,7 +73,6 @@ return {
 			require("mini.move").setup() -- Move any selection in any direction
 			require("mini.bufremove").setup() -- Remove buffers
 			require("mini.comment").setup() -- Comment lines
-			require("mini.pairs").setup()
 			require("mini.cursorword").setup()
 		end,
 	},
