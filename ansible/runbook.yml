@@ -1,8 +1,5 @@
 ---
 - hosts: ubuntu
   gather_facts: true
-  tasks:
-    - name: Include common role
-      import_role:
-        name: ubuntu-bootstrap
-      tags: ubuntu-bootstrap
+  roles:
+    - ubuntu-bootstrap

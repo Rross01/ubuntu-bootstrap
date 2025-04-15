@@ -96,10 +96,6 @@ dconf:
   - "/org/gnome/shell/extensions/dash-to-dock/click-action": "'minimize'"
   - "/org/gnome/shell/extensions/dash-to-dock/show-trash": "false"
 
-  # Colors
-  - "/org/gnome/desktop/interface/gtk-theme": "'Yaru-blue-dark'"
-  - "/org/gnome/desktop/interface/icon-theme": "'Yaru-blue'"
-
   # Disable window preview when alt-tab
   - "/org/gnome/shell/window-switcher/app-icon-mode": "'app-icon-only'"
 
