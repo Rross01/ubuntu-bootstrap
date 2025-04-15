@@ -55,7 +55,7 @@ return {
 		priority = 1000,
 		config = function()
 			vim.g.gruvbox_material_background = "medium"
-			vim.g.gruvbox_material_foreground = "hard"
+			vim.g.gruvbox_material_foreground = "original"
 			vim.g.gruvbox_material_show_eob = 0
 			vim.cmd.colorscheme("gruvbox-material")
 		end,
@@ -91,7 +91,7 @@ return {
 			require("mini.bufremove").setup() -- Remove buffers
 			require("mini.comment").setup() -- Comment lines
 			require("mini.pairs").setup()
-            require("mini.cursorword").setup()
+			require("mini.cursorword").setup()
 		end,
 	},
 
