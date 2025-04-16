@@ -35,6 +35,7 @@ packages:
   - network-manager-openconnect-gnome
 
   # cli tools
+  - bat
   - curl
   - fzf
   - git

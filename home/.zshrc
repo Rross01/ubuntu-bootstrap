@@ -29,6 +29,13 @@ alias git_log='git log --all --decorate --oneline --graph $argv'
 alias getpass="head /dev/urandom | tr -dc \"A-Za-z0-9@#!()&'\" | head -c 16 | wl-copy"
 alias locconf='export KUBECONFIG=~/places/kubeconfigs/loc.conf'
 
+# Batcat
+BAT_THEME="Monokai Extended"
+alias bat='batcat'
+# Use batcat for all help pages
+alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'
+alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
+
 python_venv() {
     MYVENV=./.venv
     # when you cd into a folder that contains $MYVENV
