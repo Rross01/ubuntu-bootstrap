@@ -14,13 +14,13 @@
     state: link
     mode: 0775
 
-- name: Ensure destination directory exists
+- name: Ensure bins directory exists
   with_items: "{{ bin_archived }}"
   file:
     path: "{{ apps_home }}/{{ item.name }}"
     state: directory
 
-- name: Download app archive
+- name: Download archived bins
   with_items: "{{ bin_archived }}"
   unarchive:
     src: "{{ item.url }}"

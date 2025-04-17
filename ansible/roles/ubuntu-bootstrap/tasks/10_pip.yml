@@ -1,5 +1,5 @@
 ---
-- name: Install package in isolated env
+- name: Install pip packages in isolated env
   with_items: "{{ pip }}"
   pip:
     name: "{{ item.package_name }}"

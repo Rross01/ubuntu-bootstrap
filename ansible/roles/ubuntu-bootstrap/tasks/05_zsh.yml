@@ -1,5 +1,5 @@
 ---
-- name: Clone zsh repo
+- name: Clone ohmyzsh repo
   git:
     repo: https://github.com/ohmyzsh/ohmyzsh/
     dest: "{{ zsh_home }}"
