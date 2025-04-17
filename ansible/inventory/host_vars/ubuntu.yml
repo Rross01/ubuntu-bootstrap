@@ -136,8 +136,7 @@ user_systemd_timers: []
 #     WantedBy=timers.target
 
 system_systemd_enabled: []
-user_systemd_enabled: [
-  ssh-agent.service,
+user_systemd_enabled: []
+  # ssh-agent.service,
   # git-sniffer.timer,
   # config-sync.timer,
-]
