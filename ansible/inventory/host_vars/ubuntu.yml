@@ -14,7 +14,6 @@ packages:
   # some deps
   - npm # nvim dep
   - python3-psutil # ansible gsettings module
-  - python3-venv
   - ripgrep # nvim dep
   - sshpass # ansible
   - wl-clipboard
@@ -25,7 +24,6 @@ packages:
   - podman-docker
 
   # dev
-  - ansible
   - golang-go
   - postgresql-client
   - python3-venv
@@ -115,7 +113,6 @@ pip:
   - package_name: uv
     bin_path: bin/uv
     symlink_name: uv
-
 
 user_systemd_units: []
 # - git-sniffer: |-
