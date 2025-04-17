@@ -63,6 +63,18 @@ return {
 			"MunifTanjim/nui.nvim",
 			"s1n7ax/nvim-window-picker",
 		},
+		opts = {
+			filesystem = {
+				filtered_items = {
+					always_show = {
+                        ".env",
+						".gitignore",
+						".helmignore",
+						".dockerignore",
+					},
+				},
+			},
+		},
 	},
 
 	{
