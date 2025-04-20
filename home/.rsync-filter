@@ -1,3 +1,5 @@
++ .kube/
++ .kube/config
 + .config/
 + .config/fontconfig/***
 + .config/ghostty/***
