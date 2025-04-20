@@ -1,6 +1,6 @@
 #!/bin/bash
 
-FZF_OPTS="--bind=alt-k:up,alt-j:down --layout=reverse --no-color"
+export FZF_DEFAULT_OPTS='--bind=alt-k:up,alt-j:down --tmux 40%,30%'
 
 DIRS_TO_FIND="\
 $HOME \
@@ -21,7 +21,7 @@ TMUX_LIST_FORMAT="\
 TMUX_SESSIONS=$(tmux list-sessions -F "$TMUX_LIST_FORMAT")
 DIRS_LIST=$(find $DIRS_TO_FIND -mindepth 1 -maxdepth 1 -type d)
 
-RESULT=$((echo "$TMUX_SESSIONS"; echo "$DIRS_LIST") | fzf $FZF_OPTS | tail -n 1)
+RESULT=$((echo "$TMUX_SESSIONS"; echo "$DIRS_LIST") | fzf | tail -n 1)
 
 if [ -z "$RESULT" ]; then
     exit 0

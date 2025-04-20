@@ -1,23 +1,28 @@
+# Setup
 ZSH_THEME="fwalch"
 HYPHEN_INSENSITIVE="true"
 HISTFILE=~/places/.zsh_history
 HISTFILESIZE=1000000000
 HISTSIZE=1000000000
 plugins=(zsh-autosuggestions)
+source $HOME/places/sys/oh-my-zsh/oh-my-zsh.sh
 
 # Change default editor
 export EDITOR="nvim"
 
-# Sources
-source <(helm completion zsh)
-source <(kubectl completion zsh)
-source $HOME/places/sys/oh-my-zsh/oh-my-zsh.sh
+# fzf opts
+export FZF_DEFAULT_OPTS='--bind=alt-k:up,alt-j:down --tmux 80%'
 
 # Different home for gpg
 export GNUPGHOME="~/places/gpg"
 
 # awscli config file
 export AWS_CONFIG_FILE="~/places/.aws_credentials"
+
+# Sources
+source <(helm completion zsh)
+source <(kubectl completion zsh)
+source <(fzf --zsh)
 
 # Aliases
 alias s='ssh'
