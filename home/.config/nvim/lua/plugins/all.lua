@@ -10,7 +10,7 @@ return {
 			transparent_bg = false,
 			options = { show_source = true },
 		},
-		event = "VeryLazy", -- Or `LspAttach`
+		event = "VeryLazy",
 		priority = 1000, -- needs to be loaded in first
 	},
 
@@ -47,9 +47,10 @@ return {
 		lazy = false,
 		priority = 1000,
 		config = function()
-			vim.g.gruvbox_material_background = "medium"
-			vim.g.gruvbox_material_foreground = "original"
+			vim.g.gruvbox_material_background = "hard"
+			vim.g.gruvbox_material_foreground = "mix"
 			vim.g.gruvbox_material_show_eob = 0
+			vim.g.gruvbox_material_transparent_background = 1
 			vim.cmd.colorscheme("gruvbox-material")
 		end,
 	},
