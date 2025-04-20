@@ -67,7 +67,7 @@ return {
 			filesystem = {
 				filtered_items = {
 					always_show = {
-                        ".env",
+						".env",
 						".gitignore",
 						".helmignore",
 						".dockerignore",
