@@ -131,7 +131,6 @@ return {
 	-- lsp stuff - setup in lsp.lua file
 	{
 		"neovim/nvim-lspconfig",
-		branch = "v3.x",
 		dependencies = {
 			{ "towolf/vim-helm", ft = "helm" },
 			{ "williamboman/mason-lspconfig.nvim" },

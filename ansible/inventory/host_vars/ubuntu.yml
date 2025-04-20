@@ -13,7 +13,6 @@ packages:
 
   # some deps
   - npm # nvim dep
-  - python3-psutil # ansible gsettings module
   - ripgrep # nvim dep
   - sshpass # ansible
   - wl-clipboard
@@ -36,7 +35,6 @@ packages:
   - bat
   - curl
   - fzf
-  - git
   - htop
   - krb5-user
   - sshfs
@@ -57,7 +55,7 @@ snap_packages:
 deb:
   - https://st.ktalk.host/ktalk-app/linux/ktalk2.13.0amd64.deb
   - https://github.com/derailed/k9s/releases/download/v0.50.3/k9s_linux_amd64.deb
-  - https://github.com/getsops/sops/releases/download/v3.9.4/sops_3.9.1_amd64.deb
+  - https://github.com/getsops/sops/releases/download/v3.10.2/sops_3.10.2_amd64.deb
 
 fonts:
   - https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/JetBrainsMono.zip
@@ -106,9 +104,9 @@ dconf:
   - "/org/gnome/settings-daemon/plugins/media-keys/calculator": "['<Super>c']"
 
 pip:
-  - package_name: aider-chat
-    bin_path: bin/aider
-    symlink_name: aider
+#  - package_name: aider-chat
+#    bin_path: bin/aider
+#    symlink_name: aider
 
   - package_name: uv
     bin_path: bin/uv
