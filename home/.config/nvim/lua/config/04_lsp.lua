@@ -52,6 +52,7 @@ require("mason-lspconfig").setup({
 		"helm_ls",
 		"lua_ls",
 		"yamlls",
+		"fixjson",
 	},
 	handlers = { default_setup },
 })
