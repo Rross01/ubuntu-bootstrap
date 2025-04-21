@@ -35,11 +35,16 @@ alias getpass="head /dev/urandom | tr -dc \"A-Za-z0-9@#!()&'\" | head -c 16 | wl
 alias locconf="export KUBECONFIG=~/places/kubeconfigs/loc.conf"
 
 # Batcat
-export BAT_THEME="base16-256"
-alias bat='batcat'
+export BAT_THEME="base16"
+# export BAT_THEME_LIGHT="gruvbox-light"
+# export BAT_THEME_DARK="gruvbox-dark"
 # Use batcat for all help pages
-alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'
-alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
+alias -g -- -h='-h 2>&1 | batcat --language=help --style=plain'
+alias -g -- --help='--help 2>&1 | batcat --language=help --style=plain'
+# Use batcat for man pages
+export MANPAGER="sh -c 'col -bx | batcat --language=man --style=plain'"
+export MANROFFOPT="-c"
+alias bat='batcat'
 
 python_venv() {
     MYVENV=./.venv
