@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export FZF_DEFAULT_OPTS='--bind=alt-k:up,alt-j:down --tmux 40%,30%'
+export FZF_DEFAULT_OPTS='--bind=alt-k:up,alt-j:down --tmux 40%,30% --reverse --color=bw'
 
 DIRS_TO_FIND="\
 $HOME \

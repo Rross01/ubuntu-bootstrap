@@ -11,7 +11,7 @@ source $HOME/places/sys/oh-my-zsh/oh-my-zsh.sh
 export EDITOR="nvim"
 
 # fzf opts
-export FZF_DEFAULT_OPTS='--bind=alt-k:up,alt-j:down --tmux 80%'
+export FZF_DEFAULT_OPTS='--bind=alt-k:up,alt-j:down --tmux 60%,40% --reverse --color=bw'
 
 # Different home for gpg
 export GNUPGHOME="~/places/gpg"
