@@ -35,7 +35,7 @@ alias getpass="head /dev/urandom | tr -dc \"A-Za-z0-9@#!()&'\" | head -c 16 | wl
 alias locconf="export KUBECONFIG=~/places/kubeconfigs/loc.conf"
 
 # Batcat
-BAT_THEME="Monokai Extended"
+export BAT_THEME="base16-256"
 alias bat='batcat'
 # Use batcat for all help pages
 alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'
