@@ -46,7 +46,7 @@ require("mason-lspconfig").setup({
 	ensure_installed = {
 		-- python
 		"pyright",
-		"ruff",
+		-- "ruff",
 		-- other
 		"dockerls",
 		"helm_ls",
