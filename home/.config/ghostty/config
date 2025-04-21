@@ -6,6 +6,5 @@ bold-is-bright = true
 mouse-hide-while-typing = true
 command = tmux
 mouse-scroll-multiplier = 0.01
-window-decoration = "none"
 keybind = ctrl+minus=decrease_font_size:0.5
 keybind = ctrl+equal=increase_font_size:0.5
