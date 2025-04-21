@@ -46,6 +46,7 @@ snap_packages:
   common:
     - beautysh
     - pinta
+    - postman
     - ruff
     - telegram-desktop
   classic:
