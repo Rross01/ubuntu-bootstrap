@@ -1,13 +1,11 @@
 window-padding-y = 0
-font-family = "IosevkaTerm Nerd Font"
-font-size = 13
+font-family = "Iosevka Nerd Font"
+font-size = 12
 theme = light:GruvboxLight,dark:GruvboxDark
 bold-is-bright = true
 mouse-hide-while-typing = true
 command = tmux
 mouse-scroll-multiplier = 0.01
-keybind = ctrl+minus=decrease_font_size:0.5
-keybind = ctrl+equal=increase_font_size:0.5
 
 # Unbind keybinds
 keybind = unconsumed:alt+1=goto_tab:1
