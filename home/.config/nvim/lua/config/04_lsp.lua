@@ -46,13 +46,13 @@ require("mason-lspconfig").setup({
 	ensure_installed = {
 		-- python
 		"pyright",
-		-- "ruff",
 		-- other
 		"dockerls",
+		"fixjson",
 		"helm_ls",
 		"lua_ls",
+		"prettier",
 		"yamlls",
-		"fixjson",
 	},
 	handlers = { default_setup },
 })

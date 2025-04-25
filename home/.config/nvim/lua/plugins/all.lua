@@ -105,6 +105,7 @@ return {
 				sh = { "beautysh" },
 				sql = { "sqlfmt" },
 				json = { "fixjson" },
+				markdown = { "prettier" },
 			},
 		},
 	},
