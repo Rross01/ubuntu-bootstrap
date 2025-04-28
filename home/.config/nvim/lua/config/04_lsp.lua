@@ -16,6 +16,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 	end,
 })
 local lsp_capabilities = require("blink.cmp").get_lsp_capabilities()
+
 local default_setup = function(server)
 	require("lspconfig")[server].setup({
 		capabilities = lsp_capabilities,
@@ -42,22 +43,24 @@ vim.diagnostic.config({
 })
 
 require("mason").setup({})
-require("mason-lspconfig").setup({
+require("mason-tool-installer").setup({
 	ensure_installed = {
-		-- python
-		"pyright",
-		-- other
-		"dockerls",
-		"fixjson",
+		-- lsp's
 		"helm_ls",
 		"lua_ls",
+		"pyright",
+		-- formatters
+		"beautysh",
+		"fixjson",
 		"prettier",
-		"yamlls",
+		"sqlfmt",
+		"stylua",
 	},
-	handlers = { default_setup },
+	start_delay = 3000, -- 3 second delay
 })
-
 local lspconfig = require("lspconfig")
+lspconfig.pyright.setup({})
+lspconfig.lua_ls.setup({})
 lspconfig.helm_ls.setup({
 	settings = {
 		["helm-ls"] = { yamlls = { path = "yaml-language-server" } },

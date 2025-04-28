@@ -94,7 +94,6 @@ return {
 		event = { "BufWritePre" },
 		cmd = { "ConformInfo" },
 		opts = {
-			log_level = vim.log.levels.DEBUG,
 			formatters_by_ft = {
 				lua = { "stylua" },
 				python = {
@@ -139,8 +138,9 @@ return {
 		"neovim/nvim-lspconfig",
 		dependencies = {
 			{ "towolf/vim-helm", ft = "helm" },
-			{ "williamboman/mason-lspconfig.nvim" },
 			{ "williamboman/mason.nvim" },
+			{ "williamboman/mason-lspconfig.nvim" },
+			{ "WhoIsSethDaniel/mason-tool-installer.nvim" },
 			{ "L3MON4D3/LuaSnip" },
 			{ "mfussenegger/nvim-lint" },
 		},

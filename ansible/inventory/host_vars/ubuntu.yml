@@ -70,10 +70,6 @@ bin_archived:
     name: nvim
     bin_path: nvim-linux-x86_64/bin/nvim
 
-  - url: https://github.com/JohnnyMorganz/StyLua/releases/download/v2.0.2/stylua-linux-x86_64.zip
-    name: stylua
-    bin_path: stylua
-
   - url: https://get.helm.sh/helm-v3.17.0-linux-amd64.tar.gz
     name: helm
     bin_path: linux-amd64/helm
