@@ -105,6 +105,7 @@ return {
 				sql = { "sqlfmt" },
 				json = { "fixjson" },
 				markdown = { "prettier" },
+				toml = { "taplo" },
 			},
 		},
 	},

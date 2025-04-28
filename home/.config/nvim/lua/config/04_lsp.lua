@@ -55,6 +55,7 @@ require("mason-tool-installer").setup({
 		"prettier",
 		"sqlfmt",
 		"stylua",
+		"taplo",
 	},
 	start_delay = 3000, -- 3 second delay
 })
