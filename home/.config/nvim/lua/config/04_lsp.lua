@@ -49,9 +49,11 @@ require("mason-tool-installer").setup({
 		"helm_ls",
 		"lua_ls",
 		"pyright",
+		"gopls",
 		-- formatters
 		"beautysh",
 		"fixjson",
+		"gofumpt",
 		"prettier",
 		"sqlfmt",
 		"stylua",
@@ -61,6 +63,7 @@ require("mason-tool-installer").setup({
 })
 local lspconfig = require("lspconfig")
 lspconfig.pyright.setup({})
+lspconfig.gopls.setup({})
 lspconfig.lua_ls.setup({})
 lspconfig.helm_ls.setup({
 	settings = {

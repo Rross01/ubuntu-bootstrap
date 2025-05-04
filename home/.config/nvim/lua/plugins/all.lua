@@ -106,6 +106,7 @@ return {
 				json = { "fixjson" },
 				markdown = { "prettier" },
 				toml = { "taplo" },
+				go = { "gofumpt" },
 			},
 		},
 	},
