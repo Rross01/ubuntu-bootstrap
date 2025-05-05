@@ -36,8 +36,6 @@ alias locconf="export KUBECONFIG=~/places/kubeconfigs/loc.conf"
 
 # Batcat
 export BAT_THEME="base16"
-# export BAT_THEME_LIGHT="gruvbox-light"
-# export BAT_THEME_DARK="gruvbox-dark"
 # Use batcat for all help pages
 alias -g -- -h='-h 2>&1 | batcat --language=help --style=plain'
 alias -g -- --help='--help 2>&1 | batcat --language=help --style=plain'
@@ -55,5 +53,4 @@ python_venv() {
 }
 autoload -U add-zsh-hook
 add-zsh-hook chpwd python_venv
-
 python_venv
