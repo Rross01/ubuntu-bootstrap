@@ -4,14 +4,13 @@ HYPHEN_INSENSITIVE="true"
 HISTFILE=~/places/.zsh_history
 HISTFILESIZE=1000000000
 HISTSIZE=1000000000
-plugins=(zsh-autosuggestions)
 source $HOME/places/sys/oh-my-zsh/oh-my-zsh.sh
 
 # Change default editor
 export EDITOR="nvim"
 
 # fzf opts
-export FZF_DEFAULT_OPTS='--bind=alt-k:up,alt-j:down --reverse --color=bw --height=20'
+export FZF_DEFAULT_OPTS='--bind=alt-k:up,alt-j:down --reverse --color=bw'
 
 # Different home for gpg
 export GNUPGHOME="~/places/gpg"
