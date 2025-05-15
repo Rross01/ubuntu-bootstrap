@@ -42,36 +42,16 @@ return {
 		},
 	},
 
-	-- {
-	-- 	"sainnhe/gruvbox-material",
-	-- 	lazy = false,
-	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		vim.g.gruvbox_material_background = "hard"
-	-- 		vim.g.gruvbox_material_foreground = "original"
-	-- 		vim.g.gruvbox_material_show_eob = 0
-	-- 		vim.cmd.colorscheme("gruvbox-material")
-	-- 	end,
-	-- },
-
 	{
-		"projekt0n/github-nvim-theme",
-		name = "github-theme",
+		"sainnhe/gruvbox-material",
 		lazy = false,
 		priority = 1000,
 		config = function()
-			-- Default options
-			require("github-theme").setup({
-				options = {
-					styles = {
-						comments = "italic",
-					},
-				},
-			})
+			vim.g.gruvbox_material_background = "medium"
+			vim.g.gruvbox_material_foreground = "original"
+			vim.g.gruvbox_material_show_eob = 0
+			vim.cmd.colorscheme("gruvbox-material")
 
-			-- setup must be called before loading
-			vim.cmd("colorscheme github_dark")
-			-- Функция для получения значения из gsettings
 			local function get_gnome_color_scheme()
 				local handle = io.popen("gsettings get org.gnome.desktop.interface color-scheme 2>/dev/null")
 				if not handle then
@@ -90,10 +70,8 @@ return {
 
 			if scheme == "prefer-dark" then
 				vim.opt.background = "dark"
-				vim.cmd("colorscheme github_dark")
 			else
 				vim.opt.background = "light"
-				vim.cmd("colorscheme github_light")
 			end
 		end,
 	},
