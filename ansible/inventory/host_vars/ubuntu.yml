@@ -37,6 +37,7 @@ packages:
   - fzf
   - htop
   - krb5-user
+  - skopeo
   - sshfs
   - tldr
   - tmux
