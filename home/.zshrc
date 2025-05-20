@@ -4,6 +4,7 @@ HYPHEN_INSENSITIVE="true"
 HISTFILE=~/places/.zsh_history
 HISTFILESIZE=1000000000
 HISTSIZE=1000000000
+plugins=(zsh-autosuggestions)
 source $HOME/places/sys/oh-my-zsh/oh-my-zsh.sh
 
 # Change default editor
