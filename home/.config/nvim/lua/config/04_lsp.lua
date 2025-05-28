@@ -84,6 +84,7 @@ lspconfig.ruff.setup({
 					"FIX",
 					"INP",
 					"TD",
+                    "ERA",
 					-- specific rule
 					"ANN002",
 					"ANN003",
