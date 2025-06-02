@@ -3,8 +3,7 @@ font-family = "Iosevka Nerd Font"
 font-size = 12
 # Disable most ligatures
 font-feature = -calt, -liga, -dlig
-theme = light:GruvboxLight,dark:GruvboxDark
-bold-is-bright = true
+theme = light:Adwaita,dark:Adwaita Dark
 mouse-hide-while-typing = true
 command = tmux
 mouse-scroll-multiplier = 0.01

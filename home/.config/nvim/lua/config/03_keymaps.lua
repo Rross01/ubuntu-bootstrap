@@ -18,46 +18,46 @@ map("n", "<leader><Tab>", "<C-^>")
 
 -- mini
 map("n", "<leader>d", function()
-	require("mini.bufremove").delete()
+    require("mini.bufremove").delete()
 end)
 map("n", "gS", function()
-	require("mini.splitjoin").toggle()
+    require("mini.splitjoin").toggle()
 end)
 
 -- conform
 map("n", "fr", function()
-	require("conform").format({
-		async = true,
-		lsp_format = "fallback",
-	})
+    require("conform").format({
+        async = true,
+        lsp_format = "fallback",
+    })
 end)
 
 -- Harpoon2
 local harpoon = require("harpoon")
 
 map("n", "<leader>a", function()
-	harpoon:list():add()
+    harpoon:list():add()
 end)
 map("n", "<C-e>", function()
-	harpoon.ui:toggle_quick_menu(harpoon:list())
+    harpoon.ui:toggle_quick_menu(harpoon:list())
 end)
 map("n", "<leader>1", function()
-	harpoon:list():select(1)
+    harpoon:list():select(1)
 end)
 map("n", "<leader>2", function()
-	harpoon:list():select(2)
+    harpoon:list():select(2)
 end)
 map("n", "<leader>3", function()
-	harpoon:list():select(3)
+    harpoon:list():select(3)
 end)
 map("n", "<leader>4", function()
-	harpoon:list():select(4)
+    harpoon:list():select(4)
 end)
 map("n", "<leader>5", function()
-	harpoon:list():select(5)
+    harpoon:list():select(5)
 end)
 map("n", "<leader>6", function()
-	harpoon:list():select(6)
+    harpoon:list():select(6)
 end)
 
 -- Fugitive
