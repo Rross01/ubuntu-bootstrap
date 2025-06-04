@@ -4,7 +4,18 @@ end
 
 local M = {}
 
-local function hsl_to_hex(h, s, l)
+local function hsl_to_hex_css_str(css_str)
+    -- Удалить лишние пробелы вокруг чисел и процентов!
+    -- Извлечь 3 числа (h, s%, l%) игнорируя пробелы вокруг них и запятых
+    local h, s, l = css_str:match("hsl%(%s*([%d%.]+)%s*,%s*([%d%.]+)%%%s*,%s*([%d%.]+)%%%s*%)")
+    if not h or not s or not l then
+        error("Invalid CSS hsl() string: " .. tostring(css_str))
+    end
+
+    h = tonumber(h)
+    s = tonumber(s) / 100
+    l = tonumber(l) / 100
+
     local function hue2rgb(p, q, t)
         if t < 0 then
             t = t + 1
@@ -24,12 +35,11 @@ local function hsl_to_hex(h, s, l)
         return p
     end
 
-    h = h / 360
+    h = (h % 360) / 360
 
     local r, g, b
-
     if s == 0 then
-        r, g, b = l, l, l -- achromatic (grey)
+        r, g, b = l, l, l
     else
         local q = l < 0.5 and l * (1 + s) or l + s - l * s
         local p = 2 * l - q
@@ -45,57 +55,60 @@ local function hsl_to_hex(h, s, l)
     return "#" .. tohex(r) .. tohex(g) .. tohex(b)
 end
 
+-- Пример использования:
+-- print(hsl_to_hex_css_str("hsl(213 ,70%  ,90%)")) -- #e8f1fa
+
 -- stylua: ignore start
 M.dark_colors = {
-    red         =  hsl_to_hex(357,  0.78,  0.49),
-    orange      =  hsl_to_hex(30,   1,     0.64),
-    yellow      =  hsl_to_hex(50,   0.92,  0.57),
-    green       =  hsl_to_hex(141,  0.65,  0.62),
-    blue        =  hsl_to_hex(213,  0.76,  0.65),
-    purple      =  hsl_to_hex(299,  0.55,  0.70),
-    teal        =  hsl_to_hex(166,  0.50,  0.57),
-    violet      =  hsl_to_hex(229,  0.4,   0.64),
-    search      =  hsl_to_hex(47,   0.60,  0.25),
-    visual      =  hsl_to_hex(212,  0.60,  0.25),
-    bg_1        =  hsl_to_hex(0,    0,     0.11),
-    bg_2        =  hsl_to_hex(0,    0,     0.25),
-    bg_3        =  hsl_to_hex(0,    0,     0.32),
-    bg_4        =  hsl_to_hex(0,    0,     0.38),
-    bg_5        =  hsl_to_hex(0,    0,     0.47),
-    fg_5        =  hsl_to_hex(0,    0,     0.60),
-    fg_4        =  hsl_to_hex(0,    0,     0.75),
-    fg_3        =  hsl_to_hex(0,    0,     0.89),
-    fg_2        =  hsl_to_hex(0,    0,     0.96),
-    fg_1        =  hsl_to_hex(0,    0,     0.99),
-    git_add     =  hsl_to_hex(80,   0.62,  0.20),
-    git_remove  =  hsl_to_hex(340,  0.66,  0.17),
-    git_change  =  hsl_to_hex(218,  0.47,  0.29),
+    red         = hsl_to_hex_css_str("hsl(357 ,78%  ,49%)"),
+    orange      = hsl_to_hex_css_str("hsl(30  ,100% ,64%)"),
+    yellow      = hsl_to_hex_css_str("hsl(50  ,92%  ,57%)"),
+    green       = hsl_to_hex_css_str("hsl(141 ,65%  ,62%)"),
+    blue        = hsl_to_hex_css_str("hsl(213 ,76%  ,65%)"),
+    purple      = hsl_to_hex_css_str("hsl(299 ,55%  ,70%)"),
+    teal        = hsl_to_hex_css_str("hsl(166 ,50%  ,57%)"),
+    violet      = hsl_to_hex_css_str("hsl(229 ,40%  ,64%)"),
+    search      = hsl_to_hex_css_str("hsl(47  ,60%  ,25%)"),
+    visual      = hsl_to_hex_css_str("hsl(212 ,60%  ,25%)"),
+    bg_1        = hsl_to_hex_css_str("hsl(0   ,0%   ,11%)"),
+    bg_2        = hsl_to_hex_css_str("hsl(0   ,0%   ,25%)"),
+    bg_3        = hsl_to_hex_css_str("hsl(0   ,0%   ,32%)"),
+    bg_4        = hsl_to_hex_css_str("hsl(0   ,0%   ,38%)"),
+    bg_5        = hsl_to_hex_css_str("hsl(0   ,0%   ,47%)"),
+    fg_5        = hsl_to_hex_css_str("hsl(0   ,0%   ,60%)"),
+    fg_4        = hsl_to_hex_css_str("hsl(0   ,0%   ,75%)"),
+    fg_3        = hsl_to_hex_css_str("hsl(0   ,0%   ,89%)"),
+    fg_2        = hsl_to_hex_css_str("hsl(0   ,0%   ,96%)"),
+    fg_1        = hsl_to_hex_css_str("hsl(0   ,0%   ,99%)"),
+    git_add     = hsl_to_hex_css_str("hsl(80  ,62%  ,20%)"),
+    git_remove  = hsl_to_hex_css_str("hsl(340 ,66%  ,17%)"),
+    git_change  = hsl_to_hex_css_str("hsl(218 ,47%  ,29%)"),
 }
 
 M.light_colors = {
-    red         =  hsl_to_hex(356,  0.75,  0.43),
-    orange      =  hsl_to_hex(25,   1,     0.42),
-    yellow      =  hsl_to_hex(39,   0.92,  0.43),
-    green       =  hsl_to_hex(150,  1,     0.24),
-    blue        =  hsl_to_hex(213,  1,     0.32),
-    purple      =  hsl_to_hex(285,  0.45,  0.46),
-    teal        =  hsl_to_hex(188,  0.55,  0.33),
-    violet      =  hsl_to_hex(235,  0.44,  0.52),
-    search      =  hsl_to_hex(57,   0.70,  0.90),
-    visual      =  hsl_to_hex(213,  0.70,  0.90),
-    bg_1        =  hsl_to_hex(0,    0,     0.99),
-    bg_2        =  hsl_to_hex(0,    0,     0.96),
-    bg_3        =  hsl_to_hex(0,    0,     0.89),
-    bg_4        =  hsl_to_hex(0,    0,     0.75),
-    bg_5        =  hsl_to_hex(0,    0,     0.60),
-    fg_5        =  hsl_to_hex(0,    0,     0.47),
-    fg_4        =  hsl_to_hex(0,    0,     0.38),
-    fg_3        =  hsl_to_hex(0,    0,     0.32),
-    fg_2        =  hsl_to_hex(0,    0,     0.25),
-    fg_1        =  hsl_to_hex(0,    0,     0.11),
-    git_add     =  hsl_to_hex(140,  0.92,  0.43),
-    git_remove  =  hsl_to_hex(356,  0.92,  0.43),
-    git_change  =  hsl_to_hex(39,   0.92,  0.43),
+    red         = hsl_to_hex_css_str("hsl(356 ,75%  ,43%)"),
+    orange      = hsl_to_hex_css_str("hsl(25  ,100% ,42%)"),
+    yellow      = hsl_to_hex_css_str("hsl(51  ,85%  ,32%)"),
+    green       = hsl_to_hex_css_str("hsl(129 ,95%  ,26%)"),
+    blue        = hsl_to_hex_css_str("hsl(224 ,80%  ,46%)"),
+    purple      = hsl_to_hex_css_str("hsl(294 ,80%  ,32%)"),
+    teal        = hsl_to_hex_css_str("hsl(192 ,100% ,24%)"),
+    violet      = hsl_to_hex_css_str("hsl(235 ,44%  ,52%)"),
+    search      = hsl_to_hex_css_str("hsl(57  ,70%  ,90%)"),
+    visual      = hsl_to_hex_css_str("hsl(213 ,70%  ,90%)"),
+    bg_1        = hsl_to_hex_css_str("hsl(0   ,0%   ,99%)"),
+    bg_2        = hsl_to_hex_css_str("hsl(0   ,0%   ,96%)"),
+    bg_3        = hsl_to_hex_css_str("hsl(0   ,0%   ,89%)"),
+    bg_4        = hsl_to_hex_css_str("hsl(0   ,0%   ,75%)"),
+    bg_5        = hsl_to_hex_css_str("hsl(0   ,0%   ,60%)"),
+    fg_5        = hsl_to_hex_css_str("hsl(0   ,0%   ,47%)"),
+    fg_4        = hsl_to_hex_css_str("hsl(0   ,0%   ,38%)"),
+    fg_3        = hsl_to_hex_css_str("hsl(0   ,0%   ,32%)"),
+    fg_2        = hsl_to_hex_css_str("hsl(0   ,0%   ,25%)"),
+    fg_1        = hsl_to_hex_css_str("hsl(0   ,0%   ,11%)"),
+    git_add     = hsl_to_hex_css_str("hsl(140 ,92%  ,43%)"),
+    git_remove  = hsl_to_hex_css_str("hsl(356 ,92%  ,43%)"),
+    git_change  = hsl_to_hex_css_str("hsl(39  ,92%  ,43%)"),
 }
 -- stylua: ignore end
 
@@ -149,7 +162,7 @@ M.set = function(colors)
     hl("String", { fg = colors.teal })
     hl("Character", { fg = colors.teal })
     hl("Number", { fg = colors.violet })
-    hl("Boolean", { fg = colors.purple })
+    hl("Boolean", { fg = colors.blue })
     hl("Float", { fg = colors.violet })
     hl("Identifier", { fg = colors.orange })
     hl("Function", { fg = colors.blue })
@@ -208,7 +221,7 @@ M.set = function(colors)
     hl("@constant.macro", { fg = colors.yellow, bold = true })
     hl("@define", { fg = colors.yellow, bold = true })
     hl("@macro", { fg = colors.yellow, bold = true })
-    hl("@string", { fg = colors.teal })
+    hl("@string", { fg = colors.green })
     hl("@string.escape", { fg = colors.blue })
     hl("@stringEscape", { fg = colors.blue })
     hl("@string.special", { fg = colors.blue })
@@ -218,7 +231,7 @@ M.set = function(colors)
     hl("@number", { fg = colors.violet })
     hl("@boolan", { fg = colors.violet, bold = true })
     hl("@float", { fg = colors.teal })
-    hl("@function", { fg = colors.green })
+    hl("@function", { fg = colors.teal })
     hl("@function.builtin", { fg = colors.blue })
     hl("@function.macro", { fg = colors.blue, bold = true })
     hl("@attribute", { fg = colors.orange })
@@ -239,7 +252,7 @@ M.set = function(colors)
     hl("@exception", { fg = colors.orange, bold = true })
     hl("@variable", { fg = colors.fg_2 })
     hl("@variable.builtin", { fg = colors.purple })
-    hl("@variable.parameter", { fg = colors.fg_3 })
+    hl("@variable.parameter", { fg = colors.purple })
     hl("@variable.other", { fg = colors.teal })
     hl("@type", { fg = colors.yellow })
     hl("@type.builtin", { fg = colors.teal })
@@ -254,10 +267,13 @@ M.set = function(colors)
     hl("@tag", { fg = colors.teal })
     hl("@tag.delimiter", { fg = colors.fg_3 })
     hl("@tag.attribute", { fg = colors.orange })
+    hl("@spell", { fg = colors.bg_5, italic = true })
 
     -- python
-    hl("@variable.member.python", { fg = colors.blue })
     hl("@function.call.python", { fg = colors.green })
+    hl("@module.python", { fg = colors.fg_1 })
+    hl("@attribute.python", { fg = colors.yellow })
+    hl("@string.documentation.python", { fg = colors.bg_5 })
 
     -- LSP semantic tokens
     hl("@lsp.type.class", { link = "@type" })
