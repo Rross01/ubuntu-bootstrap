@@ -4,57 +4,101 @@ end
 
 local M = {}
 
+local function hsl_to_hex(h, s, l)
+    local function hue2rgb(p, q, t)
+        if t < 0 then
+            t = t + 1
+        end
+        if t > 1 then
+            t = t - 1
+        end
+        if t < 1 / 6 then
+            return p + (q - p) * 6 * t
+        end
+        if t < 1 / 2 then
+            return q
+        end
+        if t < 2 / 3 then
+            return p + (q - p) * (2 / 3 - t) * 6
+        end
+        return p
+    end
+
+    h = h / 360
+
+    local r, g, b
+
+    if s == 0 then
+        r, g, b = l, l, l -- achromatic (grey)
+    else
+        local q = l < 0.5 and l * (1 + s) or l + s - l * s
+        local p = 2 * l - q
+        r = hue2rgb(p, q, h + 1 / 3)
+        g = hue2rgb(p, q, h)
+        b = hue2rgb(p, q, h - 1 / 3)
+    end
+
+    local function tohex(x)
+        return string.format("%02x", math.floor(x * 255 + 0.5))
+    end
+
+    return "#" .. tohex(r) .. tohex(g) .. tohex(b)
+end
+
+-- stylua: ignore start
 M.dark_colors = {
-    -- base16
-    red = "#E01B24",
-    orange = "#FFA348",
-    yellow = "#F6D32D",
-    green = "#57E389",
-    blue = "#62A0EA",
-    purple = "#DC8ADD",
-    teal = "#5BC8AF",
-    violet = "#7D8AC7",
-    search = "#F5C211",
-    visual = "#193D66",
-    bg_1 = "#1c1c1c",
-    bg_2 = "#404040",
-    bg_3 = "#504E55",
-    bg_4 = "#5E5C64",
-    bg_5 = "#77767B",
-    fg_5 = "#9A9996",
-    fg_4 = "#C0BFBC",
-    fg_3 = "#E5E4E1",
-    fg_2 = "#F6F5F4",
-    fg_1 = "#FCFCFC",
+    red         =  hsl_to_hex(357,  0.78,  0.49),
+    orange      =  hsl_to_hex(30,   1,     0.64),
+    yellow      =  hsl_to_hex(50,   0.92,  0.57),
+    green       =  hsl_to_hex(141,  0.65,  0.62),
+    blue        =  hsl_to_hex(213,  0.76,  0.65),
+    purple      =  hsl_to_hex(299,  0.55,  0.70),
+    teal        =  hsl_to_hex(166,  0.50,  0.57),
+    violet      =  hsl_to_hex(229,  0.4,   0.64),
+    search      =  hsl_to_hex(47,   0.60,  0.25),
+    visual      =  hsl_to_hex(212,  0.60,  0.25),
+    bg_1        =  hsl_to_hex(0,    0,     0.11),
+    bg_2        =  hsl_to_hex(0,    0,     0.25),
+    bg_3        =  hsl_to_hex(0,    0,     0.32),
+    bg_4        =  hsl_to_hex(0,    0,     0.38),
+    bg_5        =  hsl_to_hex(0,    0,     0.47),
+    fg_5        =  hsl_to_hex(0,    0,     0.60),
+    fg_4        =  hsl_to_hex(0,    0,     0.75),
+    fg_3        =  hsl_to_hex(0,    0,     0.89),
+    fg_2        =  hsl_to_hex(0,    0,     0.96),
+    fg_1        =  hsl_to_hex(0,    0,     0.99),
+    git_add     =  hsl_to_hex(80,   0.62,  0.20),
+    git_remove  =  hsl_to_hex(340,  0.66,  0.17),
+    git_change  =  hsl_to_hex(218,  0.47,  0.29),
 }
 
 M.light_colors = {
-    red = "#C01C28",
-    orange = "#d65900",
-    yellow = "#D38B09",
-    green = "#007a3d",
-    blue = "#0049A3",
-    purple = "#9141AC",
-    teal = "#267582",
-    violet = "#4E57BA",
-    search = "#F9F7D2",
-    visual = "#99C1F1",
-    bg_1 = "#FCFCFC",
-    bg_2 = "#F6F5F4",
-    bg_3 = "#E5E4E1",
-    bg_4 = "#C0BFBC",
-    bg_5 = "#9A9996",
-    fg_5 = "#77767B",
-    fg_4 = "#5E5C64",
-    fg_3 = "#504E55",
-    fg_2 = "#404040",
-    fg_1 = "#1c1c1c",
-
-    -- diff_dark_add = "#3d5213",
-    -- diff_dark_remove = "#4a0f23",
-    -- diff_dark_change = "#27406b",
-    -- diff_dark_text = "#23324d",
+    red         =  hsl_to_hex(356,  0.75,  0.43),
+    orange      =  hsl_to_hex(25,   1,     0.42),
+    yellow      =  hsl_to_hex(39,   0.92,  0.43),
+    green       =  hsl_to_hex(150,  1,     0.24),
+    blue        =  hsl_to_hex(213,  1,     0.32),
+    purple      =  hsl_to_hex(285,  0.45,  0.46),
+    teal        =  hsl_to_hex(188,  0.55,  0.33),
+    violet      =  hsl_to_hex(235,  0.44,  0.52),
+    search      =  hsl_to_hex(57,   0.70,  0.90),
+    visual      =  hsl_to_hex(213,  0.70,  0.90),
+    bg_1        =  hsl_to_hex(0,    0,     0.99),
+    bg_2        =  hsl_to_hex(0,    0,     0.96),
+    bg_3        =  hsl_to_hex(0,    0,     0.89),
+    bg_4        =  hsl_to_hex(0,    0,     0.75),
+    bg_5        =  hsl_to_hex(0,    0,     0.60),
+    fg_5        =  hsl_to_hex(0,    0,     0.47),
+    fg_4        =  hsl_to_hex(0,    0,     0.38),
+    fg_3        =  hsl_to_hex(0,    0,     0.32),
+    fg_2        =  hsl_to_hex(0,    0,     0.25),
+    fg_1        =  hsl_to_hex(0,    0,     0.11),
+    git_add     =  hsl_to_hex(140,  0.92,  0.43),
+    git_remove  =  hsl_to_hex(356,  0.92,  0.43),
+    git_change  =  hsl_to_hex(39,   0.92,  0.43),
 }
+-- stylua: ignore end
+
 M.set = function(colors)
     -- UI highlight
     hl("Normal", { fg = colors.fg_3, bg = colors.bg_1 })
@@ -160,8 +204,7 @@ M.set = function(colors)
     hl("@punctuation.special", { fg = colors.teal })
     hl("@punctuation.bracket", { fg = colors.fg_3 })
     hl("@punctuation.delimiter", { fg = colors.fg_3 })
-    hl("@constant", { fg = colors.green })
-    -- hl("@constant.builtin", { fg = colors.violet })
+    hl("@constant", { fg = colors.fg_3 })
     hl("@constant.macro", { fg = colors.yellow, bold = true })
     hl("@define", { fg = colors.yellow, bold = true })
     hl("@macro", { fg = colors.yellow, bold = true })
@@ -185,7 +228,7 @@ M.set = function(colors)
     hl("@method", { fg = colors.blue })
     hl("@field", { fg = colors.teal })
     hl("@property", { fg = colors.blue })
-    hl("@constructor", { fg = colors.green })
+    hl("@constructor", { fg = colors.fg_3 })
     hl("@conditional", { fg = colors.orange, bold = true })
     hl("@repeat", { fg = colors.orange, bold = true })
     hl("@label", { fg = colors.purple })
@@ -194,7 +237,7 @@ M.set = function(colors)
     hl("@keyword.function", { fg = colors.blue })
     hl("@keyword.operator", { fg = colors.orange })
     hl("@exception", { fg = colors.orange, bold = true })
-    hl("@variable", { fg = colors.fg_3 })
+    hl("@variable", { fg = colors.fg_2 })
     hl("@variable.builtin", { fg = colors.purple })
     hl("@variable.parameter", { fg = colors.fg_3 })
     hl("@variable.other", { fg = colors.teal })
@@ -262,7 +305,7 @@ M.set = function(colors)
     hl("TelescopeMatching", { fg = colors.fg_3, bold = true })
     hl("TelescopePromptPrefix", { fg = colors.fg_3, bold = true })
 
-    hl("LspReferenceText", { bg = colors.blue })
+    hl("LspReferenceText", { bg = colors.search })
     hl("LspReferenceRead", { bg = colors.blue })
     hl("LspReferenceWrite", { bg = colors.blue })
     hl("DiagnosticError", { fg = colors.red })
@@ -278,17 +321,21 @@ M.set = function(colors)
 
     -- Typescript fix
     hl("typescriptParens", { fg = colors.bg_3, bg = "NONE" })
+
     -- A custome thing to make cmp doc border invisible
     hl("CmpNDocBorder", { fg = colors.bg_5, bg = colors.bg_1 })
 
-    hl("GitSignsAddLn", { fg = colors.green, bg = colors.green })
-    hl("GitSignsChangeLn", { fg = colors.orange, bg = colors.orange })
-    hl("GitSignsCurrentLineBlame", { fg = colors.fg_4 })
+    hl("GitSignsAdd", { fg = colors.git_add })
+    hl("GitSignsChange", { fg = colors.git_change })
+    hl("GitSignsDelete", { fg = colors.git_remove })
 
     -- neotree
     hl("NeoTreeDirectoryName", { fg = colors.fg_2 })
     hl("NeoTreeDirectoryIcon", { fg = colors.fg_2 })
     hl("NeoTreeFloatBorder", { fg = colors.bg_5, bg = colors.bg_1 })
+
+    hl("IblIndent", { fg = colors.bg_3 })
+    hl("IblIndentBlank", { fg = colors.bg_1 })
 end
 
 M.setup = function()

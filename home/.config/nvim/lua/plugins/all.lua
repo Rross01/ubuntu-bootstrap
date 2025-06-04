@@ -72,7 +72,22 @@ return {
         event = "VeryLazy",
         opts = {
             scope = { enabled = false },
-            indent = { highlight = "IblIndent", char = "▏" },
+            indent = {
+                -- weird way to hide first line
+                highlight = {
+                    "IblIndentBlank",
+                    "IblIndent",
+                    "IblIndent",
+                    "IblIndent",
+                    "IblIndent",
+                    "IblIndent",
+                    "IblIndent",
+                    "IblIndent",
+                    "IblIndent",
+                    "IblIndent",
+                },
+                char = "▏",
+            },
         },
     },
 
