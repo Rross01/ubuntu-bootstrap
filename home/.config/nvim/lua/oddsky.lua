@@ -80,9 +80,6 @@ M.dark_colors = {
     fg_3        = hsl_to_hex_css_str("hsl(0   ,0%   ,89%)"),
     fg_2        = hsl_to_hex_css_str("hsl(0   ,0%   ,96%)"),
     fg_1        = hsl_to_hex_css_str("hsl(0   ,0%   ,99%)"),
-    git_add     = hsl_to_hex_css_str("hsl(80  ,62%  ,20%)"),
-    git_remove  = hsl_to_hex_css_str("hsl(340 ,66%  ,17%)"),
-    git_change  = hsl_to_hex_css_str("hsl(218 ,47%  ,29%)"),
 }
 
 M.light_colors = {
@@ -106,9 +103,6 @@ M.light_colors = {
     fg_3        = hsl_to_hex_css_str("hsl(0   ,0%   ,32%)"),
     fg_2        = hsl_to_hex_css_str("hsl(0   ,0%   ,25%)"),
     fg_1        = hsl_to_hex_css_str("hsl(0   ,0%   ,11%)"),
-    git_add     = hsl_to_hex_css_str("hsl(140 ,92%  ,43%)"),
-    git_remove  = hsl_to_hex_css_str("hsl(356 ,92%  ,43%)"),
-    git_change  = hsl_to_hex_css_str("hsl(39  ,92%  ,43%)"),
 }
 -- stylua: ignore end
 
@@ -245,7 +239,7 @@ M.set = function(colors)
     hl("@conditional", { fg = colors.orange, bold = true })
     hl("@repeat", { fg = colors.orange, bold = true })
     hl("@label", { fg = colors.purple })
-    hl("@operator", { fg = colors.purple })
+    hl("@operator", { fg = colors.fg_3 })
     hl("@keyword", { fg = colors.red })
     hl("@keyword.function", { fg = colors.blue })
     hl("@keyword.operator", { fg = colors.orange })
@@ -270,10 +264,15 @@ M.set = function(colors)
     hl("@spell", { fg = colors.bg_5, italic = true })
 
     -- python
-    hl("@function.call.python", { fg = colors.green })
-    hl("@module.python", { fg = colors.fg_1 })
     hl("@attribute.python", { fg = colors.yellow })
+    hl("@constructor.python", { fg = colors.yellow })
+    hl("@function.call.python", { fg = colors.green })
+    hl("@module.python", { fg = colors.fg_3 })
     hl("@string.documentation.python", { fg = colors.bg_5 })
+    hl("@type.python", { fg = colors.yellow })
+
+    -- markdown
+    hl("@spell.markdown", { fg = colors.fg_3 })
 
     -- LSP semantic tokens
     hl("@lsp.type.class", { link = "@type" })
@@ -341,9 +340,9 @@ M.set = function(colors)
     -- A custome thing to make cmp doc border invisible
     hl("CmpNDocBorder", { fg = colors.bg_5, bg = colors.bg_1 })
 
-    hl("GitSignsAdd", { fg = colors.git_add })
-    hl("GitSignsChange", { fg = colors.git_change })
-    hl("GitSignsDelete", { fg = colors.git_remove })
+    hl("GitSignsAdd", { fg = colors.green })
+    hl("GitSignsChange", { fg = colors.yellow })
+    hl("GitSignsDelete", { fg = colors.red })
 
     -- neotree
     hl("NeoTreeDirectoryName", { fg = colors.fg_2 })
