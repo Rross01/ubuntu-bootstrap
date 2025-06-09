@@ -10,6 +10,8 @@ source $HOME/places/sys/oh-my-zsh/oh-my-zsh.sh
 # Change default editor
 export EDITOR="nvim"
 
+export PATH="$HOME/.local/share/nvim/mason/bin/:$PATH"
+
 # fzf opts
 export FZF_DEFAULT_OPTS='--bind=alt-k:up,alt-j:down --reverse --color=bw'
 

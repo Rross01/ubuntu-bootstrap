@@ -152,6 +152,9 @@ return {
                 stylua = {
                     prepend_args = { "--indent-type", "Spaces" },
                 },
+                cbfmt = {
+                    prepend_args = { "--config", "/home/rrossamakhin/.config/nvim/cbfmt.toml" },
+                },
             },
             formatters_by_ft = {
                 lua = { "stylua" },
@@ -163,7 +166,7 @@ return {
                 sh = { "beautysh" },
                 sql = { "sqlfmt" },
                 json = { "fixjson" },
-                markdown = { "prettier" },
+                markdown = { "prettier", "cbfmt" },
                 toml = { "taplo" },
                 go = { "gofumpt" },
             },

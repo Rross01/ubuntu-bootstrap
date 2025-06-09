@@ -51,6 +51,7 @@ require("mason-tool-installer").setup({
         "sqlfmt",
         "stylua",
         "taplo",
+        "cbfmt",
     },
     start_delay = 3000, -- 3 second delay
 })
