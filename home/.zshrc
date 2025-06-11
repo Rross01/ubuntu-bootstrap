@@ -1,4 +1,4 @@
-# Setup
+# setup
 ZSH_THEME="fwalch"
 HYPHEN_INSENSITIVE="true"
 HISTFILE=~/places/.zsh_history
@@ -7,26 +7,31 @@ HISTSIZE=1000000000
 plugins=(zsh-autosuggestions)
 source $HOME/places/sys/oh-my-zsh/oh-my-zsh.sh
 
-# Change default editor
+# change default editor
 export EDITOR="nvim"
 
+# add mason installed bin's to PATH
 export PATH="$HOME/.local/share/nvim/mason/bin/:$PATH"
 
 # fzf opts
-export FZF_DEFAULT_OPTS='--bind=alt-k:up,alt-j:down --reverse --color=bw'
+export FZF_DEFAULT_OPTS='
+--reverse
+--bind=alt-k:up,alt-j:down
+--color=bw
+'
 
-# Different home for gpg
+# different home for gpg
 export GNUPGHOME="~/places/gpg"
 
 # awscli config file
 export AWS_CONFIG_FILE="~/places/.aws_credentials"
 
-# Sources
+# completions
 source <(helm completion zsh)
 source <(kubectl completion zsh)
 source <(fzf --zsh)
 
-# Aliases
+# aliases
 alias s='ssh'
 alias v='nvim'
 alias vim='nvim'
@@ -35,12 +40,14 @@ alias git_log='git log --all --decorate --oneline --graph $argv'
 alias getpass="head /dev/urandom | tr -dc \"A-Za-z0-9@#!()&'\" | head -c 16 | wl-copy"
 alias locconf="export KUBECONFIG=~/places/kubeconfigs/loc.conf"
 
-# Batcat
+# batcat theme
 export BAT_THEME="base16"
-# Use batcat for all help pages
+
+# batcat for all help pages
 alias -g -- -h='-h 2>&1 | batcat --language=help --style=plain'
 alias -g -- --help='--help 2>&1 | batcat --language=help --style=plain'
-# Use batcat for man pages
+
+# batcat for man pages
 export MANPAGER="sh -c 'col -bx | batcat --language=man --style=plain'"
 export MANROFFOPT="-c"
 alias bat='batcat'

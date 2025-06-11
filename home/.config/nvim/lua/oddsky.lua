@@ -117,7 +117,7 @@ M.set = function(colors)
     hl("DiffChange", { fg = colors.orange })
     hl("DiffDelete", { fg = colors.red })
     hl("DiffText", { fg = colors.orange })
-    hl("EndOfBuffer", { fg = colors.bg_1 })
+    hl("EndOfBuffer", { link = "@transparent" })
     hl("ErrorMsg", { fg = colors.red, underline = true })
     hl("VertSplit", { fg = colors.bg_3 })
     hl("WinSeparator", { link = "VertSplit" })
@@ -260,6 +260,9 @@ M.set = function(colors)
     hl("@tag.attribute", { fg = colors.orange })
     hl("@spell", { fg = colors.bg_5, italic = true })
 
+    -- custom links
+    hl("@transparent", { bg = colors.bg_1, fg = colors.bg_1 })
+
     -- python
     hl("@attribute.python", { fg = colors.yellow })
     hl("@constructor.python", { fg = colors.yellow })
@@ -294,15 +297,6 @@ M.set = function(colors)
     hl("htmlTagName", { fg = colors.teal })
     hl("htmlSpecialTagName", { fg = colors.teal })
     hl("htmlArg", { fg = colors.orange })
-
-    hl("NvimTreeRootFolder", { fg = colors.fg_3 })
-    hl("NvimTreeFolderIcon", { fg = colors.fg_3 })
-    hl("NvimTreeFolderName", { fg = colors.fg_3, bold = true })
-    hl("NvimTreeEmptyFolderName", { fg = colors.fg_3, bold = true })
-    hl("NvimTreeOpenedFolderName", { fg = colors.fg_3, bold = true })
-    hl("NvimTreeVertSplit", { fg = colors.bg_1 })
-    hl("NvimTreeNormal", { bg = colors.bg_1 })
-    hl("NvimTreeEndOfBuffer", { fg = colors.bg_1, bg = colors.bg_1 })
 
     hl("BufferLineIndicatorSelected", { bg = colors.bg_1 })
     hl("BufferLineFill", { bg = colors.bg_2 })
@@ -343,9 +337,6 @@ M.set = function(colors)
     hl("NeoTreeDirectoryName", { fg = colors.fg_2 })
     hl("NeoTreeDirectoryIcon", { fg = colors.fg_2 })
     hl("NeoTreeFloatBorder", { fg = colors.bg_5, bg = colors.bg_1 })
-
-    hl("IblIndent", { fg = colors.bg_3 })
-    hl("IblIndentBlank", { fg = colors.bg_1 })
 end
 
 M.setup = function()
