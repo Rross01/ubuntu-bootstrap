@@ -55,31 +55,28 @@ local function hsl_to_hex_css_str(css_str)
     return "#" .. tohex(r) .. tohex(g) .. tohex(b)
 end
 
--- Пример использования:
--- print(hsl_to_hex_css_str("hsl(213 ,70%  ,90%)")) -- #e8f1fa
-
 -- stylua: ignore start
 M.dark_colors = {
-    red         = hsl_to_hex_css_str("hsl(357 ,78%  ,49%)"),
-    orange      = hsl_to_hex_css_str("hsl(30  ,100% ,64%)"),
-    yellow      = hsl_to_hex_css_str("hsl(50  ,92%  ,57%)"),
-    green       = hsl_to_hex_css_str("hsl(141 ,65%  ,62%)"),
-    blue        = hsl_to_hex_css_str("hsl(213 ,76%  ,65%)"),
-    purple      = hsl_to_hex_css_str("hsl(299 ,55%  ,70%)"),
-    teal        = hsl_to_hex_css_str("hsl(166 ,50%  ,57%)"),
-    violet      = hsl_to_hex_css_str("hsl(229 ,40%  ,64%)"),
+    red         = hsl_to_hex_css_str("hsl(354 ,94%  ,69%)"),
+    orange      = hsl_to_hex_css_str("hsl(20  ,50%  ,62%)"),
+    yellow      = hsl_to_hex_css_str("hsl(56  ,40%  ,54%)"),
+    green       = hsl_to_hex_css_str("hsl(128 ,28%  ,54%)"),
+    blue        = hsl_to_hex_css_str("hsl(209 ,91%  ,65%)"),
+    purple      = hsl_to_hex_css_str("hsl(310 ,40%  ,64%)"),
+    teal        = hsl_to_hex_css_str("hsl(185 ,63%  ,44%)"),
+    violet      = hsl_to_hex_css_str("hsl(240 ,35%  ,65%)"),
     search      = hsl_to_hex_css_str("hsl(47  ,60%  ,25%)"),
     visual      = hsl_to_hex_css_str("hsl(212 ,60%  ,25%)"),
-    bg_1        = hsl_to_hex_css_str("hsl(0   ,0%   ,11%)"),
-    bg_2        = hsl_to_hex_css_str("hsl(0   ,0%   ,25%)"),
-    bg_3        = hsl_to_hex_css_str("hsl(0   ,0%   ,32%)"),
-    bg_4        = hsl_to_hex_css_str("hsl(0   ,0%   ,38%)"),
-    bg_5        = hsl_to_hex_css_str("hsl(0   ,0%   ,47%)"),
-    fg_5        = hsl_to_hex_css_str("hsl(0   ,0%   ,60%)"),
-    fg_4        = hsl_to_hex_css_str("hsl(0   ,0%   ,75%)"),
-    fg_3        = hsl_to_hex_css_str("hsl(0   ,0%   ,89%)"),
-    fg_2        = hsl_to_hex_css_str("hsl(0   ,0%   ,96%)"),
-    fg_1        = hsl_to_hex_css_str("hsl(0   ,0%   ,99%)"),
+    bg_1        = hsl_to_hex_css_str("hsl(225 ,6%   ,13%)"),
+    bg_2        = hsl_to_hex_css_str("hsl(225 ,6%   ,23%)"),
+    bg_3        = hsl_to_hex_css_str("hsl(225 ,6%   ,26%)"),
+    bg_4        = hsl_to_hex_css_str("hsl(225 ,6%   ,38%)"),
+    bg_5        = hsl_to_hex_css_str("hsl(225 ,6%   ,43%)"),
+    fg_5        = hsl_to_hex_css_str("hsl(225 ,6%   ,55%)"),
+    fg_4        = hsl_to_hex_css_str("hsl(225 ,6%   ,75%)"),
+    fg_3        = hsl_to_hex_css_str("hsl(225 ,6%   ,89%)"),
+    fg_2        = hsl_to_hex_css_str("hsl(225 ,6%   ,96%)"),
+    fg_1        = hsl_to_hex_css_str("hsl(225 ,6%   ,99%)"),
 }
 
 M.light_colors = {
@@ -102,7 +99,7 @@ M.light_colors = {
     fg_4        = hsl_to_hex_css_str("hsl(0   ,0%   ,38%)"),
     fg_3        = hsl_to_hex_css_str("hsl(0   ,0%   ,32%)"),
     fg_2        = hsl_to_hex_css_str("hsl(0   ,0%   ,25%)"),
-    fg_1        = hsl_to_hex_css_str("hsl(0   ,0%   ,11%)"),
+    fg_1        = hsl_to_hex_css_str("hsl(0   ,0%   ,13%)"),
 }
 -- stylua: ignore end
 
@@ -122,7 +119,7 @@ M.set = function(colors)
     hl("DiffText", { fg = colors.orange })
     hl("EndOfBuffer", { fg = colors.bg_1 })
     hl("ErrorMsg", { fg = colors.red, underline = true })
-    hl("VertSplit", { fg = colors.bg_4 })
+    hl("VertSplit", { fg = colors.bg_3 })
     hl("WinSeparator", { link = "VertSplit" })
     hl("Folded", { fg = colors.fg_5 })
     hl("FoldColumn", { fg = colors.fg_5 })
@@ -337,14 +334,6 @@ M.set = function(colors)
     hl("CocHighlightText", { bg = colors.blue })
     hl("CocHighlightRead", { bg = colors.blue })
     hl("CocHighlightWrite", { bg = colors.blue })
-
-    hl("CmpItemKind", { fg = colors.fg_3 })
-
-    -- Typescript fix
-    hl("typescriptParens", { fg = colors.bg_3, bg = "NONE" })
-
-    -- A custome thing to make cmp doc border invisible
-    hl("CmpNDocBorder", { fg = colors.bg_5, bg = colors.bg_1 })
 
     hl("GitSignsAdd", { fg = colors.green })
     hl("GitSignsChange", { fg = colors.yellow })
