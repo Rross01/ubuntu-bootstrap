@@ -55,8 +55,8 @@ require("mason-tool-installer").setup({
     },
     start_delay = 3000, -- 3 second delay
 })
-local lspconfig = require("lspconfig")
 
+local lspconfig = require("lspconfig")
 lspconfig.pyright.setup({})
 lspconfig.gopls.setup({})
 

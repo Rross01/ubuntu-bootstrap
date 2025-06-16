@@ -271,6 +271,9 @@ M.set = function(colors)
     hl("@string.documentation.python", { fg = colors.bg_5 })
     hl("@type.python", { fg = colors.yellow })
 
+    -- yaml
+    hl("@boolean.yaml", { link = "@variable.builtin" })
+
     -- markdown
     hl("@spell.markdown", { fg = colors.fg_3 })
 
