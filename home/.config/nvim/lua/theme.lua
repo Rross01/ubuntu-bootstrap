@@ -55,18 +55,30 @@ local function hsl_to_hex_css_str(css_str)
     return "#" .. tohex(r) .. tohex(g) .. tohex(b)
 end
 
+-- # TODO: cobalt2
+-- # https://packagecontrol.io/packages/Theme%20-%20Cobalt2
+-- Yellow: #ffc600
+-- Orange: #FF9D00
+-- Mint: #2AFFDF
+-- Blue: #193549
+-- Off Blue: #0D3A58 (use on variable bgs)
+-- Dusty Blue: #35434d
+-- Dark Blue: #15232D
+-- Pink: #FB94FF
+-- Light Blue: #9EFFFF 
+
 -- stylua: ignore start
 M.dark_colors = {
-    red         = hsl_to_hex_css_str("hsl(354 ,94%  ,69%)"),
-    orange      = hsl_to_hex_css_str("hsl(20  ,50%  ,62%)"),
-    yellow      = hsl_to_hex_css_str("hsl(56  ,40%  ,54%)"),
-    green       = hsl_to_hex_css_str("hsl(128 ,28%  ,54%)"),
-    blue        = hsl_to_hex_css_str("hsl(209 ,91%  ,65%)"),
-    purple      = hsl_to_hex_css_str("hsl(310 ,40%  ,64%)"),
-    teal        = hsl_to_hex_css_str("hsl(185 ,63%  ,44%)"),
-    violet      = hsl_to_hex_css_str("hsl(240 ,35%  ,65%)"),
-    search      = hsl_to_hex_css_str("hsl(47  ,60%  ,25%)"),
-    visual      = hsl_to_hex_css_str("hsl(212 ,60%  ,25%)"),
+    red         = hsl_to_hex_css_str("hsl(356 ,90%  ,65%)"),
+    orange      = hsl_to_hex_css_str("hsl(25  ,90%  ,65%)"),
+    yellow      = hsl_to_hex_css_str("hsl(51  ,60%  ,55%)"),
+    green       = hsl_to_hex_css_str("hsl(129 ,40%  ,54%)"),
+    blue        = hsl_to_hex_css_str("hsl(224 ,70%  ,65%)"),
+    purple      = hsl_to_hex_css_str("hsl(294 ,50%  ,64%)"),
+    teal        = hsl_to_hex_css_str("hsl(192 ,60%  ,44%)"),
+    violet      = hsl_to_hex_css_str("hsl(235 ,40%  ,65%)"),
+    search      = hsl_to_hex_css_str("hsl(57  ,60%  ,25%)"),
+    visual      = hsl_to_hex_css_str("hsl(213 ,60%  ,25%)"),
     bg_1        = hsl_to_hex_css_str("hsl(225 ,6%   ,13%)"),
     bg_2        = hsl_to_hex_css_str("hsl(225 ,6%   ,23%)"),
     bg_3        = hsl_to_hex_css_str("hsl(225 ,6%   ,26%)"),
@@ -125,6 +137,7 @@ M.set = function(colors)
     hl("FoldColumn", { fg = colors.fg_5 })
     hl("SignColumn", { fg = colors.fg_4 })
     hl("IncSearch", { fg = colors.fg_2, bg = colors.search })
+    hl("CurSearch", { fg = colors.fg_2, bg = colors.search, bold = true })
     hl("LineNr", { fg = colors.bg_3 })
     hl("CursorLineNr", { fg = colors.bg_5, bg = colors.bg_2 })
     hl("MatchParen", { fg = colors.fg_3, bold = true })
@@ -276,6 +289,9 @@ M.set = function(colors)
 
     -- markdown
     hl("@spell.markdown", { fg = colors.fg_3 })
+
+    -- json
+    hl("@property.json", { fg = colors.blue, bold = true })
 
     -- LSP semantic tokens
     hl("@lsp.type.class", { link = "@type" })

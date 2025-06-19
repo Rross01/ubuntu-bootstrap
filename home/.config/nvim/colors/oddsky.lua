@@ -1,1 +1,1 @@
-require("oddsky").setup()
+require("theme").setup()

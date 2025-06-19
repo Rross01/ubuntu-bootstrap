@@ -1,13 +1,6 @@
 return {
     "tpope/vim-fugitive",
     "armyers/Vim-Jinja2-Syntax",
-    "nvim-pack/nvim-spectre",
-
-    {
-        "lukas-reineke/headlines.nvim",
-        dependencies = "nvim-treesitter/nvim-treesitter",
-        config = true,
-    },
 
     {
         "norcalli/nvim-colorizer.lua",
@@ -186,9 +179,9 @@ return {
     {
         "saghen/blink.cmp",
         version = "1.*",
-        dependencies = {
-            "mikavilpas/blink-ripgrep.nvim",
-        },
+        -- dependencies = {
+        --     "mikavilpas/blink-ripgrep.nvim",
+        -- },
         opts = {
             -- Experimental signature help support
             signature = { enabled = true },
@@ -198,18 +191,18 @@ return {
             },
 
             sources = {
-                providers = {
-                    ripgrep = {
-                        module = "blink-ripgrep",
-                        name = "Ripgrep",
-                    },
-                },
+                -- providers = {
+                --     ripgrep = {
+                --         module = "blink-ripgrep",
+                --         name = "Ripgrep",
+                --     },
+                -- },
                 default = {
                     "lsp",
                     "path",
                     "snippets",
                     "buffer",
-                    "ripgrep",
+                    -- "ripgrep",
                 },
             },
         },
