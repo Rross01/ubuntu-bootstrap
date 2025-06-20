@@ -104,6 +104,7 @@ lspconfig.ruff.setup({
                     "ARG002",
                     "DTZ005",
                     "F841",
+                    "LOG015",
                     "N803",
                     "N806",
                     "PGH003",

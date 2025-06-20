@@ -2,7 +2,7 @@
 lua = ["stylua -s -"]
 sql = ["sqlfmt -"]
 sh = ["beautysh -"]
-json = ["fixjson -"]
+json = ["fixjson"]
 toml = ["taplo format -"]
 python = ["ruff check --fix-only -"]
 # go = ["gofumpt"]
