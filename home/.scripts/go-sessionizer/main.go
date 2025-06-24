@@ -130,7 +130,7 @@ func buildDisplayLines(items []sessionItem) []string {
 		if item.isDir {
 			lines[i] = fmt.Sprintf("%s", item.path)
 		} else {
-			lines[i] = fmt.Sprintf("🖥️ %s: %d window(s)", item.name, item.windows)
+			lines[i] = fmt.Sprintf("󰧞 %s: %d window(s)", item.name, item.windows)
 			if item.group != "" {
 				lines[i] += fmt.Sprintf(" (group %s)", item.group)
 			}

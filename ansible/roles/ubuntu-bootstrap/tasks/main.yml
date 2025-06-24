@@ -28,3 +28,6 @@
 
 - import_tasks: 10_pip.yml
   tags: pip
+
+- import_tasks: 11_alacritty_fix.yml
+  tags: alacritty_fix

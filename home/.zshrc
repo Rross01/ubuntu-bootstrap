@@ -17,7 +17,6 @@ export PATH="$HOME/.local/share/nvim/mason/bin/:$PATH"
 export FZF_DEFAULT_OPTS='
 --reverse
 --bind=alt-k:up,alt-j:down
---color=bw
 '
 
 # different home for gpg
