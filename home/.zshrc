@@ -35,6 +35,7 @@ alias s='ssh'
 alias v='nvim'
 alias vim='nvim'
 alias kl='kubectl'
+alias G='git'
 alias git_log='git log --all --decorate --oneline --graph $argv'
 alias getpass="head /dev/urandom | tr -dc \"A-Za-z0-9@#!()&'\" | head -c 16 | wl-copy"
 alias locconf="export KUBECONFIG=~/places/kubeconfigs/loc.conf"

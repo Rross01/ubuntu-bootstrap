@@ -60,7 +60,8 @@ deb:
   - https://st.ktalk.host/ktalk-app/linux/ktalk3.1.0amd64.deb
 
 fonts:
-  - https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/Iosevka.zip
+  # - https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/Iosevka.zip
+  - https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/ZedMono.zip
 
 bin:
   - url: https://dl.k8s.io/release/v1.32.0/bin/linux/amd64/kubectl

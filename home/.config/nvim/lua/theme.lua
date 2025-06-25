@@ -68,7 +68,7 @@ end
 -- Light Blue: #9EFFFF 
 
 -- stylua: ignore start
-M.dark_colors = {
+M.colors = {
     red         = hsl_to_hex_css_str("hsl(356 ,90%  ,65%)"),
     orange      = hsl_to_hex_css_str("hsl(25  ,90%  ,65%)"),
     yellow      = hsl_to_hex_css_str("hsl(51  ,60%  ,55%)"),
@@ -80,7 +80,7 @@ M.dark_colors = {
     search      = hsl_to_hex_css_str("hsl(57  ,60%  ,25%)"),
     visual      = hsl_to_hex_css_str("hsl(213 ,60%  ,25%)"),
     bg_1        = hsl_to_hex_css_str("hsl(225 ,0%   ,13%)"),
-    bg_2        = hsl_to_hex_css_str("hsl(225 ,0%   ,23%)"),
+    bg_2        = hsl_to_hex_css_str("hsl(225 ,0%   ,18%)"),
     bg_3        = hsl_to_hex_css_str("hsl(225 ,0%   ,26%)"),
     bg_4        = hsl_to_hex_css_str("hsl(225 ,0%   ,38%)"),
     bg_5        = hsl_to_hex_css_str("hsl(225 ,0%   ,43%)"),
@@ -89,29 +89,6 @@ M.dark_colors = {
     fg_3        = hsl_to_hex_css_str("hsl(225 ,0%   ,89%)"),
     fg_2        = hsl_to_hex_css_str("hsl(225 ,0%   ,96%)"),
     fg_1        = hsl_to_hex_css_str("hsl(225 ,0%   ,99%)"),
-}
-
-M.light_colors = {
-    red         = hsl_to_hex_css_str("hsl(356 ,75%  ,43%)"),
-    orange      = hsl_to_hex_css_str("hsl(25  ,100% ,42%)"),
-    yellow      = hsl_to_hex_css_str("hsl(51  ,85%  ,32%)"),
-    green       = hsl_to_hex_css_str("hsl(129 ,95%  ,26%)"),
-    blue        = hsl_to_hex_css_str("hsl(224 ,80%  ,46%)"),
-    purple      = hsl_to_hex_css_str("hsl(294 ,80%  ,32%)"),
-    teal        = hsl_to_hex_css_str("hsl(192 ,100% ,24%)"),
-    violet      = hsl_to_hex_css_str("hsl(235 ,44%  ,52%)"),
-    search      = hsl_to_hex_css_str("hsl(57  ,70%  ,90%)"),
-    visual      = hsl_to_hex_css_str("hsl(213 ,70%  ,90%)"),
-    bg_1        = hsl_to_hex_css_str("hsl(0   ,0%   ,99%)"),
-    bg_2        = hsl_to_hex_css_str("hsl(0   ,0%   ,96%)"),
-    bg_3        = hsl_to_hex_css_str("hsl(0   ,0%   ,89%)"),
-    bg_4        = hsl_to_hex_css_str("hsl(0   ,0%   ,75%)"),
-    bg_5        = hsl_to_hex_css_str("hsl(0   ,0%   ,60%)"),
-    fg_5        = hsl_to_hex_css_str("hsl(0   ,0%   ,47%)"),
-    fg_4        = hsl_to_hex_css_str("hsl(0   ,0%   ,38%)"),
-    fg_3        = hsl_to_hex_css_str("hsl(0   ,0%   ,32%)"),
-    fg_2        = hsl_to_hex_css_str("hsl(0   ,0%   ,25%)"),
-    fg_1        = hsl_to_hex_css_str("hsl(0   ,0%   ,13%)"),
 }
 -- stylua: ignore end
 
@@ -122,7 +99,7 @@ M.set = function(colors)
     hl("FloatBorder", { fg = colors.bg_5, bg = colors.bg_2 })
     hl("ColorColumn", { bg = colors.bg_2 })
     hl("Cursor", { fg = colors.bg_5, bg = colors.fg_4 })
-    hl("CursorLine", { bg = colors.bg_3 })
+    hl("CursorLine", { bg = colors.bg_2 })
     hl("CursorColumn", { bg = colors.bg_3 })
     hl("Directory", { fg = colors.fg_2, bold = true })
     hl("DiffAdd", { fg = colors.teal })
@@ -137,10 +114,10 @@ M.set = function(colors)
     hl("FoldColumn", { fg = colors.fg_5 })
     hl("SignColumn", { fg = colors.fg_4 })
     hl("IncSearch", { fg = colors.fg_2, bg = colors.search })
-    hl("CurSearch", { fg = colors.fg_2, bg = colors.search, bold = true })
+    hl("CurSearch", { fg = colors.fg_2, bg = colors.search })
     hl("LineNr", { fg = colors.bg_3 })
     hl("CursorLineNr", { fg = colors.bg_5, bg = colors.bg_2 })
-    hl("MatchParen", { fg = colors.fg_3, bold = true })
+    hl("MatchParen", { fg = colors.fg_3 })
     hl("ModeMsg", { fg = colors.fg_3, bg = colors.bg_2 })
     hl("MoreMsg", { fg = colors.fg_3, bg = colors.bg_2 })
     hl("NonText", { fg = colors.fg_5 })
@@ -151,7 +128,7 @@ M.set = function(colors)
     hl("Question", { fg = colors.blue })
     hl("Search", { fg = colors.fg_2, bg = colors.search })
     hl("SpecialKey", { fg = colors.fg_4 })
-    hl("StatusLine", { fg = colors.fg_3, bg = colors.bg_2 })
+    hl("StatusLine", { fg = colors.bg_5, bg = "NONE" })
     hl("StatusLineNC", { fg = colors.fg_3, bg = colors.bg_3 })
     hl("TabLine", { fg = colors.fg_3, bg = colors.bg_3 })
     hl("TabLineFill", { fg = colors.fg_3, bg = colors.bg_3 })
@@ -274,7 +251,7 @@ M.set = function(colors)
     hl("@spell", { fg = colors.bg_5, italic = true })
 
     -- custom links
-    hl("@transparent", { bg = colors.bg_1, fg = colors.bg_1 })
+    hl("@transparent", { bg = "NONE", fg = colors.bg_1 })
 
     -- python
     hl("@attribute.python", { fg = colors.yellow })
@@ -353,8 +330,8 @@ M.set = function(colors)
     hl("GitSignsDelete", { fg = colors.red })
 
     -- neotree
-    hl("NeoTreeDirectoryName", { fg = colors.fg_2 })
-    hl("NeoTreeDirectoryIcon", { fg = colors.fg_2 })
+    hl("NeoTreeDirectoryName", { fg = colors.fg_3 })
+    hl("NeoTreeDirectoryIcon", { fg = colors.fg_3 })
     hl("NeoTreeFloatBorder", { fg = colors.bg_5, bg = colors.bg_1 })
 end
 
@@ -368,10 +345,6 @@ M.setup = function()
     vim.o.termguicolors = true
     vim.g.colors_name = "oddsky"
 
-    if vim.o.background == "dark" then
-        M.set(M.dark_colors)
-    else
-        M.set(M.light_colors)
-    end
+    M.set(M.colors)
 end
 return M
