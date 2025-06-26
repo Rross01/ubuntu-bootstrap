@@ -86,7 +86,7 @@ M.colors = {
     bg_5        = hsl_to_hex_css_str("hsl(225 ,0%   ,43%)"),
     fg_5        = hsl_to_hex_css_str("hsl(225 ,0%   ,55%)"),
     fg_4        = hsl_to_hex_css_str("hsl(225 ,0%   ,75%)"),
-    fg_3        = hsl_to_hex_css_str("hsl(225 ,0%   ,89%)"),
+    fg_3        = hsl_to_hex_css_str("hsl(225 ,0%   ,87%)"),
     fg_2        = hsl_to_hex_css_str("hsl(225 ,0%   ,96%)"),
     fg_1        = hsl_to_hex_css_str("hsl(225 ,0%   ,99%)"),
 }
@@ -101,7 +101,7 @@ M.set = function(colors)
     hl("Cursor", { fg = colors.bg_5, bg = colors.fg_4 })
     hl("CursorLine", { bg = colors.bg_2 })
     hl("CursorColumn", { bg = colors.bg_3 })
-    hl("Directory", { fg = colors.fg_2, bold = true })
+    hl("Directory", { fg = colors.fg_3, bold = true })
     hl("DiffAdd", { fg = colors.teal })
     hl("DiffChange", { fg = colors.orange })
     hl("DiffDelete", { fg = colors.red })
@@ -113,8 +113,8 @@ M.set = function(colors)
     hl("Folded", { fg = colors.fg_5 })
     hl("FoldColumn", { fg = colors.fg_5 })
     hl("SignColumn", { fg = colors.fg_4 })
-    hl("IncSearch", { fg = colors.fg_2, bg = colors.search })
-    hl("CurSearch", { fg = colors.fg_2, bg = colors.search })
+    hl("IncSearch", { fg = colors.fg_3, bg = colors.search })
+    hl("CurSearch", { fg = colors.fg_3, bg = colors.search })
     hl("LineNr", { fg = colors.bg_3 })
     hl("CursorLineNr", { fg = colors.bg_5, bg = colors.bg_2 })
     hl("MatchParen", { fg = colors.fg_3 })
@@ -126,7 +126,7 @@ M.set = function(colors)
     hl("PmenuSbar", { bg = colors.fg_5 })
     hl("PmenuThumb", { bg = colors.bg_5 })
     hl("Question", { fg = colors.blue })
-    hl("Search", { fg = colors.fg_2, bg = colors.search })
+    hl("Search", { fg = colors.fg_3, bg = colors.search })
     hl("SpecialKey", { fg = colors.fg_4 })
     hl("StatusLine", { fg = colors.bg_5, bg = "NONE" })
     hl("StatusLineNC", { fg = colors.fg_3, bg = colors.bg_3 })
@@ -231,7 +231,7 @@ M.set = function(colors)
     hl("@keyword.function", { fg = colors.blue })
     hl("@keyword.operator", { fg = colors.orange })
     hl("@exception", { fg = colors.orange, bold = true })
-    hl("@variable", { fg = colors.fg_2 })
+    hl("@variable", { fg = colors.fg_3 })
     hl("@variable.builtin", { fg = colors.purple })
     hl("@variable.parameter", { fg = colors.purple })
     hl("@variable.other", { fg = colors.teal })
@@ -333,6 +333,9 @@ M.set = function(colors)
     hl("NeoTreeDirectoryName", { fg = colors.fg_3 })
     hl("NeoTreeDirectoryIcon", { fg = colors.fg_3 })
     hl("NeoTreeFloatBorder", { fg = colors.bg_5, bg = colors.bg_1 })
+
+    -- jinja fix
+    hl("jinjaOperator", { fg = colors.fg_3, bg = "NONE" })
 end
 
 M.setup = function()
