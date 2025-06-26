@@ -1,8 +1,8 @@
 + .kube/
 + .kube/config
 + .config/
++ .config/alacritty/***
 + .config/fontconfig/***
-+ .config/ghostty/***
 + .config/nvim/***
 + .config/tmux/***
 + .gitconfig
