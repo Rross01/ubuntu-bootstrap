@@ -55,18 +55,6 @@ local function hsl_to_hex_css_str(css_str)
     return "#" .. tohex(r) .. tohex(g) .. tohex(b)
 end
 
--- # TODO: cobalt2
--- # https://packagecontrol.io/packages/Theme%20-%20Cobalt2
--- Yellow: #ffc600
--- Orange: #FF9D00
--- Mint: #2AFFDF
--- Blue: #193549
--- Off Blue: #0D3A58 (use on variable bgs)
--- Dusty Blue: #35434d
--- Dark Blue: #15232D
--- Pink: #FB94FF
--- Light Blue: #9EFFFF 
-
 -- stylua: ignore start
 M.colors = {
     red         = hsl_to_hex_css_str("hsl(356 ,90%  ,65%)"),
