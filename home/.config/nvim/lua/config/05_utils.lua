@@ -42,15 +42,15 @@ local function certinfo_to_scratch()
         on_exit = function(j, return_val)
             local stdout = table.concat(j:result(), "\n")
             local stderr = table.concat(j:stderr_result(), "\n")
+            local content = ""
             if return_val ~= 0 then
-                vim.schedule(function()
-                    pop_temp_buff(("Return code: %d\nStderr:\n%s"):format(return_val, stderr))
-                end)
+                content = ("Return code: %d\nStderr:\n%s"):format(return_val, stderr)
             else
-                vim.schedule(function()
-                    pop_temp_buff(stdout)
-                end)
+                content = stdout
             end
+            vim.schedule(function()
+                pop_temp_buff(content)
+            end)
         end,
     }
     Job:new(job_opts):start()
