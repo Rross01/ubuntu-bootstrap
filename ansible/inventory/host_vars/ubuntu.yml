@@ -15,7 +15,7 @@ packages:
   # some deps
   - npm # nvim dep
   - ripgrep # nvim dep
-  - sshpass # ansible
+  - sshpass # ansible dep
   - wl-clipboard
 
   # podman
@@ -26,9 +26,8 @@ packages:
   # dev
   - golang-go
   - postgresql-client
-  - python3-venv
 
-  # network and bluetooth
+  # network
   - network-manager-openconnect
   - network-manager-openconnect-gnome
 
@@ -46,37 +45,36 @@ packages:
 
 snap_packages:
   common:
-    - beautysh
     - pinta
     - postman
-    - ruff
     - telegram-desktop
   classic:
     - pycharm-community
 
 deb:
-  - https://github.com/derailed/k9s/releases/download/v0.50.3/k9s_linux_amd64.deb
+  - https://github.com/derailed/k9s/releases/download/v0.50.7/k9s_linux_amd64.deb
   - https://github.com/getsops/sops/releases/download/v3.10.2/sops_3.10.2_amd64.deb
   - https://st.ktalk.host/ktalk-app/linux/ktalk3.1.0amd64.deb
 
 fonts:
-  # - https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/Iosevka.zip
   - https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/ZedMono.zip
 
 bin:
-  - url: https://dl.k8s.io/release/v1.32.0/bin/linux/amd64/kubectl
+  # stable ver: https://cdn.dl.k8s.io/release/stable.txt
+  - url: https://dl.k8s.io/release/v1.33.2/bin/linux/amd64/kubectl
     name: kubectl
 
 bin_archived:
-  - url: https://github.com/neovim/neovim/releases/download/v0.11.0/nvim-linux-x86_64.tar.gz
+  - url: https://github.com/neovim/neovim/releases/download/v0.11.2/nvim-linux-x86_64.tar.gz
     name: nvim
     bin_path: nvim-linux-x86_64/bin/nvim
 
-  - url: https://get.helm.sh/helm-v3.17.0-linux-amd64.tar.gz
+  # links here -> https://github.com/helm/helm/releases
+  - url: https://get.helm.sh/helm-v3.18.4-linux-amd64.tar.gz
     name: helm
     bin_path: linux-amd64/helm
 
-  - url: https://github.com/helmfile/helmfile/releases/download/v0.170.1/helmfile_0.170.1_linux_amd64.tar.gz
+  - url: https://github.com/helmfile/helmfile/releases/download/v1.1.2/helmfile_1.1.2_linux_amd64.tar.gz
     name: helmfile
     bin_path: helmfile
 
@@ -131,6 +129,5 @@ user_systemd_timers: []
 
 system_systemd_enabled: []
 user_systemd_enabled: []
-  # ssh-agent.service,
   # git-sniffer.timer,
   # config-sync.timer,

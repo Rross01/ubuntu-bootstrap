@@ -45,13 +45,14 @@ require("mason-tool-installer").setup({
         "gopls",
         -- formatters
         "beautysh",
+        "cbfmt",
         "fixjson",
         "gofumpt",
         "prettier",
+        "ruff",
         "sqlfmt",
         "stylua",
         "taplo",
-        "cbfmt",
     },
     start_delay = 3000, -- 3 second delay
 })
