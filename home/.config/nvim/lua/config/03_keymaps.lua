@@ -6,8 +6,8 @@ map("n", "<Esc>", "<cmd>nohlsearch<CR>")
 -- Neotree
 map("n", "<leader>e", ":Neotree float toggle<CR>")
 map("n", "<leader>E", ":Neotree float reveal<CR>")
-map("n", "<leader>q", ":Neotree left toggle<CR>")
-map("n", "<leader>Q", ":Neotree left reveal<CR>")
+map("n", "<leader>q", ":Neotree right toggle<CR>")
+map("n", "<leader>Q", ":Neotree right reveal<CR>")
 
 -- Telescope
 map("n", "<leader>pf", ":Telescope find_files<CR>")
