@@ -42,17 +42,6 @@ return {
     },
 
     {
-        "rachartier/tiny-inline-diagnostic.nvim",
-        opts = {
-            preset = "powerline",
-            -- transparent_bg = false,
-            options = { show_source = true },
-        },
-        event = "VeryLazy",
-        priority = 1000, -- needs to be loaded in first
-    },
-
-    {
         "ThePrimeagen/harpoon",
         branch = "harpoon2",
         dependencies = { "nvim-lua/plenary.nvim" },
@@ -90,29 +79,6 @@ return {
                     "VertSplit",
                 },
                 char = "▏",
-            },
-        },
-    },
-
-    {
-        "nvim-neo-tree/neo-tree.nvim",
-        branch = "v3.x",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "nvim-tree/nvim-web-devicons",
-            "MunifTanjim/nui.nvim",
-            "s1n7ax/nvim-window-picker",
-        },
-        opts = {
-            filesystem = {
-                filtered_items = {
-                    always_show = {
-                        ".env",
-                        ".gitignore",
-                        ".helmignore",
-                        ".dockerignore",
-                    },
-                },
             },
         },
     },
@@ -197,32 +163,30 @@ return {
     },
 
     {
+        "rachartier/tiny-inline-diagnostic.nvim",
+        opts = {
+            preset = "powerline",
+            options = { show_source = true },
+        },
+        event = "VeryLazy",
+        priority = 1000,
+    },
+
+    {
         "saghen/blink.cmp",
         version = "1.*",
-        -- dependencies = {
-        --     "mikavilpas/blink-ripgrep.nvim",
-        -- },
         opts = {
-            -- Experimental signature help support
             signature = { enabled = true },
             keymap = { preset = "super-tab" },
             appearance = {
                 use_nvim_cmp_as_default = false,
             },
-
             sources = {
-                -- providers = {
-                --     ripgrep = {
-                --         module = "blink-ripgrep",
-                --         name = "Ripgrep",
-                --     },
-                -- },
                 default = {
                     "lsp",
                     "path",
                     "snippets",
                     "buffer",
-                    -- "ripgrep",
                 },
             },
         },

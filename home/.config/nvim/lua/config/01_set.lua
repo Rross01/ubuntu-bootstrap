@@ -71,6 +71,8 @@ vim.opt.foldcolumn = "0"
 vim.opt.foldtext = ""
 vim.opt.foldlevel = 99
 
+-- vim.g.netrw_liststyle = 3
+
 vim.filetype.add({
     pattern = {
         [".*/templates/.*%.tpl"] = "helm",

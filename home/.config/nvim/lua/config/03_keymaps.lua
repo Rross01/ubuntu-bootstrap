@@ -5,10 +5,10 @@ map("n", "<Esc>", "<cmd>nohlsearch<CR>")
 map("n", "<leader><Tab>", "<C-^>")
 
 -- Neotree
-map("n", "<leader>e", ":Neotree float toggle<CR>")
-map("n", "<leader>E", ":Neotree float reveal<CR>")
-map("n", "<leader>q", ":Neotree right toggle<CR>")
-map("n", "<leader>Q", ":Neotree right reveal<CR>")
+map("n", "<leader>e", ":Explore<CR>")
+-- map("n", "<leader>E", ":Neotree float reveal<CR>")
+-- map("n", "<leader>q", ":Neotree right toggle<CR>")
+-- map("n", "<leader>Q", ":Neotree right reveal<CR>")
 
 -- Telescope
 local builtin = require("telescope.builtin")
