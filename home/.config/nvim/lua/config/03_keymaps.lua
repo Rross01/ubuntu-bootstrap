@@ -2,6 +2,7 @@ local map = vim.keymap.set
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 map("n", "<Esc>", "<cmd>nohlsearch<CR>")
+map("n", "<leader><Tab>", "<C-^>")
 
 -- Neotree
 map("n", "<leader>e", ":Neotree float toggle<CR>")
@@ -10,19 +11,15 @@ map("n", "<leader>q", ":Neotree right toggle<CR>")
 map("n", "<leader>Q", ":Neotree right reveal<CR>")
 
 -- Telescope
-map("n", "<leader>pf", ":Telescope find_files<CR>")
-map("n", "<leader>pg", ":Telescope live_grep<CR>")
-map("n", "<leader>pd", ":Telescope diagnostics<CR>")
-
-map("n", "<leader><Tab>", "<C-^>")
+local builtin = require("telescope.builtin")
+map("n", "<leader>pf", builtin.find_files)
+map("n", "<leader>pg", builtin.live_grep)
+map("n", "<leader>pd", builtin.diagnostics)
+map("n", "<leader>pc", builtin.current_buffer_fuzzy_find)
 
 -- mini
-map("n", "<leader>d", function()
-    require("mini.bufremove").delete()
-end)
-map("n", "gS", function()
-    require("mini.splitjoin").toggle()
-end)
+map("n", "<leader>d", require("mini.bufremove").delete)
+map("n", "gS", require("mini.splitjoin").toggle)
 
 -- conform
 map("n", "fr", function()
@@ -34,7 +31,6 @@ end)
 
 -- Harpoon2
 local harpoon = require("harpoon")
-
 map("n", "<leader>a", function()
     harpoon:list():add()
 end)
@@ -71,7 +67,6 @@ local bind = vim.api.nvim_create_user_command
 local bind_default_opts = { bang = true }
 
 bind("Tmp", "e ~/places/git/personal/second-brain/scratch.md", bind_default_opts)
-bind("Todo", "e ~/places/git/personal/second-brain/todo.md", bind_default_opts)
 bind("W", "w", bind_default_opts)
 bind("Q", "q", bind_default_opts)
 bind("X", "x", bind_default_opts)
