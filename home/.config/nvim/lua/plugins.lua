@@ -4,6 +4,22 @@ return {
     "nvim-pack/nvim-spectre",
 
     {
+        "nvim-neo-tree/neo-tree.nvim",
+        branch = "v3.x",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-tree/nvim-web-devicons",
+            "MunifTanjim/nui.nvim",
+            "s1n7ax/nvim-window-picker",
+        },
+        opts = {
+            filesystem = {
+                filtered_items = { always_show = { ".env", ".gitignore", ".helmignore", ".dockerignore" } },
+            },
+        },
+    },
+
+    {
         "christoomey/vim-tmux-navigator",
         cmd = {
             "TmuxNavigateLeft",
