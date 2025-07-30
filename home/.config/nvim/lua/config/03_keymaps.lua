@@ -1,5 +1,8 @@
 local map = vim.keymap.set
 
+-- exit terminal mode
+map("t", "<C-\\>", "<C-\\><C-n>")
+
 -- Clear highlights on search when pressing <Esc> in normal mode
 map("n", "<Esc>", "<cmd>nohlsearch<CR>")
 map("n", "<leader><Tab>", "<C-^>")
@@ -16,6 +19,8 @@ map("n", "<leader>pf", builtin.find_files)
 map("n", "<leader>pg", builtin.live_grep)
 map("n", "<leader>pd", builtin.diagnostics)
 map("n", "<leader>pc", builtin.current_buffer_fuzzy_find)
+map("n", "<leader>pb", builtin.buffers)
+map("n", "<leader>ph", builtin.help_tags)
 
 -- mini
 map("n", "<leader>d", require("mini.bufremove").delete)
@@ -54,6 +59,15 @@ map("n", "<leader>5", function()
 end)
 map("n", "<leader>6", function()
     harpoon:list():select(6)
+end)
+map("n", "<leader>7", function()
+    harpoon:list():select(7)
+end)
+map("n", "<leader>8", function()
+    harpoon:list():select(8)
+end)
+map("n", "<leader>9", function()
+    harpoon:list():select(9)
 end)
 
 -- Fugitive

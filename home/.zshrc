@@ -8,6 +8,7 @@ export EDITOR="nvim"
 export PATH="$HOME/.local/share/nvim/mason/bin/:$PATH"
 export GNUPGHOME="~/places/gpg"
 export AWS_CONFIG_FILE="~/places/.aws_credentials"
+export FZF_DEFAULT_OPTS='--reverse --bind=alt-k:up,alt-j:down'
 
 # completions
 source <(helm completion zsh)
