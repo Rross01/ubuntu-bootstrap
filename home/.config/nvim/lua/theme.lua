@@ -57,23 +57,23 @@ end
 
 -- stylua: ignore start
 M.colors = {
-    red         = hsl_to_hex_css_str("hsl(356 ,90%  ,65%)"),
+    red         = hsl_to_hex_css_str("hsl(0   ,90%  ,65%)"),
     orange      = hsl_to_hex_css_str("hsl(25  ,90%  ,65%)"),
-    yellow      = hsl_to_hex_css_str("hsl(51  ,60%  ,55%)"),
-    green       = hsl_to_hex_css_str("hsl(129 ,40%  ,54%)"),
-    blue        = hsl_to_hex_css_str("hsl(224 ,70%  ,65%)"),
-    purple      = hsl_to_hex_css_str("hsl(294 ,50%  ,64%)"),
-    teal        = hsl_to_hex_css_str("hsl(192 ,60%  ,44%)"),
-    violet      = hsl_to_hex_css_str("hsl(235 ,40%  ,65%)"),
+    yellow      = hsl_to_hex_css_str("hsl(50  ,60%  ,55%)"),
+    green       = hsl_to_hex_css_str("hsl(120 ,35%  ,55%)"),
+    teal        = hsl_to_hex_css_str("hsl(175 ,35%  ,45%)"),
+    blue        = hsl_to_hex_css_str("hsl(230 ,70%  ,65%)"),
+    violet      = hsl_to_hex_css_str("hsl(265 ,40%  ,65%)"),
+    purple      = hsl_to_hex_css_str("hsl(300 ,45%  ,65%)"),
     search      = hsl_to_hex_css_str("hsl(57  ,60%  ,25%)"),
     visual      = hsl_to_hex_css_str("hsl(213 ,60%  ,25%)"),
-    bg_1        = hsl_to_hex_css_str("hsl(225 ,6%   ,13%)"),
-    bg_2        = hsl_to_hex_css_str("hsl(225 ,6%   ,18%)"),
-    bg_3        = hsl_to_hex_css_str("hsl(225 ,6%   ,26%)"),
-    bg_4        = hsl_to_hex_css_str("hsl(225 ,6%   ,38%)"),
-    bg_5        = hsl_to_hex_css_str("hsl(225 ,6%   ,43%)"),
-    fg_5        = hsl_to_hex_css_str("hsl(225 ,6%   ,55%)"),
-    fg_4        = hsl_to_hex_css_str("hsl(225 ,6%   ,75%)"),
+    bg_1        = hsl_to_hex_css_str("hsl(40  ,5%   ,12%)"),
+    bg_2        = hsl_to_hex_css_str("hsl(40  ,5%   ,18%)"),
+    bg_3        = hsl_to_hex_css_str("hsl(40  ,5%   ,26%)"),
+    bg_4        = hsl_to_hex_css_str("hsl(40  ,5%   ,38%)"),
+    bg_5        = hsl_to_hex_css_str("hsl(40  ,5%   ,43%)"),
+    fg_5        = hsl_to_hex_css_str("hsl(40  ,5%   ,55%)"),
+    fg_4        = hsl_to_hex_css_str("hsl(40  ,5%   ,75%)"),
     bg_codeblock= hsl_to_hex_css_str("hsl(147 ,20%  ,20%)"),
 }
 -- stylua: ignore end
@@ -217,7 +217,7 @@ M.set = function(colors)
     hl("@exception", { fg = colors.orange, bold = true })
     hl("@variable", { fg = colors.fg_4 })
     hl("@variable.builtin", { fg = colors.purple })
-    hl("@variable.parameter", { fg = colors.purple })
+    hl("@variable.parameter", { fg = colors.orange })
     hl("@variable.other", { fg = colors.teal })
     hl("@type", { fg = colors.yellow })
     hl("@type.builtin", { fg = colors.teal })
@@ -240,7 +240,6 @@ M.set = function(colors)
     -- python
     hl("@attribute.python", { fg = colors.yellow })
     hl("@constructor.python", { fg = colors.yellow })
-    hl("@function.call.python", { fg = colors.green })
     hl("@module.python", { fg = colors.fg_4 })
     hl("@string.documentation.python", { fg = colors.bg_5 })
     hl("@type.python", { fg = colors.yellow })
