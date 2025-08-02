@@ -149,6 +149,7 @@ return {
             ensure_installed = {
                 "bash",
                 "go",
+                "groovy",
                 "helm",
                 "json",
                 "jsonc",

@@ -57,14 +57,14 @@ end
 
 -- stylua: ignore start
 M.colors = {
-    red         = hsl_to_hex_css_str("hsl(0   ,90%  ,65%)"),
-    orange      = hsl_to_hex_css_str("hsl(25  ,90%  ,65%)"),
-    yellow      = hsl_to_hex_css_str("hsl(50  ,60%  ,55%)"),
-    green       = hsl_to_hex_css_str("hsl(120 ,35%  ,55%)"),
-    teal        = hsl_to_hex_css_str("hsl(175 ,35%  ,45%)"),
-    blue        = hsl_to_hex_css_str("hsl(230 ,70%  ,65%)"),
+    red         = hsl_to_hex_css_str("hsl(0   ,85%  ,68%)"),
+    orange      = hsl_to_hex_css_str("hsl(25  ,81%  ,67%)"),
+    yellow      = hsl_to_hex_css_str("hsl(50  ,57%  ,59%)"),
+    green       = hsl_to_hex_css_str("hsl(120 ,32%  ,59%)"),
+    teal        = hsl_to_hex_css_str("hsl(185 ,25%  ,54%)"),
+    blue        = hsl_to_hex_css_str("hsl(230 ,65%  ,67%)"),
     violet      = hsl_to_hex_css_str("hsl(265 ,40%  ,65%)"),
-    purple      = hsl_to_hex_css_str("hsl(300 ,45%  ,65%)"),
+    purple      = hsl_to_hex_css_str("hsl(300 ,40%  ,65%)"),
     search      = hsl_to_hex_css_str("hsl(57  ,60%  ,25%)"),
     visual      = hsl_to_hex_css_str("hsl(213 ,60%  ,25%)"),
     bg_1        = hsl_to_hex_css_str("hsl(40  ,5%   ,12%)"),
@@ -72,22 +72,21 @@ M.colors = {
     bg_3        = hsl_to_hex_css_str("hsl(40  ,5%   ,26%)"),
     bg_4        = hsl_to_hex_css_str("hsl(40  ,5%   ,38%)"),
     bg_5        = hsl_to_hex_css_str("hsl(40  ,5%   ,43%)"),
-    fg_5        = hsl_to_hex_css_str("hsl(40  ,5%   ,55%)"),
-    fg_4        = hsl_to_hex_css_str("hsl(40  ,5%   ,75%)"),
-    bg_codeblock= hsl_to_hex_css_str("hsl(147 ,20%  ,20%)"),
+    fg_2        = hsl_to_hex_css_str("hsl(40  ,5%   ,55%)"),
+    fg_1        = hsl_to_hex_css_str("hsl(40  ,5%   ,75%)"),
 }
 -- stylua: ignore end
 
 M.set = function(colors)
     -- UI highlight
-    hl("Normal", { fg = colors.fg_4, bg = colors.bg_1 })
-    hl("NormalFloat", { fg = colors.fg_4, bg = colors.bg_2 })
+    hl("Normal", { fg = colors.fg_1, bg = colors.bg_1 })
+    hl("NormalFloat", { fg = colors.fg_1, bg = colors.bg_2 })
     hl("FloatBorder", { fg = colors.bg_5, bg = colors.bg_2 })
     hl("ColorColumn", { bg = colors.bg_2 })
-    hl("Cursor", { fg = colors.bg_5, bg = colors.fg_4 })
+    hl("Cursor", { fg = colors.bg_5, bg = colors.fg_1 })
     hl("CursorLine", { bg = colors.bg_2 })
     hl("CursorColumn", { bg = colors.bg_3 })
-    hl("Directory", { fg = colors.fg_4, bold = true })
+    hl("Directory", { fg = colors.fg_1, bold = true })
     hl("DiffAdd", { fg = colors.teal })
     hl("DiffChange", { fg = colors.orange })
     hl("DiffDelete", { fg = colors.red })
@@ -96,37 +95,37 @@ M.set = function(colors)
     hl("ErrorMsg", { fg = colors.red, underline = true })
     hl("VertSplit", { fg = colors.bg_3 })
     hl("WinSeparator", { link = "VertSplit" })
-    hl("Folded", { fg = colors.fg_5 })
-    hl("FoldColumn", { fg = colors.fg_5 })
-    hl("SignColumn", { fg = colors.fg_4 })
-    hl("IncSearch", { fg = colors.fg_4, bg = colors.search })
-    hl("CurSearch", { fg = colors.fg_4, bg = colors.search })
+    hl("Folded", { fg = colors.fg_2 })
+    hl("FoldColumn", { fg = colors.fg_2 })
+    hl("SignColumn", { fg = colors.fg_1 })
+    hl("IncSearch", { fg = colors.fg_1, bg = colors.search })
+    hl("CurSearch", { fg = colors.fg_1, bg = colors.search })
     hl("LineNr", { fg = colors.bg_3 })
     hl("CursorLineNr", { fg = colors.bg_5, bg = colors.bg_2 })
-    hl("MatchParen", { fg = colors.fg_4 })
-    hl("ModeMsg", { fg = colors.fg_4, bg = colors.bg_2 })
-    hl("MoreMsg", { fg = colors.fg_4, bg = colors.bg_2 })
-    hl("NonText", { fg = colors.fg_5 })
-    hl("Pmenu", { fg = colors.fg_4, bg = colors.bg_2 })
-    hl("PmenuSel", { fg = colors.fg_4, bg = colors.bg_5 })
-    hl("PmenuSbar", { bg = colors.fg_5 })
+    hl("MatchParen", { fg = colors.fg_1 })
+    hl("ModeMsg", { fg = colors.fg_1, bg = colors.bg_2 })
+    hl("MoreMsg", { fg = colors.fg_1, bg = colors.bg_2 })
+    hl("NonText", { fg = colors.fg_2 })
+    hl("Pmenu", { fg = colors.fg_1, bg = colors.bg_2 })
+    hl("PmenuSel", { fg = colors.fg_1, bg = colors.bg_5 })
+    hl("PmenuSbar", { bg = colors.fg_2 })
     hl("PmenuThumb", { bg = colors.bg_5 })
     hl("Question", { fg = colors.blue })
-    hl("Search", { fg = colors.fg_4, bg = colors.search })
-    hl("SpecialKey", { fg = colors.fg_4 })
+    hl("Search", { fg = colors.fg_1, bg = colors.search })
+    hl("SpecialKey", { fg = colors.fg_1 })
     hl("StatusLine", { fg = colors.bg_5, bg = "NONE" })
-    hl("StatusLineNC", { fg = colors.fg_4, bg = colors.bg_3 })
-    hl("TabLine", { fg = colors.fg_4, bg = colors.bg_3 })
-    hl("TabLineFill", { fg = colors.fg_4, bg = colors.bg_3 })
-    hl("TablineSel", { fg = colors.fg_4, bg = colors.bg_1 })
+    hl("StatusLineNC", { fg = colors.fg_1, bg = colors.bg_3 })
+    hl("TabLine", { fg = colors.fg_1, bg = colors.bg_3 })
+    hl("TabLineFill", { fg = colors.fg_1, bg = colors.bg_3 })
+    hl("TablineSel", { fg = colors.fg_1, bg = colors.bg_1 })
     hl("Title", { italic = true })
     hl("Visual", { bg = colors.visual })
     hl("VisualNOS", { bg = colors.visual })
     hl("WarningMsg", { fg = colors.yellow, bold = true })
-    hl("WildMenu", { fg = colors.fg_4, bg = colors.blue })
-    hl("Comment", { fg = colors.fg_5 })
+    hl("WildMenu", { fg = colors.fg_1, bg = colors.blue })
+    hl("Comment", { fg = colors.fg_2 })
     hl("Constant", { fg = colors.violet })
-    hl("String", { fg = colors.teal })
+    hl("String", { fg = colors.green })
     hl("Character", { fg = colors.teal })
     hl("Number", { fg = colors.violet })
     hl("Boolean", { fg = colors.blue })
@@ -137,7 +136,7 @@ M.set = function(colors)
     hl("Conditional", { fg = colors.orange, bold = true })
     hl("Repeat", { fg = colors.purple })
     hl("Label", { fg = colors.purple })
-    hl("Operator", { fg = colors.fg_4 })
+    hl("Operator", { fg = colors.fg_1 })
     hl("Keyword", { fg = colors.orange, bold = true })
     hl("Exception", { fg = colors.orange })
     hl("PreProc", { fg = colors.violet })
@@ -151,11 +150,11 @@ M.set = function(colors)
     hl("Special", { fg = colors.red })
     hl("SpecialChar", { fg = colors.red })
     hl("Tag", { fg = colors.teal })
-    hl("Delimiter", { fg = colors.fg_4 })
-    hl("SpecialComment", { fg = colors.fg_5 })
-    hl("Debug", { fg = colors.fg_4 })
+    hl("Delimiter", { fg = colors.fg_1 })
+    hl("SpecialComment", { fg = colors.fg_2 })
+    hl("Debug", { fg = colors.fg_1 })
     hl("Underlined", { underline = true })
-    hl("Ignore", { fg = colors.fg_4 })
+    hl("Ignore", { fg = colors.fg_1 })
     hl("Error", { fg = colors.red, underline = true })
     hl("Todo", { fg = colors.orange, bold = true })
     hl("SpellBad", { fg = colors.red, underline = true, sp = colors.red })
@@ -166,7 +165,7 @@ M.set = function(colors)
 
     --- Treesitter highlight
     hl("@error", { fg = colors.red })
-    hl("@text.literal", { fg = colors.fg_4 })
+    hl("@text.literal", { fg = colors.fg_1 })
     hl("@text.title", { fg = colors.teal, bold = true })
     hl("@text.emphasis", { italic = true })
     hl("@text.strong", { bold = true })
@@ -177,12 +176,12 @@ M.set = function(colors)
     hl("@text.note", { fg = colors.green, bold = true })
     hl("@text.warning", { fg = colors.yellow, bold = true })
     hl("@text.danger", { fg = colors.red, bold = true })
-    hl("@comment", { fg = colors.fg_5, italic = true })
-    hl("@punctuation", { fg = colors.fg_4 })
+    hl("@comment", { fg = colors.fg_2, italic = true })
+    hl("@punctuation", { fg = colors.fg_1 })
     hl("@punctuation.special", { fg = colors.teal })
-    hl("@punctuation.bracket", { fg = colors.fg_4 })
-    hl("@punctuation.delimiter", { fg = colors.fg_4 })
-    hl("@constant", { fg = colors.fg_4 })
+    hl("@punctuation.bracket", { fg = colors.fg_1 })
+    hl("@punctuation.delimiter", { fg = colors.fg_1 })
+    hl("@constant", { fg = colors.fg_1 })
     hl("@constant.macro", { fg = colors.yellow, bold = true })
     hl("@define", { fg = colors.yellow, bold = true })
     hl("@macro", { fg = colors.yellow, bold = true })
@@ -206,16 +205,16 @@ M.set = function(colors)
     hl("@method", { fg = colors.blue })
     hl("@field", { fg = colors.teal })
     hl("@property", { fg = colors.blue })
-    hl("@constructor", { fg = colors.fg_4 })
+    hl("@constructor", { fg = colors.fg_1 })
     hl("@conditional", { fg = colors.orange, bold = true })
     hl("@repeat", { fg = colors.orange, bold = true })
     hl("@label", { fg = colors.purple, italic = true })
-    hl("@operator", { fg = colors.fg_4 })
+    hl("@operator", { fg = colors.fg_1 })
     hl("@keyword", { fg = colors.red })
     hl("@keyword.function", { fg = colors.blue })
     hl("@keyword.operator", { fg = colors.orange })
     hl("@exception", { fg = colors.orange, bold = true })
-    hl("@variable", { fg = colors.fg_4 })
+    hl("@variable", { fg = colors.fg_1 })
     hl("@variable.builtin", { fg = colors.purple })
     hl("@variable.parameter", { fg = colors.orange })
     hl("@variable.other", { fg = colors.teal })
@@ -230,7 +229,7 @@ M.set = function(colors)
     hl("@preproc", { fg = colors.orange })
     hl("@debug", { fg = colors.yellow })
     hl("@tag", { fg = colors.teal })
-    hl("@tag.delimiter", { fg = colors.fg_4 })
+    hl("@tag.delimiter", { fg = colors.fg_1 })
     hl("@tag.attribute", { fg = colors.orange })
     hl("@spell", { fg = colors.bg_5, italic = true })
 
@@ -240,7 +239,7 @@ M.set = function(colors)
     -- python
     hl("@attribute.python", { fg = colors.yellow })
     hl("@constructor.python", { fg = colors.yellow })
-    hl("@module.python", { fg = colors.fg_4 })
+    hl("@module.python", { fg = colors.fg_1 })
     hl("@string.documentation.python", { fg = colors.bg_5 })
     hl("@type.python", { fg = colors.yellow })
 
@@ -248,14 +247,13 @@ M.set = function(colors)
     hl("@boolean.yaml", { link = "@variable.builtin" })
 
     -- markdown
-    hl("@text.literal.markdown", { fg = colors.fg_4 })
-    hl("@text.literal.markdown.inline", { fg = colors.fg_4 })
-    hl("@spell.markdown", { fg = colors.fg_4 })
+    hl("@text.literal.markdown", { fg = colors.fg_1 })
+    hl("@text.literal.markdown.inline", { fg = colors.fg_1 })
+    hl("@spell.markdown", { fg = colors.fg_1 })
     hl("@markup.heading.1.markdown", { fg = colors.orange, italic = true })
     hl("@markup.heading.2.markdown", { fg = colors.orange, italic = true })
     hl("@markup.heading.3.markdown", { fg = colors.orange, italic = true })
     hl("@markup.heading.4.markdown", { fg = colors.orange, italic = true })
-    hl("RenderMarkdownCode", { bg = colors.bg_codeblock })
 
     -- json
     hl("@property.json", { fg = colors.blue, bold = true })
@@ -291,11 +289,11 @@ M.set = function(colors)
     hl("TelescopePromptBorder", { fg = colors.bg_5 })
     hl("TelescopeResultsBorder", { fg = colors.bg_5 })
     hl("TelescopePreviewBorder", { fg = colors.bg_5 })
-    hl("TelescopeNormal", { fg = colors.fg_4 })
-    hl("TelescopeSelection", { fg = colors.fg_4, bg = colors.bg_3 })
-    hl("TelescopeMultiSelection", { fg = colors.fg_4 })
-    hl("TelescopeMatching", { fg = colors.fg_4, bold = true })
-    hl("TelescopePromptPrefix", { fg = colors.fg_4, bold = true })
+    hl("TelescopeNormal", { fg = colors.fg_1 })
+    hl("TelescopeSelection", { fg = colors.fg_1, bg = colors.bg_3 })
+    hl("TelescopeMultiSelection", { fg = colors.fg_1 })
+    hl("TelescopeMatching", { fg = colors.fg_1, bold = true })
+    hl("TelescopePromptPrefix", { fg = colors.fg_1, bold = true })
 
     hl("LspReferenceText", { bg = colors.search })
     hl("LspReferenceRead", { bg = colors.blue })
@@ -320,12 +318,12 @@ M.set = function(colors)
     hl("GitSignsDelete", { fg = colors.red })
 
     -- neotree
-    hl("NeoTreeDirectoryName", { fg = colors.fg_4 })
-    hl("NeoTreeDirectoryIcon", { fg = colors.fg_4 })
+    hl("NeoTreeDirectoryName", { fg = colors.fg_1 })
+    hl("NeoTreeDirectoryIcon", { fg = colors.fg_1 })
     hl("NeoTreeFloatBorder", { fg = colors.bg_5, bg = colors.bg_1 })
 
     -- jinja fix
-    hl("jinjaOperator", { fg = colors.fg_4, bg = "NONE" })
+    hl("jinjaOperator", { fg = colors.fg_1, bg = "NONE" })
 end
 
 M.setup = function()
