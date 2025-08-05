@@ -1,6 +1,10 @@
 -- highlight current line
 vim.cmd.colorscheme("oddsky")
 
+vim.opt.spell = false
+
+-- vim.o.winborder = 'solid'
+
 vim.opt.cursorline = true
 vim.opt.termguicolors = true
 

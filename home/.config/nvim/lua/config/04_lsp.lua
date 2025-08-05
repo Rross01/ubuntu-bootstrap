@@ -25,6 +25,11 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
 vim.diagnostic.config({
     virtual_text = false,
     unerline = false,
+    float = {
+        header = false,
+        border = "rounded",
+        focusable = true,
+    },
     signs = {
         text = {
             [vim.diagnostic.severity.ERROR] = "",
@@ -34,6 +39,16 @@ vim.diagnostic.config({
         },
     },
 })
+
+local hover = vim.lsp.buf.hover
+vim.lsp.buf.hover = function()
+    return hover({
+        border = "single",
+        -- max_width = 100,
+        max_width = math.floor(vim.o.columns * 0.7),
+        max_height = math.floor(vim.o.lines * 0.7),
+    })
+end
 
 require("mason").setup({})
 require("mason-tool-installer").setup({
