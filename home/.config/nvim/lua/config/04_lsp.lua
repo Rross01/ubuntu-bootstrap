@@ -39,10 +39,11 @@ require("mason").setup({})
 require("mason-tool-installer").setup({
     ensure_installed = {
         -- lsp's
+        "gopls",
         "helm_ls",
         "lua_ls",
         "pyright",
-        "gopls",
+        "yaml-language-server",
         -- formatters
         "beautysh",
         "cbfmt",
@@ -60,6 +61,7 @@ require("mason-tool-installer").setup({
 local lspconfig = require("lspconfig")
 lspconfig.pyright.setup({})
 lspconfig.gopls.setup({})
+lspconfig.yamlls.setup({})
 
 lspconfig.lua_ls.setup({
     -- Fix Undefined global 'vim'
