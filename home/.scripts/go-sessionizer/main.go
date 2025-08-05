@@ -11,15 +11,18 @@ import (
 	"strings"
 )
 
-var dirsToFind = []string{
-	filepath.Join(os.Getenv("HOME")),
-	filepath.Join(os.Getenv("HOME"), ".config"),
-	filepath.Join(os.Getenv("HOME"), "temp"),
-	filepath.Join(os.Getenv("HOME"), "places/git/personal"),
-	filepath.Join(os.Getenv("HOME"), "places/git/work"),
-	filepath.Join(os.Getenv("HOME"), "places/git/work/launchpad"),
-	filepath.Join(os.Getenv("HOME"), "places/sys"),
-}
+var (
+	home       = os.Getenv("HOME")
+	dirsToFind = []string{
+		home,
+		filepath.Join(home, ".config"),
+		filepath.Join(home, "temp"),
+		filepath.Join(home, "places/git/personal"),
+		filepath.Join(home, "places/git/work"),
+		filepath.Join(home, "places/git/work/launchpad"),
+		filepath.Join(home, "places/sys"),
+	}
+)
 
 type sessionItem struct {
 	name     string
@@ -27,7 +30,6 @@ type sessionItem struct {
 	isDir    bool
 	attached bool
 	windows  int
-	group    string
 }
 
 func main() {
@@ -66,7 +68,7 @@ func prioritizeCurrentSession(items []sessionItem) []sessionItem {
 func getTmuxSessions() []sessionItem {
 	var sessions []sessionItem
 
-	cmd := exec.Command("tmux", "list-sessions", "-F", "#{session_name}||#{session_windows}||#{session_attached}||#{session_group}")
+	cmd := exec.Command("tmux", "list-sessions", "-F", "#{session_name}||#{session_windows}||#{session_attached}")
 	output, err := cmd.Output()
 	if err != nil {
 		return sessions
@@ -74,10 +76,6 @@ func getTmuxSessions() []sessionItem {
 
 	lines := strings.Split(strings.TrimSpace(string(output)), "\n")
 	for _, line := range lines {
-		if line == "" {
-			continue
-		}
-
 		parts := strings.Split(line, "||")
 		if len(parts) < 3 {
 			continue
@@ -90,10 +88,6 @@ func getTmuxSessions() []sessionItem {
 
 		fmt.Sscanf(parts[1], "%d", &session.windows)
 		session.attached = parts[2] == "1"
-		if len(parts) > 3 {
-			session.group = parts[3]
-		}
-
 		sessions = append(sessions, session)
 	}
 
@@ -130,12 +124,10 @@ func buildDisplayLines(items []sessionItem) []string {
 		if item.isDir {
 			lines[i] = fmt.Sprintf("%s", item.path)
 		} else {
-			lines[i] = fmt.Sprintf("󰧞 %s: %d window(s)", item.name, item.windows)
-			if item.group != "" {
-				lines[i] += fmt.Sprintf(" (group %s)", item.group)
-			}
 			if item.attached {
-				lines[i] += " (attached)"
+				lines[i] = fmt.Sprintf(">> %s", item.name)
+			} else {
+				lines[i] = fmt.Sprintf("> %s", item.name)
 			}
 		}
 	}
