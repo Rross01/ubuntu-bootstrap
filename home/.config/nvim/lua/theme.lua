@@ -254,6 +254,8 @@ M.set = function(colors)
     hl("@markup.heading.2.markdown", { fg = colors.orange, italic = true })
     hl("@markup.heading.3.markdown", { fg = colors.orange, italic = true })
     hl("@markup.heading.4.markdown", { fg = colors.orange, italic = true })
+    hl("@markup.raw.block.markdown", { fg = colors.green })
+    hl("@label.markdown", { fg = colors.purple, italic = true })
 
     -- json
     hl("@property.json", { fg = colors.blue, bold = true })
