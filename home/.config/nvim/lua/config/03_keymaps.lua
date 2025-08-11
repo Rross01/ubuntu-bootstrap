@@ -66,9 +66,8 @@ end)
 map("n", "<leader>8", function()
     harpoon:list():select(8)
 end)
-map("n", "<leader>9", function()
-    harpoon:list():select(9)
-end)
+
+map("n", "<leader>0", ":e ~/places/git/personal/second-brain/scratch.md<cr>")
 
 -- Fugitive
 map("n", "<leader>g", ":tab G<CR>")
