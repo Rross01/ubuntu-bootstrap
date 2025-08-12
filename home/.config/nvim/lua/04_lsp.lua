@@ -1,6 +1,5 @@
 vim.pack.add({
-    -- lsp stuff
-    -- { "towolf/vim-helm", ft = "helm" },
+    "https://github.com/towolf/vim-helm",
     "https://github.com/neovim/nvim-lspconfig",
     "https://github.com/williamboman/mason.nvim",
     "https://github.com/williamboman/mason-lspconfig.nvim",
@@ -54,7 +53,7 @@ vim.diagnostic.config({
 local hover = vim.lsp.buf.hover
 vim.lsp.buf.hover = function()
     return hover({
-        border = "single",
+        border = "rounded",
         -- max_width = 100,
         max_width = math.floor(vim.o.columns * 0.7),
         max_height = math.floor(vim.o.lines * 0.7),
@@ -89,8 +88,8 @@ lspconfig.pyright.setup({})
 lspconfig.gopls.setup({})
 lspconfig.yamlls.setup({})
 
+-- Fix Undefined global 'vim'
 lspconfig.lua_ls.setup({
-    -- Fix Undefined global 'vim'
     settings = {
         Lua = {
             diagnostics = {

@@ -6,7 +6,7 @@ vim.pack.add({
     "https://github.com/christoomey/vim-tmux-navigator",
     "https://github.com/nvim-telescope/telescope.nvim",
     "https://github.com/nvim-lua/plenary.nvim",
-    { src = "https://github.com/ThePrimeagen/harpoon", branch = "harpoon2" },
+    "https://github.com/ThePrimeagen/harpoon",
 })
 
 vim.pack.add({ { src = "https://github.com/saghen/blink.cmp", version = vim.version.range("1.0") } })
