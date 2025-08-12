@@ -1,1 +1,1 @@
-require("theme").setup()
+require("00_theme").setup()

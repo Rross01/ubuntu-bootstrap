@@ -85,3 +85,6 @@ vim.filetype.add({
         ["helmfile.*%.ya?ml"] = "helm",
     },
 })
+
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"

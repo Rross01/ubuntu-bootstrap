@@ -65,7 +65,7 @@ bin:
     name: kubectl
 
 bin_archived:
-  - url: https://github.com/neovim/neovim/releases/download/v0.11.2/nvim-linux-x86_64.tar.gz
+  - url: https://github.com/neovim/neovim/releases/download/nightly/nvim-linux-x86_64.tar.gz
     name: nvim
     bin_path: nvim-linux-x86_64/bin/nvim
 

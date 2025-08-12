@@ -13,6 +13,13 @@ map("n", "<leader>E", ":Neotree float reveal<CR>")
 map("n", "<leader>q", ":Neotree right toggle<CR>")
 map("n", "<leader>Q", ":Neotree right reveal<CR>")
 
+-- christoomey/vim-tmux-navigator
+map("n", "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>")
+map("n", "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>")
+map("n", "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>")
+map("n", "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>")
+map("n", "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>")
+
 -- Telescope
 local builtin = require("telescope.builtin")
 map("n", "<leader>pf", builtin.find_files)

@@ -1,3 +1,14 @@
+vim.pack.add({
+    -- lsp stuff
+    -- { "towolf/vim-helm", ft = "helm" },
+    "https://github.com/neovim/nvim-lspconfig",
+    "https://github.com/williamboman/mason.nvim",
+    "https://github.com/williamboman/mason-lspconfig.nvim",
+    "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim",
+    "https://github.com/L3MON4D3/LuaSnip",
+    "https://github.com/mfussenegger/nvim-lint",
+})
+
 vim.api.nvim_create_autocmd("LspAttach", {
     desc = "LSP actions",
     callback = function(event)

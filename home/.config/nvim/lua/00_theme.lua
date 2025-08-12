@@ -55,25 +55,26 @@ local function hsl_to_hex_css_str(css_str)
     return "#" .. tohex(r) .. tohex(g) .. tohex(b)
 end
 
+
 -- stylua: ignore start
 M.colors = {
-    red         = hsl_to_hex_css_str("hsl(0   ,85%  ,68%)"),
-    orange      = hsl_to_hex_css_str("hsl(25  ,81%  ,67%)"),
+    red         = hsl_to_hex_css_str("hsl(0   ,80%  ,68%)"),
+    orange      = hsl_to_hex_css_str("hsl(25  ,77%  ,69%)"),
     yellow      = hsl_to_hex_css_str("hsl(50  ,57%  ,59%)"),
-    green       = hsl_to_hex_css_str("hsl(120 ,32%  ,59%)"),
+    green       = hsl_to_hex_css_str("hsl(120 ,30%  ,59%)"),
     teal        = hsl_to_hex_css_str("hsl(185 ,25%  ,54%)"),
     blue        = hsl_to_hex_css_str("hsl(230 ,65%  ,67%)"),
     violet      = hsl_to_hex_css_str("hsl(265 ,40%  ,65%)"),
     purple      = hsl_to_hex_css_str("hsl(300 ,40%  ,65%)"),
-    search      = hsl_to_hex_css_str("hsl(57  ,60%  ,25%)"),
-    visual      = hsl_to_hex_css_str("hsl(213 ,60%  ,25%)"),
-    bg_1        = hsl_to_hex_css_str("hsl(40  ,5%   ,12%)"),
-    bg_2        = hsl_to_hex_css_str("hsl(40  ,5%   ,18%)"),
-    bg_3        = hsl_to_hex_css_str("hsl(40  ,5%   ,26%)"),
-    bg_4        = hsl_to_hex_css_str("hsl(40  ,5%   ,38%)"),
-    bg_5        = hsl_to_hex_css_str("hsl(40  ,5%   ,43%)"),
-    fg_2        = hsl_to_hex_css_str("hsl(40  ,5%   ,55%)"),
-    fg_1        = hsl_to_hex_css_str("hsl(40  ,5%   ,75%)"),
+    search      = hsl_to_hex_css_str("hsl(57  ,60%  ,20%)"),
+    visual      = hsl_to_hex_css_str("hsl(213 ,60%  ,20%)"),
+    bg_1        = "#181818",
+    bg_2        = hsl_to_hex_css_str("hsl(0  ,0%   ,18%)"),
+    bg_3        = hsl_to_hex_css_str("hsl(0  ,0%   ,26%)"),
+    bg_4        = hsl_to_hex_css_str("hsl(0  ,0%   ,38%)"),
+    bg_5        = hsl_to_hex_css_str("hsl(0  ,0%   ,43%)"),
+    fg_2        = hsl_to_hex_css_str("hsl(0  ,0%   ,55%)"),
+    fg_1        = hsl_to_hex_css_str("hsl(0  ,0%   ,75%)"),
 }
 -- stylua: ignore end
 
@@ -93,7 +94,7 @@ M.set = function(colors)
     hl("DiffText", { fg = colors.orange })
     hl("EndOfBuffer", { link = "@transparent" })
     hl("ErrorMsg", { fg = colors.red, underline = true })
-    hl("VertSplit", { fg = colors.bg_3 })
+    hl("VertSplit", { fg = colors.bg_2 })
     hl("WinSeparator", { link = "VertSplit" })
     hl("Folded", { fg = colors.fg_2 })
     hl("FoldColumn", { fg = colors.fg_2 })
@@ -284,7 +285,7 @@ M.set = function(colors)
     hl("htmlSpecialTagName", { fg = colors.teal })
     hl("htmlArg", { fg = colors.orange })
 
-    hl("BufferLineIndicatorSelected", { bg = colors.bg_1 })
+    -- hl("BufferLineIndicatorSelected", { bg = colors.bg_1 })
     hl("BufferLineFill", { bg = colors.bg_2 })
 
     -- Telescope nvim
@@ -322,7 +323,7 @@ M.set = function(colors)
     -- neotree
     hl("NeoTreeDirectoryName", { fg = colors.fg_1 })
     hl("NeoTreeDirectoryIcon", { fg = colors.fg_1 })
-    hl("NeoTreeFloatBorder", { fg = colors.bg_5, bg = colors.bg_1 })
+    -- hl("NeoTreeFloatBorder", { fg = colors.bg_5, bg = colors.bg_1 })
 
     -- jinja fix
     hl("jinjaOperator", { fg = colors.fg_1, bg = "NONE" })
