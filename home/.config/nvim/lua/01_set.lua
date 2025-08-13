@@ -41,8 +41,6 @@ vim.opt.tabstop = 4 -- 1 tab == 4 spaces
 vim.o.splitright = true
 
 -- Highlight when yanking (copying) text
---  Try it with `yap` in normal mode
---  See `:help vim.highlight.on_yank()`
 vim.api.nvim_create_autocmd("TextYankPost", {
     desc = "Highlight when yanking (copying) text",
     group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
@@ -74,8 +72,6 @@ vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.opt.foldcolumn = "0"
 vim.opt.foldtext = ""
 vim.opt.foldlevel = 99
-
--- vim.g.netrw_liststyle = 3
 
 vim.filetype.add({
     pattern = {

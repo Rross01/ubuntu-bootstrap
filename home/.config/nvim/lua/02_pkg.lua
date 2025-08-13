@@ -1,4 +1,6 @@
-vim.pack.add({
+local pak = vim.pack.add
+
+pak({
     "https://github.com/tpope/vim-fugitive",
     "https://github.com/armyers/Vim-Jinja2-Syntax",
     "https://github.com/nvim-pack/nvim-spectre",
@@ -9,20 +11,27 @@ vim.pack.add({
     "https://github.com/ThePrimeagen/harpoon",
 })
 
-vim.pack.add({ { src = "https://github.com/saghen/blink.cmp", version = vim.version.range("1.0") } })
+pak({ { src = "https://github.com/saghen/blink.cmp", version = vim.version.range("1.0") } })
 require("blink.cmp").setup({
     signature = {
         enabled = true,
-        window = { show_documentation = true },
+        window = {
+            show_documentation = true,
+        },
     },
     keymap = { preset = "super-tab" },
     appearance = { use_nvim_cmp_as_default = false },
     sources = {
-        default = { "lsp", "path", "snippets", "buffer" },
+        default = {
+            "lsp",
+            "path",
+            "snippets",
+            "buffer",
+        },
     },
 })
 
-vim.pack.add({ { src = "https://github.com/nvim-treesitter/nvim-treesitter", branch = "master" } })
+pak({ { src = "https://github.com/nvim-treesitter/nvim-treesitter", branch = "master" } })
 require("nvim-treesitter.configs").setup({
     ensure_installed = {
         "bash",
@@ -45,13 +54,13 @@ require("nvim-treesitter.configs").setup({
     highlight = { enable = true },
 })
 
-vim.pack.add({ "https://github.com/rachartier/tiny-inline-diagnostic.nvim" })
+pak({ "https://github.com/rachartier/tiny-inline-diagnostic.nvim" })
 require("tiny-inline-diagnostic").setup({
     preset = "powerline",
     options = { show_source = true },
 })
 
-vim.pack.add({ "https://github.com/lukas-reineke/indent-blankline.nvim" })
+pak({ "https://github.com/lukas-reineke/indent-blankline.nvim" })
 require("ibl").setup({
     scope = { enabled = false },
     indent = {
@@ -71,7 +80,7 @@ require("ibl").setup({
     },
 })
 
-vim.pack.add({ "https://github.com/stevearc/conform.nvim" })
+pak({ "https://github.com/stevearc/conform.nvim" })
 require("conform").setup({
     formatters = {
         stylua = {
@@ -98,7 +107,7 @@ require("conform").setup({
     },
 })
 
-vim.pack.add({
+pak({
     "https://github.com/nvim-neo-tree/neo-tree.nvim",
     "https://github.com/nvim-lua/plenary.nvim",
     "https://github.com/nvim-tree/nvim-web-devicons",
@@ -107,16 +116,23 @@ vim.pack.add({
 })
 require("neo-tree").setup({
     filesystem = {
-        filtered_items = { always_show = { ".env", ".gitignore", ".helmignore", ".dockerignore" } },
+        filtered_items = {
+            always_show = {
+                ".env",
+                ".gitignore",
+                ".helmignore",
+                ".dockerignore",
+            },
+        },
     },
 })
 
-vim.pack.add({ "https://github.com/echasnovski/mini.nvim" })
+pak({ "https://github.com/echasnovski/mini.nvim" })
 require("mini.move").setup() -- Move any selection in any direction
 require("mini.bufremove").setup() -- Remove buffers
 require("mini.comment").setup() -- Comment lines
 
--- vim.pack.add({
+-- pak({
 --     "https://github.com/norcalli/nvim-colorizer.lua",
 -- })
 -- local colorizer = require("colorizer")
