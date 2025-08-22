@@ -55,6 +55,7 @@ deb:
   - https://github.com/derailed/k9s/releases/download/v0.50.7/k9s_linux_amd64.deb
   - https://github.com/getsops/sops/releases/download/v3.10.2/sops_3.10.2_amd64.deb
   - https://st.ktalk.host/ktalk-app/linux/ktalk3.1.0amd64.deb
+  - https://github.com/wagoodman/dive/releases/download/v0.13.1/dive_0.13.1_linux_amd64.deb
 
 fonts:
   - https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/ZedMono.zip

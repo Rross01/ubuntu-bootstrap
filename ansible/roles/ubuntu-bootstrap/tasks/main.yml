@@ -1,33 +1,27 @@
 ---
-- import_tasks: 01_packages.yml
-  tags: packages
-
-- import_tasks: 02_dirs.yml
+- import_tasks: 00_dirs.yml        
   tags: dirs
-
-- import_tasks: 03_groups.yml
-  tags: groups
-
-- import_tasks: 04_systemd.yml
-  tags: systemd
-
-- import_tasks: 05_zsh.yml
-  tags: zsh
-
-- import_tasks: 06_fonts.yml
-  tags: fonts
-
-- import_tasks: 07_bin.yml
+- import_tasks: 01_apt.yml         
+  tags: apt
+- import_tasks: 02_deb.yml         
+  tags: deb
+- import_tasks: 03_bin.yml         
   tags: bin
-
-- import_tasks: 08_dconf.yml
-  tags: dconf
-
-- import_tasks: 09_podman.yml
-  tags: podman
-
-- import_tasks: 10_pip.yml
+- import_tasks: 04_snap.yml        
+  tags: snap
+- import_tasks: 05_pip.yml         
   tags: pip
-
-- import_tasks: 11_alacritty_fix.yml
+- import_tasks: 06_groups.yml      
+  tags: groups
+- import_tasks: 07_dconf.yml       
+  tags: dconf
+- import_tasks: 08_fonts.yml       
+  tags: fonts
+- import_tasks: 09_systemd.yml     
+  tags: systemd
+- import_tasks: 10_zsh.yml         
+  tags: zsh
+- import_tasks: 11_podman.yml      
+  tags: podman
+- import_tasks: 12_alacritty_fix.yml
   tags: alacritty_fix
