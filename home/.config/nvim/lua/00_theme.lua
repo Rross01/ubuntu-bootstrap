@@ -248,15 +248,10 @@ M.set = function(colors)
     hl("@boolean.yaml", { link = "@variable.builtin" })
 
     -- markdown
-    hl("@text.literal.markdown", { fg = colors.fg_1 })
-    hl("@text.literal.markdown.inline", { fg = colors.fg_1 })
-    hl("@spell.markdown", { fg = colors.fg_1 })
-    hl("@markup.heading.1.markdown", { fg = colors.orange, italic = true })
+    hl("@markup.heading.1.markdown", { fg = colors.red, italic = true })
     hl("@markup.heading.2.markdown", { fg = colors.orange, italic = true })
-    hl("@markup.heading.3.markdown", { fg = colors.orange, italic = true })
-    hl("@markup.heading.4.markdown", { fg = colors.orange, italic = true })
-    hl("@markup.raw.block.markdown", { fg = colors.green })
-    hl("@label.markdown", { fg = colors.purple, italic = true })
+    hl("@markup.heading.3.markdown", { fg = colors.yellow, italic = true })
+    hl("@markup.heading.4.markdown", { fg = colors.green, italic = true })
 
     -- json
     hl("@property.json", { fg = colors.blue, bold = true })
