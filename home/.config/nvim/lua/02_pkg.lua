@@ -3,9 +3,7 @@ local pak = vim.pack.add
 pak({
     "https://github.com/tpope/vim-fugitive",
     "https://github.com/armyers/Vim-Jinja2-Syntax",
-    "https://github.com/nvim-pack/nvim-spectre",
     "https://github.com/lewis6991/gitsigns.nvim",
-    "https://github.com/christoomey/vim-tmux-navigator",
     "https://github.com/nvim-telescope/telescope.nvim",
     "https://github.com/nvim-lua/plenary.nvim",
     "https://github.com/ThePrimeagen/harpoon",
@@ -131,20 +129,3 @@ pak({ "https://github.com/echasnovski/mini.nvim" })
 require("mini.move").setup() -- Move any selection in any direction
 require("mini.bufremove").setup() -- Remove buffers
 require("mini.comment").setup() -- Comment lines
-
--- pak({
---     "https://github.com/norcalli/nvim-colorizer.lua",
--- })
--- local colorizer = require("colorizer")
--- colorizer.setup({ "css", "lua" }, {
---     RGB = false, -- #RGB hex codes
---     RRGGBB = true, -- #RRGGBB hex codes
---     names = false, -- "Name" codes like Blue or blue
---     RRGGBBAA = false, -- #RRGGBBAA hex codes
---     rgb_fn = false, -- CSS rgb() and rgba() functions
---     hsl_fn = true, -- CSS hsl() and hsla() functions
---     css = false, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
---     css_fn = false, -- Enable all CSS functions: rgb_fn, hsl_fn
---     mode = "background", -- Set the display mode.
---     lowercase = true, -- Enable lowercase color names
--- })

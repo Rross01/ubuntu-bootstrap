@@ -68,13 +68,13 @@ M.colors = {
     purple      = hsl_to_hex_css_str("hsl(300 ,40%  ,65%)"),
     search      = hsl_to_hex_css_str("hsl(57  ,60%  ,20%)"),
     visual      = hsl_to_hex_css_str("hsl(213 ,60%  ,20%)"),
-    bg_1        = "#242424",
-    bg_2        = hsl_to_hex_css_str("hsl(0  ,0%   ,18%)"),
-    bg_3        = hsl_to_hex_css_str("hsl(0  ,0%   ,26%)"),
-    bg_4        = hsl_to_hex_css_str("hsl(0  ,0%   ,38%)"),
-    bg_5        = hsl_to_hex_css_str("hsl(0  ,0%   ,43%)"),
-    fg_2        = hsl_to_hex_css_str("hsl(0  ,0%   ,55%)"),
-    fg_1        = hsl_to_hex_css_str("hsl(0  ,0%   ,75%)"),
+    bg_1        = hsl_to_hex_css_str("hsl(0   ,0%   ,14%)"),
+    bg_2        = hsl_to_hex_css_str("hsl(0   ,0%   ,18%)"),
+    bg_3        = hsl_to_hex_css_str("hsl(0   ,0%   ,26%)"),
+    bg_4        = hsl_to_hex_css_str("hsl(0   ,0%   ,38%)"),
+    bg_5        = hsl_to_hex_css_str("hsl(0   ,0%   ,43%)"),
+    fg_2        = hsl_to_hex_css_str("hsl(0   ,0%   ,55%)"),
+    fg_1        = hsl_to_hex_css_str("hsl(0   ,0%   ,75%)"),
 }
 -- stylua: ignore end
 
@@ -94,8 +94,8 @@ M.set = function(colors)
     hl("DiffText", { fg = colors.orange })
     hl("EndOfBuffer", { link = "@transparent" })
     hl("ErrorMsg", { fg = colors.red, underline = true })
-    hl("VertSplit", { fg = colors.bg_2 })
-    hl("WinSeparator", { link = "VertSplit" })
+    hl("VertSplit", { fg = colors.bg_3 })
+    hl("WinSeparator", { fg = colors.bg_4 })
     hl("Folded", { fg = colors.fg_2 })
     hl("FoldColumn", { fg = colors.fg_2 })
     hl("SignColumn", { fg = colors.fg_1 })
@@ -307,10 +307,6 @@ M.set = function(colors)
     hl("DiagnosticHint", { fg = colors.blue, italic = true })
     hl("DiagnosticInfo", { fg = colors.teal, italic = true })
 
-    hl("CocHighlightText", { bg = colors.blue })
-    hl("CocHighlightRead", { bg = colors.blue })
-    hl("CocHighlightWrite", { bg = colors.blue })
-
     hl("GitSignsAdd", { fg = colors.green })
     hl("GitSignsChange", { fg = colors.yellow })
     hl("GitSignsDelete", { fg = colors.red })
@@ -318,10 +314,6 @@ M.set = function(colors)
     -- neotree
     hl("NeoTreeDirectoryName", { fg = colors.fg_1 })
     hl("NeoTreeDirectoryIcon", { fg = colors.fg_1 })
-    -- hl("NeoTreeFloatBorder", { fg = colors.bg_5, bg = colors.bg_1 })
-
-    -- jinja fix
-    hl("jinjaOperator", { fg = colors.fg_1, bg = "NONE" })
 end
 
 M.setup = function()

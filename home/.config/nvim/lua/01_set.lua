@@ -1,28 +1,19 @@
--- highlight current line
 vim.cmd.colorscheme("oddsky")
 
 vim.opt.spell = false
-
--- vim.o.winborder = 'solid'
-
 vim.opt.cursorline = true
 vim.opt.termguicolors = true
-
 vim.opt.number = true
-
 vim.opt.scrolloff = 999
-vim.opt.undofile = true -- Возможность отката назад
+vim.opt.undofile = true
+vim.opt.cmdheight = 0
+vim.opt.laststatus = 3
+vim.opt.statusline = " %f %m %= %l:%v"
 
 -- Интеграция с буфером обмена ОС
 vim.schedule(function()
     vim.opt.clipboard = "unnamedplus"
 end)
-
--- Скрытие командной строки
-vim.cmd([[ set cmdheight=0 ]])
-
-vim.opt.laststatus = 3
-vim.opt.statusline = " %f %m %= %l:%v"
 
 -- search
 vim.opt.ignorecase = true
