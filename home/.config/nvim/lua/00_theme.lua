@@ -67,34 +67,13 @@ M.colors = {
     purple  =  hsl_to_hex_css_str("hsl(300 ,40%  ,65%)"),
     search  =  hsl_to_hex_css_str("hsl(57  ,60%  ,20%)"),
     visual  =  hsl_to_hex_css_str("hsl(210 ,60%  ,20%)"),
-    bg_1    =  hsl_to_hex_css_str("hsl(186 ,20%  ,14%)"),
-    bg_2    =  hsl_to_hex_css_str("hsl(186 ,20%  ,18%)"),
-    bg_3    =  hsl_to_hex_css_str("hsl(186 ,20%  ,26%)"),
-    fg_3    =  hsl_to_hex_css_str("hsl(186 ,15%  ,38%)"),
-    fg_2    =  hsl_to_hex_css_str("hsl(186 ,15%  ,55%)"),
-    fg_1    =  hsl_to_hex_css_str("hsl(186 ,15%  ,75%)"),
+    bg_1    =  hsl_to_hex_css_str("hsl(0   ,0%   ,14%)"),
+    bg_2    =  hsl_to_hex_css_str("hsl(0   ,0%   ,18%)"),
+    bg_3    =  hsl_to_hex_css_str("hsl(0   ,0%   ,26%)"),
+    fg_3    =  hsl_to_hex_css_str("hsl(186 ,5%   ,38%)"),
+    fg_2    =  hsl_to_hex_css_str("hsl(186 ,5%   ,55%)"),
+    fg_1    =  hsl_to_hex_css_str("hsl(186 ,5%   ,75%)"),
 }
--- stylua: ignore end
-
--- stylua: ignore start
--- M.colors = {
---     red     =  hsl_to_hex_css_str("hsl(0   ,80%  ,68%)"),
---     orange  =  hsl_to_hex_css_str("hsl(25  ,77%  ,69%)"),
---     yellow  =  hsl_to_hex_css_str("hsl(50  ,57%  ,59%)"),
---     green   =  hsl_to_hex_css_str("hsl(120 ,30%  ,59%)"),
---     teal    =  hsl_to_hex_css_str("hsl(185 ,25%  ,54%)"),
---     blue    =  hsl_to_hex_css_str("hsl(230 ,65%  ,67%)"),
---     violet  =  hsl_to_hex_css_str("hsl(265 ,40%  ,65%)"),
---     purple  =  hsl_to_hex_css_str("hsl(300 ,40%  ,65%)"),
---     search  =  hsl_to_hex_css_str("hsl(57  ,60%  ,20%)"),
---     visual  =  hsl_to_hex_css_str("hsl(210 ,60%  ,20%)"),
---     bg_1    =  hsl_to_hex_css_str("hsl(192 ,20%  ,14%)"),
---     bg_2    =  hsl_to_hex_css_str("hsl(192 ,20%  ,18%)"),
---     bg_3    =  hsl_to_hex_css_str("hsl(192 ,20%  ,26%)"),
---     fg_3    =  hsl_to_hex_css_str("hsl(186 ,20%  ,38%)"),
---     fg_2    =  hsl_to_hex_css_str("hsl(186 ,20%  ,55%)"),
---     fg_1    =  hsl_to_hex_css_str("hsl(186 ,20%  ,75%)"),
--- }
 -- stylua: ignore end
 
 M.set = function(colors)
