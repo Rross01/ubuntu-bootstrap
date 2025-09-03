@@ -55,66 +55,85 @@ local function hsl_to_hex_css_str(css_str)
     return "#" .. tohex(r) .. tohex(g) .. tohex(b)
 end
 
-
 -- stylua: ignore start
 M.colors = {
-    red         = hsl_to_hex_css_str("hsl(0   ,80%  ,68%)"),
-    orange      = hsl_to_hex_css_str("hsl(25  ,77%  ,69%)"),
-    yellow      = hsl_to_hex_css_str("hsl(50  ,57%  ,59%)"),
-    green       = hsl_to_hex_css_str("hsl(120 ,30%  ,59%)"),
-    teal        = hsl_to_hex_css_str("hsl(185 ,25%  ,54%)"),
-    blue        = hsl_to_hex_css_str("hsl(230 ,65%  ,67%)"),
-    violet      = hsl_to_hex_css_str("hsl(265 ,40%  ,65%)"),
-    purple      = hsl_to_hex_css_str("hsl(300 ,40%  ,65%)"),
-    search      = hsl_to_hex_css_str("hsl(57  ,60%  ,20%)"),
-    visual      = hsl_to_hex_css_str("hsl(213 ,60%  ,20%)"),
-    bg_1        = hsl_to_hex_css_str("hsl(0   ,0%   ,14%)"),
-    bg_2        = hsl_to_hex_css_str("hsl(0   ,0%   ,18%)"),
-    bg_3        = hsl_to_hex_css_str("hsl(0   ,0%   ,26%)"),
-    bg_4        = hsl_to_hex_css_str("hsl(0   ,0%   ,38%)"),
-    bg_5        = hsl_to_hex_css_str("hsl(0   ,0%   ,43%)"),
-    fg_2        = hsl_to_hex_css_str("hsl(0   ,0%   ,55%)"),
-    fg_1        = hsl_to_hex_css_str("hsl(0   ,0%   ,75%)"),
+    red     =  hsl_to_hex_css_str("hsl(0   ,80%  ,68%)"),
+    orange  =  hsl_to_hex_css_str("hsl(25  ,77%  ,69%)"),
+    yellow  =  hsl_to_hex_css_str("hsl(50  ,57%  ,59%)"),
+    green   =  hsl_to_hex_css_str("hsl(120 ,30%  ,59%)"),
+    teal    =  hsl_to_hex_css_str("hsl(185 ,25%  ,54%)"),
+    blue    =  hsl_to_hex_css_str("hsl(230 ,65%  ,67%)"),
+    violet  =  hsl_to_hex_css_str("hsl(265 ,40%  ,65%)"),
+    purple  =  hsl_to_hex_css_str("hsl(300 ,40%  ,65%)"),
+    search  =  hsl_to_hex_css_str("hsl(57  ,60%  ,20%)"),
+    visual  =  hsl_to_hex_css_str("hsl(210 ,60%  ,20%)"),
+    bg_1    =  hsl_to_hex_css_str("hsl(186 ,20%  ,14%)"),
+    bg_2    =  hsl_to_hex_css_str("hsl(186 ,20%  ,18%)"),
+    bg_3    =  hsl_to_hex_css_str("hsl(186 ,20%  ,26%)"),
+    fg_3    =  hsl_to_hex_css_str("hsl(186 ,15%  ,38%)"),
+    fg_2    =  hsl_to_hex_css_str("hsl(186 ,15%  ,55%)"),
+    fg_1    =  hsl_to_hex_css_str("hsl(186 ,15%  ,75%)"),
 }
+-- stylua: ignore end
+
+-- stylua: ignore start
+-- M.colors = {
+--     red     =  hsl_to_hex_css_str("hsl(0   ,80%  ,68%)"),
+--     orange  =  hsl_to_hex_css_str("hsl(25  ,77%  ,69%)"),
+--     yellow  =  hsl_to_hex_css_str("hsl(50  ,57%  ,59%)"),
+--     green   =  hsl_to_hex_css_str("hsl(120 ,30%  ,59%)"),
+--     teal    =  hsl_to_hex_css_str("hsl(185 ,25%  ,54%)"),
+--     blue    =  hsl_to_hex_css_str("hsl(230 ,65%  ,67%)"),
+--     violet  =  hsl_to_hex_css_str("hsl(265 ,40%  ,65%)"),
+--     purple  =  hsl_to_hex_css_str("hsl(300 ,40%  ,65%)"),
+--     search  =  hsl_to_hex_css_str("hsl(57  ,60%  ,20%)"),
+--     visual  =  hsl_to_hex_css_str("hsl(210 ,60%  ,20%)"),
+--     bg_1    =  hsl_to_hex_css_str("hsl(192 ,20%  ,14%)"),
+--     bg_2    =  hsl_to_hex_css_str("hsl(192 ,20%  ,18%)"),
+--     bg_3    =  hsl_to_hex_css_str("hsl(192 ,20%  ,26%)"),
+--     fg_3    =  hsl_to_hex_css_str("hsl(186 ,20%  ,38%)"),
+--     fg_2    =  hsl_to_hex_css_str("hsl(186 ,20%  ,55%)"),
+--     fg_1    =  hsl_to_hex_css_str("hsl(186 ,20%  ,75%)"),
+-- }
 -- stylua: ignore end
 
 M.set = function(colors)
     -- UI highlight
     hl("Normal", { fg = colors.fg_1, bg = colors.bg_1 })
     hl("NormalFloat", { fg = colors.fg_1 })
-    hl("FloatBorder", { fg = colors.bg_5 })
+    hl("FloatBorder", { fg = colors.fg_3 })
     hl("ColorColumn", { bg = colors.bg_2 })
-    hl("Cursor", { fg = colors.bg_5, bg = colors.fg_1 })
+    hl("Cursor", { fg = colors.fg_3, bg = colors.fg_1 })
     hl("CursorLine", { bg = colors.bg_2 })
     hl("CursorColumn", { bg = colors.bg_3 })
     hl("Directory", { fg = colors.fg_1, bold = true })
-    hl("DiffAdd", { fg = colors.teal })
+    hl("DiffAdd", { fg = colors.cyan })
     hl("DiffChange", { fg = colors.orange })
     hl("DiffDelete", { fg = colors.red })
     hl("DiffText", { fg = colors.orange })
     hl("EndOfBuffer", { link = "@transparent" })
     hl("ErrorMsg", { fg = colors.red, underline = true })
-    hl("VertSplit", { fg = colors.bg_3 })
-    hl("WinSeparator", { fg = colors.bg_4 })
+    hl("VertSplit", { fg = colors.bg_2 })
+    hl("WinSeparator", { fg = colors.bg_3 })
     hl("Folded", { fg = colors.fg_2 })
     hl("FoldColumn", { fg = colors.fg_2 })
     hl("SignColumn", { fg = colors.fg_1 })
     hl("IncSearch", { fg = colors.fg_1, bg = colors.search })
     hl("CurSearch", { fg = colors.fg_1, bg = colors.search })
     hl("LineNr", { fg = colors.bg_3 })
-    hl("CursorLineNr", { fg = colors.bg_5, bg = colors.bg_2 })
+    hl("CursorLineNr", { fg = colors.fg_3, bg = colors.bg_2 })
     hl("MatchParen", { fg = colors.fg_1 })
     hl("ModeMsg", { fg = colors.fg_1, bg = colors.bg_2 })
     hl("MoreMsg", { fg = colors.fg_1, bg = colors.bg_2 })
     hl("NonText", { fg = colors.fg_2 })
     hl("Pmenu", { fg = colors.fg_1, bg = colors.bg_2 })
-    hl("PmenuSel", { fg = colors.fg_1, bg = colors.bg_5 })
+    hl("PmenuSel", { fg = colors.fg_1, bg = colors.fg_3 })
     hl("PmenuSbar", { bg = colors.fg_2 })
-    hl("PmenuThumb", { bg = colors.bg_5 })
+    hl("PmenuThumb", { bg = colors.fg_3 })
     hl("Question", { fg = colors.blue })
     hl("Search", { fg = colors.fg_1, bg = colors.search })
     hl("SpecialKey", { fg = colors.fg_1 })
-    hl("StatusLine", { fg = colors.bg_5, bg = "NONE" })
+    hl("StatusLine", { fg = colors.fg_3, bg = "NONE" })
     hl("StatusLineNC", { fg = colors.fg_1, bg = colors.bg_3 })
     hl("TabLine", { fg = colors.fg_1, bg = colors.bg_3 })
     hl("TabLineFill", { fg = colors.fg_1, bg = colors.bg_3 })
@@ -124,10 +143,10 @@ M.set = function(colors)
     hl("VisualNOS", { bg = colors.visual })
     hl("WarningMsg", { fg = colors.yellow, bold = true })
     hl("WildMenu", { fg = colors.fg_1, bg = colors.blue })
-    hl("Comment", { fg = colors.bg_5, italic = true })
+    hl("Comment", { fg = colors.fg_3, italic = true })
     hl("Constant", { fg = colors.violet })
     hl("String", { fg = colors.green })
-    hl("Character", { fg = colors.teal })
+    hl("Character", { fg = colors.cyan })
     hl("Number", { fg = colors.violet })
     hl("Boolean", { fg = colors.blue })
     hl("Float", { fg = colors.violet })
@@ -144,13 +163,13 @@ M.set = function(colors)
     hl("Include", { fg = colors.orange, bold = true })
     hl("Define", { fg = colors.yellow, bold = true })
     hl("Macro", { fg = colors.yellow, bold = true })
-    hl("Type", { fg = colors.teal, bold = true })
-    hl("StorageClass", { fg = colors.teal, bold = true })
-    hl("Typedef", { fg = colors.teal, bold = true })
+    hl("Type", { fg = colors.cyan, bold = true })
+    hl("StorageClass", { fg = colors.cyan, bold = true })
+    hl("Typedef", { fg = colors.cyan, bold = true })
     hl("Structure", { fg = colors.yellow })
     hl("Special", { fg = colors.red })
     hl("SpecialChar", { fg = colors.red })
-    hl("Tag", { fg = colors.teal })
+    hl("Tag", { fg = colors.cyan })
     hl("Delimiter", { fg = colors.fg_1 })
     hl("SpecialComment", { fg = colors.fg_2 })
     hl("Debug", { fg = colors.fg_1 })
@@ -162,13 +181,13 @@ M.set = function(colors)
     hl("SpellCap", { fg = colors.red, underline = true, sp = colors.red })
     hl("SpellRare", { fg = colors.red, underline = true, sp = colors.red })
     hl("SpellLocale", { fg = colors.red, underline = true, sp = colors.red })
-    hl("Whitespace", { fg = colors.bg_5 })
+    hl("Whitespace", { fg = colors.fg_3 })
 
     --- Treesitter highlight
     -- hl("@spell", { link = "@string" })
     hl("@error", { fg = colors.red })
     hl("@text.literal", { fg = colors.fg_1 })
-    hl("@text.title", { fg = colors.teal, bold = true })
+    hl("@text.title", { fg = colors.cyan, bold = true })
     hl("@text.emphasis", { italic = true })
     hl("@text.strong", { bold = true })
     hl("@text.uri", { fg = colors.blue, underline = true })
@@ -180,7 +199,7 @@ M.set = function(colors)
     hl("@text.danger", { fg = colors.red, bold = true })
     hl("@comment", { link = "Comment" })
     hl("@punctuation", { fg = colors.fg_1 })
-    hl("@punctuation.special", { fg = colors.teal })
+    hl("@punctuation.special", { fg = colors.cyan })
     hl("@punctuation.bracket", { fg = colors.fg_1 })
     hl("@punctuation.delimiter", { fg = colors.fg_1 })
     hl("@constant", { fg = colors.fg_1 })
@@ -192,12 +211,12 @@ M.set = function(colors)
     hl("@stringEscape", { fg = colors.blue })
     hl("@string.special", { fg = colors.blue })
     hl("@string.regex", { fg = colors.purple })
-    hl("@character", { fg = colors.teal })
+    hl("@character", { fg = colors.cyan })
     hl("@character.special", { fg = colors.blue })
     hl("@number", { fg = colors.violet })
     hl("@boolan", { fg = colors.violet, bold = true })
-    hl("@float", { fg = colors.teal })
-    hl("@function", { fg = colors.teal })
+    hl("@float", { fg = colors.cyan })
+    hl("@function", { fg = colors.cyan })
     hl("@function.builtin", { fg = colors.blue })
     hl("@function.macro", { fg = colors.blue, bold = true })
     hl("@attribute", { fg = colors.orange })
@@ -205,7 +224,7 @@ M.set = function(colors)
     hl("@parameter", { fg = colors.orange })
     hl("@parameter.reference", { fg = colors.orange })
     hl("@method", { fg = colors.blue })
-    hl("@field", { fg = colors.teal })
+    hl("@field", { fg = colors.cyan })
     hl("@property", { fg = colors.blue })
     hl("@constructor", { fg = colors.fg_1 })
     hl("@conditional", { fg = colors.orange, bold = true })
@@ -219,18 +238,18 @@ M.set = function(colors)
     hl("@variable", { fg = colors.fg_1 })
     hl("@variable.builtin", { fg = colors.purple })
     hl("@variable.parameter", { fg = colors.orange })
-    hl("@variable.other", { fg = colors.teal })
+    hl("@variable.other", { fg = colors.cyan })
     hl("@type", { fg = colors.yellow })
-    hl("@type.builtin", { fg = colors.teal })
-    hl("@type.qualifire", { fg = colors.teal })
-    hl("@type.definition", { fg = colors.teal, bold = true })
+    hl("@type.builtin", { fg = colors.cyan })
+    hl("@type.qualifire", { fg = colors.cyan })
+    hl("@type.definition", { fg = colors.cyan, bold = true })
     hl("@storageclass", { fg = colors.orange, bold = true })
-    hl("@structure", { fg = colors.teal, bold = true })
+    hl("@structure", { fg = colors.cyan, bold = true })
     hl("@namespace", { fg = colors.orange })
     hl("@include", { fg = colors.orange, bold = true })
     hl("@preproc", { fg = colors.orange })
     hl("@debug", { fg = colors.yellow })
-    hl("@tag", { fg = colors.teal })
+    hl("@tag", { fg = colors.cyan })
     hl("@tag.delimiter", { fg = colors.fg_1 })
     hl("@tag.attribute", { fg = colors.orange })
 
@@ -241,8 +260,9 @@ M.set = function(colors)
     hl("@attribute.python", { fg = colors.yellow })
     hl("@constructor.python", { fg = colors.yellow })
     hl("@module.python", { fg = colors.fg_1 })
-    hl("@string.documentation.python", { fg = colors.bg_5 })
+    hl("@string.documentation.python", { fg = colors.fg_3 })
     hl("@type.python", { fg = colors.yellow })
+    hl("@string.documentation.python", { link = "Comment" })
 
     -- yaml
     hl("@boolean.yaml", { link = "@variable.builtin" })
@@ -274,21 +294,21 @@ M.set = function(colors)
     hl("@lsp.type.variable", { link = "@variable" })
     hl("@lsp.type.keyword", { link = "@keyword" })
 
-    hl("htmlTag", { fg = colors.teal })
-    hl("htmlEndTag", { fg = colors.teal })
-    hl("htmlTagName", { fg = colors.teal })
-    hl("htmlSpecialTagName", { fg = colors.teal })
+    hl("htmlTag", { fg = colors.cyan })
+    hl("htmlEndTag", { fg = colors.cyan })
+    hl("htmlTagName", { fg = colors.cyan })
+    hl("htmlSpecialTagName", { fg = colors.cyan })
     hl("htmlArg", { fg = colors.orange })
 
     -- hl("BufferLineIndicatorSelected", { bg = colors.bg_1 })
     hl("BufferLineFill", { bg = colors.bg_2 })
 
     -- Telescope nvim
-    hl("TelescopePromptBorder", { fg = colors.bg_5 })
-    hl("TelescopeResultsBorder", { fg = colors.bg_5 })
-    hl("TelescopePreviewBorder", { fg = colors.bg_5 })
+    hl("TelescopePromptBorder", { fg = colors.fg_3 })
+    hl("TelescopeResultsBorder", { fg = colors.fg_3 })
+    hl("TelescopePreviewBorder", { fg = colors.fg_3 })
     hl("TelescopeNormal", { fg = colors.fg_1 })
-    hl("TelescopeSelection", { fg = colors.fg_1, bg = colors.bg_3 })
+    hl("TelescopeSelection", { fg = colors.fg_1, bg = colors.bg_2 })
     hl("TelescopeMultiSelection", { fg = colors.fg_1 })
     hl("TelescopeMatching", { fg = colors.fg_1, bold = true })
     hl("TelescopePromptPrefix", { fg = colors.fg_1, bold = true })
@@ -305,7 +325,7 @@ M.set = function(colors)
     hl("DiagnosticError", { fg = colors.red, italic = true })
     hl("DiagnosticWarn", { fg = colors.yellow, italic = true })
     hl("DiagnosticHint", { fg = colors.blue, italic = true })
-    hl("DiagnosticInfo", { fg = colors.teal, italic = true })
+    hl("DiagnosticInfo", { fg = colors.cyan, italic = true })
 
     hl("GitSignsAdd", { fg = colors.green })
     hl("GitSignsChange", { fg = colors.yellow })

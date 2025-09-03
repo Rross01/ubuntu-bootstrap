@@ -15,8 +15,8 @@ bindings = [{ key = "F11", action = "ToggleFullscreen" }]
 # Solarized Dark
 # Default colors
 [colors.primary]
-background = '#002b36'
-foreground = '#839496'
+background = '#112b32'
+foreground = '#819598'
 
 # Normal colors
 [colors.normal]
