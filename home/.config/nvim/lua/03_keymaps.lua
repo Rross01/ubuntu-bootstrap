@@ -54,6 +54,7 @@ bind("Tmp", "e ~/places/git/personal/second-brain/scratch.md", bind_default_opts
 bind("W", "w", bind_default_opts)
 bind("Q", "q", bind_default_opts)
 bind("X", "x", bind_default_opts)
+bind("Gb", "G branch -vv", bind_default_opts)
 bind("Gca", "G commit --amend", bind_default_opts)
 bind("Grm", "G rebase master", bind_default_opts)
 bind("Gp", "G push", bind_default_opts)
