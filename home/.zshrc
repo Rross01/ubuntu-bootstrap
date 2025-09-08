@@ -44,7 +44,6 @@ git_clean() {
     fi
     git checkout "$b" && git pull
     git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D
-    git branch | grep -v -E "^\*|\b($b)\b" | xargs git branch -D
 }
 
 python_venv() {

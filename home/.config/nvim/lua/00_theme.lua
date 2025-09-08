@@ -70,9 +70,9 @@ M.colors = {
     bg_1    =  hsl_to_hex_css_str("hsl(0   ,0%   ,14%)"),
     bg_2    =  hsl_to_hex_css_str("hsl(0   ,0%   ,18%)"),
     bg_3    =  hsl_to_hex_css_str("hsl(0   ,0%   ,26%)"),
-    fg_3    =  hsl_to_hex_css_str("hsl(186 ,5%   ,38%)"),
-    fg_2    =  hsl_to_hex_css_str("hsl(186 ,5%   ,55%)"),
-    fg_1    =  hsl_to_hex_css_str("hsl(186 ,5%   ,75%)"),
+    fg_3    =  hsl_to_hex_css_str("hsl(0   ,0%   ,38%)"),
+    fg_2    =  hsl_to_hex_css_str("hsl(0   ,0%   ,55%)"),
+    fg_1    =  hsl_to_hex_css_str("hsl(0   ,0%   ,75%)"),
 }
 -- stylua: ignore end
 
