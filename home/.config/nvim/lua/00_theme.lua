@@ -311,8 +311,8 @@ M.set = function(colors)
     hl("GitSignsDelete", { fg = colors.red })
 
     -- neotree
-    hl("NeoTreeDirectoryName", { fg = colors.fg_1 })
-    hl("NeoTreeDirectoryIcon", { fg = colors.fg_1 })
+    hl("NeoTreeNormal", { bg = colors.bg_1 })
+    hl("NeoTreeCursorLine", { bg = colors.bg_2 })
 end
 
 M.setup = function()

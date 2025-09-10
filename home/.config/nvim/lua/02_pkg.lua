@@ -119,6 +119,7 @@ pak({
     "https://github.com/MunifTanjim/nui.nvim",
     "https://github.com/s1n7ax/nvim-window-picker",
 })
+
 require("neo-tree").setup({
     filesystem = {
         filtered_items = {

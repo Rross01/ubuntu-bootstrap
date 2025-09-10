@@ -8,8 +8,33 @@ TERM = "xterm-256color"
 [mouse]
 hide_when_typing = true
 [window]
+decorations = "None"
 decorations_theme_variant = "Dark"
 [keyboard]
 bindings = [{ key = "F11", action = "ToggleFullscreen" }]
+# [colors.primary]
+# foreground = '#cccccc'
+
 [colors.primary]
-foreground = '#cccccc'
+background = '#1f1f1f'
+foreground = '#c5c8c6'
+
+[colors.normal]
+black = '#1d1f21'
+red = '#cc342b'
+green = '#2bab5c'
+yellow = '#fba922'
+blue = '#3971ed'
+magenta = '#a36ac7'
+cyan = '#3971ed'
+white = '#c5c8c6'
+
+[colors.bright]
+black = '#969896'
+red = '#cc342b'
+green = '#2bab5c'
+yellow = '#fba922'
+blue = '#3971ed'
+magenta = '#a36ac7'
+cyan = '#3971ed'
+white = '#ffffff'
