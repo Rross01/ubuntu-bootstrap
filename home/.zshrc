@@ -8,7 +8,7 @@ export EDITOR="nvim"
 export PATH="$HOME/.local/share/nvim/mason/bin/:$PATH"
 export GNUPGHOME="~/places/gpg"
 export AWS_CONFIG_FILE="~/places/.aws_credentials"
-export FZF_DEFAULT_OPTS='--reverse --bind=alt-k:up,alt-j:down --style=minimal --color=16'
+export FZF_DEFAULT_OPTS='--reverse --bind=alt-k:up,alt-j:down --style=minimal --color=bw'
 
 # completions
 source <(helm completion zsh)
@@ -31,6 +31,8 @@ alias -g -- --help='--help 2>&1 | batcat --language=help --style=plain'
 # batcat for man pages
 export MANPAGER="sh -c 'col -bx | batcat --language=man --style=plain'"
 export MANROFFOPT="-c"
+
+export BAT_STYLE="plain"
 
 git_clean() {
     # master или main

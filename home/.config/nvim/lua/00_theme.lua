@@ -67,12 +67,12 @@ M.colors = {
     purple  =  hsl_to_hex_css_str("hsl(300 ,40%  ,65%)"),
     search  =  hsl_to_hex_css_str("hsl(57  ,60%  ,20%)"),
     visual  =  hsl_to_hex_css_str("hsl(210 ,60%  ,20%)"),
-    bg_1    =  hsl_to_hex_css_str("hsl(0   ,0%   ,14%)"),
-    bg_2    =  hsl_to_hex_css_str("hsl(0   ,0%   ,18%)"),
-    bg_3    =  hsl_to_hex_css_str("hsl(0   ,0%   ,26%)"),
-    fg_3    =  hsl_to_hex_css_str("hsl(0   ,0%   ,38%)"),
-    fg_2    =  hsl_to_hex_css_str("hsl(0   ,0%   ,55%)"),
-    fg_1    =  hsl_to_hex_css_str("hsl(0   ,0%   ,75%)"),
+    bg_1    =  hsl_to_hex_css_str("hsl(222   ,11%   ,16%)"),
+    bg_2    =  hsl_to_hex_css_str("hsl(222   ,11%   ,18%)"),
+    bg_3    =  hsl_to_hex_css_str("hsl(222   ,11%   ,26%)"),
+    fg_3    =  hsl_to_hex_css_str("hsl(222   ,11%   ,38%)"),
+    fg_2    =  hsl_to_hex_css_str("hsl(222   ,11%   ,55%)"),
+    fg_1    =  hsl_to_hex_css_str("hsl(222   ,11%   ,75%)"),
 }
 -- stylua: ignore end
 
