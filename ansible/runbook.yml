@@ -1,5 +1,0 @@
----
-- hosts: ubuntu
-  gather_facts: true
-  roles:
-    - ubuntu-bootstrap

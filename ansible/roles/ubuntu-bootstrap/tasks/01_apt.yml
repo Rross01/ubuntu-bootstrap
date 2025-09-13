@@ -1,6 +1,0 @@
----
-- name: Install apt packages
-  become: true
-  with_items: "{{ packages }}"
-  apt:
-    name: "{{ item }}"

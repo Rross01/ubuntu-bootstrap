@@ -1,7 +1,0 @@
----
-- name: Install deb packages
-  become: true
-  ignore_errors: true
-  with_items: "{{ deb }}"
-  apt:
-    deb: "{{ item }}"

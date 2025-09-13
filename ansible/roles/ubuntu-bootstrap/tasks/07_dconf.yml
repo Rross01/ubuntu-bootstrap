@@ -1,6 +1,0 @@
----
-- name: Configure dconf
-  with_dict: "{{ dconf }}"
-  dconf:
-    key: "{{ item.key }}"
-    value: "{{ item.value }}"

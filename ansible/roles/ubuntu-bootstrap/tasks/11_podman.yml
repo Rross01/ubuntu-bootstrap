@@ -1,7 +1,0 @@
----
-- name: Configure podman default registry to docker.io
-  become: true
-  copy:
-    content: |-
-      unqualified-search-registries = ["docker.io"]
-    dest: /etc/containers/registries.conf.d/10-unqualified-search-registries.conf
