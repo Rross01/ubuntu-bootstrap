@@ -12,15 +12,15 @@ sudo apt install -y \
 sudo snap install pinta postman telegram-desktop
 sudo snap install --classic pycharm-community
 
+dconf write "/org/gnome/desktop/input-sources/xkb-options" "['caps:swapescape']"
+dconf write "/org/gnome/desktop/interface/enable-animations" "false"
+dconf write "/org/gnome/desktop/wm/keybindings/close" "['<Shift><Super>q']"
+dconf write "/org/gnome/desktop/wm/keybindings/switch-input-source" "['<Alt>Shift_L']"
+dconf write "/org/gnome/settings-daemon/plugins/media-keys/calculator" "['<Super>c']"
+dconf write "/org/gnome/settings-daemon/plugins/media-keys/home" "['<Super>e']"
 dconf write "/org/gnome/shell/extensions/dash-to-dock/click-action" "'minimize'"
 dconf write "/org/gnome/shell/extensions/dash-to-dock/show-trash" "false"
 dconf write "/org/gnome/shell/window-switcher/app-icon-mode" "'app-icon-only'"
-dconf write "/org/gnome/desktop/input-sources/xkb-options" "['caps:swapescape']"
-dconf write "/org/gnome/desktop/wm/keybindings/switch-input-source" "['<Alt>Shift_L']"
-dconf write "/org/gnome/desktop/wm/keybindings/close" "['<Shift><Super>q']"
-dconf write "/org/gnome/settings-daemon/plugins/media-keys/home" "['<Super>e']"
-dconf write "/org/gnome/settings-daemon/plugins/media-keys/calculator" "['<Super>c']"
-dconf write "/org/gnome/shell/extensions/just-perfection/animation" "0"
 
 for file in $(find $PWD/home); do
     RELNAME=$(echo $file | sed "s|$PWD/home/||g")
