@@ -20,6 +20,7 @@ dconf write "/org/gnome/desktop/wm/keybindings/switch-input-source" "['<Alt>Shif
 dconf write "/org/gnome/desktop/wm/keybindings/close" "['<Shift><Super>q']"
 dconf write "/org/gnome/settings-daemon/plugins/media-keys/home" "['<Super>e']"
 dconf write "/org/gnome/settings-daemon/plugins/media-keys/calculator" "['<Super>c']"
+dconf write "/org/gnome/shell/extensions/just-perfection/animation" "0"
 
 for file in $(find $PWD/home); do
     RELNAME=$(echo $file | sed "s|$PWD/home/||g")
