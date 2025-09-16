@@ -60,11 +60,19 @@ if [ ! -d /opt/pytimesched ]; then
     sudo mkdir /opt/pytimesched
     sudo tar xzvf /tmp/pyTimeSched.tar.gz -C /opt/pytimesched
     sudo chown -R $USER:$USER /opt/pytimesched
-    # TODO: desktop icon
+    cat << EOF | sed 's/^[[:space:]]*//' > ~/.local/share/applications/pyTimeSched.desktop
+        [Desktop Entry]
+        Version=1.0
+        Name=pyTimeSched
+        Exec=/opt/pytimesched/pyTimeSched
+        Icon=/opt/pytimesched/gui/icons/icon.png
+        Terminal=false
+        Type=Application
+EOF
 fi
 
 CONTAINER="arch-tools"
-TOOLS="kubectl helm helmfile sops k9s dive"
+TOOLS="kubectl helm helmfile sops k9s dive uv"
 
 if ! podman container exists $CONTAINER; then
     podman run --name $CONTAINER archlinux:latest pacman -Sy --noconfirm --needed $TOOLS
