@@ -1,4 +1,4 @@
-export PS1=' \[\e[33;01;34m\]\W\[\e[0m\] ❱ '
+export PS1=' \[\e[33;01;32m\]\W\[\e[0m\] ❱ '
 export EDITOR="/usr/bin/nvim"
 export PATH="$HOME/.local/share/nvim/mason/bin/:$PATH"
 export GNUPGHOME="~/places/gpg"
