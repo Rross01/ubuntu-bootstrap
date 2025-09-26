@@ -67,12 +67,12 @@ M.colors = {
     purple  =  hsl_to_hex_css_str("hsl(300 ,40%  ,65%)"),
     search  =  hsl_to_hex_css_str("hsl(57  ,60%  ,20%)"),
     visual  =  hsl_to_hex_css_str("hsl(210 ,60%  ,20%)"),
-    bg_1    =  "#292c33",
-    bg_2    =  hsl_to_hex_css_str("hsl(222   ,11%   ,21%)"),
-    bg_3    =  hsl_to_hex_css_str("hsl(222   ,11%   ,26%)"),
-    fg_3    =  hsl_to_hex_css_str("hsl(222   ,11%   ,38%)"),
-    fg_2    =  hsl_to_hex_css_str("hsl(222   ,11%   ,55%)"),
-    fg_1    =  hsl_to_hex_css_str("hsl(222   ,11%   ,75%)"),
+    bg_1    =  "#24272d",
+    bg_2    =  hsl_to_hex_css_str("hsl(222   ,11%   ,19%)"),
+    bg_3    =  hsl_to_hex_css_str("hsl(222   ,11%   ,24%)"),
+    fg_3    =  hsl_to_hex_css_str("hsl(222   ,11%   ,36%)"),
+    fg_2    =  hsl_to_hex_css_str("hsl(222   ,11%   ,53%)"),
+    fg_1    =  hsl_to_hex_css_str("hsl(222   ,11%   ,79%)"),
 }
 -- stylua: ignore end
 
@@ -85,7 +85,7 @@ M.set = function(colors)
     hl("Cursor", { fg = colors.fg_3, bg = colors.fg_1 })
     hl("CursorLine", { bg = colors.bg_2 })
     hl("CursorColumn", { bg = colors.bg_3 })
-    hl("Directory", { fg = colors.fg_1, bold = true })
+    hl("Directory", { fg = colors.fg_1 })
     hl("DiffAdd", { fg = colors.cyan })
     hl("DiffChange", { fg = colors.orange })
     hl("DiffDelete", { fg = colors.red })

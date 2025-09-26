@@ -24,7 +24,7 @@ require("blink.cmp").setup({
             show_documentation = true,
         },
     },
-    keymap = { preset = "super-tab" },
+    -- keymap = { preset = "super-tab" },
     appearance = { use_nvim_cmp_as_default = false },
     sources = {
         default = {
