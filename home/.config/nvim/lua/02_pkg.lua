@@ -106,7 +106,7 @@ require("conform").setup({
         zsh = { "beautysh" },
         sql = { "sqlfmt" },
         json = { "fixjson" },
-        markdown = { "prettier", "cbfmt" },
+        markdown = { "cbfmt" },
         toml = { "taplo" },
         go = { "gofumpt" },
     },
