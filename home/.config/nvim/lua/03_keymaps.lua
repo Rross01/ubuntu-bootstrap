@@ -13,13 +13,13 @@ map("n", "<leader>q", ":Neotree right toggle<CR>")
 map("n", "<leader>Q", ":Neotree right reveal<CR>")
 
 -- nvim-telescope/telescope.nvim
-local builtin = require("telescope.builtin")
-map("n", "<leader>pf", builtin.find_files)
-map("n", "<leader>pg", builtin.live_grep)
-map("n", "<leader>pd", builtin.diagnostics)
-map("n", "<leader>pc", builtin.current_buffer_fuzzy_find)
-map("n", "<leader>pb", builtin.buffers)
-map("n", "<leader>ph", builtin.help_tags)
+local telescope = require("telescope.builtin")
+map("n", "<leader>pf", telescope.find_files)
+map("n", "<leader>pg", telescope.live_grep)
+map("n", "<leader>pd", telescope.diagnostics)
+map("n", "<leader>pc", telescope.current_buffer_fuzzy_find)
+map("n", "<leader>pb", telescope.buffers)
+map("n", "<leader>ph", telescope.help_tags)
 
 -- echasnovski/mini.nvim
 map("n", "<leader>d", require("mini.bufremove").delete)
