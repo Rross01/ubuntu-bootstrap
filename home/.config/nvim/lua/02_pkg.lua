@@ -57,25 +57,25 @@ require("tiny-inline-diagnostic").setup({
     options = { show_source = true },
 })
 
-pak({ "https://github.com/lukas-reineke/indent-blankline.nvim" })
-require("ibl").setup({
-    scope = { enabled = false },
-    indent = {
-        -- weird way to hide first line
-        highlight = {
-            "@transparent",
-            "VertSplit",
-            "VertSplit",
-            "VertSplit",
-            "VertSplit",
-            "VertSplit",
-            "VertSplit",
-            "VertSplit",
-            "VertSplit",
-        },
-        char = "▏",
-    },
-})
+-- pak({ "https://github.com/lukas-reineke/indent-blankline.nvim" })
+-- require("ibl").setup({
+--     scope = { enabled = false },
+--     indent = {
+--         -- weird way to hide first line
+--         highlight = {
+--             "@transparent",
+--             "VertSplit",
+--             "VertSplit",
+--             "VertSplit",
+--             "VertSplit",
+--             "VertSplit",
+--             "VertSplit",
+--             "VertSplit",
+--             "VertSplit",
+--         },
+--         char = "▏",
+--     },
+-- })
 
 pak({ "https://github.com/stevearc/conform.nvim" })
 require("conform").setup({

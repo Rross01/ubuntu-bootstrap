@@ -57,22 +57,22 @@ end
 
 -- stylua: ignore start
 M.colors = {
-    red     =  hsl_to_hex_css_str("hsl(0   ,80%  ,68%)"),
-    orange  =  hsl_to_hex_css_str("hsl(25  ,77%  ,69%)"),
-    yellow  =  hsl_to_hex_css_str("hsl(50  ,57%  ,59%)"),
-    green   =  hsl_to_hex_css_str("hsl(120 ,30%  ,59%)"),
-    cyan    =  hsl_to_hex_css_str("hsl(185 ,25%  ,54%)"),
-    blue    =  hsl_to_hex_css_str("hsl(230 ,65%  ,67%)"),
-    violet  =  hsl_to_hex_css_str("hsl(265 ,40%  ,65%)"),
-    purple  =  hsl_to_hex_css_str("hsl(300 ,40%  ,65%)"),
-    search  =  hsl_to_hex_css_str("hsl(57  ,60%  ,20%)"),
-    visual  =  hsl_to_hex_css_str("hsl(210 ,60%  ,20%)"),
-    bg_1    =  "#24272d",
-    bg_2    =  hsl_to_hex_css_str("hsl(222   ,11%   ,19%)"),
-    bg_3    =  hsl_to_hex_css_str("hsl(222   ,11%   ,24%)"),
-    fg_3    =  hsl_to_hex_css_str("hsl(222   ,11%   ,36%)"),
-    fg_2    =  hsl_to_hex_css_str("hsl(222   ,11%   ,53%)"),
-    fg_1    =  hsl_to_hex_css_str("hsl(222   ,11%   ,79%)"),
+    red     =  hsl_to_hex_css_str("hsl(0   ,82%  ,70%)"),
+    orange  =  hsl_to_hex_css_str("hsl(25  ,79%  ,70%)"),
+    yellow  =  hsl_to_hex_css_str("hsl(50  ,59%  ,60%)"),
+    green   =  hsl_to_hex_css_str("hsl(120 ,32%  ,60%)"),
+    cyan    =  hsl_to_hex_css_str("hsl(185 ,27%  ,55%)"),
+    blue    =  hsl_to_hex_css_str("hsl(230 ,67%  ,70%)"),
+    violet  =  hsl_to_hex_css_str("hsl(265 ,42%  ,66%)"),
+    purple  =  hsl_to_hex_css_str("hsl(300 ,42%  ,66%)"),
+    search  =  hsl_to_hex_css_str("hsl(57  ,62%  ,21%)"),
+    visual  =  hsl_to_hex_css_str("hsl(210 ,62%  ,21%)"),
+    bg_1    =  hsl_to_hex_css_str("hsl(0   ,0%   ,15%)"),
+    bg_2    =  hsl_to_hex_css_str("hsl(0   ,0%   ,18%)"),
+    bg_3    =  hsl_to_hex_css_str("hsl(0   ,0%   ,25%)"),
+    fg_3    =  hsl_to_hex_css_str("hsl(0   ,0%   ,37%)"),
+    fg_2    =  hsl_to_hex_css_str("hsl(0   ,0%   ,54%)"),
+    fg_1    =  hsl_to_hex_css_str("hsl(0   ,0%   ,80%)"),
 }
 -- stylua: ignore end
 
@@ -84,7 +84,7 @@ M.set = function(colors)
     hl("ColorColumn", { bg = colors.bg_2 })
     hl("Cursor", { fg = colors.fg_3, bg = colors.fg_1 })
     hl("CursorLine", { bg = colors.bg_2 })
-    hl("CursorColumn", { bg = colors.bg_3 })
+    hl("CursorColumn", { bg = colors.bg_2 })
     hl("Directory", { fg = colors.fg_1 })
     hl("DiffAdd", { fg = colors.cyan })
     hl("DiffChange", { fg = colors.orange })
@@ -93,7 +93,7 @@ M.set = function(colors)
     hl("EndOfBuffer", { link = "@transparent" })
     hl("ErrorMsg", { fg = colors.red, underline = true })
     hl("VertSplit", { fg = colors.bg_2 })
-    hl("WinSeparator", { fg = colors.bg_3 })
+    hl("WinSeparator", { fg = colors.fg_3 })
     hl("Folded", { fg = colors.fg_2 })
     hl("FoldColumn", { fg = colors.fg_2 })
     hl("SignColumn", { fg = colors.fg_1 })
@@ -300,6 +300,7 @@ M.set = function(colors)
     hl("DiagnosticUnderlineWarn", { underline = false, undercurl = false })
     hl("DiagnosticUnderlineInfo", { underline = false, undercurl = false })
     hl("DiagnosticUnderlineHint", { underline = false, undercurl = false })
+    hl("DiagnosticUnnecessary", { fg = colors.fg_2, italic = true })
 
     hl("DiagnosticError", { fg = colors.red, italic = true })
     hl("DiagnosticWarn", { fg = colors.yellow, italic = true })

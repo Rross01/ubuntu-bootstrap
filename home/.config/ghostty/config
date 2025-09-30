@@ -6,7 +6,8 @@ window-padding-y = 0
 mouse-hide-while-typing = true
 command = tmux
 mouse-scroll-multiplier = 0.01
-background = "#24272d"
+background = "#2e2e2e"
+window-theme = "ghostty"
 # Unbind keybinds
 keybind = unconsumed:alt+1=goto_tab:1
 keybind = unconsumed:alt+2=goto_tab:2
