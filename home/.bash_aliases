@@ -17,7 +17,6 @@ source /tmp/comp
 alias s='ssh'
 alias v='nvim'
 alias kl='kubectl'
-alias git_log='git log --all --decorate --oneline --graph $argv'
 alias locconf="export KUBECONFIG=~/places/kubeconfigs/loc.conf"
 
 # batcat for help pages
