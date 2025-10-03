@@ -3,7 +3,7 @@ export EDITOR="/usr/bin/nvim"
 export PATH="$HOME/.local/share/nvim/mason/bin/:$PATH"
 export GNUPGHOME="~/places/gpg"
 export AWS_CONFIG_FILE="~/places/.aws_credentials"
-export FZF_DEFAULT_OPTS='--reverse --bind=alt-k:up,alt-j:down --style=minimal --color=bw'
+export FZF_DEFAULT_OPTS='--reverse --bind=alt-k:up,alt-j:down --style=minimal'
 
 # completions
 if [ ! -f /tmp/comp ]; then
@@ -18,12 +18,6 @@ alias s='ssh'
 alias v='nvim'
 alias kl='kubectl'
 alias locconf="export KUBECONFIG=~/places/kubeconfigs/loc.conf"
-
-# batcat for help pages
-alias bathelp='batcat --plain --language=help'
-help() {
-    "$@" --help 2>&1 | bathelp
-}
 
 # batcat for man pages
 export MANPAGER="sh -c 'col -bx | batcat --language=man --style=plain'"
@@ -44,7 +38,7 @@ git_clean() {
     git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D
 }
 
-python_venv() {
+vv() {
     MYVENV=./.venv
     # when you cd into a folder that contains $MYVENV
     [[ -d $MYVENV ]] && source $MYVENV/bin/activate > /dev/null 2>&1
