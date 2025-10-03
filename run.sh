@@ -34,7 +34,7 @@ done
 
 if [ ! -f /usr/bin/ghostty ]; then
     wget \
-        https://github.com/mkasberg/ghostty-ubuntu/releases/download/1.1.3-0-ppa2/ghostty_1.1.3-0.ppa2_amd64_25.04.deb \
+        https://github.com/mkasberg/ghostty-ubuntu/releases/download/1.2.0-0-ppa2/ghostty_1.2.0-0.ppa2_amd64_25.04.deb \
         -O /tmp/ghostty.deb
     sudo apt install -y /tmp/ghostty.deb
 fi
@@ -46,11 +46,12 @@ if [ ! -f /usr/bin/ktalk ]; then
     sudo apt install -y /tmp/ktalk.deb
 fi
 
+
 if [ ! -f ~/.fonts/README.md ]; then
     wget \
-        https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/ZedMono.zip \
-        -O /tmp/ZedMono.zip
-    unzip /tmp/ZedMono.zip -d ~/.fonts
+        https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Iosevka.zip \
+        -O /tmp/Iosevka.zip
+    unzip /tmp/Iosevka.zip -d ~/.fonts
 fi
 
 if [ ! -d /opt/pytimesched ]; then
@@ -75,7 +76,7 @@ CONTAINER="arch-tools"
 TOOLS="kubectl helm helmfile sops k9s dive uv"
 
 if ! podman container exists $CONTAINER; then
-    podman run --name $CONTAINER archlinux:latest pacman -Sy --noconfirm --needed $TOOLS
+    podman run --name $CONTAINER archlinux:latest pacman -Sy --noconfirm --needed -dd $TOOLS
 else
     podman start -ai $CONTAINER
 fi
