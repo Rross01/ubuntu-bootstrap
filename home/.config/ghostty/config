@@ -1,6 +1,6 @@
 # Disable most ligatures
 font-feature = -calt, -liga, -dlig
-font-family = "ZedMono Nerd Font"
+font-family = "Iosevka Nerd Font"
 font-size = 12
 window-padding-y = 0
 mouse-hide-while-typing = true
