@@ -314,6 +314,9 @@ M.set = function(colors)
     -- neotree
     hl("NeoTreeNormal", { bg = colors.bg_1 })
     hl("NeoTreeCursorLine", { bg = colors.bg_2 })
+
+    -- indent-blankline
+    hl("IblIndent", { fg = colors.bg_2 })
 end
 
 M.setup = function()

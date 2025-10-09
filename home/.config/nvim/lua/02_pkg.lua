@@ -125,6 +125,27 @@ require("neo-tree").setup({
     },
 })
 
+pak({ "https://github.com/lukas-reineke/indent-blankline.nvim" })
+require("ibl").setup({
+    indent = {
+        highlight = {
+            "@transparent",
+            "IblIndent",
+            "IblIndent",
+            "IblIndent",
+            "IblIndent",
+            "IblIndent",
+            "IblIndent",
+            "IblIndent",
+        },
+    },
+    -- whitespace = {
+    --     highlight = highlight,
+    --     remove_blankline_trail = false,
+    -- },
+    scope = { enabled = false },
+})
+
 pak({ "https://github.com/echasnovski/mini.nvim" })
 require("mini.move").setup() -- Move any selection in any direction
 require("mini.bufremove").setup() -- Remove buffers
