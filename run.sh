@@ -3,10 +3,9 @@
 set -x
 set -a
 
-sudo apt install -y \
-    gnome-shell-extensions evolution-ews keepassxc wireshark python3-venv \
-    moreutils wl-clipboard podman podman-compose podman-docker golang-go \
-    postgresql-client bat curl fzf skopeo sshfs tldr tmux npm ripgrep  \
+sudo apt install -y gnome-shell-extensions evolution-ews keepassxc wireshark \
+    alacritty python3-venv moreutils wl-clipboard podman podman-compose podman-docker \
+    golang-go postgresql-client bat curl fzf skopeo sshfs tldr tmux npm ripgrep  \
     network-manager-openconnect network-manager-openconnect-gnome
 
 sudo snap install pinta postman telegram-desktop
@@ -31,13 +30,6 @@ for file in $(find $PWD/home); do
         ln -sf $file ~/$RELNAME
     fi
 done
-
-if [ ! -f /usr/bin/ghostty ]; then
-    wget \
-        https://github.com/mkasberg/ghostty-ubuntu/releases/download/1.2.0-0-ppa2/ghostty_1.2.0-0.ppa2_amd64_25.04.deb \
-        -O /tmp/ghostty.deb
-    sudo apt install -y /tmp/ghostty.deb
-fi
 
 if [ ! -f /usr/bin/ktalk ]; then
     wget \

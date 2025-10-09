@@ -68,10 +68,10 @@ M.colors = {
     search  =  hsl_to_hex_css_str("hsl(57  ,62%  ,21%)"),
     visual  =  hsl_to_hex_css_str("hsl(210 ,62%  ,21%)"),
     bg_1    =  "#2e2e2e",
-    bg_2    =  hsl_to_hex_css_str("hsl(0   ,0%   ,20%)"),
-    bg_3    =  hsl_to_hex_css_str("hsl(0   ,0%   ,25%)"),
-    fg_3    =  hsl_to_hex_css_str("hsl(0   ,0%   ,37%)"),
-    fg_2    =  hsl_to_hex_css_str("hsl(0   ,0%   ,54%)"),
+    bg_2    =  hsl_to_hex_css_str("hsl(0   ,0%   ,21%)"),
+    bg_3    =  hsl_to_hex_css_str("hsl(0   ,0%   ,30%)"),
+    fg_3    =  hsl_to_hex_css_str("hsl(0   ,0%   ,40%)"),
+    fg_2    =  hsl_to_hex_css_str("hsl(0   ,0%   ,50%)"),
     fg_1    =  hsl_to_hex_css_str("hsl(0   ,0%   ,80%)"),
 }
 -- stylua: ignore end
