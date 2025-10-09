@@ -80,13 +80,8 @@ require("mason-tool-installer").setup({
     start_delay = 3000, -- 3 second delay
 })
 
-local lspconfig = require("lspconfig")
-lspconfig.pyright.setup({})
-lspconfig.gopls.setup({})
-lspconfig.yamlls.setup({})
-
 -- Fix Undefined global 'vim'
-lspconfig.lua_ls.setup({
+vim.lsp.config("lua_ls", {
     settings = {
         Lua = {
             diagnostics = {
@@ -96,13 +91,13 @@ lspconfig.lua_ls.setup({
     },
 })
 
-lspconfig.helm_ls.setup({
+vim.lsp.config("helm_ls", {
     settings = {
         ["helm-ls"] = { yamlls = { path = "yaml-language-server" } },
     },
 })
 
-lspconfig.ruff.setup({
+vim.lsp.config("ruff", {
     init_options = {
         settings = {
             lint = {
@@ -152,4 +147,12 @@ lspconfig.ruff.setup({
             },
         },
     },
+})
+vim.lsp.enable({
+    "gopls",
+    "helm_ls",
+    "lua_ls",
+    "pyright",
+    "yamlls",
+    "ruff",
 })
