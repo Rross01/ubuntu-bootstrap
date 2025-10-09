@@ -142,7 +142,7 @@ func runFzf(items []sessionItem) *sessionItem {
 		fmt.Fprintln(&input, line)
 	}
 
-	cmd := exec.Command("fzf", "--bind=alt-k:up,alt-j:down", "--reverse", "--style=minimal")
+	cmd := exec.Command("fzf", "--bind=alt-k:up,alt-j:down", "--reverse", "--style=minimal", "--color=bw")
 	cmd.Stdin = &input
 	cmd.Stderr = os.Stderr
 
