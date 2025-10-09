@@ -54,6 +54,15 @@ if [ ! -f ~/.fonts/README.md ]; then
     unzip /tmp/Iosevka.zip -d ~/.fonts
 fi
 
+if [ ! -d /opt/nvim ]; then
+    wget \
+        https://github.com/neovim/neovim/releases/download/nightly/nvim-linux-x86_64.tar.gz \
+        -O /tmp/nvim-linux-x86_64.tar.gz
+    sudo mkdir /opt/nvim
+    sudo tar xzvf /tmp/nvim-linux-x86_64.tar.gz -C /opt/nvim
+    sudo ln -sf /opt/nvim/nvim-linux-x86_64/bin/nvim /usr/bin/nvim
+fi
+
 if [ ! -d /opt/pytimesched ]; then
     wget \
         https://gitlab.com/ilmenshik/pytimesched/-/jobs/3568673400/artifacts/raw/pyTimeSched-v0.6-linux.tar.gz \
