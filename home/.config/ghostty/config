@@ -1,11 +1,9 @@
-# Disable most ligatures
-font-feature = -calt, -liga, -dlig
 font-family = "Iosevka Nerd Font"
 font-size = 12
 window-padding-y = 0
 mouse-hide-while-typing = true
 command = tmux
-mouse-scroll-multiplier = 0.01
+mouse-scroll-multiplier = 1
 background = "#2e2e2e"
 window-theme = "ghostty"
 # Unbind keybinds
