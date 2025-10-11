@@ -6,9 +6,11 @@ vim.opt.termguicolors = true
 vim.opt.number = true
 vim.opt.scrolloff = 999
 vim.opt.undofile = true
+
 vim.opt.cmdheight = 0
-vim.opt.laststatus = 3
+vim.opt.laststatus = 2
 vim.opt.statusline = " %f %m %= %l:%v"
+vim.opt.cmdwinheight = 10
 
 -- Интеграция с буфером обмена ОС
 vim.schedule(function()
@@ -19,7 +21,7 @@ end)
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.hlsearch = true
-vim.opt.incsearch = true
+-- vim.opt.incsearch = true
 
 -- Табы и отступы
 vim.opt.syntax = "ON"
