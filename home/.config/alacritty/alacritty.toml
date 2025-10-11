@@ -1,6 +1,7 @@
 [font]
-normal = { family = "Iosevka Nerd Font" }
+normal = { family = "JetBrainsMono Nerd Font" }
 size = 12
+offset = { y = 3 }
 
 [terminal.shell]
 program = "tmux"
@@ -20,7 +21,7 @@ bindings = [{ key = "Enter", mods = "Control", action = "ToggleFullscreen" }]
 
 [colors.primary]
 background = "#2e2e2e"
-foreground = "#ffffff"
+foreground = "#e6e6e6"
 
 [colors.cursor]
 text = "#353a44"
