@@ -41,9 +41,9 @@ fi
 
 if [ ! -f ~/.fonts/README.md ]; then
     wget \
-        https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Iosevka.zip \
-        -O /tmp/Iosevka.zip
-    unzip /tmp/Iosevka.zip -d ~/.fonts
+        https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/JetBrainsMono.zip \
+        -O /tmp/JetBrainsMono.zip
+    unzip /tmp/JetBrainsMono.zip -d ~/.fonts
 fi
 
 if [ ! -d /opt/nvim ]; then
