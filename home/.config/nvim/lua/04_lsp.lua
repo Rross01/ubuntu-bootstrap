@@ -1,11 +1,7 @@
 vim.pack.add({
-    "https://github.com/towolf/vim-helm",
+    "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim",
     "https://github.com/neovim/nvim-lspconfig",
     "https://github.com/williamboman/mason.nvim",
-    "https://github.com/williamboman/mason-lspconfig.nvim",
-    "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim",
-    "https://github.com/L3MON4D3/LuaSnip",
-    "https://github.com/mfussenegger/nvim-lint",
 })
 
 vim.api.nvim_create_autocmd("LspAttach", {
@@ -63,8 +59,8 @@ require("mason-tool-installer").setup({
     ensure_installed = {
         -- lsp's
         "gopls",
-        "helm_ls",
-        "lua_ls",
+        "helm-ls",
+        "lua-language-server",
         "pyright",
         "yaml-language-server",
         -- formatters
