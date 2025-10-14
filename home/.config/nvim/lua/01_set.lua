@@ -1,4 +1,4 @@
-vim.cmd.colorscheme("oddsky")
+vim.cmd.colorscheme("oddsky_night")
 
 vim.opt.spell = false
 vim.opt.cursorline = true
