@@ -18,6 +18,9 @@ require("harpoon").setup({
 
 pak({ { src = "https://github.com/saghen/blink.cmp", version = vim.version.range("1.0") } })
 require("blink.cmp").setup({
+    keymap = {
+        preset = "super-tab",
+    },
     sources = {
         default = {
             "lsp",
@@ -26,6 +29,14 @@ require("blink.cmp").setup({
             "buffer",
         },
     },
+})
+
+pak({ "https://github.com/saghen/blink.indent" })
+require("blink.indent").setup({
+    static = {
+        highlights = { "Indent" },
+    },
+    scope = { enabled = false },
 })
 
 pak({ { src = "https://github.com/nvim-treesitter/nvim-treesitter", branch = "master" } })
@@ -56,26 +67,6 @@ require("tiny-inline-diagnostic").setup({
     preset = "powerline",
     options = { show_source = true },
 })
-
--- pak({ "https://github.com/lukas-reineke/indent-blankline.nvim" })
--- require("ibl").setup({
---     scope = { enabled = false },
---     indent = {
---         -- weird way to hide first line
---         highlight = {
---             "@transparent",
---             "VertSplit",
---             "VertSplit",
---             "VertSplit",
---             "VertSplit",
---             "VertSplit",
---             "VertSplit",
---             "VertSplit",
---             "VertSplit",
---         },
---         char = "▏",
---     },
--- })
 
 pak({ "https://github.com/stevearc/conform.nvim" })
 require("conform").setup({
@@ -125,28 +116,10 @@ require("neo-tree").setup({
     },
 })
 
-pak({ "https://github.com/lukas-reineke/indent-blankline.nvim" })
-require("ibl").setup({
-    indent = {
-        highlight = {
-            "@transparent",
-            "IblIndent",
-            "IblIndent",
-            "IblIndent",
-            "IblIndent",
-            "IblIndent",
-            "IblIndent",
-            "IblIndent",
-        },
-    },
-    -- whitespace = {
-    --     highlight = highlight,
-    --     remove_blankline_trail = false,
-    -- },
-    scope = { enabled = false },
-})
-
 pak({ "https://github.com/echasnovski/mini.nvim" })
 require("mini.move").setup() -- Move any selection in any direction
 require("mini.bufremove").setup() -- Remove buffers
 require("mini.comment").setup() -- Comment lines
+
+pak({ "https://github.com/kylechui/nvim-surround" })
+require("nvim-surround").setup({})

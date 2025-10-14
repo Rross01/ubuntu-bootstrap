@@ -12,6 +12,10 @@ map("n", "<leader>E", ":Neotree float reveal<CR>")
 map("n", "<leader>q", ":Neotree right toggle<CR>")
 map("n", "<leader>Q", ":Neotree right reveal<CR>")
 
+-- lewis6991/gitsigns.nvim
+map("n", "gb", ":Gitsigns blame_line<CR>")
+map("n", "dz", ":Gitsigns diffthis<CR>")
+
 -- nvim-telescope/telescope.nvim
 local telescope = require("telescope.builtin")
 map("n", "<leader>pf", telescope.find_files)
