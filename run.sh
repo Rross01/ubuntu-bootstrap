@@ -5,11 +5,13 @@ set -a
 
 sudo apt install -y gnome-shell-extensions evolution-ews keepassxc wireshark \
     alacritty python3-venv moreutils wl-clipboard podman podman-compose podman-docker \
-    golang-go postgresql-client bat curl fzf skopeo sshfs tldr tmux npm ripgrep  \
+    golang-go postgresql-client bat curl fzf skopeo sshfs tmux npm ripgrep pipx \
     network-manager-openconnect network-manager-openconnect-gnome
 
 sudo snap install pinta postman telegram-desktop
 sudo snap install --classic pycharm-community
+
+pipx install tldr
 
 dconf write "/org/gnome/desktop/input-sources/xkb-options" "['caps:swapescape']"
 dconf write "/org/gnome/desktop/interface/enable-animations" "false"
