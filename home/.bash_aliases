@@ -13,8 +13,9 @@ if [ ! -f /tmp/comp ]; then
 fi
 source /tmp/comp
 
+complete -F __start_kubectl kl
+
 # aliases
-alias s='ssh'
 alias v='nvim'
 alias kl='kubectl'
 alias locconf="export KUBECONFIG=~/places/kubeconfigs/loc.conf"
