@@ -72,6 +72,8 @@ vim.filetype.add({
     pattern = {
         [".*/templates/.*%.tpl"] = "helm",
         [".*/templates/.*%.ya?ml"] = "helm",
+        [".*/values/.*%.ya?ml.gotmpl"] = "helm",
+        [".*/values/.*%.ya?ml"] = "helm",
         [".*/helmfiles?/.*%.ya?ml"] = "helm",
         ["helmfile.*%.ya?ml"] = "helm",
     },
