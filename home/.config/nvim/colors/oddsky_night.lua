@@ -60,7 +60,7 @@ M.colors = {
     yellow  =  hsl_to_hex_css_str("hsl(50  ,59%  ,60%)"),
     green   =  hsl_to_hex_css_str("hsl(120 ,32%  ,60%)"),
     cyan    =  hsl_to_hex_css_str("hsl(185 ,27%  ,55%)"),
-    blue    =  hsl_to_hex_css_str("hsl(230 ,67%  ,70%)"),
+    blue    =  hsl_to_hex_css_str("hsl(230 ,70%  ,70%)"),
     violet  =  hsl_to_hex_css_str("hsl(265 ,42%  ,66%)"),
     purple  =  hsl_to_hex_css_str("hsl(300 ,42%  ,66%)"),
     search  =  hsl_to_hex_css_str("hsl(57  ,62%  ,21%)"),
@@ -76,7 +76,7 @@ M.colors = {
 
 M.set = function(colors)
     -- UI highlight
-    hl("Normal", { fg = colors.fg_1, bg = colors.bg_1 })
+    hl("Normal", { fg = colors.fg_1 })
     hl("NormalFloat", { fg = colors.fg_1 })
     hl("FloatBorder", { fg = colors.fg_3 })
     hl("ColorColumn", { bg = colors.bg_2 })
