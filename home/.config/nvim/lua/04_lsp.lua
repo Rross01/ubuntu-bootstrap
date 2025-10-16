@@ -63,6 +63,7 @@ require("mason-tool-installer").setup({
         "lua-language-server",
         "pyright",
         "yaml-language-server",
+        "dockerfile-language-server",
         -- formatters
         "beautysh",
         "cbfmt",
@@ -144,6 +145,7 @@ vim.lsp.config("ruff", {
         },
     },
 })
+
 vim.lsp.enable({
     "gopls",
     "helm_ls",
@@ -151,4 +153,5 @@ vim.lsp.enable({
     "pyright",
     "yamlls",
     "ruff",
+    "dockerls",
 })
