@@ -6,7 +6,7 @@ set -a
 sudo apt install -y gnome-shell-extensions evolution-ews keepassxc wireshark \
     alacritty python3-venv moreutils wl-clipboard podman podman-compose podman-docker \
     golang-go postgresql-client bat curl fzf skopeo sshfs tmux npm ripgrep pipx \
-    network-manager-openconnect network-manager-openconnect-gnome
+    network-manager-openconnect network-manager-openconnect-gnome ansible
 
 sudo snap install pinta postman telegram-desktop
 sudo snap install --classic pycharm-community
